@@ -28,7 +28,9 @@ export default async function HomePage({
         <p className="max-w-xl text-muted-foreground">{t("subtitle")}</p>
       </div>
 
-      <Button size="lg">{t("cta")}</Button>
+      <Button asChild size="lg">
+        <Link href="/login">{t("cta")}</Link>
+      </Button>
 
       <nav className="flex gap-3 text-sm">
         {routing.locales.map((loc) => (

@@ -6,11 +6,70 @@
     "language": "Langue",
     "french": "Français",
     "arabic": "Arabe",
-    "english": "Anglais"
+    "english": "Anglais",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "create": "Créer",
+    "add": "Ajouter",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "loading": "Chargement..."
   },
   "home": {
     "title": "Votre copilote tactique",
     "subtitle": "Préparez vos matchs, organisez votre effectif et générez des plans de jeu à partir des données de votre équipe.",
     "cta": "Entrer au vestiaire"
+  },
+  "auth": {
+    "loginTab": "Se connecter",
+    "signupTab": "Créer un club",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "fullName": "Votre nom",
+    "clubName": "Nom du club",
+    "loginCta": "Se connecter",
+    "signupCta": "Entrer au vestiaire",
+    "hasInvite": "Vous avez un code d'invitation ? Rejoignez plutôt l'effectif de votre club.",
+    "inviteTitle": "Vous êtes invité(e) à rejoindre {club}",
+    "inviteExpired": "Ce lien d'invitation n'est plus valide.",
+    "inviteCta": "Rejoindre le club",
+    "checkEmail": "Vérifiez votre e-mail pour confirmer votre compte."
+  },
+  "onboarding": {
+    "title": "Votre philosophie",
+    "subtitle": "Cela aide l'IA à adapter ses recommandations à votre style.",
+    "preferredFormation": "Formation préférée",
+    "playingStyle": "Style de jeu",
+    "riskTolerance": "Prise de risque",
+    "riskLow": "Prudent",
+    "riskMedium": "Équilibré",
+    "riskHigh": "Offensif",
+    "cta": "Continuer"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bienvenue, {name}",
+    "club": "Club : {club}"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "clubInfo": "Informations du club",
+    "coaches": "Entraineurs du club",
+    "inviteCoach": "Inviter un entraineur",
+    "inviteEmail": "E-mail de l'entraineur",
+    "inviteSent": "Invitation créée. Partagez ce lien :",
+    "role": {
+      "owner": "Propriétaire",
+      "member": "Membre"
+    }
+  },
+  "teams": {
+    "title": "Équipes",
+    "name": "Nom de l'équipe",
+    "ageCategory": "Catégorie d'âge",
+    "competition": "Compétition",
+    "defaultFormation": "Formation par défaut",
+    "addTeam": "Ajouter une équipe",
+    "empty": "Aucune équipe pour le moment."
   }
 }

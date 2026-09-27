@@ -6,11 +6,70 @@
     "language": "Language",
     "french": "French",
     "arabic": "Arabic",
-    "english": "English"
+    "english": "English",
+    "save": "Save",
+    "cancel": "Cancel",
+    "create": "Create",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "loading": "Loading..."
   },
   "home": {
     "title": "Your tactical copilot",
     "subtitle": "Prepare your matches, organize your squad, and generate game plans from your team's own data.",
     "cta": "Enter the dressing room"
+  },
+  "auth": {
+    "loginTab": "Log in",
+    "signupTab": "Create a club",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Your name",
+    "clubName": "Club name",
+    "loginCta": "Log in",
+    "signupCta": "Enter the dressing room",
+    "hasInvite": "Have an invite code? Join your club's squad instead.",
+    "inviteTitle": "You've been invited to join {club}",
+    "inviteExpired": "This invite link is no longer valid.",
+    "inviteCta": "Join the club",
+    "checkEmail": "Check your email to confirm your account."
+  },
+  "onboarding": {
+    "title": "Your philosophy",
+    "subtitle": "This helps the AI tailor its recommendations to your style.",
+    "preferredFormation": "Preferred formation",
+    "playingStyle": "Playing style",
+    "riskTolerance": "Risk tolerance",
+    "riskLow": "Cautious",
+    "riskMedium": "Balanced",
+    "riskHigh": "All-in",
+    "cta": "Continue"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome, {name}",
+    "club": "Club: {club}"
+  },
+  "settings": {
+    "title": "Settings",
+    "clubInfo": "Club info",
+    "coaches": "Club coaches",
+    "inviteCoach": "Invite a coach",
+    "inviteEmail": "Coach's email",
+    "inviteSent": "Invite created. Share this link:",
+    "role": {
+      "owner": "Owner",
+      "member": "Member"
+    }
+  },
+  "teams": {
+    "title": "Teams",
+    "name": "Team name",
+    "ageCategory": "Age category",
+    "competition": "Competition",
+    "defaultFormation": "Default formation",
+    "addTeam": "Add a team",
+    "empty": "No teams yet."
   }
 }
