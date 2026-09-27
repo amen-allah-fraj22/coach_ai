@@ -1,0 +1,16 @@
+{
+  "app": {
+    "name": "CoachAI"
+  },
+  "common": {
+    "language": "Language",
+    "french": "French",
+    "arabic": "Arabic",
+    "english": "English"
+  },
+  "home": {
+    "title": "Your tactical copilot",
+    "subtitle": "Prepare your matches, organize your squad, and generate game plans from your team's own data.",
+    "cta": "Enter the dressing room"
+  }
+}

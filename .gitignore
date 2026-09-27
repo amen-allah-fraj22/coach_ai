@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+apps/web/.next/
+apps/web/out/
+
+# NestJS
+dist/
+apps/ai-core/dist/
+
+# Env
+.env
+.env.local
+.env.*.local
+!.env.example
+!.env.*.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Turbo / build caches
+.turbo/
+
+# Supabase local
+.supabase/

@@ -1,0 +1,17 @@
+{
+  "name": "coach-ai",
+  "private": true,
+  "version": "0.1.0",
+  "description": "CoachAI — AI football coaching assistant (MVP monorepo)",
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "dev:ai-core": "pnpm --filter ai-core start:dev",
+    "build:web": "pnpm --filter web build",
+    "build:ai-core": "pnpm --filter ai-core build",
+    "lint": "pnpm -r lint"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  }
+}

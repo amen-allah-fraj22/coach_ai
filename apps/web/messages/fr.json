@@ -1,0 +1,16 @@
+{
+  "app": {
+    "name": "CoachAI"
+  },
+  "common": {
+    "language": "Langue",
+    "french": "Français",
+    "arabic": "Arabe",
+    "english": "Anglais"
+  },
+  "home": {
+    "title": "Votre copilote tactique",
+    "subtitle": "Préparez vos matchs, organisez votre effectif et générez des plans de jeu à partir des données de votre équipe.",
+    "cta": "Entrer au vestiaire"
+  }
+}
