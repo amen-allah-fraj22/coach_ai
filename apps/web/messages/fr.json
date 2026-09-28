@@ -13,7 +13,9 @@
     "add": "Ajouter",
     "edit": "Modifier",
     "delete": "Supprimer",
-    "loading": "Chargement..."
+    "loading": "Chargement...",
+    "none": "Aucun",
+    "optional": "facultatif"
   },
   "home": {
     "title": "Votre copilote tactique",
@@ -71,5 +73,101 @@
     "defaultFormation": "Formation par défaut",
     "addTeam": "Ajouter une équipe",
     "empty": "Aucune équipe pour le moment."
+  },
+  "players": {
+    "title": "Joueurs",
+    "addPlayer": "Ajouter un joueur",
+    "empty": "Aucun joueur pour le moment.",
+    "emptyNeedsTeam": "Créez d'abord une équipe, puis ajoutez vos joueurs.",
+    "name": "Nom du joueur",
+    "team": "Équipe",
+    "dateOfBirth": "Date de naissance",
+    "position": "Poste",
+    "secondaryPosition": "Poste secondaire",
+    "preferredFoot": "Pied fort",
+    "availability": "Disponibilité",
+    "squadGroup": "Groupe",
+    "ratings": "Évaluations (1-10)",
+    "technical": "Technique",
+    "physical": "Physique",
+    "tactical": "Tactique",
+    "form": "Forme",
+    "coachNotes": "Notes de l'entraineur",
+    "foot": {
+      "left": "Gauche",
+      "right": "Droit",
+      "both": "Les deux"
+    },
+    "status": {
+      "available": "Disponible",
+      "injured": "Blessé",
+      "suspended": "Suspendu",
+      "unavailable": "Indisponible"
+    }
+  },
+  "opponents": {
+    "title": "Adversaires",
+    "addOpponent": "Ajouter un adversaire",
+    "empty": "Aucun adversaire pour le moment.",
+    "teamName": "Nom de l'équipe",
+    "usualFormation": "Formation habituelle",
+    "playingStyle": "Style de jeu",
+    "pressingStyle": "Pressing",
+    "buildUpStyle": "Construction du jeu",
+    "defensiveStyle": "Organisation défensive",
+    "strengths": "Points forts",
+    "weaknesses": "Points faibles",
+    "setPieceNotes": "Coups de pied arrêtés"
+  },
+  "matches": {
+    "title": "Matchs",
+    "addMatch": "Ajouter un match",
+    "empty": "Aucun match pour le moment.",
+    "emptyNeedsTeam": "Créez d'abord une équipe, puis ajoutez vos matchs.",
+    "date": "Date",
+    "team": "Équipe",
+    "opponent": "Adversaire",
+    "homeAway": "Lieu",
+    "home": "Domicile",
+    "away": "Extérieur",
+    "competition": "Compétition",
+    "ourFormation": "Notre formation",
+    "opponentFormation": "Formation adverse",
+    "score": "Score",
+    "scoreFor": "Buts pour",
+    "scoreAgainst": "Buts contre",
+    "stats": "Statistiques",
+    "possession": "Possession (%)",
+    "shots": "Tirs",
+    "shotsOnTarget": "Tirs cadrés",
+    "corners": "Corners",
+    "fouls": "Fautes",
+    "yellowCards": "Cartons jaunes",
+    "redCards": "Cartons rouges",
+    "coachNotes": "Notes de l'entraineur",
+    "unknownOpponent": "Adversaire inconnu"
+  },
+  "events": {
+    "title": "Événements du match",
+    "addEvent": "Ajouter un événement",
+    "empty": "Aucun événement enregistré.",
+    "minute": "Minute",
+    "type": "Type",
+    "side": "Équipe",
+    "player": "Joueur",
+    "description": "Description",
+    "sides": {
+      "us": "Nous",
+      "them": "Eux"
+    },
+    "types": {
+      "goal": "But",
+      "assist": "Passe décisive",
+      "substitution": "Remplacement",
+      "yellow_card": "Carton jaune",
+      "red_card": "Carton rouge",
+      "injury": "Blessure",
+      "tactical_change": "Changement tactique"
+    }
   }
 }

@@ -13,7 +13,9 @@
     "add": "إضافة",
     "edit": "تعديل",
     "delete": "حذف",
-    "loading": "جارٍ التحميل..."
+    "loading": "جارٍ التحميل...",
+    "none": "لا شيء",
+    "optional": "اختياري"
   },
   "home": {
     "title": "مساعدك التكتيكي",
@@ -71,5 +73,101 @@
     "defaultFormation": "التشكيلة الافتراضية",
     "addTeam": "إضافة فريق",
     "empty": "لا توجد فرق بعد."
+  },
+  "players": {
+    "title": "اللاعبون",
+    "addPlayer": "إضافة لاعب",
+    "empty": "لا يوجد لاعبون بعد.",
+    "emptyNeedsTeam": "أنشئ فريقاً أولاً، ثم أضف لاعبيك.",
+    "name": "اسم اللاعب",
+    "team": "الفريق",
+    "dateOfBirth": "تاريخ الميلاد",
+    "position": "المركز",
+    "secondaryPosition": "المركز الثانوي",
+    "preferredFoot": "القدم المفضلة",
+    "availability": "الجاهزية",
+    "squadGroup": "المجموعة",
+    "ratings": "التقييمات (1-10)",
+    "technical": "التقني",
+    "physical": "البدني",
+    "tactical": "التكتيكي",
+    "form": "اللياقة",
+    "coachNotes": "ملاحطات المدرب",
+    "foot": {
+      "left": "اليسرى",
+      "right": "اليمنى",
+      "both": "كلتاهما"
+    },
+    "status": {
+      "available": "جاهز",
+      "injured": "مصاب",
+      "suspended": "موقوف",
+      "unavailable": "غير متاح"
+    }
+  },
+  "opponents": {
+    "title": "المنافسون",
+    "addOpponent": "إضافة منافس",
+    "empty": "لا يوجد منافسون بعد.",
+    "teamName": "اسم الفريق",
+    "usualFormation": "التشكيلة المعتادة",
+    "playingStyle": "أسلوب اللعب",
+    "pressingStyle": "الضغط",
+    "buildUpStyle": "بناء اللعب",
+    "defensiveStyle": "التنظيم الدفاعي",
+    "strengths": "نقاط القوة",
+    "weaknesses": "نقاط الضعف",
+    "setPieceNotes": "الكرات الثابتة"
+  },
+  "matches": {
+    "title": "المباريات",
+    "addMatch": "إضافة مباراة",
+    "empty": "لا توجد مباريات بعد.",
+    "emptyNeedsTeam": "أنشئ فريقاً أولاً، ثم أضف مبارياتك.",
+    "date": "التاريخ",
+    "team": "الفريق",
+    "opponent": "المنافس",
+    "homeAway": "الملعب",
+    "home": "أرضنا",
+    "away": "خارج الأرض",
+    "competition": "المسابقة",
+    "ourFormation": "تشكيلتنا",
+    "opponentFormation": "تشكيلة المنافس",
+    "score": "النتيجة",
+    "scoreFor": "أهداف لنا",
+    "scoreAgainst": "أهداف علينا",
+    "stats": "الإحصائيات",
+    "possession": "الاستحواز (%)",
+    "shots": "التسديدات",
+    "shotsOnTarget": "التسديدات على الهدف",
+    "corners": "الركنيات",
+    "fouls": "الأخطاء",
+    "yellowCards": "البطاقات الصفراء",
+    "redCards": "البطاقات الحمراء",
+    "coachNotes": "ملاحطات المدرب",
+    "unknownOpponent": "منافس غير محدد"
+  },
+  "events": {
+    "title": "أحداث المباراة",
+    "addEvent": "إضافة حدث",
+    "empty": "لم يتم تسجيل أي أحداث.",
+    "minute": "الدقيقة",
+    "type": "النوع",
+    "side": "الفريق",
+    "player": "اللاعب",
+    "description": "الوصف",
+    "sides": {
+      "us": "نحن",
+      "them": "هم"
+    },
+    "types": {
+      "goal": "هدف",
+      "assist": "تمريرة حاسمة",
+      "substitution": "تبديل",
+      "yellow_card": "بطاقة صفراء",
+      "red_card": "بطاقة حمراء",
+      "injury": "إصابة",
+      "tactical_change": "تغيير تكتيكي"
+    }
   }
 }

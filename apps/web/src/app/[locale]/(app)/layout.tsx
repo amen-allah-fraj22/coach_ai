@@ -23,6 +23,9 @@ export default async function AppLayout({
   const t = await getTranslations("dashboard");
   const tSettings = await getTranslations("settings");
   const tTeams = await getTranslations("teams");
+  const tPlayers = await getTranslations("players");
+  const tMatches = await getTranslations("matches");
+  const tOpponents = await getTranslations("opponents");
 
   return (
     <div className="flex min-h-full flex-col">
@@ -36,6 +39,18 @@ export default async function AppLayout({
           </Link>
           <Link href="/teams" className="text-muted-foreground hover:text-foreground">
             {tTeams("title")}
+          </Link>
+          <Link href="/players" className="text-muted-foreground hover:text-foreground">
+            {tPlayers("title")}
+          </Link>
+          <Link href="/matches" className="text-muted-foreground hover:text-foreground">
+            {tMatches("title")}
+          </Link>
+          <Link
+            href="/opponents"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            {tOpponents("title")}
           </Link>
           <Link href="/settings" className="text-muted-foreground hover:text-foreground">
             {tSettings("title")}

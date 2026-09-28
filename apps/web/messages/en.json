@@ -13,7 +13,9 @@
     "add": "Add",
     "edit": "Edit",
     "delete": "Delete",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "none": "None",
+    "optional": "optional"
   },
   "home": {
     "title": "Your tactical copilot",
@@ -71,5 +73,101 @@
     "defaultFormation": "Default formation",
     "addTeam": "Add a team",
     "empty": "No teams yet."
+  },
+  "players": {
+    "title": "Players",
+    "addPlayer": "Add a player",
+    "empty": "No players yet.",
+    "emptyNeedsTeam": "Create a team first, then add your players.",
+    "name": "Player name",
+    "team": "Team",
+    "dateOfBirth": "Date of birth",
+    "position": "Position",
+    "secondaryPosition": "Secondary position",
+    "preferredFoot": "Preferred foot",
+    "availability": "Availability",
+    "squadGroup": "Group",
+    "ratings": "Ratings (1-10)",
+    "technical": "Technical",
+    "physical": "Physical",
+    "tactical": "Tactical",
+    "form": "Form",
+    "coachNotes": "Coach notes",
+    "foot": {
+      "left": "Left",
+      "right": "Right",
+      "both": "Both"
+    },
+    "status": {
+      "available": "Available",
+      "injured": "Injured",
+      "suspended": "Suspended",
+      "unavailable": "Unavailable"
+    }
+  },
+  "opponents": {
+    "title": "Opponents",
+    "addOpponent": "Add an opponent",
+    "empty": "No opponents yet.",
+    "teamName": "Team name",
+    "usualFormation": "Usual formation",
+    "playingStyle": "Playing style",
+    "pressingStyle": "Pressing style",
+    "buildUpStyle": "Build-up style",
+    "defensiveStyle": "Defensive style",
+    "strengths": "Strengths",
+    "weaknesses": "Weaknesses",
+    "setPieceNotes": "Set-piece notes"
+  },
+  "matches": {
+    "title": "Matches",
+    "addMatch": "Add a match",
+    "empty": "No matches yet.",
+    "emptyNeedsTeam": "Create a team first, then add your matches.",
+    "date": "Date",
+    "team": "Team",
+    "opponent": "Opponent",
+    "homeAway": "Venue",
+    "home": "Home",
+    "away": "Away",
+    "competition": "Competition",
+    "ourFormation": "Our formation",
+    "opponentFormation": "Opponent formation",
+    "score": "Score",
+    "scoreFor": "Goals for",
+    "scoreAgainst": "Goals against",
+    "stats": "Statistics",
+    "possession": "Possession (%)",
+    "shots": "Shots",
+    "shotsOnTarget": "Shots on target",
+    "corners": "Corners",
+    "fouls": "Fouls",
+    "yellowCards": "Yellow cards",
+    "redCards": "Red cards",
+    "coachNotes": "Coach notes",
+    "unknownOpponent": "Unknown opponent"
+  },
+  "events": {
+    "title": "Match events",
+    "addEvent": "Add an event",
+    "empty": "No events logged.",
+    "minute": "Minute",
+    "type": "Type",
+    "side": "Side",
+    "player": "Player",
+    "description": "Description",
+    "sides": {
+      "us": "Us",
+      "them": "Them"
+    },
+    "types": {
+      "goal": "Goal",
+      "assist": "Assist",
+      "substitution": "Substitution",
+      "yellow_card": "Yellow card",
+      "red_card": "Red card",
+      "injury": "Injury",
+      "tactical_change": "Tactical change"
+    }
   }
 }
