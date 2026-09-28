@@ -169,5 +169,31 @@
       "injury": "إصابة",
       "tactical_change": "تغيير تكتيكي"
     }
+  },
+  "assistant": {
+    "title": "المدرب الذكي",
+    "subtitle": "اطرح سؤالاً تكتيكياً حول فريقك أو منافس أو مباراة.",
+    "placeholder": "كيف نتعامل مع هذه المباراة؟",
+    "ask": "اسأل",
+    "thinking": "جارٍ التحليل...",
+    "matchContext": "مباراة مرتبطة (اختياري)",
+    "noMatch": "لا شيء",
+    "formation": "التشكيلة",
+    "startingXI": "التشكيلة الأساسية",
+    "attacking": "الخطة الهجومية",
+    "defensive": "الخطة الدفاعية",
+    "pressing": "الضغط",
+    "transition": "التحولات",
+    "setPieces": "الكرات الثابتة",
+    "risks": "المخاطر",
+    "alternatives": "البدائل",
+    "substitutions": "سيناريوهات التبديل",
+    "training": "محاور التدريب",
+    "reasoning": "التعليل",
+    "accept": "قبول",
+    "modify": "تعديل",
+    "reject": "رفض",
+    "feedbackThanks": "شكراً، تم حفظ ملاحظتك.",
+    "poweredBy": "أُنشئ بواسطة {provider}"
   }
 }

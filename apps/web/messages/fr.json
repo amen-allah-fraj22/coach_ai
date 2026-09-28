@@ -169,5 +169,31 @@
       "injury": "Blessure",
       "tactical_change": "Changement tactique"
     }
+  },
+  "assistant": {
+    "title": "Coach IA",
+    "subtitle": "Posez une question tactique sur votre effectif, un adversaire ou un match.",
+    "placeholder": "Comment aborder ce match ?",
+    "ask": "Demander",
+    "thinking": "Analyse en cours...",
+    "matchContext": "Match lié (facultatif)",
+    "noMatch": "Aucun",
+    "formation": "Formation",
+    "startingXI": "Onze de départ",
+    "attacking": "Plan offensif",
+    "defensive": "Plan défensif",
+    "pressing": "Pressing",
+    "transition": "Transitions",
+    "setPieces": "Coups de pied arrêtés",
+    "risks": "Risques",
+    "alternatives": "Alternatives",
+    "substitutions": "Scénarios de remplacement",
+    "training": "À travailler",
+    "reasoning": "Raisonnement",
+    "accept": "Accepter",
+    "modify": "Modifier",
+    "reject": "Rejeter",
+    "feedbackThanks": "Merci, retour enregistré.",
+    "poweredBy": "Généré par {provider}"
   }
 }

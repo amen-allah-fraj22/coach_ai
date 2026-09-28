@@ -1,0 +1,159 @@
+"use client";
+
+import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
+
+import { sendFeedback } from "@/app/[locale]/(app)/assistant/actions";
+import { Button } from "@/components/ui/button";
+import type { FeedbackStatus, Recommendation } from "@/lib/types/recommendation";
+
+function Section({ title, items }: { title: string; items?: string[] }) {
+  if (!items || items.length === 0) return null;
+  return (
+    <div className="flex flex-col gap-1.5">
+      <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        {title}
+      </h3>
+      <ul className="flex flex-col gap-1 text-sm">
+        {items.map((item, i) => (
+          <li key={i} className="flex gap-2">
+            <span className="text-primary" aria-hidden>
+              &bull;
+            </span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export function MatchPlanCard({
+  recommendation,
+  recommendationId,
+  provider,
+}: {
+  recommendation: Recommendation;
+  recommendationId: string | null;
+  provider: string;
+}) {
+  const t = useTranslations("assistant");
+  const [pending, startTransition] = useTransition();
+  const [feedbackDone, setFeedbackDone] = useState(false);
+
+  const rec = recommendation;
+
+  function submitFeedback(status: FeedbackStatus) {
+    if (!recommendationId) {
+      setFeedbackDone(true);
+      return;
+    }
+    startTransition(async () => {
+      await sendFeedback(recommendationId, status);
+      setFeedbackDone(true);
+    });
+  }
+
+  return (
+    <article className="flex flex-col gap-5 rounded-lg border border-border bg-card p-5">
+      <header className="flex flex-col gap-1">
+        <h2 className="font-display text-xl uppercase tracking-tight">
+          {rec.headline}
+        </h2>
+        <p className="text-sm text-muted-foreground">{rec.summary}</p>
+        {rec.formation && (
+          <p className="mt-1 font-display text-2xl tabular-nums text-primary">
+            {rec.formation}
+          </p>
+        )}
+      </header>
+
+      {rec.starting_xi && rec.starting_xi.length > 0 && (
+        <div className="flex flex-col gap-1.5">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {t("startingXI")}
+          </h3>
+          <ul className="grid grid-cols-1 gap-1 text-sm sm:grid-cols-2">
+            {rec.starting_xi.map((p, i) => (
+              <li key={i} className="flex justify-between gap-2 border-b border-border/50 py-1">
+                <span className="font-medium">{p.player}</span>
+                <span className="text-muted-foreground">{p.role}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <Section title={t("attacking")} items={rec.attacking_plan} />
+        <Section title={t("defensive")} items={rec.defensive_plan} />
+        <Section title={t("pressing")} items={rec.pressing_plan} />
+        <Section title={t("transition")} items={rec.transition_plan} />
+        <Section title={t("setPieces")} items={rec.set_pieces} />
+        <Section title={t("substitutions")} items={rec.substitutions} />
+        <Section title={t("risks")} items={rec.risks} />
+        <Section title={t("training")} items={rec.training_focus} />
+      </div>
+
+      {rec.alternatives && rec.alternatives.length > 0 && (
+        <div className="flex flex-col gap-2">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {t("alternatives")}
+          </h3>
+          {rec.alternatives.map((alt, i) => (
+            <div key={i} className="rounded-md border border-border p-3 text-sm">
+              <p className="font-medium">{alt.name}</p>
+              <p className="text-muted-foreground">{alt.rationale}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <details className="text-sm">
+        <summary className="cursor-pointer text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          {t("reasoning")}
+        </summary>
+        <p className="mt-2 text-muted-foreground">{rec.reasoning}</p>
+      </details>
+
+      <footer className="flex flex-col gap-3 border-t border-border pt-4">
+        {feedbackDone ? (
+          <p className="text-sm text-secondary">{t("feedbackThanks")}</p>
+        ) : (
+          <div className="flex gap-2">
+            <Button
+              type="button"
+              variant="secondary"
+              size="sm"
+              disabled={pending}
+              onClick={() => submitFeedback("accepted")}
+            >
+              {t("accept")}
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              disabled={pending}
+              onClick={() => submitFeedback("modified")}
+            >
+              {t("modify")}
+            </Button>
+            <Button
+              type="button"
+              variant="destructive"
+              size="sm"
+              disabled={pending}
+              onClick={() => submitFeedback("rejected")}
+            >
+              {t("reject")}
+            </Button>
+          </div>
+        )}
+        <p className="text-xs text-muted-foreground">
+          {t("poweredBy", { provider })}
+        </p>
+      </footer>
+    </article>
+  );
+}
