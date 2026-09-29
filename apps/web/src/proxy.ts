@@ -1,49 +1,41 @@
-import { type NextRequest } from "next/server";
 import createIntlMiddleware from "next-intl/middleware";
-import { createServerClient, type CookieOptions } from "@supabase/ssr";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 import { routing } from "./i18n/routing";
 
 const intlMiddleware = createIntlMiddleware(routing);
 
-export default async function proxy(request: NextRequest) {
-  const cookiesToApply: {
-    name: string;
-    value: string;
-    options: CookieOptions;
-  }[] = [];
+// Routes that require a signed-in Clerk user. The locale prefix is optional
+// so both /dashboard and /fr/dashboard match. Auth pages and the marketing
+// home stay public.
+const isProtected = createRouteMatcher([
+  "/:locale/dashboard(.*)",
+  "/:locale/onboarding(.*)",
+  "/:locale/teams(.*)",
+  "/:locale/players(.*)",
+  "/:locale/matches(.*)",
+  "/:locale/opponents(.*)",
+  "/:locale/settings(.*)",
+  "/:locale/assistant(.*)",
+  "/dashboard(.*)",
+  "/onboarding(.*)",
+  "/teams(.*)",
+  "/players(.*)",
+  "/matches(.*)",
+  "/opponents(.*)",
+  "/settings(.*)",
+  "/assistant(.*)",
+]);
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll();
-        },
-        setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value }) => {
-            request.cookies.set(name, value);
-          });
-          cookiesToApply.push(...cookiesToSet);
-        },
-      },
-    },
-  );
-
-  // Refreshes the auth token if it's stale; queues any updated cookies above
-  // rather than writing them directly, since the response object doesn't
-  // exist yet — next-intl's middleware builds it below.
-  await supabase.auth.getUser();
-
-  const response = intlMiddleware(request);
-
-  for (const { name, value, options } of cookiesToApply) {
-    response.cookies.set(name, value, options);
+// Clerk wraps next-intl: Clerk resolves the session, then locale routing
+// runs and returns the response. protect() redirects anonymous users on
+// guarded routes to Clerk's sign-in.
+export default clerkMiddleware(async (auth, req) => {
+  if (isProtected(req)) {
+    await auth.protect();
   }
-
-  return response;
-}
+  return intlMiddleware(req);
+});
 
 export const config = {
   matcher: ["/((?!api|trpc|_next|_vercel|.*\\..*).*)"],

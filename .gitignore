@@ -9,9 +9,8 @@ out/
 apps/web/.next/
 apps/web/out/
 
-# NestJS
-dist/
-apps/ai-core/dist/
+# Convex generated types (created by `npx convex dev` / codegen)
+apps/web/convex/_generated/
 
 # Env
 .env

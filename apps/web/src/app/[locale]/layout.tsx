@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic, Archivo_Black } from "next/font/google";
 
 import { routing, rtlLocales, type Locale } from "@/i18n/routing";
+import { Providers } from "@/components/providers";
 import "../globals.css";
 
 const bodyLatin = IBM_Plex_Sans({
@@ -66,7 +67,9 @@ export default async function LocaleLayout({
       className={`${bodyFont.variable} ${display.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <Providers>{children}</Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
