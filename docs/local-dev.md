@@ -1,112 +1,93 @@
 # Local development
 
-The whole stack runs on your machine — no cloud accounts, no cost. The only
-prerequisites are **Node 22+**, **pnpm**, and **Docker** (Docker Desktop on
-Mac/Windows). Docker is what runs the local database and auth.
+The backend is **Convex** (database + serverless functions) and auth is
+**Clerk**. Both have free dev tiers and run against the cloud dev
+deployment — there is no Docker or local database to manage. You need
+**Node 22+**, **pnpm**, a **Convex** account, a **Clerk** application, and a
+**Gemini** API key (for the AI Coach).
 
-## Why not just a plain Postgres (pgAdmin)?
-
-The app doesn't only use Postgres — it uses Supabase Auth (sign-up / login),
-`auth.uid()` inside the Row Level Security policies, and the `supabase-js`
-client. A bare Postgres has none of those, so it can't run the app without
-rebuilding authentication from scratch. The Supabase CLI gives you the *whole*
-Supabase (Postgres + Auth + a Studio UI) locally in Docker, and the exact same
-code then works against a cloud project later by swapping two env values.
-
-You can still point pgAdmin at the local database once it's running (see the
-end) — it's a normal Postgres on port 54322.
-
-## 1. Install the Supabase CLI
+## 1. Install dependencies
 
 ```bash
-# macOS
-brew install supabase/tap/supabase
-# Windows (scoop)
-scoop bucket add supabase https://github.com/supabase/scoop-bucket.git
-scoop install supabase
-# or npm, any OS
-pnpm add -g supabase
+pnpm install
 ```
 
-## 2. Start the local stack
+## 2. Set up Convex
 
-From the repo root:
+From `apps/web`:
 
 ```bash
-supabase start
+cd apps/web
+pnpm convex   # = `npx convex dev`
 ```
 
-The first run pulls Docker images (a few minutes). It then applies everything
-in `supabase/migrations/` and prints a block like:
+The first run logs you into Convex (browser), creates a dev deployment,
+writes `CONVEX_DEPLOYMENT` to `apps/web/.env.local`, regenerates
+`convex/_generated/`, and then watches `convex/` and pushes changes. Leave
+it running in its own terminal. It also prints your deployment URL — put it
+in `.env.local` as `NEXT_PUBLIC_CONVEX_URL` (below).
+
+## 3. Set up Clerk
+
+1. Create an application at dashboard.clerk.com (enable Email + Password).
+2. Copy the **Publishable key** and **Secret key** (API Keys).
+3. Create a **JWT template** named exactly `convex` (Clerk has a Convex
+   preset). Copy its **Issuer** URL (looks like `https://<sub>.clerk.accounts.dev`).
+4. Tell Convex about that issuer:
+
+```bash
+npx convex env set CLERK_JWT_ISSUER_DOMAIN https://<your-subdomain>.clerk.accounts.dev
+```
+
+## 4. Set the Gemini key on Convex
+
+The AI Coach action runs on Convex's servers, so its key lives in Convex's
+env, not in `.env.local`:
+
+```bash
+npx convex env set GEMINI_API_KEY <your-gemini-key>
+# optional: npx convex env set GEMINI_MODEL gemini-2.5-flash
+```
+
+Get a free key from Google AI Studio.
+
+## 5. Fill in `apps/web/.env.local`
+
+`convex dev` already added `CONVEX_DEPLOYMENT`. Add the rest:
 
 ```
-API URL: http://localhost:54321
-Studio URL: http://localhost:54323
-anon key: eyJhbGci...
-service_role key: eyJhbGci...
-```
-
-Those keys are the well-known local development keys — they are safe to use
-locally and are NOT secrets (never reuse them for a real project).
-
-## 3. Fill in the env files
-
-`apps/web/.env.local`:
-
-```
-NEXT_PUBLIC_SUPABASE_URL=http://localhost:54321
-NEXT_PUBLIC_SUPABASE_ANON_KEY=<anon key from supabase start>
-AI_CORE_URL=http://localhost:3001
+NEXT_PUBLIC_CONVEX_URL=<the URL convex dev printed>
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<Clerk publishable key>
+CLERK_SECRET_KEY=<Clerk secret key>
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-`apps/ai-core/.env`:
+## 6. Run the app
 
-```
-PORT=3001
-SUPABASE_URL=http://localhost:54321
-SUPABASE_SERVICE_ROLE_KEY=<service_role key from supabase start>
-LLM_PROVIDER=gemini
-GEMINI_API_KEY=<your Gemini API key>
-GEMINI_MODEL=gemini-2.5-flash
-```
-
-The web app runs with just the first file; the AI Core (`/assistant`) needs a
-Gemini key. Get a free one from Google AI Studio.
-
-## 4. Run the apps
+In a second terminal (keep `convex dev` running in the first):
 
 ```bash
-pnpm dev:web       # http://localhost:3000
-pnpm dev:ai-core   # http://localhost:3001  (only needed for the AI Coach)
+pnpm dev:web   # http://localhost:3000
 ```
 
-Open http://localhost:3000, go to **Create a club**, sign up, and you're in.
-Email confirmation is turned off in local config (`supabase/config.toml`), so
-sign-up logs you straight in.
+Open http://localhost:3000, sign up through Clerk, then create a club in the
+onboarding step, and you're in.
 
-## Everyday commands
+## Everyday notes
 
-```bash
-supabase stop            # stop the stack (keeps data)
-supabase stop --no-backup   # stop and wipe local data
-supabase db reset        # re-apply all migrations from scratch (fresh DB)
-supabase migration new <name>   # scaffold a new migration file
-```
+- **Two processes in dev:** `pnpm dev:convex` (backend, from `apps/web` it's
+  `pnpm convex`) and `pnpm dev:web` (frontend). The Convex one must be
+  running for any data to load.
+- **Convex dashboard:** `npx convex dashboard` opens the deployment's tables,
+  function logs, and env vars in the browser.
+- **Generated types:** `convex/_generated/` is committed so the repo builds
+  without a Convex login; `convex dev` keeps it in sync as you edit
+  `convex/`. Don't edit it by hand.
+- **Schema/functions** live in `apps/web/convex/`. Editing a file there is
+  picked up by the running `convex dev`; no migration step.
 
-After adding a migration file to `supabase/migrations/`, `supabase db reset`
-re-applies the whole set — the same files will run against the cloud project
-later via `supabase db push`.
+## Going to production later
 
-## Inspecting data
-
-- **Studio**: http://localhost:54323 — tables, SQL editor, and the auth users
-  list, all in the browser.
-- **pgAdmin / any client**: host `localhost`, port `54322`, database
-  `postgres`, user `postgres`, password `postgres`.
-
-## Moving to a cloud project later
-
-Create a Supabase project, run `supabase db push` to apply these same
-migrations to it, turn email confirmations back on, and change the two
-`SUPABASE_URL` / key pairs in the env files. No code changes.
+`npx convex deploy` promotes the functions to a production deployment; point
+a production Clerk instance at it, set the same env vars on the prod
+deployment, and host the Next.js app. No code changes.

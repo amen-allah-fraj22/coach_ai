@@ -1,11 +1,15 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useMutation } from "convex/react";
 import { useTranslations } from "next-intl";
 
-import { sendFeedback } from "@/app/[locale]/(app)/assistant/actions";
+import { api } from "@convex/_generated/api";
+import type { Id } from "@convex/_generated/dataModel";
+import type { Recommendation } from "@convex/aiRecommendation";
 import { Button } from "@/components/ui/button";
-import type { FeedbackStatus, Recommendation } from "@/lib/types/recommendation";
+
+type FeedbackStatus = "accepted" | "modified" | "rejected";
 
 function Section({ title, items }: { title: string; items?: string[] }) {
   if (!items || items.length === 0) return null;
@@ -34,10 +38,11 @@ export function MatchPlanCard({
   provider,
 }: {
   recommendation: Recommendation;
-  recommendationId: string | null;
+  recommendationId: Id<"aiRecommendations"> | null;
   provider: string;
 }) {
   const t = useTranslations("assistant");
+  const recordFeedback = useMutation(api.ai.recordFeedback);
   const [pending, startTransition] = useTransition();
   const [feedbackDone, setFeedbackDone] = useState(false);
 
@@ -49,7 +54,7 @@ export function MatchPlanCard({
       return;
     }
     startTransition(async () => {
-      await sendFeedback(recommendationId, status);
+      await recordFeedback({ recommendationId, status });
       setFeedbackDone(true);
     });
   }

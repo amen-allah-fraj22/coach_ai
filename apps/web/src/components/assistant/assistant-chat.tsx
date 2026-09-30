@@ -1,9 +1,12 @@
 "use client";
 
-import { useActionState } from "react";
+import { useState } from "react";
+import { useAction } from "convex/react";
 import { useTranslations } from "next-intl";
 
-import { askAssistant, type AskState } from "@/app/[locale]/(app)/assistant/actions";
+import { api } from "@convex/_generated/api";
+import type { Id } from "@convex/_generated/dataModel";
+import type { Recommendation } from "@convex/aiRecommendation";
 import { MatchPlanCard } from "@/components/assistant/match-plan-card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -15,25 +18,46 @@ interface MatchOption {
   label: string;
 }
 
-const initialState: AskState = { error: null };
+interface AskResult {
+  recommendationId: Id<"aiRecommendations">;
+  recommendation: Recommendation;
+  provider: string;
+}
 
 export function AssistantChat({ matches }: { matches: MatchOption[] }) {
   const t = useTranslations("assistant");
-  const [state, formAction, pending] = useActionState(askAssistant, initialState);
+  const ask = useAction(api.ai.ask);
+
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [result, setResult] = useState<AskResult | null>(null);
+
+  async function onSubmit(formData: FormData) {
+    setError(null);
+    const question = String(formData.get("question") ?? "").trim();
+    if (!question) return;
+    const matchId = String(formData.get("matchId") ?? "");
+
+    setPending(true);
+    try {
+      const res = await ask({
+        question,
+        matchId: (matchId || undefined) as Id<"matches"> | undefined,
+      });
+      setResult(res);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setPending(false);
+    }
+  }
 
   return (
     <div className="flex flex-col gap-6">
-      <form action={formAction} className="flex flex-col gap-3">
+      <form action={onSubmit} className="flex flex-col gap-3">
         <div className="flex flex-col gap-1.5">
           <Label htmlFor="question">{t("title")}</Label>
-          <Textarea
-            id="question"
-            name="question"
-            required
-            rows={3}
-            placeholder={t("placeholder")}
-            defaultValue={state.question ?? ""}
-          />
+          <Textarea id="question" name="question" required rows={3} placeholder={t("placeholder")} />
         </div>
 
         {matches.length > 0 && (
@@ -50,18 +74,18 @@ export function AssistantChat({ matches }: { matches: MatchOption[] }) {
           </div>
         )}
 
-        {state.error && <p className="text-sm text-destructive">{state.error}</p>}
+        {error && <p className="text-sm text-destructive">{error}</p>}
 
         <Button type="submit" disabled={pending} className="self-start">
           {pending ? t("thinking") : t("ask")}
         </Button>
       </form>
 
-      {state.result && (
+      {result && (
         <MatchPlanCard
-          recommendation={state.result.recommendation}
-          recommendationId={state.result.recommendationId}
-          provider={state.result.provider}
+          recommendation={result.recommendation}
+          recommendationId={result.recommendationId}
+          provider={result.provider}
         />
       )}
     </div>

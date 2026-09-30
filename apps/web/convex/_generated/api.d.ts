@@ -14,6 +14,11 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as ai from "../ai.js";
+import type * as aiLlm from "../aiLlm.js";
+import type * as aiPrompt from "../aiPrompt.js";
+import type * as aiRecommendation from "../aiRecommendation.js";
+import type * as aiTools from "../aiTools.js";
 import type * as clubs from "../clubs.js";
 import type * as coaches from "../coaches.js";
 import type * as invites from "../invites.js";
@@ -33,6 +38,11 @@ import type * as teams from "../teams.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  ai: typeof ai;
+  aiLlm: typeof aiLlm;
+  aiPrompt: typeof aiPrompt;
+  aiRecommendation: typeof aiRecommendation;
+  aiTools: typeof aiTools;
   clubs: typeof clubs;
   coaches: typeof coaches;
   invites: typeof invites;
