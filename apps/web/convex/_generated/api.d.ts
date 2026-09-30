@@ -18,6 +18,11 @@ import type * as clubs from "../clubs.js";
 import type * as coaches from "../coaches.js";
 import type * as invites from "../invites.js";
 import type * as lib_auth from "../lib/auth.js";
+import type * as matchEvents from "../matchEvents.js";
+import type * as matches from "../matches.js";
+import type * as opponents from "../opponents.js";
+import type * as players from "../players.js";
+import type * as teams from "../teams.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -32,6 +37,11 @@ declare const fullApi: ApiFromModules<{
   coaches: typeof coaches;
   invites: typeof invites;
   "lib/auth": typeof lib_auth;
+  matchEvents: typeof matchEvents;
+  matches: typeof matches;
+  opponents: typeof opponents;
+  players: typeof players;
+  teams: typeof teams;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,

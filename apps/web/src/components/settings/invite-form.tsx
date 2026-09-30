@@ -1,23 +1,44 @@
 "use client";
 
-import { useActionState } from "react";
-import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { useMutation } from "convex/react";
+import { useTranslations, useLocale } from "next-intl";
 
-import { createInvite, type InviteState } from "@/app/[locale]/(app)/settings/actions";
+import { api } from "@convex/_generated/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-const initialState: InviteState = { error: null };
-
-export function InviteForm({ locale }: { locale: string }) {
+export function InviteForm() {
   const t = useTranslations("settings");
-  const [state, formAction, pending] = useActionState(createInvite, initialState);
+  const locale = useLocale();
+  const createInvite = useMutation(api.invites.createInvite);
+
+  const [error, setError] = useState<string | null>(null);
+  const [inviteUrl, setInviteUrl] = useState<string | null>(null);
+  const [pending, setPending] = useState(false);
+
+  async function onSubmit(formData: FormData) {
+    setError(null);
+    setInviteUrl(null);
+    setPending(true);
+    try {
+      const { token } = await createInvite({
+        email: String(formData.get("email") ?? "").trim(),
+      });
+      const base =
+        process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin;
+      setInviteUrl(`${base}/${locale}/invite/${token}`);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setPending(false);
+    }
+  }
 
   return (
     <div className="flex flex-col gap-3">
-      <form action={formAction} className="flex items-end gap-3">
-        <input type="hidden" name="locale" value={locale} />
+      <form action={onSubmit} className="flex items-end gap-3">
         <div className="flex flex-1 flex-col gap-1.5">
           <Label htmlFor="inviteEmail">{t("inviteEmail")}</Label>
           <Input id="inviteEmail" name="email" type="email" required />
@@ -27,13 +48,13 @@ export function InviteForm({ locale }: { locale: string }) {
         </Button>
       </form>
 
-      {state.error && <p className="text-sm text-destructive">{state.error}</p>}
+      {error && <p className="text-sm text-destructive">{error}</p>}
 
-      {state.inviteUrl && (
+      {inviteUrl && (
         <p className="rounded-md bg-muted p-3 text-sm break-all">
           {t("inviteSent")}
           <br />
-          <span className="font-mono text-foreground">{state.inviteUrl}</span>
+          <span className="font-mono text-foreground">{inviteUrl}</span>
         </p>
       )}
     </div>

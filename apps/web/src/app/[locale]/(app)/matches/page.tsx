@@ -1,42 +1,33 @@
 import { getTranslations } from "next-intl/server";
 
-import { getCurrentCoach } from "@/lib/auth/session";
-import { createClient } from "@/lib/supabase/server";
+import { fetchAuthed } from "@/lib/convex/server";
+import { api } from "@convex/_generated/api";
+import type { Doc } from "@convex/_generated/dataModel";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
-import type { Match, Opponent, Team } from "@/lib/types/database";
 
-function resultAccent(match: Match) {
-  if (match.score_for === null || match.score_against === null) {
+function resultAccent(match: Doc<"matches">) {
+  if (match.scoreFor === undefined || match.scoreAgainst === undefined) {
     return "bg-muted";
   }
-  if (match.score_for > match.score_against) return "bg-secondary";
-  if (match.score_for < match.score_against) return "bg-primary";
+  if (match.scoreFor > match.scoreAgainst) return "bg-secondary";
+  if (match.scoreFor < match.scoreAgainst) return "bg-primary";
   return "bg-muted-foreground";
 }
 
 export default async function MatchesPage() {
   const t = await getTranslations("matches");
 
-  const current = await getCurrentCoach();
-  if (!current) return null;
+  const [matches, teams, opponents] = await Promise.all([
+    fetchAuthed(api.matches.list, {}),
+    fetchAuthed(api.teams.list, {}),
+    fetchAuthed(api.opponents.list, {}),
+  ]);
 
-  const supabase = await createClient();
-  const [{ data: matches }, { data: teams }, { data: opponents }] =
-    await Promise.all([
-      supabase
-        .from("matches")
-        .select("*")
-        .eq("club_id", current.club.id)
-        .order("match_date", { ascending: false }),
-      supabase.from("teams").select("*").eq("club_id", current.club.id),
-      supabase.from("opponents").select("*").eq("club_id", current.club.id),
-    ]);
-
-  const list = (matches as Match[] | null) ?? [];
-  const teamList = (teams as Team[] | null) ?? [];
+  const list = (matches ?? []) as Doc<"matches">[];
+  const teamList = (teams ?? []) as Doc<"teams">[];
   const opponentNames = new Map(
-    ((opponents as Opponent[] | null) ?? []).map((o) => [o.id, o.team_name]),
+    ((opponents ?? []) as Doc<"opponents">[]).map((o) => [o._id, o.teamName]),
   );
 
   return (
@@ -59,29 +50,26 @@ export default async function MatchesPage() {
       ) : (
         <ul className="flex flex-col gap-2">
           {list.map((match) => (
-            <li key={match.id}>
+            <li key={match._id}>
               <Link
-                href={`/matches/${match.id}`}
+                href={`/matches/${match._id}`}
                 className="flex items-stretch gap-4 overflow-hidden rounded-md border border-border hover:border-primary"
               >
-                <span
-                  className={`w-1.5 shrink-0 ${resultAccent(match)}`}
-                  aria-hidden
-                />
+                <span className={`w-1.5 shrink-0 ${resultAccent(match)}`} aria-hidden />
                 <span className="flex flex-1 items-center justify-between py-3 pe-4">
                   <span className="flex flex-col">
                     <span className="font-medium">
-                      {match.opponent_id
-                        ? opponentNames.get(match.opponent_id)
+                      {match.opponentId
+                        ? opponentNames.get(match.opponentId)
                         : t("unknownOpponent")}
                     </span>
                     <span className="text-xs text-muted-foreground">
-                      {match.match_date} &middot;{" "}
-                      {match.home_away === "home" ? t("home") : t("away")}
+                      {match.matchDate} &middot;{" "}
+                      {match.homeAway === "home" ? t("home") : t("away")}
                     </span>
                   </span>
                   <span className="font-display text-lg tabular-nums">
-                    {match.score_for ?? "-"} : {match.score_against ?? "-"}
+                    {match.scoreFor ?? "-"} : {match.scoreAgainst ?? "-"}
                   </span>
                 </span>
               </Link>

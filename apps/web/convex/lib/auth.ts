@@ -44,3 +44,17 @@ export async function getCoachOrNull(
     .withIndex("by_token", (q) => q.eq("tokenIdentifier", identity.subject))
     .unique();
 }
+
+/**
+ * Guards a mutation/query against a record from another club. Convex has no
+ * RLS, so a get-by-id could return any club's row; this is what stops a
+ * coach acting on data that isn't theirs.
+ */
+export function assertSameClub(
+  coach: Doc<"coaches">,
+  record: { clubId: Doc<"coaches">["clubId"] } | null,
+): void {
+  if (!record || record.clubId !== coach.clubId) {
+    throw new Error("Not found");
+  }
+}

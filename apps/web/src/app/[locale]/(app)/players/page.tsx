@@ -1,37 +1,31 @@
 import { getTranslations } from "next-intl/server";
 
-import { getCurrentCoach } from "@/lib/auth/session";
-import { createClient } from "@/lib/supabase/server";
+import { fetchAuthed } from "@/lib/convex/server";
+import { api } from "@convex/_generated/api";
+import type { Doc } from "@convex/_generated/dataModel";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
-import type { Player, Team } from "@/lib/types/database";
 
 export default async function PlayersPage() {
   const t = await getTranslations("players");
 
-  const current = await getCurrentCoach();
-  if (!current) return null;
-
-  const supabase = await createClient();
-
-  const [{ data: players }, { data: teams }] = await Promise.all([
-    supabase
-      .from("players")
-      .select("*")
-      .eq("club_id", current.club.id)
-      .order("squad_group", { ascending: true })
-      .order("sort_order", { ascending: true }),
-    supabase.from("teams").select("*").eq("club_id", current.club.id),
+  const [players, teams] = await Promise.all([
+    fetchAuthed(api.players.list, {}),
+    fetchAuthed(api.teams.list, {}),
   ]);
 
-  const list = (players as Player[] | null) ?? [];
-  const teamList = (teams as Team[] | null) ?? [];
-  const teamNames = new Map(teamList.map((team) => [team.id, team.name]));
+  const list = (players ?? []) as Doc<"players">[];
+  const teamList = (teams ?? []) as Doc<"teams">[];
+  const teamNames = new Map(teamList.map((team) => [team._id, team.name]));
 
-  const groups = list.reduce<Map<string, Player[]>>((acc, player) => {
-    const group = acc.get(player.squad_group) ?? [];
+  const sorted = [...list].sort(
+    (a, b) =>
+      a.squadGroup.localeCompare(b.squadGroup) || a.sortOrder - b.sortOrder,
+  );
+  const groups = sorted.reduce<Map<string, Doc<"players">[]>>((acc, player) => {
+    const group = acc.get(player.squadGroup) ?? [];
     group.push(player);
-    acc.set(player.squad_group, group);
+    acc.set(player.squadGroup, group);
     return acc;
   }, new Map());
 
@@ -61,9 +55,9 @@ export default async function PlayersPage() {
               </h2>
               <ul className="flex flex-col gap-2">
                 {groupPlayers.map((player) => (
-                  <li key={player.id}>
+                  <li key={player._id}>
                     <Link
-                      href={`/players/${player.id}`}
+                      href={`/players/${player._id}`}
                       className="flex items-center justify-between rounded-md border border-border px-4 py-3 hover:border-primary"
                     >
                       <span className="flex items-center gap-3">
@@ -75,7 +69,7 @@ export default async function PlayersPage() {
                         )}
                       </span>
                       <span className="flex items-center gap-3 text-sm text-muted-foreground">
-                        <span>{teamNames.get(player.team_id)}</span>
+                        <span>{teamNames.get(player.teamId)}</span>
                         <span
                           className={
                             player.availability === "available"

@@ -2,9 +2,9 @@ import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 import { MatchForm } from "@/components/matches/match-form";
-import { getCurrentCoach } from "@/lib/auth/session";
-import { createClient } from "@/lib/supabase/server";
-import type { Opponent, Team } from "@/lib/types/database";
+import { fetchAuthed } from "@/lib/convex/server";
+import { api } from "@convex/_generated/api";
+import type { Doc } from "@convex/_generated/dataModel";
 
 export default async function NewMatchPage({
   params,
@@ -14,25 +14,12 @@ export default async function NewMatchPage({
   const { locale } = await params;
   const t = await getTranslations("matches");
 
-  const current = await getCurrentCoach();
-  if (!current) return null;
-
-  const supabase = await createClient();
-  const [{ data: teams }, { data: opponents }] = await Promise.all([
-    supabase
-      .from("teams")
-      .select("*")
-      .eq("club_id", current.club.id)
-      .order("created_at", { ascending: true }),
-    supabase
-      .from("opponents")
-      .select("*")
-      .eq("club_id", current.club.id)
-      .order("team_name", { ascending: true }),
+  const [teams, opponents] = await Promise.all([
+    fetchAuthed(api.teams.list, {}),
+    fetchAuthed(api.opponents.list, {}),
   ]);
 
-  const teamList = (teams as Team[] | null) ?? [];
-
+  const teamList = (teams ?? []) as Doc<"teams">[];
   if (teamList.length === 0) {
     redirect(`/${locale}/teams/new`);
   }
@@ -42,11 +29,7 @@ export default async function NewMatchPage({
       <h1 className="font-display text-2xl uppercase tracking-tight">
         {t("addMatch")}
       </h1>
-      <MatchForm
-        locale={locale}
-        teams={teamList}
-        opponents={(opponents as Opponent[] | null) ?? []}
-      />
+      <MatchForm teams={teamList} opponents={(opponents ?? []) as Doc<"opponents">[]} />
     </div>
   );
 }

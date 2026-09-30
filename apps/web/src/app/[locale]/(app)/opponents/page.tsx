@@ -1,25 +1,15 @@
 import { getTranslations } from "next-intl/server";
 
-import { getCurrentCoach } from "@/lib/auth/session";
-import { createClient } from "@/lib/supabase/server";
+import { fetchAuthed } from "@/lib/convex/server";
+import { api } from "@convex/_generated/api";
+import type { Doc } from "@convex/_generated/dataModel";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
-import type { Opponent } from "@/lib/types/database";
 
 export default async function OpponentsPage() {
   const t = await getTranslations("opponents");
-
-  const current = await getCurrentCoach();
-  if (!current) return null;
-
-  const supabase = await createClient();
-  const { data: opponents } = await supabase
-    .from("opponents")
-    .select("*")
-    .eq("club_id", current.club.id)
-    .order("team_name", { ascending: true });
-
-  const list = (opponents as Opponent[] | null) ?? [];
+  const opponents = ((await fetchAuthed(api.opponents.list, {})) ?? []) as Doc<"opponents">[];
+  const list = [...opponents].sort((a, b) => a.teamName.localeCompare(b.teamName));
 
   return (
     <div className="flex max-w-2xl flex-col gap-6">
@@ -37,14 +27,14 @@ export default async function OpponentsPage() {
       ) : (
         <ul className="flex flex-col gap-2">
           {list.map((opponent) => (
-            <li key={opponent.id}>
+            <li key={opponent._id}>
               <Link
-                href={`/opponents/${opponent.id}`}
+                href={`/opponents/${opponent._id}`}
                 className="flex items-center justify-between rounded-md border border-border px-4 py-3 hover:border-primary"
               >
-                <span className="font-medium">{opponent.team_name}</span>
+                <span className="font-medium">{opponent.teamName}</span>
                 <span className="text-sm text-muted-foreground">
-                  {opponent.usual_formation}
+                  {opponent.usualFormation}
                 </span>
               </Link>
             </li>

@@ -1,45 +1,33 @@
 import { getTranslations } from "next-intl/server";
 
-import { getCurrentCoach } from "@/lib/auth/session";
-import { createClient } from "@/lib/supabase/server";
+import { fetchAuthed } from "@/lib/convex/server";
+import { api } from "@convex/_generated/api";
+import type { Doc } from "@convex/_generated/dataModel";
 import { AssistantChat } from "@/components/assistant/assistant-chat";
-import type { Match, Opponent } from "@/lib/types/database";
 
 export default async function AssistantPage() {
   const t = await getTranslations("assistant");
   const tMatches = await getTranslations("matches");
 
-  const current = await getCurrentCoach();
-  if (!current) return null;
-
-  const supabase = await createClient();
-  const [{ data: matches }, { data: opponents }] = await Promise.all([
-    supabase
-      .from("matches")
-      .select("id, match_date, opponent_id")
-      .eq("club_id", current.club.id)
-      .order("match_date", { ascending: false })
-      .limit(20),
-    supabase.from("opponents").select("id, team_name").eq("club_id", current.club.id),
+  const [matches, opponents] = await Promise.all([
+    fetchAuthed(api.matches.list, {}),
+    fetchAuthed(api.opponents.list, {}),
   ]);
 
   const opponentNames = new Map(
-    ((opponents as Pick<Opponent, "id" | "team_name">[] | null) ?? []).map((o) => [
-      o.id,
-      o.team_name,
-    ]),
+    ((opponents ?? []) as Doc<"opponents">[]).map((o) => [o._id, o.teamName]),
   );
 
-  const matchOptions = (
-    (matches as Pick<Match, "id" | "match_date" | "opponent_id">[] | null) ?? []
-  ).map((m) => ({
-    id: m.id,
-    label: `${m.match_date} — ${
-      m.opponent_id
-        ? opponentNames.get(m.opponent_id) ?? tMatches("unknownOpponent")
-        : tMatches("unknownOpponent")
-    }`,
-  }));
+  const matchOptions = ((matches ?? []) as Doc<"matches">[])
+    .slice(0, 20)
+    .map((m) => ({
+      id: m._id as string,
+      label: `${m.matchDate} — ${
+        m.opponentId
+          ? opponentNames.get(m.opponentId) ?? tMatches("unknownOpponent")
+          : tMatches("unknownOpponent")
+      }`,
+    }));
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-6">

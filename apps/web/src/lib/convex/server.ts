@@ -2,19 +2,29 @@ import "server-only";
 
 import { auth } from "@clerk/nextjs/server";
 import { fetchQuery } from "convex/nextjs";
+import type { FunctionReference } from "convex/server";
 
 import { api } from "@convex/_generated/api";
 
-/**
- * Reads the signed-in coach + club server-side, passing the Clerk-issued
- * Convex JWT so Convex can authenticate the request. Returns null when there
- * is no session or no coach profile yet (the caller decides: login vs
- * onboarding).
- */
-export async function getServerCoach() {
+async function convexToken() {
   const { getToken } = await auth();
-  const token = await getToken({ template: "convex" });
-  if (!token) return null;
+  return getToken({ template: "convex" });
+}
 
-  return fetchQuery(api.coaches.getCurrentCoach, {}, { token });
+/**
+ * Runs a Convex query server-side with the Clerk-issued Convex JWT so the
+ * query's requireCoach() sees the caller. Returns null when unauthenticated.
+ */
+export async function fetchAuthed<Query extends FunctionReference<"query">>(
+  query: Query,
+  args: Query["_args"],
+): Promise<Query["_returnType"] | null> {
+  const token = await convexToken();
+  if (!token) return null;
+  return fetchQuery(query, args, { token });
+}
+
+/** The signed-in coach + club, or null (no session / no profile). */
+export async function getServerCoach() {
+  return fetchAuthed(api.coaches.getCurrentCoach, {});
 }

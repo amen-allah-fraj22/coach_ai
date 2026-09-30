@@ -1,11 +1,11 @@
 import { getTranslations } from "next-intl/server";
 
-import { getCurrentCoach } from "@/lib/auth/session";
-import { createClient } from "@/lib/supabase/server";
+import { fetchAuthed, getServerCoach } from "@/lib/convex/server";
+import { api } from "@convex/_generated/api";
+import type { Doc } from "@convex/_generated/dataModel";
 import { InviteForm } from "@/components/settings/invite-form";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
-import type { Coach } from "@/lib/types/database";
 
 export default async function SettingsPage({
   params,
@@ -16,15 +16,11 @@ export default async function SettingsPage({
   const t = await getTranslations("settings");
   const tCommon = await getTranslations("common");
 
-  const current = await getCurrentCoach();
+  const current = await getServerCoach();
   if (!current) return null;
 
-  const supabase = await createClient();
-  const { data: coaches } = await supabase
-    .from("coaches")
-    .select("*")
-    .eq("club_id", current.club.id)
-    .order("created_at", { ascending: true });
+  const coaches = ((await fetchAuthed(api.coaches.listClubCoaches, {})) ??
+    []) as Doc<"coaches">[];
 
   const languageLabels: Record<Locale, string> = {
     fr: tCommon("french"),
@@ -34,11 +30,9 @@ export default async function SettingsPage({
 
   return (
     <div className="flex max-w-2xl flex-col gap-10">
-      <div>
-        <h1 className="font-display text-2xl uppercase tracking-tight">
-          {t("title")}
-        </h1>
-      </div>
+      <h1 className="font-display text-2xl uppercase tracking-tight">
+        {t("title")}
+      </h1>
 
       <section className="flex flex-col gap-3">
         <h2 className="text-sm font-semibold text-muted-foreground uppercase">
@@ -74,12 +68,12 @@ export default async function SettingsPage({
           {t("coaches")}
         </h2>
         <ul className="flex flex-col gap-2">
-          {(coaches as Coach[] | null)?.map((coach) => (
+          {coaches.map((coach) => (
             <li
-              key={coach.id}
+              key={coach._id}
               className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
             >
-              <span>{coach.full_name}</span>
+              <span>{coach.fullName}</span>
               <span className="text-muted-foreground">
                 {t(`role.${coach.role}` as "role.owner" | "role.member")}
               </span>
@@ -87,7 +81,7 @@ export default async function SettingsPage({
           ))}
         </ul>
 
-        <InviteForm locale={locale} />
+        <InviteForm />
       </section>
     </div>
   );
