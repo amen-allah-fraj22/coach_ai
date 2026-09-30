@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
+import { SignOutButton } from "@clerk/nextjs";
 
-import { getCurrentCoach } from "@/lib/auth/session";
-import { logout } from "@/lib/auth/actions";
+import { getServerCoach } from "@/lib/convex/server";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 
@@ -14,10 +14,12 @@ export default async function AppLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const current = await getCurrentCoach();
+  // Middleware guarantees a signed-in Clerk user here. If they have no coach
+  // profile yet, send them to onboarding to create a club or accept an invite.
+  const current = await getServerCoach();
 
   if (!current) {
-    redirect(`/${locale}/login`);
+    redirect(`/${locale}/onboarding`);
   }
 
   const t = await getTranslations("dashboard");
@@ -64,12 +66,11 @@ export default async function AppLayout({
           </Link>
         </nav>
 
-        <form action={logout}>
-          <input type="hidden" name="locale" value={locale} />
-          <Button type="submit" variant="ghost" size="sm">
-            {current.coach.full_name}
+        <SignOutButton>
+          <Button type="button" variant="ghost" size="sm">
+            {current.coach.fullName}
           </Button>
-        </form>
+        </SignOutButton>
       </header>
 
       <main className="flex-1 px-6 py-8">{children}</main>

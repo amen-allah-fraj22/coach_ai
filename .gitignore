@@ -9,8 +9,8 @@ out/
 apps/web/.next/
 apps/web/out/
 
-# Convex generated types (created by `npx convex dev` / codegen)
-apps/web/convex/_generated/
+# Convex generated types are committed (regenerated identically by
+# `npx convex dev`), so the repo builds without a Convex login first.
 
 # Env
 .env

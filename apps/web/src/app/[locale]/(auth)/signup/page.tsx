@@ -1,7 +1,5 @@
-import { getTranslations } from "next-intl/server";
+import { SignUp } from "@clerk/nextjs";
 
-import { SignupForm } from "@/components/auth/signup-form";
-import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 
 export default async function SignupPage({
@@ -10,20 +8,14 @@ export default async function SignupPage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations("auth");
 
+  // Clerk handles account creation. New accounts have no coach profile yet,
+  // so we send them to onboarding to create a club or accept an invite.
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex gap-4 border-b border-border pb-3 text-sm font-medium">
-        <Link href="/login" className="text-muted-foreground hover:text-foreground">
-          {t("loginTab")}
-        </Link>
-        <span className="text-primary">{t("signupTab")}</span>
-      </div>
-
-      <SignupForm locale={locale} />
-
-      <p className="text-center text-sm text-muted-foreground">{t("hasInvite")}</p>
-    </div>
+    <SignUp
+      routing="hash"
+      signInUrl={`/${locale}/login`}
+      fallbackRedirectUrl={`/${locale}/onboarding`}
+    />
   );
 }

@@ -17,6 +17,7 @@ const isProtected = createRouteMatcher([
   "/:locale/opponents(.*)",
   "/:locale/settings(.*)",
   "/:locale/assistant(.*)",
+  "/:locale/invite(.*)",
   "/dashboard(.*)",
   "/onboarding(.*)",
   "/teams(.*)",
@@ -25,6 +26,7 @@ const isProtected = createRouteMatcher([
   "/opponents(.*)",
   "/settings(.*)",
   "/assistant(.*)",
+  "/invite(.*)",
 ]);
 
 // Clerk wraps next-intl: Clerk resolves the session, then locale routing
