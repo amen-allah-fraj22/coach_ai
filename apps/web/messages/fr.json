@@ -51,7 +51,10 @@
   "dashboard": {
     "title": "Tableau de bord",
     "welcome": "Bienvenue, {name}",
-    "club": "Club : {club}"
+    "club": "Club : {club}",
+    "loadDemo": "Charger des données de démonstration",
+    "loadingDemo": "Chargement...",
+    "emptyHint": "Votre club est vide. Chargez un jeu de données de démonstration pour essayer l’assistant."
   },
   "settings": {
     "title": "Paramètres",
@@ -150,7 +153,16 @@
     "yellowCards": "Cartons jaunes",
     "redCards": "Cartons rouges",
     "coachNotes": "Notes de l'entraineur",
-    "unknownOpponent": "Adversaire inconnu"
+    "unknownOpponent": "Adversaire inconnu",
+    "importMatch": "Importer un tableur",
+    "importTitle": "Importer des matchs (CSV)",
+    "importIntro": "Choisissez une équipe, puis un fichier CSV. Colonnes reconnues :",
+    "chooseFile": "Fichier CSV",
+    "importCta": "Importer",
+    "importedCount": "{n} match(s) importé(s).",
+    "parseError": "Impossible de lire ce fichier.",
+    "noRows": "Aucune ligne valide trouvée.",
+    "rowsReady": "{n} ligne(s) prêtes à importer."
   },
   "events": {
     "title": "Événements du match",

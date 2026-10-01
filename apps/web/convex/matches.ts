@@ -63,3 +63,46 @@ export const update = mutation({
     await ctx.db.patch(id, patch);
   },
 });
+
+const importRow = {
+  matchDate: v.string(),
+  homeAway: v.union(v.literal("home"), v.literal("away")),
+  competition: v.optional(v.string()),
+  ourFormation: v.optional(v.string()),
+  opponentFormation: v.optional(v.string()),
+  scoreFor: v.optional(v.number()),
+  scoreAgainst: v.optional(v.number()),
+  possessionPct: v.optional(v.number()),
+  shots: v.optional(v.number()),
+  shotsOnTarget: v.optional(v.number()),
+  corners: v.optional(v.number()),
+  fouls: v.optional(v.number()),
+  yellowCards: v.optional(v.number()),
+  redCards: v.optional(v.number()),
+  coachNotes: v.optional(v.string()),
+};
+
+/**
+ * Bulk-inserts matches parsed from a spreadsheet. The team is chosen once in
+ * the UI (CSV exports rarely carry it) and applied to every row; opponents
+ * are left unlinked and can be matched up by editing afterward.
+ */
+export const importRows = mutation({
+  args: {
+    teamId: v.id("teams"),
+    rows: v.array(v.object(importRow)),
+  },
+  handler: async (ctx, args) => {
+    const coach = await requireCoach(ctx);
+    assertSameClub(coach, await ctx.db.get(args.teamId));
+
+    for (const row of args.rows) {
+      await ctx.db.insert("matches", {
+        ...row,
+        clubId: coach.clubId,
+        teamId: args.teamId,
+      });
+    }
+    return { imported: args.rows.length };
+  },
+});

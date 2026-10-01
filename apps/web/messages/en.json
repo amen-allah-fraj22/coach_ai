@@ -51,7 +51,10 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Welcome, {name}",
-    "club": "Club: {club}"
+    "club": "Club: {club}",
+    "loadDemo": "Load demo data",
+    "loadingDemo": "Loading...",
+    "emptyHint": "Your club is empty. Load a demo dataset to try the assistant."
   },
   "settings": {
     "title": "Settings",
@@ -150,7 +153,16 @@
     "yellowCards": "Yellow cards",
     "redCards": "Red cards",
     "coachNotes": "Coach notes",
-    "unknownOpponent": "Unknown opponent"
+    "unknownOpponent": "Unknown opponent",
+    "importMatch": "Import spreadsheet",
+    "importTitle": "Import matches (CSV)",
+    "importIntro": "Pick a team, then a CSV file. Recognized columns:",
+    "chooseFile": "CSV file",
+    "importCta": "Import",
+    "importedCount": "{n} match(es) imported.",
+    "parseError": "Could not read that file.",
+    "noRows": "No valid rows found.",
+    "rowsReady": "{n} row(s) ready to import."
   },
   "events": {
     "title": "Match events",

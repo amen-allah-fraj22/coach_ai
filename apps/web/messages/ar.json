@@ -51,7 +51,10 @@
   "dashboard": {
     "title": "لوحة التحكم",
     "welcome": "مرحباً ، {name}",
-    "club": "النادي: {club}"
+    "club": "النادي: {club}",
+    "loadDemo": "تحميل بيانات تجريبية",
+    "loadingDemo": "جارٍ التحميل...",
+    "emptyHint": "ناديك فارغ. حمّل بيانات تجريبية لتجربة المساعد."
   },
   "settings": {
     "title": "الإعدادات",
@@ -150,7 +153,16 @@
     "yellowCards": "البطاقات الصفراء",
     "redCards": "البطاقات الحمراء",
     "coachNotes": "ملاحطات المدرب",
-    "unknownOpponent": "منافس غير محدد"
+    "unknownOpponent": "منافس غير محدد",
+    "importMatch": "استيراد جدول",
+    "importTitle": "استيراد المباريات (CSV)",
+    "importIntro": "اختر فريقاً، ثم ملف CSV. الأعمدة المدعومة:",
+    "chooseFile": "ملف CSV",
+    "importCta": "استيراد",
+    "importedCount": "تم استيراد {n} مباراة.",
+    "parseError": "تعذّر قراءة الملف.",
+    "noRows": "لم يتم العثور على صفوف صالحة.",
+    "rowsReady": "{n} صف جاهز للاستيراد."
   },
   "events": {
     "title": "أحداث المباراة",

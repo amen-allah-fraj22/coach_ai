@@ -21,6 +21,7 @@ import type * as aiRecommendation from "../aiRecommendation.js";
 import type * as aiTools from "../aiTools.js";
 import type * as clubs from "../clubs.js";
 import type * as coaches from "../coaches.js";
+import type * as demo from "../demo.js";
 import type * as invites from "../invites.js";
 import type * as lib_auth from "../lib/auth.js";
 import type * as matchEvents from "../matchEvents.js";
@@ -45,6 +46,7 @@ declare const fullApi: ApiFromModules<{
   aiTools: typeof aiTools;
   clubs: typeof clubs;
   coaches: typeof coaches;
+  demo: typeof demo;
   invites: typeof invites;
   "lib/auth": typeof lib_auth;
   matchEvents: typeof matchEvents;
