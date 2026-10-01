@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useMutation } from "convex/react";
+import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 
 import { api } from "@convex/_generated/api";
@@ -10,6 +11,16 @@ import type { Recommendation } from "@convex/aiRecommendation";
 import { Button } from "@/components/ui/button";
 
 type FeedbackStatus = "accepted" | "modified" | "rejected";
+
+// Sections reveal one after another, like a plan being written out.
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+const item = {
+  hidden: { opacity: 0, y: 8 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" } },
+} as const;
 
 function Section({ title, items }: { title: string; items?: string[] }) {
   if (!items || items.length === 0) return null;
@@ -59,9 +70,20 @@ export function MatchPlanCard({
     });
   }
 
+  const stamps: { status: FeedbackStatus; label: string; variant: "secondary" | "outline" | "destructive" }[] = [
+    { status: "accepted", label: t("accept"), variant: "secondary" },
+    { status: "modified", label: t("modify"), variant: "outline" },
+    { status: "rejected", label: t("reject"), variant: "destructive" },
+  ];
+
   return (
-    <article className="flex flex-col gap-5 rounded-lg border border-border bg-card p-5">
-      <header className="flex flex-col gap-1">
+    <motion.article
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="flex flex-col gap-5 rounded-lg border border-border bg-card p-5"
+    >
+      <motion.header variants={item} className="flex flex-col gap-1">
         <h2 className="font-display text-xl uppercase tracking-tight">
           {rec.headline}
         </h2>
@@ -71,10 +93,10 @@ export function MatchPlanCard({
             {rec.formation}
           </p>
         )}
-      </header>
+      </motion.header>
 
       {rec.starting_xi && rec.starting_xi.length > 0 && (
-        <div className="flex flex-col gap-1.5">
+        <motion.div variants={item} className="flex flex-col gap-1.5">
           <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             {t("startingXI")}
           </h3>
@@ -86,10 +108,10 @@ export function MatchPlanCard({
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       )}
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <motion.div variants={item} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Section title={t("attacking")} items={rec.attacking_plan} />
         <Section title={t("defensive")} items={rec.defensive_plan} />
         <Section title={t("pressing")} items={rec.pressing_plan} />
@@ -98,10 +120,10 @@ export function MatchPlanCard({
         <Section title={t("substitutions")} items={rec.substitutions} />
         <Section title={t("risks")} items={rec.risks} />
         <Section title={t("training")} items={rec.training_focus} />
-      </div>
+      </motion.div>
 
       {rec.alternatives && rec.alternatives.length > 0 && (
-        <div className="flex flex-col gap-2">
+        <motion.div variants={item} className="flex flex-col gap-2">
           <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             {t("alternatives")}
           </h3>
@@ -111,54 +133,46 @@ export function MatchPlanCard({
               <p className="text-muted-foreground">{alt.rationale}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       )}
 
-      <details className="text-sm">
+      <motion.details variants={item} className="text-sm">
         <summary className="cursor-pointer text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           {t("reasoning")}
         </summary>
         <p className="mt-2 text-muted-foreground">{rec.reasoning}</p>
-      </details>
+      </motion.details>
 
-      <footer className="flex flex-col gap-3 border-t border-border pt-4">
+      <motion.footer variants={item} className="flex flex-col gap-3 border-t border-border pt-4">
         {feedbackDone ? (
-          <p className="text-sm text-secondary">{t("feedbackThanks")}</p>
+          <motion.p
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-sm text-secondary"
+          >
+            {t("feedbackThanks")}
+          </motion.p>
         ) : (
           <div className="flex gap-2">
-            <Button
-              type="button"
-              variant="secondary"
-              size="sm"
-              disabled={pending}
-              onClick={() => submitFeedback("accepted")}
-            >
-              {t("accept")}
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              disabled={pending}
-              onClick={() => submitFeedback("modified")}
-            >
-              {t("modify")}
-            </Button>
-            <Button
-              type="button"
-              variant="destructive"
-              size="sm"
-              disabled={pending}
-              onClick={() => submitFeedback("rejected")}
-            >
-              {t("reject")}
-            </Button>
+            {stamps.map((s) => (
+              <motion.div key={s.status} whileTap={{ scale: 0.9, rotate: -3 }}>
+                <Button
+                  type="button"
+                  variant={s.variant}
+                  size="sm"
+                  disabled={pending}
+                  onClick={() => submitFeedback(s.status)}
+                >
+                  {s.label}
+                </Button>
+              </motion.div>
+            ))}
           </div>
         )}
         <p className="text-xs text-muted-foreground">
           {t("poweredBy", { provider })}
         </p>
-      </footer>
-    </article>
+      </motion.footer>
+    </motion.article>
   );
 }

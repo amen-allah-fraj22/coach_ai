@@ -8,6 +8,7 @@ import { api } from "@convex/_generated/api";
 import type { Id } from "@convex/_generated/dataModel";
 import type { Recommendation } from "@convex/aiRecommendation";
 import { MatchPlanCard } from "@/components/assistant/match-plan-card";
+import { AiThinking } from "@/components/assistant/ai-thinking";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { SelectNative } from "@/components/ui/select-native";
@@ -81,7 +82,9 @@ export function AssistantChat({ matches }: { matches: MatchOption[] }) {
         </Button>
       </form>
 
-      {result && (
+      {pending && <AiThinking label={t("thinking")} />}
+
+      {!pending && result && (
         <MatchPlanCard
           recommendation={result.recommendation}
           recommendationId={result.recommendationId}
