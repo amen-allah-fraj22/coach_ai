@@ -103,7 +103,12 @@
       "injured": "Blessé",
       "suspended": "Suspendu",
       "unavailable": "Indisponible"
-    }
+    },
+    "board": "Tableau",
+    "list": "Liste",
+    "squadBoard": "Organisation de l’effectif",
+    "dragHint": "Glissez les joueurs entre les groupes.",
+    "ratingAvg": "Moy"
   },
   "opponents": {
     "title": "Adversaires",

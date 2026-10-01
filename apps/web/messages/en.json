@@ -103,7 +103,12 @@
       "injured": "Injured",
       "suspended": "Suspended",
       "unavailable": "Unavailable"
-    }
+    },
+    "board": "Board",
+    "list": "List",
+    "squadBoard": "Squad organization",
+    "dragHint": "Drag players between groups.",
+    "ratingAvg": "Avg"
   },
   "opponents": {
     "title": "Opponents",

@@ -103,7 +103,12 @@
       "injured": "مصاب",
       "suspended": "موقوف",
       "unavailable": "غير متاح"
-    }
+    },
+    "board": "لوحة",
+    "list": "قائمة",
+    "squadBoard": "تنظيم الفريق",
+    "dragHint": "اسحب اللاعبين بين المجموعات.",
+    "ratingAvg": "معدل"
   },
   "opponents": {
     "title": "المنافسون",

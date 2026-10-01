@@ -32,9 +32,20 @@ export default async function PlayersPage() {
   return (
     <div className="flex max-w-3xl flex-col gap-6">
       <div className="flex items-center justify-between">
-        <h1 className="font-display text-2xl uppercase tracking-tight">
-          {t("title")}
-        </h1>
+        <div className="flex items-center gap-4">
+          <h1 className="font-display text-2xl uppercase tracking-tight">
+            {t("title")}
+          </h1>
+          <nav className="flex gap-2 text-sm">
+            <span className="font-semibold text-primary">{t("list")}</span>
+            <Link
+              href="/players/board"
+              className="text-muted-foreground hover:text-foreground"
+            >
+              {t("board")}
+            </Link>
+          </nav>
+        </div>
         {teamList.length > 0 && (
           <Button asChild>
             <Link href="/players/new">{t("addPlayer")}</Link>
