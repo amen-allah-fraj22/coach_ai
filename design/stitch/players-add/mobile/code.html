@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary": "#94d4b0", "surface-variant": "#273831", "outline-variant": "#464741", "surface-container-highest": "#273831", "on-surface": "#d3e7dc", "on-primary-fixed": "#1b1c18", "secondary-container": "#0c5135", "on-tertiary": "#670500", "surface": "#061610", "on-tertiary-fixed": "#400200", "tertiary-fixed-dim": "#ffb4a7", "secondary-fixed": "#b0f1cb", "error": "#ffb4ab", "on-secondary-container": "#83c39f", "surface-dim": "#061610", "primary-fixed": "#e4e2dd", "inverse-surface": "#d3e7dc", "on-error-container": "#ffdad6", "outline": "#91918a", "on-secondary": "#003823", "surface-bright": "#2b3d35", "surface-tint": "#c8c6c1", "primary-fixed-dim": "#c8c6c1", "inverse-on-surface": "#23342c", "primary": "#ffffff", "inverse-primary": "#5f5f5a", "on-secondary-fixed-variant": "#0c5135", "primary-container": "#e4e2dd", "tertiary": "#ffffff", "on-tertiary-fixed-variant": "#910a00", "on-primary-container": "#656560", "tertiary-container": "#ffdad4", "surface-container-high": "#1c2d26", "error-container": "#93000a", "on-primary": "#30312d", "on-primary-fixed-variant": "#474743", "secondary-fixed-dim": "#94d4b0", "on-error": "#690005", "background": "#061610", "surface-container": "#12231c", "surface-container-lowest": "#02110b", "on-surface-variant": "#c7c7bf", "on-background": "#d3e7dc", "on-secondary-fixed": "#002112", "on-tertiary-container": "#c12714", "surface-container-low": "#0e1f18", "tertiary-fixed": "#ffdad4" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "2rem", "margin-tablet": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin": "1rem", "margin-desktop": "2rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "gutter": "1rem", "space-md": "1rem" }, fontFamily: { "body-sm": ["IBM Plex Sans"], "headline-lg": ["Anton"], "display-lg-mobile": ["Anton"], "headline-md": ["Anton"], "metric-huge-mobile": ["Anton"], "headline-sm": ["Anton"], "label-tactical": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "metric-huge": ["Anton"], "body-lg": ["IBM Plex Sans"], "label-mono": ["IBM Plex Sans"], "display-lg": ["Anton"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "0.03em", "fontWeight": "400" }], "display-lg-mobile": ["38px", { "lineHeight": "42px", "letterSpacing": "0.02em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "28px", "letterSpacing": "0.03em", "fontWeight": "400" }], "metric-huge-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "22px", "letterSpacing": "0.04em", "fontWeight": "400" }], "label-tactical": ["11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "metric-huge": ["64px", { "lineHeight": "64px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-mono": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "500" }], "display-lg": ["56px", { "lineHeight": "60px", "letterSpacing": "0.02em", "fontWeight": "400" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface-container text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container/90 backdrop-blur-xl pt-safe"><div class="h-16 px-margin flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><button aria-label="Back to Players" class="min-w-[44px] min-h-[44px] -ml-space-xs flex items-center gap-1 text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">chevron_left</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">PLAYERS</span></button><div class="flex flex-col ml-space-xs"><h1 class="font-headline-sm text-headline-sm uppercase text-primary leading-none">Player Telemetry Detail</h1></div></div><div class="flex items-center gap-space-sm"><button aria-label="Cancel action" class="min-w-[44px] min-h-[44px] flex items-center justify-center font-label-tactical text-label-tactical uppercase text-on-surface-variant hover:text-error transition-colors px-space-xs" type="button">CANCEL</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface-container min-h-screen"><div class="flex flex-col w-full px-margin pb-28 space-y-space-md">
+<!-- Ledger Reference Header Banner -->
+<div class="flex items-center justify-between py-space-xs px-space-sm bg-surface-container-lowest rounded">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">LEDGER ENROLLMENT ACTIVE</span>
+</div>
+<span class="font-label-mono text-label-mono text-secondary tracking-widest font-semibold">DOC.REF #PL-REG-2025</span>
+</div>
+<!-- Pinned Live Token Preview Card (Top section) -->
+<section aria-label="Tactical Token Preview" class="w-full bg-surface-container-high rounded-xl p-space-md shadow-md relative overflow-hidden">
+<!-- Ambient Chalkboard Texture Scrim -->
+<div class="absolute inset-0 bg-gradient-to-br from-surface-variant/40 via-transparent to-surface-container-lowest/80 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/60 rounded">
+<span class="material-symbols-outlined text-secondary text-[14px]">bolt</span>
+<span class="font-label-tactical text-label-tactical uppercase text-secondary tracking-wider">LIVE PREVIEW • SYNCED TO LEDGER</span>
+</div>
+<span class="font-label-mono text-label-mono uppercase px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant">MAGNETIC TOKEN #44</span>
+</div>
+<!-- Tactical Counter Plate -->
+<div class="flex items-center gap-space-md bg-surface-container p-space-sm rounded-lg shadow-sm">
+<!-- Kit Token Badge -->
+<div class="relative flex-shrink-0 w-16 h-16 rounded-xl bg-surface-variant flex flex-col items-center justify-center shadow-inner group">
+<span class="font-label-mono text-label-mono text-outline uppercase leading-none">NO.</span>
+<span class="font-headline-md text-headline-md text-primary leading-none mt-0.5" id="preview-kit">23</span>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<!-- Player Meta Telemetry -->
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<h2 class="font-headline-sm text-headline-sm text-primary uppercase truncate leading-tight" id="preview-name">M. MERINO</h2>
+<div class="flex items-baseline gap-0.5 px-1.5 py-0.5 bg-surface-container-highest rounded flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-secondary leading-none" id="preview-rating-badge">8.5</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">/10</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="font-label-tactical text-label-tactical text-on-surface uppercase truncate tracking-wide" id="preview-role">CM • ADVANCED PIVOT</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<div class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-label-mono uppercase font-semibold">MATCH READY</span>
+</div>
+<span class="font-label-mono text-label-mono uppercase px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant" id="preview-tier-badge">SENIOR A</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Enrolment Form Body -->
+<form class="flex flex-col space-y-space-lg" id="athlete-form" onsubmit="event.preventDefault();">
+<!-- Field 1 & 2: Name & Kit Stepper in compact stack -->
+<div class="flex flex-col gap-space-md bg-surface-container-high p-space-md rounded-xl">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-wider">01 // DOSSIER PROFILE</span>
+<span class="font-label-mono text-label-mono uppercase text-secondary">REQUIRED</span>
+</div>
+<!-- Athlete Full Name Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant" for="athlete-name">Full Legal / Match Name</label>
+<div class="relative flex items-center bg-surface-container rounded-lg px-space-sm py-2.5 shadow-inner focus-within:bg-surface-variant">
+<input class="w-full bg-transparent font-headline-sm text-headline-sm text-primary tracking-wide uppercase outline-none placeholder:text-outline-variant" id="athlete-name" maxlength="32" placeholder="e.g. Martin Ødegaard" type="text" value="Mikel Merino"/>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">badge</span>
+</div>
+</div>
+<!-- Kit Stepper & Squad Allocation -->
+<div class="grid grid-cols-2 gap-space-md pt-space-xs">
+<!-- Kit Number -->
+<div class="flex flex-col gap-1">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">Kit Jersey No.</label>
+<div class="flex items-center justify-between bg-surface-container rounded-lg p-1 shadow-inner">
+<button aria-label="Decrease Kit Number" class="w-9 h-9 rounded bg-surface-variant text-primary flex items-center justify-center active:scale-95 transition-transform" onclick="adjustKit(-1)" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<input class="w-12 text-center bg-transparent font-headline-md text-headline-md text-primary outline-none" id="athlete-kit" max="99" min="1" type="number" value="23"/>
+<button aria-label="Increase Kit Number" class="w-9 h-9 rounded bg-surface-variant text-primary flex items-center justify-center active:scale-95 transition-transform" onclick="adjustKit(1)" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Dominant Foot Selection -->
+<div class="flex flex-col gap-1">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">Preferred Foot</label>
+<div class="grid grid-cols-2 gap-1 bg-surface-container p-1 rounded-lg">
+<button class="py-2 text-center rounded font-label-tactical text-label-tactical uppercase font-bold bg-primary text-on-primary shadow-sm" id="foot-left" onclick="selectFoot('Left')" type="button">
+              LEFT
+            </button>
+<button class="py-2 text-center rounded font-label-tactical text-label-tactical uppercase font-medium text-on-surface-variant hover:text-primary transition-colors" id="foot-right" onclick="selectFoot('Right')" type="button">
+              RIGHT
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Field 3: Tactical Position Pitch Picker -->
+<div class="flex flex-col gap-space-sm bg-surface-container-high p-space-md rounded-xl">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-wider">02 // TACTICAL ROLE &amp; ZONE</span>
+<span class="font-label-mono text-label-mono uppercase px-2 py-0.5 rounded bg-on-tertiary-container text-white font-semibold" id="selected-role-tag">SELECTED: CM (BOX-TO-BOX)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tap tactical zone on pitch matrix to map counter coordinate.</p>
+<!-- Chalkboard Tactical Pitch Vector Graphic -->
+<div class="relative w-full h-56 bg-surface-container-lowest rounded-xl p-3 flex flex-col justify-between overflow-hidden shadow-inner select-none">
+<!-- SVG Pitch Chalk Markings -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" preserveaspectratio="none" viewbox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+<!-- Outer Boundary -->
+<rect fill="none" height="180" stroke="#F7F5EF" stroke-width="1.5" width="280" x="10" y="10"></rect>
+<!-- Halfway Line -->
+<line stroke="#F7F5EF" stroke-dasharray="4 3" stroke-width="1" x1="150" x2="150" y1="10" y2="190"></line>
+<!-- Center Circle -->
+<circle cx="150" cy="100" fill="none" r="32" stroke="#F7F5EF" stroke-width="1"></circle>
+<!-- Penalty Boxes -->
+<rect fill="none" height="90" stroke="#F7F5EF" stroke-width="1" width="45" x="10" y="55"></rect>
+<rect fill="none" height="90" stroke="#F7F5EF" stroke-width="1" width="45" x="245" y="55"></rect>
+<!-- Goal Areas -->
+<rect fill="none" height="50" stroke="#F7F5EF" stroke-width="1" width="18" x="10" y="75"></rect>
+<rect fill="none" height="50" stroke="#F7F5EF" stroke-width="1" width="18" x="272" y="75"></rect>
+</svg>
+<!-- Dynamic Tap Zones for Mobile Fingers -->
+<!-- Attackers Tier -->
+<div class="relative z-10 grid grid-cols-3 gap-2">
+<button class="zone-btn h-11 rounded-lg bg-surface-variant/40 flex flex-col items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="selectZone('LW', 'LW • INVERTED WINGER')" type="button">
+<span class="font-headline-sm text-headline-sm leading-none">LW</span>
+<span class="font-label-mono text-label-mono text-outline-variant">FLANK</span>
+</button>
+<button class="zone-btn h-11 rounded-lg bg-surface-variant/40 flex flex-col items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="selectZone('ST', 'ST • TARGET FORWARD')" type="button">
+<span class="font-headline-sm text-headline-sm leading-none">ST</span>
+<span class="font-label-mono text-label-mono text-outline-variant">STRIKER</span>
+</button>
+<button class="zone-btn h-11 rounded-lg bg-surface-variant/40 flex flex-col items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="selectZone('RW', 'RW • WIDE PLAYMAKER')" type="button">
+<span class="font-headline-sm text-headline-sm leading-none">RW</span>
+<span class="font-label-mono text-label-mono text-outline-variant">FLANK</span>
+</button>
+</div>
+<!-- Midfield Core (Selected Default: CM) -->
+<div class="relative z-10 grid grid-cols-3 gap-2 my-auto">
+<button class="zone-btn h-12 rounded-lg bg-surface-variant/40 flex flex-col items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="selectZone('LM', 'LM • WIDE MIDFIELDER')" type="button">
+<span class="font-headline-sm text-headline-sm leading-none">LM</span>
+<span class="font-label-mono text-label-mono text-outline-variant">WIDE</span>
+</button>
+<button class="zone-btn h-12 rounded-lg bg-on-tertiary-container text-white flex flex-col items-center justify-center shadow-lg relative ring-2 ring-white/20" id="zone-cm" onclick="selectZone('CM', 'CM • ADVANCED PIVOT')" type="button">
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-white"></span>
+<span class="font-headline-sm text-headline-sm leading-none">CM</span>
+<span class="font-label-mono text-label-mono text-white/90">PIVOT</span>
+</button>
+<button class="zone-btn h-12 rounded-lg bg-surface-variant/40 flex flex-col items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="selectZone('RM', 'RM • WIDE CARRIER')" type="button">
+<span class="font-headline-sm text-headline-sm leading-none">RM</span>
+<span class="font-label-mono text-label-mono text-outline-variant">WIDE</span>
+</button>
+</div>
+<!-- Defensive Line + GK -->
+<div class="relative z-10 grid grid-cols-4 gap-1.5">
+<button class="zone-btn h-10 rounded-lg bg-surface-variant/40 flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="selectZone('LB', 'LB • ATTACKING BACK')" type="button">
+<span class="font-headline-sm text-headline-sm">LB</span>
+</button>
+<button class="zone-btn h-10 rounded-lg bg-surface-variant/40 flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="selectZone('CB', 'CB • BALL PLAYING')" type="button">
+<span class="font-headline-sm text-headline-sm">CB</span>
+</button>
+<button class="zone-btn h-10 rounded-lg bg-surface-variant/40 flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="selectZone('RB', 'RB • INVERTED BACK')" type="button">
+<span class="font-headline-sm text-headline-sm">RB</span>
+</button>
+<button class="zone-btn h-10 rounded-lg bg-surface-variant/70 flex items-center justify-center text-secondary hover:bg-surface-variant transition-colors" onclick="selectZone('GK', 'GK • SWEEPER KEEPER')" type="button">
+<span class="font-headline-sm text-headline-sm">GK</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Field 4: Squad Tier Selector -->
+<div class="flex flex-col gap-space-xs bg-surface-container-high p-space-md rounded-xl">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-wider">03 // SQUAD LEVEL ALLOCATION</span>
+<div class="grid grid-cols-4 gap-1.5 pt-space-xs">
+<button class="tier-btn py-2.5 rounded bg-primary text-on-primary font-label-tactical text-label-tactical uppercase font-bold text-center shadow-sm" onclick="setSquadTier('SENIOR A', this)" type="button">
+          SENIOR A
+        </button>
+<button class="tier-btn py-2.5 rounded bg-surface-container text-on-surface-variant font-label-tactical text-label-tactical uppercase font-medium text-center hover:bg-surface-variant" onclick="setSquadTier('U-23', this)" type="button">
+          U-23
+        </button>
+<button class="tier-btn py-2.5 rounded bg-surface-container text-on-surface-variant font-label-tactical text-label-tactical uppercase font-medium text-center hover:bg-surface-variant" onclick="setSquadTier('U-18', this)" type="button">
+          U-18
+        </button>
+<button class="tier-btn py-2.5 rounded bg-surface-container text-on-surface-variant font-label-tactical text-label-tactical uppercase font-medium text-center hover:bg-surface-variant" onclick="setSquadTier('ACADEMY', this)" type="button">
+          ACADEMY
+        </button>
+</div>
+</div>
+<!-- Field 5: Thumb Drag Horizontal Rating Slider -->
+<div class="flex flex-col gap-space-sm bg-surface-container-high p-space-md rounded-xl">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-wider">04 // BASELINE RECRUIT RATING</span>
+<span class="font-label-mono text-label-mono uppercase text-secondary font-semibold" id="rating-status-label">TIER 1 ELITE</span>
+</div>
+<!-- Rating Readout -->
+<div class="flex items-baseline justify-between pt-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-huge-mobile text-metric-huge-mobile text-primary leading-none" id="slider-val-readout">8.5</span>
+<span class="font-headline-sm text-headline-sm text-outline-variant">/ 10.0</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary uppercase tracking-wider" id="slider-verbal">EXCELLENT</span>
+</div>
+<!-- Thumb Slider Control -->
+<div class="relative flex flex-col py-2">
+<input class="w-full h-3 bg-surface-container rounded-lg appearance-none cursor-pointer accent-secondary focus:outline-none" id="rating-range" max="10.0" min="1.0" step="0.1" type="range" value="8.5"/>
+<!-- Notched Increments 1 to 10 Visual Rule -->
+<div class="flex justify-between items-center px-1 pt-2 font-label-mono text-label-mono text-outline-variant">
+<span>1.0</span>
+<span>2.5</span>
+<span>5.0</span>
+<span>7.5</span>
+<span>10.0</span>
+</div>
+</div>
+</div>
+<!-- Field 6: Player Attributes & Specialization Chips -->
+<div class="flex flex-col gap-space-xs bg-surface-container-high p-space-md rounded-xl">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-wider">05 // PROFILE TRAIT METRICS</span>
+<div class="flex flex-wrap gap-2 pt-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded bg-surface-container text-on-surface font-label-tactical text-label-tactical uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          HIGH WORKRATE
+        </span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded bg-surface-container text-on-surface font-label-tactical text-label-tactical uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          AERIAL SUPREMACY
+        </span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded bg-surface-container text-on-surface font-label-tactical text-label-tactical uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          PRESS INITIATOR
+        </span>
+<button class="inline-flex items-center gap-1 px-space-sm py-1.5 rounded bg-surface-variant text-on-surface-variant hover:text-primary font-label-tactical text-label-tactical uppercase" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+          ADD TRAIT
+        </button>
+</div>
+</div>
+</form>
+<!-- Pinned Touchline Red Bottom Action Bar -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface/95 backdrop-blur-md p-space-md pb-safe shadow-2xl">
+<div class="w-full max-w-md mx-auto">
+<button class="w-full h-14 bg-on-tertiary-container hover:bg-error-container text-white active:scale-[0.98] transition-all rounded-lg flex items-center justify-between px-space-md shadow-lg" id="stamp-submit-btn" onclick="handleStampRegistration()" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-white text-[24px]">verified</span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wider text-white">STAMP &amp; REGISTER ATHLETE</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-white">→</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Live Name updates
+  const nameInput = document.getElementById('athlete-name');
+  const previewName = document.getElementById('preview-name');
+  nameInput.addEventListener('input', (e) => {
+    const val = e.target.value.trim();
+    if (!val) {
+      previewName.textContent = 'UNTITLED RECRUIT';
+    } else {
+      // Abbreviate first initial if spaces present
+      const parts = val.split(' ');
+      if (parts.length > 1) {
+        previewName.textContent = (parts[0][0] + '. ' + parts.slice(1).join(' ')).toUpperCase();
+      } else {
+        previewName.textContent = val.toUpperCase();
+      }
+    }
+  });
+
+  // Kit Number Stepper
+  const kitInput = document.getElementById('athlete-kit');
+  const previewKit = document.getElementById('preview-kit');
+  function adjustKit(delta) {
+    let current = parseInt(kitInput.value, 10) || 1;
+    current = Math.min(99, Math.max(1, current + delta));
+    kitInput.value = current;
+    previewKit.textContent = current;
+  }
+  kitInput.addEventListener('input', (e) => {
+    let val = parseInt(e.target.value, 10);
+    if (isNaN(val)) val = 1;
+    previewKit.textContent = val;
+  });
+
+  // Position Pitch Picker
+  function selectZone(pos, fullLabel) {
+    // Reset buttons
+    document.querySelectorAll('.zone-btn').forEach(btn => {
+      btn.className = 'zone-btn h-11 rounded-lg bg-surface-variant/40 flex flex-col items-center justify-center text-on-surface hover:bg-surface-variant transition-colors';
+    });
+    // Highlight clicked
+    event.currentTarget.className = 'zone-btn h-11 rounded-lg bg-on-tertiary-container text-white flex flex-col items-center justify-center shadow-lg relative ring-2 ring-white/20';
+    
+    // Update labels
+    document.getElementById('selected-role-tag').textContent = 'SELECTED: ' + pos;
+    document.getElementById('preview-role').textContent = fullLabel;
+  }
+
+  // Dominant Foot
+  function selectFoot(side) {
+    const lBtn = document.getElementById('foot-left');
+    const rBtn = document.getElementById('foot-right');
+    if (side === 'Left') {
+      lBtn.className = 'py-2 text-center rounded font-label-tactical text-label-tactical uppercase font-bold bg-primary text-on-primary shadow-sm';
+      rBtn.className = 'py-2 text-center rounded font-label-tactical text-label-tactical uppercase font-medium text-on-surface-variant hover:text-primary transition-colors';
+    } else {
+      rBtn.className = 'py-2 text-center rounded font-label-tactical text-label-tactical uppercase font-bold bg-primary text-on-primary shadow-sm';
+      lBtn.className = 'py-2 text-center rounded font-label-tactical text-label-tactical uppercase font-medium text-on-surface-variant hover:text-primary transition-colors';
+    }
+  }
+
+  // Squad Tier Selector
+  function setSquadTier(tier, btnEl) {
+    document.querySelectorAll('.tier-btn').forEach(btn => {
+      btn.className = 'tier-btn py-2.5 rounded bg-surface-container text-on-surface-variant font-label-tactical text-label-tactical uppercase font-medium text-center hover:bg-surface-variant';
+    });
+    btnEl.className = 'tier-btn py-2.5 rounded bg-primary text-on-primary font-label-tactical text-label-tactical uppercase font-bold text-center shadow-sm';
+    document.getElementById('preview-tier-badge').textContent = tier;
+  }
+
+  // Horizontal Drag Rating Slider
+  const slider = document.getElementById('rating-range');
+  const readout = document.getElementById('slider-val-readout');
+  const previewBadge = document.getElementById('preview-rating-badge');
+  const verbal = document.getElementById('slider-verbal');
+  const statusLabel = document.getElementById('rating-status-label');
+
+  slider.addEventListener('input', (e) => {
+    const val = parseFloat(e.target.value).toFixed(1);
+    readout.textContent = val;
+    previewBadge.textContent = val;
+
+    if (val >= 8.5) {
+      verbal.textContent = 'EXCELLENT';
+      verbal.className = 'font-headline-sm text-headline-sm text-secondary uppercase tracking-wider';
+      statusLabel.textContent = 'TIER 1 ELITE';
+    } else if (val >= 7.0) {
+      verbal.textContent = 'COMPETENT';
+      verbal.className = 'font-headline-sm text-headline-sm text-on-surface uppercase tracking-wider';
+      statusLabel.textContent = 'SQUAD ROTATION';
+    } else if (val >= 5.0) {
+      verbal.textContent = 'DEVELOPMENT';
+      verbal.className = 'font-headline-sm text-headline-sm text-on-surface-variant uppercase tracking-wider';
+      statusLabel.textContent = 'PROSPECT ONLY';
+    } else {
+      verbal.textContent = 'MARGINAL';
+      verbal.className = 'font-headline-sm text-headline-sm text-error uppercase tracking-wider';
+      statusLabel.textContent = 'CRITICAL DRILL REQUIRED';
+    }
+  });
+
+  // Action Button Interactive Feedback
+  function handleStampRegistration() {
+    const btn = document.getElementById('stamp-submit-btn');
+    btn.innerHTML = `
+      <div class="flex items-center gap-space-sm">
+        <span class="material-symbols-outlined text-white text-[24px] animate-spin">sync</span>
+        <span class="font-headline-sm text-headline-sm uppercase tracking-wider text-white">RECORDING TO TACTICAL LEDGER...</span>
+      </div>
+    `;
+    setTimeout(() => {
+      btn.innerHTML = `
+        <div class="flex items-center gap-space-sm">
+          <span class="material-symbols-outlined text-white text-[24px]">task_alt</span>
+          <span class="font-headline-sm text-headline-sm uppercase tracking-wider text-white">REGISTERED & SEALED</span>
+        </div>
+        <span class="font-headline-sm text-headline-sm text-white">✓</span>
+      `;
+      btn.classList.remove('bg-on-tertiary-container');
+      btn.classList.add('bg-secondary-container');
+    }, 900);
+  }
+</script></main></body></html>

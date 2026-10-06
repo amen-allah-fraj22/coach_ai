@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-background":"#d3e7dc","on-tertiary-container":"#c12714","primary-fixed":"#e4e2dd","on-secondary-fixed-variant":"#0c5135","surface":"#061610","on-primary":"#30312d","on-primary-container":"#656560","on-surface-variant":"#c7c7bf","tertiary-container":"#ffdad4","outline-variant":"#464741","tertiary-fixed":"#ffdad4","inverse-on-surface":"#23342c","surface-bright":"#2b3d35","secondary-fixed-dim":"#94d4b0","secondary-container":"#0c5135","primary":"#ffffff","on-error":"#690005","inverse-primary":"#5f5f5a","on-surface":"#d3e7dc","surface-tint":"#c8c6c1","secondary-fixed":"#b0f1cb","on-tertiary-fixed":"#400200","on-error-container":"#ffdad6","primary-container":"#e4e2dd","primary-fixed-dim":"#c8c6c1","on-primary-fixed-variant":"#474743","surface-container-low":"#0e1f18","on-primary-fixed":"#1b1c18","on-tertiary":"#670500","secondary":"#94d4b0","on-secondary-container":"#83c39f","error-container":"#93000a","background":"#061610","tertiary-fixed-dim":"#ffb4a7","surface-container-high":"#1c2d26","surface-container":"#12231c","surface-container-lowest":"#02110b","inverse-surface":"#d3e7dc","tertiary":"#ffffff","error":"#ffb4ab","outline":"#91918a","surface-variant":"#273831","on-secondary":"#003823","on-secondary-fixed":"#002112","on-tertiary-fixed-variant":"#910a00","surface-dim":"#061610","surface-container-highest":"#273831"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","space-sm":"0.5rem","gutter-desktop":"1.5rem","space-lg":"1.5rem","gutter":"1rem","margin-desktop":"2rem","space-xs":"0.25rem","margin-tablet":"1.5rem","space-xl":"2rem","space-md":"1rem"},"fontFamily":{"headline-lg":["Anton"],"headline-sm":["Anton"],"metric-huge":["Anton"],"body-sm":["IBM Plex Sans"],"display-lg":["Anton"],"headline-md":["Anton"],"label-tactical":["IBM Plex Sans"],"display-lg-mobile":["Anton"],"body-md":["IBM Plex Sans"],"metric-huge-mobile":["Anton"],"body-lg":["IBM Plex Sans"],"label-mono":["IBM Plex Sans"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"36px","letterSpacing":"0.03em","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"22px","letterSpacing":"0.04em","fontWeight":"400"}],"metric-huge":["64px",{"lineHeight":"64px","letterSpacing":"0.01em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"60px","letterSpacing":"0.02em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"28px","letterSpacing":"0.03em","fontWeight":"400"}],"label-tactical":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"600"}],"display-lg-mobile":["38px",{"lineHeight":"42px","letterSpacing":"0.02em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"metric-huge-mobile":["44px",{"lineHeight":"44px","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-mono":["10px",{"lineHeight":"12px","letterSpacing":"0.08em","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-3 h-3 bg-secondary rounded-none flex-shrink-0"></div><span class="font-headline-md text-headline-md tracking-wider uppercase text-primary">COACH<span class="text-secondary">AI</span></span></div><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant bg-surface-container-highest px-space-xs py-0.5">V3.8</span></div><div class="px-space-lg"><div class="bg-surface-container px-space-md py-space-sm flex items-center justify-between"><div class="flex flex-col"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">ACTIVE CAMPAIGN</span><span class="font-body-md text-body-md text-primary font-semibold truncate max-w-[140px]">PREMIER DIV 24/25</span></div><span class="material-symbols-outlined text-secondary text-[18px]">shield</span></div></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-secondary-container text-on-secondary-container font-semibold border-l-4 border-secondary"><div class="px-space-sm py-1"><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">TACTICAL ARENA</span></div><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tactical-board" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Tactical Board</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="live-matchday" href="#"><span class="material-symbols-outlined text-[20px]">timer</span><span class="font-body-md text-body-md">Live Matchday</span><span class="w-2 h-2 rounded-full bg-error ml-auto animate-pulse"></span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="matches" href="#"><span class="material-symbols-outlined text-[20px]">sports_soccer</span><span class="font-body-md text-body-md">Matches</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="squad-roster" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-md text-body-md">Squad &amp; Roster</span></a><div class="px-space-sm pt-space-md pb-1"><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">INTELLIGENCE</span></div><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="opponents-list" href="#"><span class="material-symbols-outlined text-[20px]">travel_explore</span><span class="font-body-md text-body-md">Opponents &amp; Scouting</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-secondary-container text-on-secondary-container font-semibold border-l-4 border-secondary" data-path="ai-coach-assistant" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span class="font-body-md text-body-md">AI Assistant</span><span class="font-label-mono text-label-mono text-secondary bg-surface-container-highest px-1 py-0.5 ml-auto">SYNC</span></a></nav></div><div class="flex flex-col gap-space-sm px-space-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Settings</span></a><div class="bg-surface-container-lowest p-space-sm flex items-center justify-between mx-space-sm"><div class="flex flex-col"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">TELEMETRY FEED</span><span class="font-label-tactical text-label-tactical text-secondary uppercase">ONLINE // 60FPS</span></div><div class="w-2 h-2 bg-secondary rounded-none"></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">SESSION:</span><span class="font-headline-sm text-headline-sm uppercase text-primary">TACTICAL OPERATIONS</span></div><div class="h-4 w-px bg-surface-container-highest hidden md:block"></div><div class="hidden lg:flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">SYSTEM LOAD:</span><span class="font-label-tactical text-label-tactical text-secondary">OPTIMAL (23%)</span></div><div class="flex items-center gap-space-xs"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">PITCH RADAR:</span><span class="font-label-tactical text-label-tactical text-secondary">LINKED</span></div><div class="flex items-center gap-space-xs"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">MATCH PROJECTION:</span><span class="font-label-tactical text-label-tactical text-on-surface">W 68% / D 18% / L 14%</span></div></div></div><div class="flex items-center gap-space-md"><div class="bg-surface-container px-space-md py-1.5 flex items-center gap-space-sm"><span class="font-label-mono text-label-mono text-on-surface-variant uppercase">TOUCHLINE HUD</span><span class="w-2 h-2 rounded-full bg-secondary"></span></div><button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">notifications</span></button><button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">help</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Sub-header tactical banner -->
+<div class="w-full bg-surface-container-low px-space-xl py-space-md flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm uppercase text-primary tracking-wider">TACTICAL QUERY ENGINE // LIVE DIALOGUE</span>
+</div>
+<span class="hidden sm:inline-block font-label-mono text-label-mono text-on-surface-variant bg-surface-container-highest px-space-xs py-0.5">TARGET: MANCHESTER BLUE (4-3-3 REST-POSSESSION)</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant">CONFIDENCE:</span>
+<span class="font-label-tactical text-label-tactical text-secondary">94.2% TACTICAL FIT</span>
+</div>
+<button class="bg-primary hover:bg-secondary text-on-primary px-space-md py-1 font-headline-sm text-headline-sm uppercase transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+        SYNC PITCH
+      </button>
+</div>
+</div>
+<!-- Main 2-Panel Split Engine Layout -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-space-lg pt-space-lg">
+<!-- LEFT PANEL: 35% Width (lg:col-span-4 or 5) - Touchline Notepad & Match Plan Dialogue -->
+<div class="lg:col-span-4 flex flex-col bg-surface-container-low p-space-md relative min-h-[780px] justify-between">
+<!-- Notepad Header Strip with chalk-stamped feel -->
+<div class="flex flex-col pb-space-sm mb-space-sm bg-surface-container-lowest p-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">edit_note</span>
+            PITCHSIDE FIELD NOTEBOOK
+          </span>
+<span class="font-label-mono text-label-mono text-secondary">PAGE 04 // 68' MINUTE</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-mono text-label-mono text-outline">SESSION ID: PREM-882-TRAP</span>
+<span class="font-label-tactical text-label-tactical uppercase text-primary">ANALOGUE DRAFT</span>
+</div>
+</div>
+<!-- Dialogue Thread Container (Scrollable) -->
+<div class="flex flex-col gap-space-md overflow-y-auto pr-1 flex-1 max-h-[640px]">
+<!-- Coach Scrawled Note 1 -->
+<div class="flex flex-col items-start max-w-[92%]">
+<div class="bg-surface-variant px-space-md py-space-sm shadow-sm relative rotate-[-0.5deg]">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[14px]">draw</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">HEAD COACH • CHALKING</span>
+</div>
+<p class="font-body-md text-body-md text-primary font-medium tracking-wide">
+              "How do we exploit City's high line when Rodri steps up into the half-space pocket?"
+            </p>
+<span class="font-label-mono text-label-mono text-on-surface-variant block mt-1 text-right">64:12 RECORDED</span>
+</div>
+</div>
+<!-- AI Match Plan Response 1 -->
+<div class="flex flex-col items-end w-full">
+<div class="w-full bg-surface-container p-space-md shadow-md">
+<!-- Header bar of AI Match Plan Card -->
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm uppercase text-primary tracking-wide">MATCH PLAN RESPONSE</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-tactical text-label-tactical px-space-xs py-0.5 uppercase">DIRECTIVE ACTIVE</span>
+</div>
+<!-- Badges -->
+<div class="flex flex-wrap gap-space-xs mb-space-sm">
+<span class="bg-surface-container-highest px-space-xs py-0.5 font-label-tactical text-label-tactical text-on-surface uppercase">ZONE 14 ISOLATION</span>
+<span class="bg-surface-container-highest px-space-xs py-0.5 font-label-tactical text-label-tactical text-secondary uppercase">TARGET: 12M TRANSITION</span>
+</div>
+<!-- Content -->
+<p class="font-body-sm text-body-sm text-on-surface mb-space-sm">
+              When Rodri commits past the central circle, trigger an inverted trigger: winger #7 drops 5 meters inward to fix the left center-back, creating a direct diagonal seam for striker #9 into the vacated lateral channel.
+            </p>
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container-lowest p-space-xs mb-space-sm">
+<div>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">SPACE CREATION</span>
+<span class="font-headline-sm text-headline-sm text-secondary">24.6 M²</span>
+</div>
+<div>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">TURN OVER RISK</span>
+<span class="font-headline-sm text-headline-sm text-error">11.8% LOW</span>
+</div>
+</div>
+<button class="w-full bg-surface-container-high hover:bg-surface-container-highest py-1 text-center font-label-tactical text-label-tactical text-primary uppercase transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+              INSPECT PHASE SIMULATION
+            </button>
+</div>
+</div>
+<!-- Coach Note 2 -->
+<div class="flex flex-col items-start max-w-[92%] mt-space-xs">
+<div class="bg-surface-variant px-space-md py-space-sm shadow-sm relative rotate-[0.3deg]">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[14px]">draw</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">HEAD COACH • CHALKING</span>
+</div>
+<p class="font-body-md text-body-md text-primary font-medium tracking-wide">
+              "What happens if Bernardo drops back to double-cover that seam before #9 reaches it?"
+            </p>
+<span class="font-label-mono text-label-mono text-on-surface-variant block mt-1 text-right">66:40 RECORDED</span>
+</div>
+</div>
+<!-- AI Match Plan Response 2 (Structured Card) -->
+<div class="flex flex-col items-end w-full">
+<div class="w-full bg-surface-container p-space-md shadow-md">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm uppercase text-primary tracking-wide">COUNTER-ADAPTATION</span>
+</div>
+<span class="bg-surface-container-highest text-on-surface-variant font-label-tactical text-label-tactical px-space-xs py-0.5 uppercase">CONTINGENCY B</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mb-space-xs">
+              Execute secondary snap release: our attacking midfielder #10 breaks blindside over Bernardo's vacated right shoulder into Zone 11.
+            </p>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono text-label-mono">
+<span>PROJECTED XG GAIN: +0.22</span>
+<span class="text-secondary font-label-tactical text-label-tactical uppercase">CHALK SYNCHRONIZED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Touchline Input Bar (Notepad footer with pencil icon) -->
+<div class="mt-space-md pt-space-sm bg-surface-container-lowest p-space-sm">
+<div class="flex items-center justify-between mb-space-xs px-1">
+<span class="font-label-tactical text-label-tactical text-outline uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">mode_edit</span>
+            TOUCHLINE PROMPT DIALOGUE
+          </span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">READY // AI v3.8</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-space-sm">
+<span class="material-symbols-outlined text-outline text-[18px]">edit</span>
+<input class="bg-transparent border-none text-primary font-body-md text-body-md placeholder:text-outline-variant focus:outline-none w-full" placeholder="Scrawl question or tactical modification..." type="text" value="Simulate inverted fullback tucking in to secure the central lane."/>
+<button class="bg-primary hover:bg-secondary text-on-primary px-space-md py-1.5 font-headline-sm text-headline-sm uppercase transition-colors shrink-0">
+            TRANSCRIBE
+          </button>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: 65% Width (lg:col-span-8) - Tactics Board Sheet with Folded Tabs & Stamps -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Folded Card-Flap Tabs Bar -->
+<div class="w-full flex flex-wrap items-end gap-1 bg-surface-container-lowest p-1">
+<!-- Active Tab: Phase 1 -->
+<button class="bg-surface-container px-space-lg py-2.5 font-headline-sm text-headline-sm uppercase text-secondary flex items-center gap-space-xs shadow-md transition-all">
+<span class="w-2 h-2 bg-secondary"></span>
+          PHASE 1: MID-BLOCK TRAP
+          <span class="font-label-mono text-label-mono text-on-surface-variant ml-space-xs">[ACTIVE]</span>
+</button>
+<!-- Tab: Phase 2 -->
+<button class="bg-surface-container-low hover:bg-surface-container px-space-lg py-2.5 font-headline-sm text-headline-sm uppercase text-on-surface-variant hover:text-on-surface flex items-center gap-space-xs transition-colors">
+<span class="w-2 h-2 bg-outline"></span>
+          PHASE 2: DIRECT DIAGONAL RELEASE
+        </button>
+<!-- Tab: Phase 3 -->
+<button class="bg-surface-container-low hover:bg-surface-container px-space-lg py-2.5 font-headline-sm text-headline-sm uppercase text-on-surface-variant hover:text-on-surface flex items-center gap-space-xs transition-colors">
+<span class="w-2 h-2 bg-outline"></span>
+          PHASE 3: REST DEFENSE
+        </button>
+</div>
+<!-- Main Tactics Board Visual Sheet Canvas -->
+<div class="w-full bg-surface-container p-space-lg shadow-xl relative overflow-hidden flex flex-col gap-space-lg">
+<!-- Top Board Metadata Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pb-space-sm bg-surface-container-high px-space-md py-2">
+<div class="flex items-center gap-space-md">
+<span class="font-headline-md text-headline-md uppercase text-primary tracking-wide">TACTICAL BLUEPRINT // EXECUTION 01</span>
+<span class="bg-surface-container-highest px-space-xs py-0.5 font-label-tactical text-label-tactical text-secondary uppercase">HIGH PRESSURE INCLINATION</span>
+</div>
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">BLOCK DEPTH:</span>
+<span class="font-label-tactical text-label-tactical text-primary">34.2 METERS</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">PASS INTENSITY:</span>
+<span class="font-label-tactical text-label-tactical text-secondary">PPDA 7.4</span>
+</div>
+</div>
+</div>
+<!-- The Pitch Canvas SVG: Dark Pitch Slate (#12231C) with chalk markings and formation -->
+<div class="w-full relative bg-surface-container-lowest aspect-[16/9] sm:aspect-[21/9] flex items-center justify-center p-space-sm overflow-hidden">
+<!-- Pitch SVG representation -->
+<svg class="w-full h-full text-on-surface-variant/20" fill="none" viewbox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg">
+<!-- Outer Pitch Boundary -->
+<rect height="440" stroke="currentColor" stroke-dasharray="6 4" stroke-width="2" width="960" x="20" y="20"></rect>
+<!-- Halfway line -->
+<line stroke="currentColor" stroke-dasharray="6 4" stroke-width="2" x1="500" x2="500" y1="20" y2="460"></line>
+<!-- Center Circle -->
+<circle cx="500" cy="240" r="70" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2"></circle>
+<circle cx="500" cy="240" fill="currentColor" r="3"></circle>
+<!-- Penalty Boxes Left -->
+<rect height="260" stroke="currentColor" stroke-dasharray="6 4" stroke-width="2" width="140" x="20" y="110"></rect>
+<rect height="140" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2" width="50" x="20" y="170"></rect>
+<path d="M 160 190 A 60 60 0 0 1 160 290" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2"></path>
+<!-- Penalty Boxes Right -->
+<rect height="260" stroke="currentColor" stroke-dasharray="6 4" stroke-width="2" width="140" x="840" y="110"></rect>
+<rect height="140" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2" width="50" x="930" y="170"></rect>
+<path d="M 840 190 A 60 60 0 0 0 840 290" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2"></path>
+<!-- DEFENSIVE MID-BLOCK ZONE (Highlighted Shaded chalk overlay) -->
+<rect fill="#0c5135" fill-opacity="0.25" height="300" stroke="#94d4b0" stroke-dasharray="4 4" stroke-width="1.5" width="220" x="360" y="90"></rect>
+<text fill="#94d4b0" font-family="Anton" font-size="14" letter-spacing="1.5" x="375" y="115">MID-BLOCK TRAP CORRIDOR</text>
+<!-- TRANSITION CORRIDOR (Diagonal chalk hatch) -->
+<polygon fill="#ffb4a7" fill-opacity="0.1" points="580,240 820,80 880,110 610,290" stroke="#ffdad4" stroke-dasharray="6 4" stroke-width="1"></polygon>
+<text fill="#d3e7dc" font-family="Anton" font-size="13" letter-spacing="1" x="690" y="140">RELEASE CORRIDOR</text>
+<!-- Curved Chalk Arrow 1: Winger Inward Drop -->
+<path d="M 640 120 Q 560 160 520 200" fill="none" stroke="#ffffff" stroke-dasharray="8 6" stroke-linecap="round" stroke-width="3"></path>
+<polygon fill="#ffffff" points="515,195 528,198 522,210"></polygon>
+<text fill="#ffffff" font-family="IBM Plex Sans" font-size="11" font-weight="600" x="560" y="145">#7 INWARD DROP</text>
+<!-- Curved Chalk Arrow 2: Striker Diagonal Surge -->
+<path d="M 520 250 Q 640 220 790 120" fill="none" stroke="#94d4b0" stroke-dasharray="8 4" stroke-linecap="round" stroke-width="3.5"></path>
+<polygon fill="#94d4b0" points="798,115 784,120 790,132"></polygon>
+<text fill="#94d4b0" font-family="Anton" font-size="14" letter-spacing="0.5" x="650" y="200">#9 DIRECT DIAGONAL RELEASE</text>
+<!-- Opponent Defensive High Line -->
+<line stroke="#ffdad4" stroke-dasharray="3 5" stroke-width="2" x1="680" x2="680" y1="40" y2="440"></line>
+<text fill="#ffb4a7" font-family="Anton" font-size="12" letter-spacing="1" x="686" y="60">OPPONENT HIGH LINE</text>
+<!-- FORMATION DOTS: Home Team (Green #94d4b0 + White numbers) -->
+<!-- GK -->
+<circle cx="60" cy="240" fill="#061610" r="14" stroke="#94d4b0" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="12" text-anchor="middle" x="60" y="245">1</text>
+<!-- Back 4 -->
+<circle cx="210" cy="90" fill="#182e25" r="13" stroke="#94d4b0" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="11" text-anchor="middle" x="210" y="94">2</text>
+<circle cx="190" cy="180" fill="#182e25" r="13" stroke="#94d4b0" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="11" text-anchor="middle" x="190" y="184">4</text>
+<circle cx="190" cy="300" fill="#182e25" r="13" stroke="#94d4b0" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="11" text-anchor="middle" x="190" y="304">5</text>
+<circle cx="210" cy="390" fill="#182e25" r="13" stroke="#94d4b0" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="11" text-anchor="middle" x="210" y="394">3</text>
+<!-- Midfield 3 -->
+<circle cx="390" cy="240" fill="#0c5135" r="14" stroke="#ffffff" stroke-width="2.5"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="12" text-anchor="middle" x="390" y="245">6</text>
+<circle cx="450" cy="160" fill="#182e25" r="13" stroke="#94d4b0" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="11" text-anchor="middle" x="450" y="164">8</text>
+<circle cx="460" cy="320" fill="#182e25" r="13" stroke="#94d4b0" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="11" text-anchor="middle" x="460" y="324">10</text>
+<!-- Front 3 -->
+<circle cx="640" cy="110" fill="#94d4b0" r="14" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#003823" font-family="Anton" font-size="12" text-anchor="middle" x="640" y="115">7</text>
+<circle cx="510" cy="240" fill="#ffffff" r="16" stroke="#94d4b0" stroke-width="3"></circle>
+<text fill="#003823" font-family="Anton" font-size="14" text-anchor="middle" x="510" y="246">9</text>
+<circle cx="620" cy="370" fill="#182e25" r="13" stroke="#94d4b0" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="11" text-anchor="middle" x="620" y="374">11</text>
+<!-- Opponent Target Dot: Rodri (#16 Reddish) -->
+<circle cx="530" cy="190" fill="#93000a" r="13" stroke="#ffdad4" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="10" text-anchor="middle" x="530" y="194">16</text>
+<text fill="#ffb4a7" font-family="IBM Plex Sans" font-size="10" font-weight="600" text-anchor="middle" x="530" y="172">RODRI</text>
+</svg>
+<!-- Board Pitch Legends -->
+<div class="absolute bottom-3 left-3 bg-surface-container-high/90 px-space-sm py-1 flex items-center gap-space-md text-[10px]">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 bg-secondary rounded-none"></span>
+<span class="font-label-mono text-label-mono text-on-surface">OUR UNIT (4-3-3)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 bg-error rounded-none"></span>
+<span class="font-label-mono text-label-mono text-on-surface">STEPPING PIVOT</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-0.5 bg-primary border-b border-dashed border-primary"></span>
+<span class="font-label-mono text-label-mono text-on-surface">TRIGGER PATH</span>
+</div>
+</div>
+</div>
+<!-- Strategy Directives Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Directive Step 1 -->
+<div class="bg-surface-container-low p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono text-label-mono text-secondary">SUB-PHASE 1.1</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">TRIGGER</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm uppercase text-primary mb-1">THE BAIT STEP</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                #6 holds central depth, baiting Rodri forward 8 meters to contest the first vertical reception.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-highest px-space-xs py-1">
+<span class="font-label-mono text-label-mono text-secondary">TELEMETRY: SUCCESS 82%</span>
+</div>
+</div>
+<!-- Directive Step 2 -->
+<div class="bg-surface-container-low p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono text-label-mono text-secondary">SUB-PHASE 1.2</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">MOVEMENT</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm uppercase text-primary mb-1">INWARD PINNING</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                #7 moves laterally into half-space. Both opponent CBs freeze for 0.8s, creating diagonal blindspot.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-highest px-space-xs py-1">
+<span class="font-label-mono text-label-mono text-secondary">DISRUPTION INDEX: 9.1</span>
+</div>
+</div>
+<!-- Directive Step 3 -->
+<div class="bg-surface-container-low p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono text-label-mono text-secondary">SUB-PHASE 1.3</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">RELEASE</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm uppercase text-primary mb-1">DIAGONAL SNAPPING</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Over-the-top curved ball behind City's defensive line for #9 running into empty 28-meter channel.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-highest px-space-xs py-1">
+<span class="font-label-mono text-label-mono text-secondary">EXPECTED CHANCE: 0.44 XG</span>
+</div>
+</div>
+</div>
+<!-- Rubber Team-Sheet Stamp Decision Actions -->
+<div class="mt-space-sm pt-space-md bg-surface-container-lowest p-space-md flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-wider">TEAM-SHEET DIRECTIVE DECISION:</span>
+<span class="font-headline-sm text-headline-sm uppercase text-primary tracking-wide">APPLY TACTICAL ADJUSTMENT TO ACTIVE MATCH ROSTER</span>
+</div>
+<!-- 3 Tactile Rubber Stamps -->
+<div class="flex items-center flex-wrap sm:flex-nowrap gap-space-sm">
+<!-- Green Accept Stamp -->
+<button class="group relative px-space-lg py-2.5 bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary transition-all transform active:scale-95 shadow-md flex items-center gap-space-xs" onclick="stampDirective('accepted')">
+<div class="w-3 h-3 bg-secondary group-hover:bg-on-secondary shrink-0"></div>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-headline-sm uppercase leading-none tracking-wider">ACCEPT DIRECTIVE</span>
+<span class="font-label-mono text-label-mono uppercase text-on-secondary-container group-hover:text-on-secondary">STAMP ROSTER</span>
+</div>
+</button>
+<!-- Amber Pencil Modify Stamp -->
+<button class="group relative px-space-lg py-2.5 bg-surface-container-high hover:bg-surface-container-highest text-primary transition-all transform active:scale-95 shadow-md flex items-center gap-space-xs" onclick="stampDirective('modified')">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">edit_note</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-headline-sm uppercase leading-none tracking-wider text-tertiary-fixed-dim">MODIFY WITH AI</span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">ADAPT PARAMS</span>
+</div>
+</button>
+<!-- Red Cross Reject Stamp -->
+<button class="group relative px-space-lg py-2.5 bg-surface-container-high hover:bg-error-container text-error hover:text-on-error transition-all transform active:scale-95 shadow-md flex items-center gap-space-xs" onclick="stampDirective('discarded')">
+<span class="material-symbols-outlined text-[18px] text-error group-hover:text-on-error">close</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-headline-sm uppercase leading-none tracking-wider">DISCARD</span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant group-hover:text-on-error">SCRAP PLAN</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Rubber Stamp Feedback Indicator (Dynamic Alert) -->
+<div class="hidden w-full bg-secondary-container p-space-md text-on-secondary-container transition-all" id="stampFeedback">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase block" id="stampFeedbackTitle">DIRECTIVE ACCEPTED</span>
+<span class="font-body-sm text-body-sm block" id="stampFeedbackDesc">Formation and tactical roles pushed to dugout tablets and player HUDs.</span>
+</div>
+</div>
+<button class="font-label-tactical text-label-tactical uppercase text-on-secondary-container" onclick="document.getElementById('stampFeedback').classList.add('hidden')">DISMISS</button>
+</div>
+</div>
+</div>
+<!-- Quick Metrics Strip Under Tactics Board -->
+<div class="w-full grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+<div class="bg-surface-container-low p-space-md">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">SIMULATED COUNTER DURATION</span>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">6.2s</span>
+<span class="font-label-tactical text-label-tactical text-secondary block mt-1">FAST BREAK VECTOR</span>
+</div>
+<div class="bg-surface-container-low p-space-md">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">PASS COMPLETION ODDS</span>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">78.4%</span>
+<span class="font-label-tactical text-label-tactical text-secondary block mt-1">+14% OVER BENCHMARK</span>
+</div>
+<div class="bg-surface-container-low p-space-md">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">OFFSIDE RISK PROBABILITY</span>
+<span class="font-headline-lg text-headline-lg text-error tracking-tight">8.1%</span>
+<span class="font-label-tactical text-label-tactical text-outline-variant block mt-1">TIMING THRESHOLD HIGH</span>
+</div>
+<div class="bg-surface-container-low p-space-md">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">SECOND-BALL WIN PERCENT</span>
+<span class="font-headline-lg text-headline-lg text-secondary tracking-tight">64.0%</span>
+<span class="font-label-tactical text-label-tactical text-secondary block mt-1">CENTRAL RECOVERY LIKELY</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function stampDirective(action) {
+    const banner = document.getElementById('stampFeedback');
+    const title = document.getElementById('stampFeedbackTitle');
+    const desc = document.getElementById('stampFeedbackDesc');
+
+    banner.classList.remove('hidden', 'bg-secondary-container', 'text-on-secondary-container', 'bg-error-container', 'text-on-error', 'bg-surface-container-highest', 'text-primary');
+
+    if (action === 'accepted') {
+      banner.classList.add('bg-secondary-container', 'text-on-secondary-container');
+      title.innerText = 'STAMP APPLIED: DIRECTIVE ACCEPTED';
+      desc.innerText = 'Phase 1 Mid-Block Trap written into active sideline telemetry feed.';
+    } else if (action === 'modified') {
+      banner.classList.add('bg-surface-container-highest', 'text-primary');
+      title.innerText = 'STAMP APPLIED: PARAMETERS OPENED FOR REVISION';
+      desc.innerText = 'Transcribing query into touchline prompt box for granular adjustment.';
+    } else if (action === 'discarded') {
+      banner.classList.add('bg-error-container', 'text-on-error');
+      title.innerText = 'STAMP APPLIED: DIRECTIVE DISCARDED';
+      desc.innerText = 'Tactic archived. Returning to baseline 4-3-3 positional structure.';
+    }
+  }
+</script></main></div></body></html>

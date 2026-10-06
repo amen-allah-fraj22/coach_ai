@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-fixed-variant":"#910a00","outline-variant":"#464741","on-error-container":"#ffdad6","primary":"#ffffff","inverse-on-surface":"#23342c","inverse-surface":"#d3e7dc","surface-variant":"#273831","surface-dim":"#061610","on-primary-fixed":"#1b1c18","on-background":"#d3e7dc","on-primary-fixed-variant":"#474743","on-error":"#690005","on-secondary-fixed-variant":"#0c5135","primary-fixed":"#e4e2dd","on-tertiary-container":"#c12714","secondary":"#94d4b0","error-container":"#93000a","error":"#ffb4ab","tertiary":"#ffffff","on-primary":"#30312d","on-secondary-fixed":"#002112","inverse-primary":"#5f5f5a","surface-container-low":"#0e1f18","surface-container-highest":"#273831","surface-container-lowest":"#02110b","tertiary-fixed":"#ffdad4","surface":"#061610","on-tertiary":"#670500","primary-container":"#e4e2dd","surface-container-high":"#1c2d26","background":"#061610","on-secondary-container":"#83c39f","surface-bright":"#2b3d35","outline":"#91918a","on-secondary":"#003823","secondary-container":"#0c5135","tertiary-fixed-dim":"#ffb4a7","on-primary-container":"#656560","on-surface-variant":"#c7c7bf","secondary-fixed-dim":"#94d4b0","tertiary-container":"#ffdad4","primary-fixed-dim":"#c8c6c1","secondary-fixed":"#b0f1cb","on-tertiary-fixed":"#400200","surface-tint":"#c8c6c1","surface-container":"#12231c","on-surface":"#d3e7dc"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","margin":"1rem","margin-tablet":"1.5rem","space-md":"1rem","gutter":"1rem","gutter-desktop":"1.5rem","margin-desktop":"2rem","space-xl":"2rem","space-sm":"0.5rem","space-xs":"0.25rem"},"fontFamily":{"metric-huge-mobile":["Anton"],"label-tactical":["IBM Plex Sans"],"metric-huge":["Anton"],"label-mono":["IBM Plex Sans"],"headline-md":["Anton"],"display-lg":["Anton"],"headline-lg":["Anton"],"body-lg":["IBM Plex Sans"],"body-sm":["IBM Plex Sans"],"headline-sm":["Anton"],"display-lg-mobile":["Anton"],"body-md":["IBM Plex Sans"]},"fontSize":{"metric-huge-mobile":["44px",{"lineHeight":"44px","letterSpacing":"0.01em","fontWeight":"400"}],"label-tactical":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"600"}],"metric-huge":["64px",{"lineHeight":"64px","letterSpacing":"0.01em","fontWeight":"400"}],"label-mono":["10px",{"lineHeight":"12px","letterSpacing":"0.08em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"28px","letterSpacing":"0.03em","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"60px","letterSpacing":"0.02em","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"36px","letterSpacing":"0.03em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"22px","letterSpacing":"0.04em","fontWeight":"400"}],"display-lg-mobile":["38px",{"lineHeight":"42px","letterSpacing":"0.02em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="matches-history" href="#"><span class="material-symbols-outlined text-[18px]">arrow_back</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Matches History</span></a><div class="flex items-center gap-space-xs"><div class="w-3 h-3 bg-secondary flex items-center justify-center"></div><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary">CoachAI</span><span class="font-label-mono text-label-mono uppercase px-space-xs py-0.5 bg-surface-container-high text-secondary">Tactical Core</span></div></div><nav class="hidden md:flex items-center gap-space-md" data-active-classes="bg-secondary-container text-on-secondary font-label-tactical uppercase tracking-wider py-space-xs px-space-md"><a aria-current="page" class="transition-colors bg-secondary-container text-on-secondary font-label-tactical uppercase tracking-wider py-space-xs px-space-md" data-path="upload-file" href="#">Upload File</a><a class="text-on-surface-variant hover:text-on-surface font-label-tactical text-label-tactical uppercase tracking-wider py-space-xs px-space-md transition-colors" data-path="column-mapping" href="#">Column Mapping</a><a class="text-on-surface-variant hover:text-on-surface font-label-tactical text-label-tactical uppercase tracking-wider py-space-xs px-space-md transition-colors" data-path="validation-preview" href="#">Validation Preview</a><a class="text-on-surface-variant hover:text-on-surface font-label-tactical text-label-tactical uppercase tracking-wider py-space-xs px-space-md transition-colors" data-path="import-summary" href="#">Import Summary</a></nav><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-label-mono text-label-mono uppercase"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>Telemetrum 04</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)] flex flex-col"><div class="flex flex-col w-full">
+<!-- Tactical Stage Top Bar -->
+<div class="w-full bg-surface-container px-margin-desktop py-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 bg-secondary inline-block"></span>
+<span class="font-label-tactical text-label-tactical uppercase text-secondary">TELEMETRY INGESTION TERMINAL</span>
+</div>
+<span class="hidden sm:inline font-label-mono text-label-mono text-outline">|</span>
+<div class="font-label-mono text-label-mono uppercase text-on-surface-variant tracking-wider">
+        DOC REF: CSV-IMP-88 // OPTA &amp; STATSBOMB COMPATIBLE
+      </div>
+</div>
+<div class="flex items-center gap-space-sm font-label-mono text-label-mono uppercase text-secondary">
+<span class="inline-block px-space-xs py-0.5 bg-surface-container-high">ENCODING: UTF-8</span>
+<span class="inline-block px-space-xs py-0.5 bg-surface-container-high">PIPELINE: ACTIVE</span>
+</div>
+</div>
+<!-- Workspace Container -->
+<div class="w-full px-margin-desktop py-space-xl flex flex-col items-center">
+<!-- Stage Tracker Chips -->
+<div class="w-full max-w-5xl flex items-center justify-between mb-space-lg gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="bg-primary text-on-primary font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs shadow-md" id="step-pill-1">
+<span>01</span>
+<span class="font-label-tactical text-label-tactical">INGESTION</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<div class="bg-surface-container text-on-surface-variant font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs" id="step-pill-2">
+<span>02</span>
+<span class="font-label-tactical text-label-tactical">LEDGER MAPPING</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<div class="bg-surface-container text-on-surface-variant font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs" id="step-pill-3">
+<span>03</span>
+<span class="font-label-tactical text-label-tactical">TELEMETRY COMMIT</span>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs text-on-surface-variant font-label-mono text-label-mono uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+<span>BENCH DESK WORKSTATION ALPHA</span>
+</div>
+</div>
+<!-- MAIN CHALK DOSSIER CARD -->
+<div class="w-full max-w-5xl bg-primary-container text-on-primary-fixed shadow-2xl relative overflow-hidden">
+<!-- Dossier Header Tab Stamped Strip -->
+<div class="w-full bg-surface-container-lowest text-primary px-space-lg py-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="bg-secondary text-on-secondary font-headline-sm text-headline-sm px-space-xs py-0.5">S-24</span>
+<div>
+<h1 class="font-headline-md text-headline-md uppercase tracking-wider text-primary leading-none">TACTICAL DATA REPOSITORY INGEST</h1>
+<p class="font-label-mono text-label-mono text-on-surface-variant uppercase mt-1">Spreadsheet Import Protocol // Match Log Standard</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="text-right">
+<span class="font-label-mono text-label-mono uppercase text-secondary block">BATCH STATUS</span>
+<span class="font-headline-sm text-headline-sm uppercase text-primary" id="batch-indicator">AWAITING PAYLOAD</span>
+</div>
+<div class="w-8 h-8 bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">table_chart</span>
+</div>
+</div>
+</div>
+<!-- STATE 1: LARGE CHALK DROP ZONE -->
+<div class="p-space-lg md:p-space-xl flex flex-col items-center" id="drop-zone-section">
+<!-- Dashed Chalk Inset Container -->
+<div class="w-full relative flex flex-col items-center justify-center p-space-xl md:py-space-xl text-center cursor-pointer transition-all duration-200 bg-surface-container-lowest/5 hover:bg-surface-container-lowest/10 group" id="chalk-drop-box">
+<!-- Chalk SVG Line Overlay (Tactile Pitch Boundary) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<rect fill="none" height="calc(100% - 8px)" stroke="#23342c" stroke-dasharray="8 6" stroke-linecap="square" stroke-width="2" width="calc(100% - 8px)" x="4" y="4"></rect>
+<circle cx="16" cy="16" fill="#23342c" r="3"></circle>
+<circle cx="calc(100% - 16px)" cy="16" fill="#23342c" r="3"></circle>
+<circle cx="16" cy="calc(100% - 16px)" fill="#23342c" r="3"></circle>
+<circle cx="calc(100% - 16px)" cy="calc(100% - 16px)" fill="#23342c" r="3"></circle>
+</svg>
+<!-- Hand-Drawn Tactical Spreadsheet-into-Folder Illustration (SVG) -->
+<div class="relative w-72 h-44 mb-space-md">
+<svg class="w-full h-full" fill="none" viewbox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+<!-- Background Chalk Grid Hatch -->
+<path d="M20 30 L260 30 M20 50 L260 50 M20 70 L260 70" stroke="#061610" stroke-dasharray="3 3" stroke-opacity="0.08" stroke-width="1"></path>
+<!-- Manila Dossier Folder Base -->
+<path d="M120 150 L250 150 L258 85 L180 85 L170 75 L120 75 Z" fill="#d3e7dc" fill-opacity="0.45" stroke="#12231c" stroke-linejoin="round" stroke-width="1.75"></path>
+<path d="M128 150 L258 150 L264 96 L124 96 Z" fill="#e4e2dd" stroke="#12231c" stroke-width="1.75"></path>
+<rect fill="#0c5135" fill-opacity="0.3" height="6" width="48" x="140" y="105"></rect>
+<rect fill="#12231c" fill-opacity="0.25" height="4" width="75" x="140" y="116"></rect>
+<rect fill="#12231c" fill-opacity="0.2" height="4" width="60" x="140" y="124"></rect>
+<!-- Suspended Tactical Spreadsheet Sheet -->
+<g class="transform transition-transform group-hover:-translate-y-1">
+<rect fill="#ffffff" height="78" rx="1" stroke="#12231c" stroke-width="2" width="105" x="30" y="20"></rect>
+<!-- Spreadsheet Top Header Cell Bar -->
+<rect fill="#12231c" height="15" width="105" x="30" y="20"></rect>
+<text fill="#d3e7dc" font-family="'IBM Plex Sans', sans-serif" font-size="8" font-weight="600" letter-spacing="0.5" x="35" y="31">MATCH_DATA.CSV</text>
+<!-- Sheet internal cells -->
+<line stroke="#12231c" stroke-opacity="0.2" stroke-width="1" x1="30" x2="135" y1="46" y2="46"></line>
+<line stroke="#12231c" stroke-opacity="0.2" stroke-width="1" x1="30" x2="135" y1="60" y2="60"></line>
+<line stroke="#12231c" stroke-opacity="0.2" stroke-width="1" x1="30" x2="135" y1="74" y2="74"></line>
+<line stroke="#12231c" stroke-opacity="0.2" stroke-width="1" x1="62" x2="62" y1="35" y2="98"></line>
+<line stroke="#12231c" stroke-opacity="0.2" stroke-width="1" x1="96" x2="96" y1="35" y2="98"></line>
+<!-- Cell Data Scribbles -->
+<rect fill="#0c5135" height="3" width="20" x="35" y="40"></rect>
+<rect fill="#12231c" height="3" width="22" x="68" y="40"></rect>
+<rect fill="#12231c" height="3" width="18" x="102" y="40"></rect>
+<rect fill="#12231c" fill-opacity="0.4" height="3" width="16" x="35" y="52"></rect>
+<rect fill="#12231c" fill-opacity="0.4" height="3" width="24" x="68" y="52"></rect>
+<rect fill="#c12714" height="3" width="14" x="102" y="52"></rect>
+<rect fill="#12231c" fill-opacity="0.4" height="3" width="18" x="35" y="66"></rect>
+<rect fill="#12231c" fill-opacity="0.4" height="3" width="16" x="68" y="66"></rect>
+<rect fill="#0c5135" height="3" width="22" x="102" y="66"></rect>
+</g>
+<!-- Dynamic Pouring Flightpath Lines -->
+<path d="M110 50 C 145 45, 165 70, 185 100" stroke="#12231c" stroke-dasharray="5 4" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M125 65 C 150 65, 175 80, 195 106" stroke="#0c5135" stroke-dasharray="4 3" stroke-linecap="round" stroke-width="2"></path>
+<path d="M98 80 C 125 90, 150 95, 170 115" stroke="#12231c" stroke-dasharray="3 3" stroke-linecap="round" stroke-width="1.8"></path>
+<!-- Flowing Floating Chalk Markers/Counters -->
+<circle cx="152" cy="58" fill="#12231c" r="4.5"></circle>
+<circle cx="152" cy="58" fill="#ffffff" r="2.5"></circle>
+<polygon fill="#c12714" points="175,76 182,79 178,85"></polygon>
+<circle cx="166" cy="94" fill="#0c5135" r="3.5"></circle>
+<!-- Downward Inflow Indicator -->
+<path d="M188 102 L198 112 L202 98" fill="none" stroke="#12231c" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-primary-fixed tracking-wide mb-1">
+              DROP MATCH SPREADSHEET HERE
+            </h2>
+<p class="font-body-md text-body-md text-on-primary-container max-w-md mb-space-md">
+              Drag and place raw CSV, TSV, or StatsBomb exports directly onto this chalk canvas. Autodetects Premier League, Opta, and Wyscout matchday formats.
+            </p>
+<!-- Browse Button & Trigger -->
+<div class="flex flex-col sm:flex-row items-center gap-space-sm">
+<button class="bg-surface-container-lowest text-primary hover:bg-surface-container-high transition-colors font-headline-sm text-headline-sm uppercase px-space-lg py-space-xs flex items-center gap-space-xs" id="browse-trigger-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+<span>Select Ledger File</span>
+</button>
+<span class="font-label-mono text-label-mono uppercase text-on-primary-container">OR PRESS [SPACE]</span>
+</div>
+<input accept=".csv, .tsv, .xlsx" class="hidden" id="hidden-file-input" type="file"/>
+<div class="mt-space-lg flex items-center gap-space-md text-on-primary-fixed-variant font-label-mono text-label-mono uppercase">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-secondary inline-block"></span>.CSV (COMMA)</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-secondary inline-block"></span>.TSV (TAB)</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-secondary inline-block"></span>OPTA SYNC V2</span>
+</div>
+</div>
+</div>
+<!-- Sample Demonstration Trigger Note -->
+<div class="w-full mt-space-md bg-surface-container-high/20 p-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-primary-fixed">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">info</span>
+<span class="font-label-tactical text-label-tactical uppercase">Bench Note:</span>
+<span class="font-body-sm text-body-sm">Testing the ingestion pipeline? Click below to immediately load the sample Oct-Nov fixture dossier.</span>
+</div>
+<button class="font-label-tactical text-label-tactical uppercase px-space-md py-1 bg-surface-container-lowest text-secondary hover:bg-surface-container transition-colors" id="load-sample-btn" type="button">
+            LOAD FIXTURE_24_OCT.CSV (18 MATCHES)
+          </button>
+</div>
+</div>
+<!-- STATE 2: LEDGER COLUMN MAPPING TABLE (Initially hidden, revealed on file drop) -->
+<div class="hidden flex-col" id="mapping-section">
+<!-- Ingested File Details Summary Strip -->
+<div class="bg-surface-container-low text-on-surface px-space-lg py-space-sm flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-headline-sm">
+              CSV
+            </div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase tracking-wide" id="loaded-filename">FIXTURE_24_OCT_EXPORT.CSV</span>
+<span class="px-1.5 py-0.5 bg-secondary-container text-on-secondary-container font-label-mono text-label-mono uppercase">PARSED OK</span>
+</div>
+<div class="font-label-mono text-label-mono text-on-surface-variant uppercase mt-0.5">
+                SIZE: 142.8 KB • DETECTED ROWS: 18 FIXTURES • HEADERS: 6 COLUMNS FOUND
+              </div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-tactical text-label-tactical text-secondary uppercase bg-surface-container-high px-space-xs py-1">
+              AUTOMATIC SCHEMA: 100% CONFIDENCE
+            </span>
+</div>
+</div>
+<!-- Ruled Ledger Paper Area -->
+<div class="p-space-lg md:p-space-xl bg-primary-container text-on-primary-fixed">
+<!-- Ledger Header Info -->
+<div class="flex flex-col sm:flex-row items-start sm:items-end justify-between pb-space-sm mb-space-sm gap-space-xs">
+<div>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary-container">TACTICAL LEDGER SYSTEM // FIELD RECONCILIATION</span>
+<h2 class="font-headline-md text-headline-md uppercase text-on-primary-fixed tracking-wide">
+                COLUMN MAPPING SHEET
+              </h2>
+</div>
+<div class="font-label-mono text-label-mono uppercase text-on-primary-fixed-variant">
+              LEDGER REF: PL-WK9-AUTOGEN
+            </div>
+</div>
+<!-- Ruled Table Container -->
+<div class="w-full overflow-x-auto shadow-sm bg-white/70">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest text-primary font-headline-sm text-headline-sm uppercase">
+<th class="py-space-xs px-space-md tracking-wider">CSV SOURCE COLUMN</th>
+<th class="py-space-xs px-space-md tracking-wider">SAMPLE DETECTED VALUE</th>
+<th class="py-space-xs px-space-xs text-center w-12 tracking-wider">→</th>
+<th class="py-space-xs px-space-md tracking-wider">COACHAI TARGET FIELD</th>
+<th class="py-space-xs px-space-md tracking-wider text-right">STATUS</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-surface-container-highest/15" id="ledger-table-body">
+<!-- Row 1: Match Date -->
+<tr class="hover:bg-primary/90 transition-colors">
+<td class="py-space-sm px-space-md font-label-tactical text-label-tactical uppercase font-bold text-on-primary-fixed">
+                    match_date_utc
+                  </td>
+<td class="py-space-sm px-space-md">
+<span class="inline-block bg-surface-container-lowest/10 px-space-xs py-0.5 font-label-mono text-label-mono text-on-primary-fixed">
+                      2024-10-18
+                    </span>
+</td>
+<td class="py-space-sm px-space-xs text-center text-on-primary-container font-bold">→</td>
+<td class="py-space-sm px-space-md">
+<div class="relative w-full max-w-xs">
+<select class="w-full bg-primary text-on-primary font-label-tactical text-label-tactical uppercase px-space-sm py-1.5 appearance-none focus:outline-none focus:ring-1 focus:ring-on-primary-fixed cursor-pointer">
+<option selected="" value="match_date">Fixture Date (Date)</option>
+<option value="opponent">Opponent Club</option>
+<option value="team_score">Team Score</option>
+<option value="opp_score">Opponent Score</option>
+<option value="shape">Tactical Shape</option>
+<option value="xg">Expected Goals (xG)</option>
+<option value="ignore">[ Ignore Column ]</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-on-primary-fixed">arrow_drop_down</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-mono text-label-mono uppercase text-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                      MAPPED
+                    </span>
+</td>
+</tr>
+<!-- Row 2: Opponent -->
+<tr class="hover:bg-primary/90 transition-colors">
+<td class="py-space-sm px-space-md font-label-tactical text-label-tactical uppercase font-bold text-on-primary-fixed">
+                    opposing_team_name
+                  </td>
+<td class="py-space-sm px-space-md">
+<span class="inline-block bg-surface-container-lowest/10 px-space-xs py-0.5 font-label-mono text-label-mono text-on-primary-fixed">
+                      Man City
+                    </span>
+</td>
+<td class="py-space-sm px-space-xs text-center text-on-primary-container font-bold">→</td>
+<td class="py-space-sm px-space-md">
+<div class="relative w-full max-w-xs">
+<select class="w-full bg-primary text-on-primary font-label-tactical text-label-tactical uppercase px-space-sm py-1.5 appearance-none focus:outline-none cursor-pointer">
+<option value="match_date">Fixture Date (Date)</option>
+<option selected="" value="opponent">Opponent Club (Team Name)</option>
+<option value="team_score">Team Score</option>
+<option value="opp_score">Opponent Score</option>
+<option value="shape">Tactical Shape</option>
+<option value="xg">Expected Goals (xG)</option>
+<option value="ignore">[ Ignore Column ]</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-on-primary-fixed">arrow_drop_down</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-mono text-label-mono uppercase text-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                      MAPPED
+                    </span>
+</td>
+</tr>
+<!-- Row 3: Goals For -->
+<tr class="hover:bg-primary/90 transition-colors">
+<td class="py-space-sm px-space-md font-label-tactical text-label-tactical uppercase font-bold text-on-primary-fixed">
+                    full_time_gf
+                  </td>
+<td class="py-space-sm px-space-md">
+<span class="inline-block bg-surface-container-lowest/10 px-space-xs py-0.5 font-label-mono text-label-mono text-on-primary-fixed">
+                      2
+                    </span>
+</td>
+<td class="py-space-sm px-space-xs text-center text-on-primary-container font-bold">→</td>
+<td class="py-space-sm px-space-md">
+<div class="relative w-full max-w-xs">
+<select class="w-full bg-primary text-on-primary font-label-tactical text-label-tactical uppercase px-space-sm py-1.5 appearance-none focus:outline-none cursor-pointer">
+<option value="match_date">Fixture Date (Date)</option>
+<option value="opponent">Opponent Club</option>
+<option selected="" value="team_score">Team Score (Goals For)</option>
+<option value="opp_score">Opponent Score</option>
+<option value="shape">Tactical Shape</option>
+<option value="xg">Expected Goals (xG)</option>
+<option value="ignore">[ Ignore Column ]</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-on-primary-fixed">arrow_drop_down</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-mono text-label-mono uppercase text-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                      MAPPED
+                    </span>
+</td>
+</tr>
+<!-- Row 4: Goals Against -->
+<tr class="hover:bg-primary/90 transition-colors">
+<td class="py-space-sm px-space-md font-label-tactical text-label-tactical uppercase font-bold text-on-primary-fixed">
+                    full_time_ga
+                  </td>
+<td class="py-space-sm px-space-md">
+<span class="inline-block bg-surface-container-lowest/10 px-space-xs py-0.5 font-label-mono text-label-mono text-on-primary-fixed">
+                      1
+                    </span>
+</td>
+<td class="py-space-sm px-space-xs text-center text-on-primary-container font-bold">→</td>
+<td class="py-space-sm px-space-md">
+<div class="relative w-full max-w-xs">
+<select class="w-full bg-primary text-on-primary font-label-tactical text-label-tactical uppercase px-space-sm py-1.5 appearance-none focus:outline-none cursor-pointer">
+<option value="match_date">Fixture Date (Date)</option>
+<option value="opponent">Opponent Club</option>
+<option value="team_score">Team Score</option>
+<option selected="" value="opp_score">Opponent Score (Goals Against)</option>
+<option value="shape">Tactical Shape</option>
+<option value="xg">Expected Goals (xG)</option>
+<option value="ignore">[ Ignore Column ]</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-on-primary-fixed">arrow_drop_down</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-mono text-label-mono uppercase text-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                      MAPPED
+                    </span>
+</td>
+</tr>
+<!-- Row 5: Tactical Formation -->
+<tr class="hover:bg-primary/90 transition-colors">
+<td class="py-space-sm px-space-md font-label-tactical text-label-tactical uppercase font-bold text-on-primary-fixed">
+                    starting_formation
+                  </td>
+<td class="py-space-sm px-space-md">
+<span class="inline-block bg-surface-container-lowest/10 px-space-xs py-0.5 font-label-mono text-label-mono text-on-primary-fixed">
+                      4-3-3
+                    </span>
+</td>
+<td class="py-space-sm px-space-xs text-center text-on-primary-container font-bold">→</td>
+<td class="py-space-sm px-space-md">
+<div class="relative w-full max-w-xs">
+<select class="w-full bg-primary text-on-primary font-label-tactical text-label-tactical uppercase px-space-sm py-1.5 appearance-none focus:outline-none cursor-pointer">
+<option value="match_date">Fixture Date (Date)</option>
+<option value="opponent">Opponent Club</option>
+<option value="team_score">Team Score</option>
+<option value="opp_score">Opponent Score</option>
+<option selected="" value="shape">Tactical Shape (Formation)</option>
+<option value="xg">Expected Goals (xG)</option>
+<option value="ignore">[ Ignore Column ]</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-on-primary-fixed">arrow_drop_down</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-mono text-label-mono uppercase text-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                      MAPPED
+                    </span>
+</td>
+</tr>
+<!-- Row 6: xG -->
+<tr class="hover:bg-primary/90 transition-colors">
+<td class="py-space-sm px-space-md font-label-tactical text-label-tactical uppercase font-bold text-on-primary-fixed">
+                    expected_goals_calc
+                  </td>
+<td class="py-space-sm px-space-md">
+<span class="inline-block bg-surface-container-lowest/10 px-space-xs py-0.5 font-label-mono text-label-mono text-on-primary-fixed">
+                      2.14
+                    </span>
+</td>
+<td class="py-space-sm px-space-xs text-center text-on-primary-container font-bold">→</td>
+<td class="py-space-sm px-space-md">
+<div class="relative w-full max-w-xs">
+<select class="w-full bg-primary text-on-primary font-label-tactical text-label-tactical uppercase px-space-sm py-1.5 appearance-none focus:outline-none cursor-pointer">
+<option value="match_date">Fixture Date (Date)</option>
+<option value="opponent">Opponent Club</option>
+<option value="team_score">Team Score</option>
+<option value="opp_score">Opponent Score</option>
+<option value="shape">Tactical Shape</option>
+<option selected="" value="xg">Expected Goals (xG Index)</option>
+<option value="ignore">[ Ignore Column ]</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-on-primary-fixed">arrow_drop_down</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-mono text-label-mono uppercase text-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                      MAPPED
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bottom Action Bar / Stamp Confirmation -->
+<div class="mt-space-lg pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Discard Action -->
+<button class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-tertiary-container hover:text-error transition-colors flex items-center gap-space-xs" id="discard-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Discard file &amp; restart ingestion</span>
+</button>
+<!-- Touchline Red Rubber-Stamp Action Button -->
+<div class="flex items-center gap-space-md w-full md:w-auto justify-end">
+<div class="hidden sm:block text-right">
+<span class="font-label-mono text-label-mono uppercase text-on-primary-container block">ALL ENTRIES VALIDATED</span>
+<span class="font-label-tactical text-label-tactical uppercase text-on-secondary-fixed-variant">0 REJECTED ROWS</span>
+</div>
+<button class="w-full sm:w-auto bg-on-tertiary-container hover:bg-error-container text-primary font-headline-md text-headline-md uppercase tracking-wider px-space-xl py-space-sm shadow-xl flex items-center justify-center gap-space-sm transition-all transform active:scale-95" id="commit-import-btn" type="button">
+<span>IMPORT 18 MATCHES</span>
+<span class="text-headline-lg font-headline-lg leading-none">→</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SUCCESS CONFIRMATION MODAL STATE -->
+<div class="hidden p-space-xl bg-surface-container-lowest text-primary flex flex-col items-center justify-center text-center" id="success-overlay">
+<div class="w-16 h-16 bg-secondary text-on-secondary flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[36px]">sports_soccer</span>
+</div>
+<span class="font-label-tactical text-label-tactical text-secondary uppercase tracking-widest mb-1">EXECUTION COMPLETE</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary mb-space-xs">
+          18 MATCHES COMMITTED TO DATABASE
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-space-lg">
+          Telemetry ingested into match analysis pipeline. Tactical shapes, xG curves, and squad ratings have been calculated and synced with the main timeline.
+        </p>
+<div class="flex flex-wrap items-center justify-center gap-space-md">
+<a class="bg-primary text-on-primary font-headline-sm text-headline-sm uppercase px-space-lg py-space-xs hover:bg-primary-fixed transition-colors" data-path="matches-history" href="#">
+            Open Matches History →
+          </a>
+<button class="bg-surface-container text-on-surface font-label-tactical text-label-tactical uppercase px-space-md py-space-xs hover:bg-surface-container-high transition-colors" id="reset-workspace-btn" type="button">
+            Import Another Ledger
+          </button>
+</div>
+</div>
+</div>
+<!-- Supplementary Tactical Ledger Metadata Footer Cards -->
+<div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-lg">
+<div class="bg-surface-container p-space-md">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2 h-2 bg-secondary"></span>
+<span class="font-label-tactical text-label-tactical uppercase text-secondary">CHALK RULE VALIDATION</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Auto-verifies that formation strings conform to numeric field lines (e.g., 4-3-3, 3-5-2, 4-2-3-1) with 10 outfielders accounted for.
+        </p>
+</div>
+<div class="bg-surface-container p-space-md">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2 h-2 bg-on-tertiary-container"></span>
+<span class="font-label-tactical text-label-tactical uppercase text-on-tertiary-container">TOUCHLINE EXCEPTION LOG</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Rows with missing scorelines or corrupted squad abbreviations are routed to the touchline isolation buffer without stopping the batch.
+        </p>
+</div>
+<div class="bg-surface-container p-space-md">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="font-label-tactical text-label-tactical uppercase text-primary">OPTA TELEMETRY COMPATIBILITY</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Strict match ID matching prevents duplicate fixture records from being logged over previously calibrated video sessions.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initChalkImportWorkflow() {
+    const dropBox = document.getElementById('chalk-drop-box');
+    const fileInput = document.getElementById('hidden-file-input');
+    const browseBtn = document.getElementById('browse-trigger-btn');
+    const sampleBtn = document.getElementById('load-sample-btn');
+    
+    const dropSection = document.getElementById('drop-zone-section');
+    const mappingSection = document.getElementById('mapping-section');
+    const successOverlay = document.getElementById('success-overlay');
+    
+    const discardBtn = document.getElementById('discard-btn');
+    const commitBtn = document.getElementById('commit-import-btn');
+    const resetBtn = document.getElementById('reset-workspace-btn');
+    
+    const batchIndicator = document.getElementById('batch-indicator');
+    const step1 = document.getElementById('step-pill-1');
+    const step2 = document.getElementById('step-pill-2');
+    const step3 = document.getElementById('step-pill-3');
+
+    function activateMappingState(fileName) {
+      if (dropSection) dropSection.classList.add('hidden');
+      if (mappingSection) {
+        mappingSection.classList.remove('hidden');
+        mappingSection.classList.add('flex');
+      }
+      if (batchIndicator) {
+        batchIndicator.textContent = "READY FOR COMMITTING";
+        batchIndicator.classList.remove('text-primary');
+        batchIndicator.classList.add('text-secondary');
+      }
+      if (step1) {
+        step1.className = "bg-surface-container text-on-surface-variant font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs";
+      }
+      if (step2) {
+        step2.className = "bg-primary text-on-primary font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs shadow-md";
+      }
+      const nameEl = document.getElementById('loaded-filename');
+      if (nameEl && fileName) {
+        nameEl.textContent = fileName.toUpperCase();
+      }
+    }
+
+    function resetToDropZone() {
+      if (mappingSection) {
+        mappingSection.classList.add('hidden');
+        mappingSection.classList.remove('flex');
+      }
+      if (successOverlay) {
+        successOverlay.classList.add('hidden');
+        successOverlay.classList.remove('flex');
+      }
+      if (dropSection) {
+        dropSection.classList.remove('hidden');
+      }
+      if (batchIndicator) {
+        batchIndicator.textContent = "AWAITING PAYLOAD";
+        batchIndicator.className = "font-headline-sm text-headline-sm uppercase text-primary";
+      }
+      if (step1) {
+        step1.className = "bg-primary text-on-primary font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs shadow-md";
+      }
+      if (step2) {
+        step2.className = "bg-surface-container text-on-surface-variant font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs";
+      }
+      if (step3) {
+        step3.className = "bg-surface-container text-on-surface-variant font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs";
+      }
+      if (fileInput) fileInput.value = "";
+    }
+
+    function showSuccess() {
+      if (mappingSection) {
+        mappingSection.classList.add('hidden');
+        mappingSection.classList.remove('flex');
+      }
+      if (successOverlay) {
+        successOverlay.classList.remove('hidden');
+        successOverlay.classList.add('flex');
+      }
+      if (batchIndicator) {
+        batchIndicator.textContent = "COMMITTED // OK";
+        batchIndicator.className = "font-headline-sm text-headline-sm uppercase text-secondary";
+      }
+      if (step2) {
+        step2.className = "bg-surface-container text-on-surface-variant font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs";
+      }
+      if (step3) {
+        step3.className = "bg-secondary text-on-secondary font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-space-xs shadow-md";
+      }
+    }
+
+    // Drag and drop event listeners
+    if (dropBox) {
+      dropBox.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropBox.classList.add('bg-surface-container-lowest/20');
+      });
+      dropBox.addEventListener('dragleave', () => {
+        dropBox.classList.remove('bg-surface-container-lowest/20');
+      });
+      dropBox.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropBox.classList.remove('bg-surface-container-lowest/20');
+        if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+          activateMappingState(e.dataTransfer.files[0].name);
+        } else {
+          activateMappingState("FIXTURE_INGESTION_RAW.CSV");
+        }
+      });
+    }
+
+    if (browseBtn && fileInput) {
+      browseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fileInput.click();
+      });
+    }
+
+    if (fileInput) {
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+          activateMappingState(e.target.files[0].name);
+        }
+      });
+    }
+
+    if (sampleBtn) {
+      sampleBtn.addEventListener('click', () => {
+        activateMappingState("FIXTURE_24_OCT_SAMPLE.CSV");
+      });
+    }
+
+    if (discardBtn) {
+      discardBtn.addEventListener('click', resetToDropZone);
+    }
+
+    if (commitBtn) {
+      commitBtn.addEventListener('click', showSuccess);
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', resetToDropZone);
+    }
+
+    // Keyboard trigger shortcut: [Space] to browse
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && dropSection && !dropSection.classList.contains('hidden') && document.activeElement.tagName !== 'BUTTON' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (fileInput) fileInput.click();
+      }
+    });
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest py-space-md"><div class="w-full px-margin-desktop flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-mono text-label-mono text-on-surface-variant uppercase"><div>CoachAI Tactical Telemetry Workspace • Broadcast Standard Engine</div><div>Dataset Spec v2.4 • UTF-8 Strict Parsing</div></div></footer></body></html>

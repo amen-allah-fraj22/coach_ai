@@ -14,6 +14,11 @@ apps/web/
                 action (LLM orchestration + tools). This is the whole backend.
 design/
   stitch-prompts.md  Screen-by-screen Stitch prompts + motion specs.
+  stitch/            Exported Stitch designs: DESIGN.md tokens, and
+                     <page>/{web,mobile}/{code.html,screen.png} for all 22 pages.
+docs/
+  design-implementation-plan.md  How the Stitch designs get built: feature
+                                 split (build / recast / cut), per-screen spec, phases.
 ```
 
 Backend + database is **Convex**; auth is **Clerk**; the AI Coach uses

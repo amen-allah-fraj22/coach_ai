@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-background": "#d3e7dc", "on-tertiary-container": "#c12714", "primary-fixed": "#e4e2dd", "on-secondary-fixed-variant": "#0c5135", "surface": "#061610", "on-primary": "#30312d", "on-primary-container": "#656560", "on-surface-variant": "#c7c7bf", "tertiary-container": "#ffdad4", "outline-variant": "#464741", "tertiary-fixed": "#ffdad4", "inverse-on-surface": "#23342c", "surface-bright": "#2b3d35", "secondary-fixed-dim": "#94d4b0", "secondary-container": "#0c5135", "primary": "#ffffff", "on-error": "#690005", "inverse-primary": "#5f5f5a", "on-surface": "#d3e7dc", "surface-tint": "#c8c6c1", "secondary-fixed": "#b0f1cb", "on-tertiary-fixed": "#400200", "on-error-container": "#ffdad6", "primary-container": "#e4e2dd", "primary-fixed-dim": "#c8c6c1", "on-primary-fixed-variant": "#474743", "surface-container-low": "#0e1f18", "on-primary-fixed": "#1b1c18", "on-tertiary": "#670500", "secondary": "#94d4b0", "on-secondary-container": "#83c39f", "error-container": "#93000a", "background": "#061610", "tertiary-fixed-dim": "#ffb4a7", "surface-container-high": "#1c2d26", "surface-container": "#12231c", "surface-container-lowest": "#02110b", "inverse-surface": "#d3e7dc", "tertiary": "#ffffff", "error": "#ffb4ab", "outline": "#91918a", "surface-variant": "#273831", "on-secondary": "#003823", "on-secondary-fixed": "#002112", "on-tertiary-fixed-variant": "#910a00", "surface-dim": "#061610", "surface-container-highest": "#273831" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "space-lg": "1.5rem", "gutter": "1rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "margin-tablet": "1.5rem", "space-xl": "2rem", "space-md": "1rem" }, fontFamily: { "headline-lg": ["Anton"], "headline-sm": ["Anton"], "metric-huge": ["Anton"], "body-sm": ["IBM Plex Sans"], "display-lg": ["Anton"], "headline-md": ["Anton"], "label-tactical": ["IBM Plex Sans"], "display-lg-mobile": ["Anton"], "body-md": ["IBM Plex Sans"], "metric-huge-mobile": ["Anton"], "body-lg": ["IBM Plex Sans"], "label-mono": ["IBM Plex Sans"] }, fontSize: { "headline-lg": ["32px", { lineHeight: "36px", letterSpacing: "0.03em", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "22px", letterSpacing: "0.04em", fontWeight: "400" }], "metric-huge": ["64px", { lineHeight: "64px", letterSpacing: "0.01em", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "display-lg": ["56px", { lineHeight: "60px", letterSpacing: "0.02em", fontWeight: "400" }], "headline-md": ["24px", { lineHeight: "28px", letterSpacing: "0.03em", fontWeight: "400" }], "label-tactical": ["11px", { lineHeight: "14px", letterSpacing: "0.12em", fontWeight: "600" }], "display-lg-mobile": ["38px", { lineHeight: "42px", letterSpacing: "0.02em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "metric-huge-mobile": ["44px", { lineHeight: "44px", letterSpacing: "0.01em", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "label-mono": ["10px", { lineHeight: "12px", letterSpacing: "0.08em", fontWeight: "500" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#061610;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md tracking-wider text-primary uppercase">Settings</span></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- Telemetry Bar & Subheader -->
+<div class="px-margin pt-space-md pb-space-sm bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider text-secondary">Telemetry Active // 24.8 Hz</span>
+</div>
+<div class="flex items-center gap-1 bg-surface px-space-sm py-0.5">
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-widest">SYS_REV</span>
+<span class="font-headline-sm text-headline-sm text-primary">v4.2</span>
+</div>
+</div>
+<!-- SECTION 1: Jersey Tag Language Switcher -->
+<div class="w-full bg-surface-container-high py-space-md px-margin flex flex-col gap-space-xs">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-widest">Tactical Dialect // Kit Lang</span>
+<span class="font-label-mono text-label-mono text-outline">LOC_ID: 994</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs w-full" id="lang-switcher">
+<!-- FR Tab -->
+<button class="lang-tab group relative flex flex-col items-center justify-center py-space-sm bg-surface-container transition-colors" onclick="setLang(this)" type="button">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider mb-0.5">ZONE A</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant group-hover:text-primary">FR</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase mt-0.5">Français</span>
+<div class="indicator absolute bottom-0 left-0 right-0 h-1 bg-transparent"></div>
+</button>
+<!-- AR Tab -->
+<button class="lang-tab group relative flex flex-col items-center justify-center py-space-sm bg-surface-container transition-colors" onclick="setLang(this)" type="button">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider mb-0.5">ZONE B</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant group-hover:text-primary">AR</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase mt-0.5">العربية</span>
+<div class="indicator absolute bottom-0 left-0 right-0 h-1 bg-transparent"></div>
+</button>
+<!-- EN Tab (Default Active) -->
+<button class="lang-tab active group relative flex flex-col items-center justify-center py-space-sm bg-surface-variant transition-colors" onclick="setLang(this)" type="button">
+<span class="font-label-mono text-label-mono text-secondary uppercase tracking-wider mb-0.5">PRIMARY</span>
+<span class="font-headline-md text-headline-md text-primary">EN</span>
+<span class="font-label-tactical text-label-tactical text-primary uppercase mt-0.5">English</span>
+<div class="indicator absolute bottom-0 left-0 right-0 h-1 bg-secondary-fixed"></div>
+</button>
+</div>
+</div>
+<!-- SECTION 2: Club & Head Coach Credentials -->
+<div class="w-full bg-surface-container flex flex-col p-margin gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-widest">Master Clearance // Entity</span>
+<span class="font-label-mono text-label-mono text-secondary uppercase px-1.5 py-0.5 bg-surface-container-highest">UEFA PRO LICENSE</span>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-high p-space-md">
+<!-- Crest Asset -->
+<div class="relative w-16 h-16 bg-surface-container-lowest flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Minimalist monochromatic football club crest featuring an aggressive geometric hawk over a slate deep green background with sharp tactical stencil lines and gold accent contour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeKJcdxGEzHxoXctZXgSZuSvo0mGkczXthM746KgwQGqYDxgQJZboZ-vlxnkzNG5kKhSOvpN5ne7HEDOHmTR3lqmjs9CUKBUQxrutH9S8JfCUZSplBnBbdiYELt19HfOKy-q62qZvY3DZdIUWSBcZJssAD8N-b3BwbkfMvh5pJTnoA2bI2-KDC-hnDS1LqttojltLIavp3WIZDnLaTx0eEZQBXvody0gW1wpSRvEgC"/>
+<div class="absolute bottom-0 inset-x-0 bg-surface/90 text-center py-0.5">
+<span class="font-label-mono text-label-mono text-primary">EST. 1904</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary uppercase truncate">Marcus Vance</span>
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">verified</span>
+</div>
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-wider truncate">Chief Tactician // First Team</span>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="bg-surface px-2 py-0.5 font-label-mono text-label-mono text-on-surface">VALKYRIE SC</span>
+<span class="font-label-mono text-label-mono text-outline">TIER-1 ELITE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Tactical Preferences & Telemetry -->
+<div class="w-full bg-surface-container-high p-margin flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-widest">Pitch Telemetry Parameters</span>
+<span class="font-label-mono text-label-mono text-outline">SEC_03</span>
+</div>
+<!-- Live Telemetry Toggle -->
+<div class="flex items-center justify-between bg-surface-container p-space-md">
+<div class="flex flex-col pr-space-sm min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">sensors</span>
+<span class="font-body-md text-body-md text-primary font-semibold uppercase tracking-wide">Live High-Band Stream</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Transmit live raw tracking sensors to video analysis bench</span>
+</div>
+<button class="flex-shrink-0 w-12 h-6 bg-secondary-container relative flex items-center p-0.5 transition-colors" id="telemetry-btn" onclick="toggleTelemetry(this)" type="button">
+<span class="w-5 h-5 bg-primary transform translate-x-6 transition-transform block"></span>
+</button>
+</div>
+<!-- Default Formation -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-primary font-semibold uppercase tracking-wide">Default Shape Architecture</span>
+<span class="font-label-mono text-label-mono text-secondary">ACTIVE PLAYBOOK</span>
+</div>
+<div class="grid grid-cols-4 gap-space-xs mt-1">
+<button class="formation-chip py-1.5 px-2 bg-surface text-center transition-colors" onclick="selectFormation(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">4-3-3</span>
+</button>
+<button class="formation-chip py-1.5 px-2 bg-surface-variant text-center transition-colors" onclick="selectFormation(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-primary">3-4-2-1</span>
+</button>
+<button class="formation-chip py-1.5 px-2 bg-surface text-center transition-colors" onclick="selectFormation(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">4-2-3-1</span>
+</button>
+<button class="formation-chip py-1.5 px-2 bg-surface text-center transition-colors" onclick="selectFormation(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">5-3-2</span>
+</button>
+</div>
+</div>
+<!-- Alert Thresholds -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">warning</span>
+<span class="font-body-md text-body-md text-primary font-semibold uppercase tracking-wide">Fatigue Critical Alert Threshold</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary" id="threshold-val">82%</span>
+</div>
+<input class="w-full h-1 bg-surface-container-lowest appearance-none accent-primary cursor-pointer mt-1" max="95" min="60" oninput="document.getElementById('threshold-val').innerText = this.value + '%'" type="range" value="82"/>
+<div class="flex justify-between items-center mt-1">
+<span class="font-label-mono text-label-mono text-outline">60% CONSERVATIVE</span>
+<span class="font-label-mono text-label-mono text-outline">95% REDLINE</span>
+</div>
+</div>
+</div>
+<!-- SECTION 4: Coaching Staff Roster -->
+<div class="w-full bg-surface-container flex flex-col p-margin gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-widest">Coaching Staff Matrix</span>
+<span class="bg-surface-variant px-1.5 font-label-mono text-label-mono text-primary">04 SLOTS FILLED</span>
+</div>
+<span class="font-label-mono text-label-mono text-outline">BENCH ALLOC</span>
+</div>
+<div class="flex flex-col gap-space-xs w-full">
+<!-- Staff Row 1 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 bg-surface-container-lowest flex items-center justify-center font-headline-sm text-headline-sm text-primary flex-shrink-0">
+            02
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-primary font-semibold truncate">J. Arispe</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">Asst. Manager // Set-Pieces</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-mono text-label-mono text-secondary uppercase">BENCH</span>
+</div>
+</div>
+<!-- Staff Row 2 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 bg-surface-container-lowest flex items-center justify-center font-headline-sm text-headline-sm text-primary flex-shrink-0">
+            07
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-primary font-semibold truncate">E. Lindqvist</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">Lead Video Analyst</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-mono text-label-mono text-secondary uppercase">GANTRY</span>
+</div>
+</div>
+<!-- Staff Row 3 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 bg-surface-container-lowest flex items-center justify-center font-headline-sm text-headline-sm text-primary flex-shrink-0">
+            11
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-primary font-semibold truncate">Dr. K. Nakamura</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">High Performance &amp; Recovery</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-mono text-label-mono text-secondary uppercase">TUNNEL</span>
+</div>
+</div>
+<!-- Staff Row 4 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 bg-surface-container-lowest flex items-center justify-center font-headline-sm text-headline-sm text-outline flex-shrink-0">
+            19
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface-variant font-semibold truncate">M. Al-Farooq</span>
+<span class="font-label-tactical text-label-tactical text-outline uppercase">Opposition Scout (Scouting Away)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-mono text-label-mono text-outline uppercase">REMOTE</span>
+</div>
+</div>
+</div>
+<!-- SECTION 5: Invite a Coach Action Row -->
+<div class="w-full mt-space-sm bg-surface-container-lowest p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 bg-surface-container flex items-center justify-center">
+<span class="font-label-mono text-label-mono text-on-surface-variant font-bold">--</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical uppercase text-primary tracking-wider">Open Staff Credential</span>
+<span class="font-label-mono text-label-mono text-outline">SLOT_05 // UNASSIGNED</span>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-tertiary-fixed-dim uppercase bg-surface px-1.5 py-0.5">VACANT</span>
+</div>
+<button class="w-full bg-on-tertiary-container hover:bg-error transition-colors p-space-sm flex items-center justify-between text-left group" onclick="alert('Invitation link generated for Tactical Staff Portal.')" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">person_add</span>
+<span class="font-headline-sm text-headline-sm text-primary uppercase tracking-wide">Invite Staff Member</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary transition-transform group-hover:translate-x-1">→</span>
+</button>
+</div>
+</div>
+<!-- Operational Diagnostics / Footer Metatag -->
+<div class="p-margin text-center bg-surface flex flex-col items-center gap-1 pb-space-xl">
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-widest">TACTICAL TELEMETRY OS // BUILD CODE 884-FL</span>
+<span class="font-label-tactical text-label-tactical text-outline uppercase">ENCRYPTED APPARATUS CONSOLE • MATCHDAY DEPLOYED</span>
+</div>
+</div>
+<script>
+  function setLang(btn) {
+    document.querySelectorAll('.lang-tab').forEach(el => {
+      el.classList.remove('active', 'bg-surface-variant');
+      el.classList.add('bg-surface-container');
+      const ind = el.querySelector('.indicator');
+      if (ind) ind.className = 'indicator absolute bottom-0 left-0 right-0 h-1 bg-transparent';
+      const heading = el.querySelector('.font-headline-md');
+      if (heading) {
+        heading.classList.remove('text-primary');
+        heading.classList.add('text-on-surface-variant');
+      }
+      const sub = el.querySelector('.font-label-tactical');
+      if (sub) {
+        sub.classList.remove('text-primary');
+        sub.classList.add('text-on-surface-variant');
+      }
+    });
+
+    btn.classList.add('active', 'bg-surface-variant');
+    btn.classList.remove('bg-surface-container');
+    const ind = btn.querySelector('.indicator');
+    if (ind) ind.className = 'indicator absolute bottom-0 left-0 right-0 h-1 bg-secondary-fixed';
+    const heading = btn.querySelector('.font-headline-md');
+    if (heading) {
+      heading.classList.add('text-primary');
+      heading.classList.remove('text-on-surface-variant');
+    }
+    const sub = btn.querySelector('.font-label-tactical');
+    if (sub) {
+      sub.classList.add('text-primary');
+      sub.classList.remove('text-on-surface-variant');
+    }
+  }
+
+  function toggleTelemetry(btn) {
+    const knob = btn.querySelector('span');
+    const isActive = knob.classList.contains('translate-x-6');
+    if (isActive) {
+      knob.classList.remove('translate-x-6');
+      knob.classList.add('translate-x-0');
+      btn.classList.remove('bg-secondary-container');
+      btn.classList.add('bg-surface-container-lowest');
+    } else {
+      knob.classList.remove('translate-x-0');
+      knob.classList.add('translate-x-6');
+      btn.classList.add('bg-secondary-container');
+      btn.classList.remove('bg-surface-container-lowest');
+    }
+  }
+
+  function selectFormation(chip) {
+    document.querySelectorAll('.formation-chip').forEach(c => {
+      c.classList.remove('bg-surface-variant');
+      c.classList.add('bg-surface');
+      const text = c.querySelector('span');
+      if (text) {
+        text.classList.remove('text-primary');
+        text.classList.add('text-on-surface-variant');
+      }
+    });
+
+    chip.classList.add('bg-surface-variant');
+    chip.classList.remove('bg-surface');
+    const activeText = chip.querySelector('span');
+    if (activeText) {
+      activeText.classList.remove('text-on-surface-variant');
+      activeText.classList.add('text-primary');
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary"><div class="flex justify-between items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] flex-1 text-on-surface-variant transition-colors hover:text-on-surface" data-path="tactics" href="#"><span class="material-symbols-outlined text-[24px]">strategy</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1">Tactics</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] flex-1 text-on-surface-variant transition-colors hover:text-on-surface" data-path="matches" href="#"><span class="material-symbols-outlined text-[24px]">sports_soccer</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1">Matches</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] flex-1 text-on-surface-variant transition-colors hover:text-on-surface" data-path="opponents" href="#"><span class="material-symbols-outlined text-[24px]">shield</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1">Opponents</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] flex-1 text-on-surface-variant transition-colors hover:text-on-surface" data-path="assistant" href="#"><span class="material-symbols-outlined text-[24px]">smart_toy</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1">Assistant</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] flex-1 transition-colors text-primary" data-path="settings" href="#"><span class="material-symbols-outlined text-[24px]">settings</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1">Settings</span></a></div></nav></body></html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<title>CoachAI — Teams Detail (Mobile)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error-container": "#93000a",
+            "surface-container-high": "#1c2d26",
+            "inverse-primary": "#5f5f5a",
+            "tertiary-fixed-dim": "#ffb4a7",
+            "on-secondary": "#003823",
+            "on-secondary-fixed-variant": "#0c5135",
+            "on-error-container": "#ffdad6",
+            "background": "#061610",
+            "on-primary": "#30312d",
+            "surface-bright": "#2b3d35",
+            "surface-container-lowest": "#02110b",
+            "on-secondary-container": "#83c39f",
+            "primary-container": "#e4e2dd",
+            "surface-container-low": "#0e1f18",
+            "on-primary-container": "#656560",
+            "on-tertiary": "#670500",
+            "on-surface": "#d3e7dc",
+            "secondary-container": "#0c5135",
+            "surface-tint": "#c8c6c1",
+            "outline-variant": "#464741",
+            "on-secondary-fixed": "#002112",
+            "surface-container": "#12231c",
+            "on-tertiary-fixed-variant": "#910a00",
+            "inverse-on-surface": "#23342c",
+            "surface-dim": "#061610",
+            "surface-container-highest": "#273831",
+            "on-error": "#690005",
+            "secondary-fixed-dim": "#94d4b0",
+            "on-tertiary-fixed": "#400200",
+            "outline": "#91918a",
+            "error": "#e3402a",
+            "inverse-surface": "#d3e7dc",
+            "tertiary-fixed": "#ffdad4",
+            "on-background": "#d3e7dc",
+            "tertiary": "#ffffff",
+            "surface-variant": "#273831",
+            "secondary-fixed": "#b0f1cb",
+            "on-tertiary-container": "#c12714",
+            "primary-fixed": "#e4e2dd",
+            "primary": "#ffffff",
+            "on-primary-fixed": "#1b1c18",
+            "secondary": "#94d4b0",
+            "surface": "#061610",
+            "tertiary-container": "#ffdad4",
+            "on-primary-fixed-variant": "#474743",
+            "on-surface-variant": "#c7c7bf",
+            "primary-fixed-dim": "#c8c6c1"
+          },
+          fontFamily: {
+            "metric-huge-mobile": ["Anton", "sans-serif"],
+            "display-lg-mobile": ["Anton", "sans-serif"],
+            "label-tactical": ["IBM Plex Sans", "sans-serif"],
+            "display-lg": ["Anton", "sans-serif"],
+            "headline-sm": ["Anton", "sans-serif"],
+            "label-mono": ["IBM Plex Sans", "monospace"],
+            "body-md": ["IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans", "sans-serif"],
+            "metric-huge": ["Anton", "sans-serif"],
+            "headline-lg": ["Anton", "sans-serif"],
+            "headline-md": ["Anton", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #061610;
+        color: #d3e7dc;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 16px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .chalk-border {
+      border: 1px solid rgba(148, 212, 176, 0.18);
+    }
+    .pitch-grid {
+      background-image: radial-gradient(rgba(148, 212, 176, 0.08) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-secondary selection:text-surface">
+<!-- Top Sticky App Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 pt-safe bg-[#061610]/95 backdrop-blur-md border-b border-[#273831]">
+<div class="h-14 px-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<a aria-label="Go back to Teams" class="min-h-[44px] min-w-[44px] flex items-center justify-center -ml-2 text-primary hover:text-secondary active:scale-95 transition-all" href="/teams">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+<span class="font-label-tactical text-[11px] uppercase tracking-wider font-semibold ml-0.5">TEAMS</span>
+</a>
+<div class="flex flex-col border-l border-[#273831] pl-3 py-0.5">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-mono text-[10px] uppercase text-secondary font-medium tracking-widest">CALL-SIGN // TAC-01</span>
+</div>
+<span class="font-label-tactical text-[11px] uppercase text-on-surface-variant tracking-wider">MATCHDAY ACTIVE</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="w-9 h-9 rounded-md bg-surface-container-high border border-[#273831] flex items-center justify-center text-on-surface active:bg-surface-bright">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+</button>
+<div class="w-9 h-9 rounded-md bg-secondary text-surface font-headline-sm flex items-center justify-center text-sm shadow-sm ring-1 ring-secondary/30">
+          CA
+        </div>
+</div>
+</div>
+</header>
+<!-- Main Content Scroll Area -->
+<main class="flex flex-col relative w-full pt-[calc(3.5rem+env(safe-area-inset-top,0px))] pb-28 px-4 bg-surface">
+<!-- Team Header Card -->
+<section class="flex flex-col bg-surface-container rounded-lg p-4 mt-3 mb-4 chalk-border shadow-lg relative overflow-hidden">
+<!-- Top Meta Badges -->
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-surface-container-highest border border-[#464741]/50 rounded text-on-surface font-label-tactical text-[10px] uppercase font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            SENIOR SQUAD
+          </span>
+<span class="inline-flex items-center px-2 py-0.5 bg-secondary-container text-on-secondary-container border border-secondary/20 rounded font-label-tactical text-[10px] uppercase font-semibold">
+            EPL TIER 1 / USSF PRO
+          </span>
+<span class="inline-flex items-center px-2 py-0.5 bg-[#1c2d26] text-secondary rounded font-label-tactical text-[10px] uppercase font-semibold">
+            24 ACTIVE
+          </span>
+</div>
+<span class="font-label-mono text-[10px] text-on-surface-variant uppercase tracking-widest shrink-0">
+          ID: TM-084
+        </span>
+</div>
+<!-- Club Title -->
+<div class="flex items-baseline justify-between mb-3 border-b border-[#273831] pb-2">
+<div>
+<span class="font-label-mono text-[11px] text-secondary uppercase tracking-widest block font-medium">DIVISION // ALPHA · SENIOR A</span>
+<h1 class="font-headline-lg text-[28px] sm:text-[32px] tracking-wide uppercase text-primary leading-tight">LONDON VANGUARD FC</h1>
+</div>
+<span class="font-metric-huge text-[40px] text-primary/30 font-headline-sm leading-none select-none">
+          01
+        </span>
+</div>
+<!-- Formation Selector Dropdown Pill Trigger -->
+<button aria-label="Toggle formation selector" class="w-full flex items-center justify-between px-3.5 py-2.5 bg-surface-container-high border border-[#273831] hover:border-secondary/40 rounded text-primary mb-3 active:bg-surface-bright transition-all text-left" id="formation-btn">
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded bg-[#0c5135] text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[15px]">tune</span>
+</div>
+<div>
+<span class="font-label-tactical text-[11px] uppercase tracking-wider text-primary font-semibold block">SYSTEM // 4-3-3 HIGH PRESS</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant block uppercase">ATTACKING OVERLOAD · POSSESSION TACTIC</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">swap_vert</span>
+</button>
+<!-- Mini Tactical Chalk Pitch Container -->
+<div class="flex flex-col items-center bg-surface-container-lowest border border-[#273831] rounded-lg p-3 pitch-grid">
+<div class="relative w-full max-w-[280px] h-[220px] bg-[#0c1f17]/90 rounded-md overflow-hidden flex items-center justify-center border border-[#94d4b0]/25 shadow-inner">
+<!-- Authentic SVG Chalk Pitch Diagram -->
+<svg class="w-full h-full" fill="none" viewbox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+<!-- Outer Chalk Field Markings -->
+<rect height="220" stroke="#94d4b0" stroke-dasharray="4 2" stroke-opacity="0.35" stroke-width="1.5" width="176" x="12" y="10"></rect>
+<!-- Halfway Line & Center Circle -->
+<line stroke="#94d4b0" stroke-dasharray="3 2" stroke-opacity="0.4" stroke-width="1.2" x1="12" x2="188" y1="120" y2="120"></line>
+<circle cx="100" cy="120" r="26" stroke="#94d4b0" stroke-dasharray="3 2" stroke-opacity="0.4" stroke-width="1.2"></circle>
+<circle cx="100" cy="120" fill="#94d4b0" fill-opacity="0.7" r="2"></circle>
+<!-- Top Penalty Box (Opponent End) -->
+<rect height="42" stroke="#94d4b0" stroke-opacity="0.35" stroke-width="1.2" width="96" x="52" y="10"></rect>
+<rect height="16" stroke="#94d4b0" stroke-opacity="0.3" stroke-width="1" width="52" x="74" y="10"></rect>
+<path d="M 82 52 A 18 18 0 0 0 118 52" fill="none" stroke="#94d4b0" stroke-opacity="0.3" stroke-width="1"></path>
+<!-- Bottom Penalty Box (Home End) -->
+<rect height="42" stroke="#94d4b0" stroke-opacity="0.35" stroke-width="1.2" width="96" x="52" y="188"></rect>
+<rect height="16" stroke="#94d4b0" stroke-opacity="0.3" stroke-width="1" width="52" x="74" y="214"></rect>
+<path d="M 82 188 A 18 18 0 0 1 118 188" fill="none" stroke="#94d4b0" stroke-opacity="0.3" stroke-width="1"></path>
+<!-- Tactical Press Vectors -->
+<path d="M 32 58 L 32 36" opacity="0.8" stroke="#94d4b0" stroke-dasharray="3 2" stroke-width="1.5"></path>
+<path d="M 168 58 L 168 36" opacity="0.8" stroke="#94d4b0" stroke-dasharray="3 2" stroke-width="1.5"></path>
+<path d="M 100 48 L 100 24" stroke="#e3402a" stroke-dasharray="3 2" stroke-width="1.8"></path>
+<polygon fill="#e3402a" points="100,20 97,25 103,25"></polygon>
+<!-- Attack Forward Line (Top) -->
+<!-- LW (11) -->
+<g transform="translate(32, 60)">
+<circle cx="0" cy="0" fill="#12231c" r="8" stroke="#94d4b0" stroke-width="1.5"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="8.5" text-anchor="middle" x="0" y="3.5">11</text>
+</g>
+<!-- ST (29 - Havertz) -->
+<g transform="translate(100, 48)">
+<circle cx="0" cy="0" fill="#e3402a" r="9" stroke="#ffffff" stroke-width="1.5"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="9" text-anchor="middle" x="0" y="3.5">29</text>
+</g>
+<!-- RW (07 - Saka) -->
+<g transform="translate(168, 60)">
+<circle cx="0" cy="0" fill="#12231c" r="8" stroke="#94d4b0" stroke-width="1.5"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="8.5" text-anchor="middle" x="0" y="3.5">07</text>
+</g>
+<!-- Midfield Triumvirate -->
+<!-- LCM (08 - Odegaard) -->
+<g transform="translate(56, 104)">
+<circle cx="0" cy="0" fill="#ffffff" r="8" stroke="#94d4b0" stroke-width="1.5"></circle>
+<text fill="#061610" font-family="Anton" font-size="8.5" text-anchor="middle" x="0" y="3.5">08</text>
+</g>
+<!-- CDM (05 - Partey/Rice) -->
+<g transform="translate(100, 130)">
+<circle cx="0" cy="0" fill="#94d4b0" r="8.5" stroke="#003823" stroke-width="1.5"></circle>
+<text fill="#003823" font-family="Anton" font-size="9" text-anchor="middle" x="0" y="3.5">05</text>
+</g>
+<!-- RCM (41 - Rice) -->
+<g transform="translate(144, 104)">
+<circle cx="0" cy="0" fill="#ffffff" r="8" stroke="#94d4b0" stroke-width="1.5"></circle>
+<text fill="#061610" font-family="Anton" font-size="8.5" text-anchor="middle" x="0" y="3.5">41</text>
+</g>
+<!-- Defensive Back Four -->
+<!-- LB (12) -->
+<g transform="translate(28, 168)">
+<circle cx="0" cy="0" fill="#12231c" r="7.5" stroke="#ffffff" stroke-width="1.2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="8" text-anchor="middle" x="0" y="3.2">12</text>
+</g>
+<!-- LCB (06 - Gabriel) -->
+<g transform="translate(76, 178)">
+<circle cx="0" cy="0" fill="#12231c" r="7.5" stroke="#ffffff" stroke-width="1.2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="8" text-anchor="middle" x="0" y="3.2">06</text>
+</g>
+<!-- RCB (02 - Saliba) -->
+<g transform="translate(124, 178)">
+<circle cx="0" cy="0" fill="#12231c" r="7.5" stroke="#ffffff" stroke-width="1.2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="8" text-anchor="middle" x="0" y="3.2">02</text>
+</g>
+<!-- RB (04 - White) -->
+<g transform="translate(172, 168)">
+<circle cx="0" cy="0" fill="#12231c" r="7.5" stroke="#ffffff" stroke-width="1.2"></circle>
+<text fill="#ffffff" font-family="Anton" font-size="8" text-anchor="middle" x="0" y="3.2">04</text>
+</g>
+<!-- Goalkeeper (01 - Raya) -->
+<g transform="translate(100, 222)">
+<circle cx="0" cy="0" fill="#94d4b0" r="9" stroke="#ffffff" stroke-width="1.5"></circle>
+<text fill="#003823" font-family="Anton" font-size="9" text-anchor="middle" x="0" y="3.5">01</text>
+</g>
+</svg>
+</div>
+<!-- 3-Column Micro Telemetry Stats -->
+<div class="w-full grid grid-cols-3 gap-2 mt-3 text-center">
+<div class="bg-surface-container py-2 px-2 rounded chalk-border">
+<span class="font-label-mono text-[9px] uppercase text-on-surface-variant block tracking-wider font-semibold">Pitch Width</span>
+<span class="font-headline-sm text-sm text-primary">52M</span>
+</div>
+<div class="bg-surface-container py-2 px-2 rounded chalk-border">
+<span class="font-label-mono text-[9px] uppercase text-on-surface-variant block tracking-wider font-semibold">Def Block</span>
+<span class="font-headline-sm text-sm text-secondary">HIGH (42M)</span>
+</div>
+<div class="bg-surface-container py-2 px-2 rounded chalk-border">
+<span class="font-label-mono text-[9px] uppercase text-on-surface-variant block tracking-wider font-semibold">Press Intensity</span>
+<span class="font-headline-sm text-sm text-error">8.4 PPDA</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Squad Roster List Grouped by Position -->
+<div class="flex flex-col gap-4 w-full">
+<!-- Group 1: Goalkeepers -->
+<section class="flex flex-col">
+<!-- Sticky Position Header -->
+<div class="sticky top-[calc(3.5rem+env(safe-area-inset-top,0px))] z-30 bg-[#0e1f18]/95 backdrop-blur-md px-3 py-2 rounded-t flex items-center justify-between border-b border-[#273831] chalk-border">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-sm bg-secondary"></span>
+<h2 class="font-headline-sm text-base uppercase text-primary tracking-wider">01 // GOALKEEPERS (2)</h2>
+</div>
+<span class="font-label-tactical text-[10px] uppercase text-secondary font-semibold bg-secondary/10 px-2 py-0.5 rounded">Active Area</span>
+</div>
+<!-- Player 01: David Raya -->
+<div class="flex items-center justify-between p-3 bg-surface-container border-b border-[#1c2d26] active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-primary text-[#061610] rounded flex items-center justify-center font-headline-sm text-base shrink-0 shadow-sm">
+              01
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">DAVID RAYA</span>
+<span class="px-1.5 py-0.2 bg-secondary/20 text-secondary rounded font-label-mono text-[9px] font-semibold uppercase">CPT</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">SWEEPER KEEPER · FIRST XI</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-secondary leading-none">9.3</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+<!-- Player 23: Neto / Lindstrom -->
+<div class="flex items-center justify-between p-3 bg-surface-container rounded-b active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-surface-container-high text-on-surface rounded flex items-center justify-center font-headline-sm text-base shrink-0 border border-[#273831]">
+              23
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">E. LINDSTROM</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">SHOT STOPPER · RESERVE</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-on-surface leading-none">7.8</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Group 2: Defenders -->
+<section class="flex flex-col">
+<div class="sticky top-[calc(3.5rem+env(safe-area-inset-top,0px))] z-30 bg-[#0e1f18]/95 backdrop-blur-md px-3 py-2 rounded-t flex items-center justify-between border-b border-[#273831] chalk-border">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-sm bg-secondary"></span>
+<h2 class="font-headline-sm text-base uppercase text-primary tracking-wider">02 // DEFENDERS (8)</h2>
+</div>
+<span class="font-label-tactical text-[10px] uppercase text-on-surface-variant font-semibold bg-surface-container-high px-2 py-0.5 rounded">Back Line</span>
+</div>
+<!-- Player 02: William Saliba -->
+<div class="flex items-center justify-between p-3 bg-surface-container border-b border-[#1c2d26] active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-primary text-[#061610] rounded flex items-center justify-center font-headline-sm text-base shrink-0 shadow-sm">
+              02
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">WILLIAM SALIBA</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">BALL-PLAYING CB · COVER</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-secondary leading-none">9.4</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+<!-- Player 06: Gabriel Magalhães -->
+<div class="flex items-center justify-between p-3 bg-surface-container border-b border-[#1c2d26] active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-primary text-[#061610] rounded flex items-center justify-center font-headline-sm text-base shrink-0 shadow-sm">
+              06
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">G. MAGALHÃES</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">STOPPER CB · AERIAL THREAT</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-secondary leading-none">9.1</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+<!-- Player 04: Ben White -->
+<div class="flex items-center justify-between p-3 bg-surface-container border-b border-[#1c2d26] active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-surface-container-high text-on-surface rounded flex items-center justify-center font-headline-sm text-base shrink-0 border border-[#273831]">
+              04
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">BEN WHITE</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">INVERTED FULLBACK · RIGHT</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-primary leading-none">8.8</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+<!-- Player 12: Jurrien Timber -->
+<div class="flex items-center justify-between p-3 bg-surface-container rounded-b active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-surface-container-high text-on-surface rounded flex items-center justify-center font-headline-sm text-base shrink-0 border border-[#273831]">
+              12
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">J. TIMBER</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">OVERLAP WINGBACK · LEFT</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-on-surface-variant leading-none">8.2</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-mono text-[10px] text-tertiary-fixed-dim font-semibold uppercase">REST</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Group 3: Midfielders -->
+<section class="flex flex-col">
+<div class="sticky top-[calc(3.5rem+env(safe-area-inset-top,0px))] z-30 bg-[#0e1f18]/95 backdrop-blur-md px-3 py-2 rounded-t flex items-center justify-between border-b border-[#273831] chalk-border">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-sm bg-secondary"></span>
+<h2 class="font-headline-sm text-base uppercase text-primary tracking-wider">03 // MIDFIELDERS (8)</h2>
+</div>
+<span class="font-label-tactical text-[10px] uppercase text-on-surface-variant font-semibold bg-surface-container-high px-2 py-0.5 rounded">Engine Room</span>
+</div>
+<!-- Player 08: Martin Ødegaard -->
+<div class="flex items-center justify-between p-3 bg-surface-container border-b border-[#1c2d26] active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-primary text-[#061610] rounded flex items-center justify-center font-headline-sm text-base shrink-0 shadow-sm">
+              08
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">MARTIN ØDEGAARD (C)</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">ADVANCED PLAYMAKER · CAM</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-secondary leading-none">9.6</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+<!-- Player 41: Declan Rice -->
+<div class="flex items-center justify-between p-3 bg-surface-container border-b border-[#1c2d26] active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-primary text-[#061610] rounded flex items-center justify-center font-headline-sm text-base shrink-0 shadow-sm">
+              41
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">DECLAN RICE</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">BOX-TO-BOX ENFORCER · MEZZALA</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-secondary leading-none">9.4</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+<!-- Player 05: Thomas Partey -->
+<div class="flex items-center justify-between p-3 bg-surface-container rounded-b active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-surface-container-high text-on-surface rounded flex items-center justify-center font-headline-sm text-base shrink-0 border border-[#273831]">
+              05
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">THOMAS PARTEY</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">DEEP ANCHOR PIVOT · CDM</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-primary leading-none">8.7</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Group 4: Forwards & Wingers -->
+<section class="flex flex-col">
+<div class="sticky top-[calc(3.5rem+env(safe-area-inset-top,0px))] z-30 bg-[#0e1f18]/95 backdrop-blur-md px-3 py-2 rounded-t flex items-center justify-between border-b border-[#273831] chalk-border">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-sm bg-error"></span>
+<h2 class="font-headline-sm text-base uppercase text-primary tracking-wider">04 // FORWARDS &amp; WINGERS (6)</h2>
+</div>
+<span class="font-label-tactical text-[10px] uppercase text-error font-semibold bg-error/15 px-2 py-0.5 rounded">Vanguard</span>
+</div>
+<!-- Player 07: Bukayo Saka -->
+<div class="flex items-center justify-between p-3 bg-surface-container border-b border-[#1c2d26] active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-error text-white rounded flex items-center justify-center font-headline-sm text-base shrink-0 shadow-md">
+              07
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">BUKAYO SAKA</span>
+<span class="px-1.5 py-0.2 bg-error/25 text-error border border-error/30 rounded font-label-mono text-[9px] font-bold uppercase">KEY</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">INVERTED WINGER · RW</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-secondary leading-none">9.8</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+<!-- Player 29: Kai Havertz -->
+<div class="flex items-center justify-between p-3 bg-surface-container border-b border-[#1c2d26] active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-primary text-[#061610] rounded flex items-center justify-center font-headline-sm text-base shrink-0 shadow-sm">
+              29
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">KAI HAVERTZ</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">TARGET MAN · FALSE NINE</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-secondary leading-none">9.2</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+<!-- Player 11: Gabriel Martinelli -->
+<div class="flex items-center justify-between p-3 bg-surface-container rounded-b active:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 bg-surface-container-high text-on-surface rounded flex items-center justify-center font-headline-sm text-base shrink-0 border border-[#273831]">
+              11
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-primary tracking-wide uppercase truncate">G. MARTINELLI</span>
+</div>
+<span class="font-label-tactical text-[11px] text-on-surface-variant uppercase truncate font-medium">DIRECT WINGER · LW SPEED</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-base text-secondary leading-none">8.9</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-mono text-[10px] text-secondary font-semibold uppercase">FIT</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#464741]">chevron_right</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Touchline Bottom Fixed Action Bar -->
+<aside class="fixed bottom-0 left-0 right-0 z-40 bg-[#061610]/95 backdrop-blur-lg border-t border-[#273831] pb-safe">
+<div class="max-w-md mx-auto px-4 py-3 flex items-center gap-3">
+<!-- Primary Touchline Red Action Button -->
+<button aria-label="Add player to squad roster" class="flex-1 min-h-[48px] flex items-center justify-center gap-2 py-3 px-4 bg-error text-white rounded font-headline-sm text-lg uppercase tracking-wider shadow-lg active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ ADD PLAYER</span>
+</button>
+<!-- Tactical Sheet Print / Export -->
+<button aria-label="Export matchday tactical sheet" class="h-12 w-12 shrink-0 flex items-center justify-center bg-surface-container-high text-on-surface border border-[#273831] hover:border-secondary/40 rounded active:bg-surface-bright transition-colors" title="Export Matchday Team Sheet">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</button>
+<!-- Pitch Tactic Settings -->
+<button aria-label="Tactical system settings" class="h-12 w-12 shrink-0 flex items-center justify-center bg-surface-container-high text-on-surface border border-[#273831] hover:border-secondary/40 rounded active:bg-surface-bright transition-colors" title="Matchday Tactics">
+<span class="material-symbols-outlined text-[20px]">sports</span>
+</button>
+</div>
+</aside>
+<!-- Interactive Script for Formation Switcher -->
+<script>
+    (function() {
+      const formationBtn = document.getElementById('formation-btn');
+      if (formationBtn) {
+        formationBtn.addEventListener('click', function() {
+          const title = this.querySelector('.font-label-tactical');
+          const sub = this.querySelector('.font-label-mono');
+          if (title.textContent.includes('4-3-3')) {
+            title.textContent = 'SYSTEM // 4-2-3-1 MID BLOCK';
+            if (sub) sub.textContent = 'COMPACT DEFENSE · RAPID COUNTER';
+          } else {
+            title.textContent = 'SYSTEM // 4-3-3 HIGH PRESS';
+            if (sub) sub.textContent = 'ATTACKING OVERLOAD · POSSESSION TACTIC';
+          }
+        });
+      }
+    })();
+  </script>
+</body></html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-background": "#d3e7dc", "surface-tint": "#c8c6c1", "on-tertiary-fixed-variant": "#910a00", "secondary": "#94d4b0", "primary": "#ffffff", "on-error-container": "#ffdad6", "on-secondary-fixed-variant": "#0c5135", "secondary-container": "#0c5135", "on-secondary-container": "#83c39f", "inverse-surface": "#d3e7dc", "on-primary-fixed-variant": "#474743", "on-tertiary-fixed": "#400200", "primary-container": "#e4e2dd", "error-container": "#93000a", "tertiary-fixed-dim": "#ffb4a7", "on-secondary-fixed": "#002112", "primary-fixed-dim": "#c8c6c1", "inverse-primary": "#5f5f5a", "on-surface": "#d3e7dc", "on-primary-fixed": "#1b1c18", "on-primary": "#30312d", "tertiary": "#ffffff", "surface-bright": "#2b3d35", "outline": "#91918a", "on-tertiary-container": "#c12714", "error": "#ffb4ab", "on-secondary": "#003823", "tertiary-fixed": "#ffdad4", "on-primary-container": "#656560", "surface-container": "#12231c", "surface-container-lowest": "#02110b", "on-error": "#690005", "secondary-fixed": "#b0f1cb", "background": "#061610", "surface-variant": "#273831", "surface-container-high": "#1c2d26", "surface-container-highest": "#273831", "surface-container-low": "#0e1f18", "secondary-fixed-dim": "#94d4b0", "on-surface-variant": "#c7c7bf", "surface-dim": "#061610", "primary-fixed": "#e4e2dd", "surface": "#061610", "inverse-on-surface": "#23342c", "outline-variant": "#464741", "tertiary-container": "#ffdad4", "on-tertiary": "#670500" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-xl": "2rem", "margin-desktop": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "margin": "1rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "margin-tablet": "1.5rem" }, "fontFamily": { "label-tactical": [ "IBM Plex Sans" ], "headline-lg": [ "Anton" ], "metric-huge": [ "Anton" ], "label-mono": [ "IBM Plex Sans" ], "metric-huge-mobile": [ "Anton" ], "body-sm": [ "IBM Plex Sans" ], "headline-sm": [ "Anton" ], "body-lg": [ "IBM Plex Sans" ], "headline-md": [ "Anton" ], "body-md": [ "IBM Plex Sans" ], "display-lg-mobile": [ "Anton" ], "display-lg": [ "Anton" ] }, "fontSize": { "label-tactical": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600" } ], "headline-lg": [ "32px", { "lineHeight": "36px", "letterSpacing": "0.03em", "fontWeight": "400" } ], "metric-huge": [ "64px", { "lineHeight": "64px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "label-mono": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "500" } ], "metric-huge-mobile": [ "44px", { "lineHeight": "44px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "headline-sm": [ "18px", { "lineHeight": "22px", "letterSpacing": "0.04em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-md": [ "24px", { "lineHeight": "28px", "letterSpacing": "0.03em", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "display-lg-mobile": [ "38px", { "lineHeight": "42px", "letterSpacing": "0.02em", "fontWeight": "400" } ], "display-lg": [ "56px", { "lineHeight": "60px", "letterSpacing": "0.02em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><a class="p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" data-path="squad-roster" href="#"><span class="material-symbols-outlined text-[20px]">arrow_back</span></a><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary">CoachAI</span><span class="font-label-mono text-label-mono text-outline uppercase px-space-xs py-0.5 bg-surface-container-high rounded">Desk</span></div><div class="hidden md:flex items-center text-outline-variant font-label-mono text-label-mono uppercase tracking-widest pl-space-sm"><span>Teams</span><span class="px-space-xs text-outline">//</span><span class="text-secondary">New Squad</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden sm:flex items-center gap-space-md bg-surface-container-low px-space-md py-1 rounded"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">Draft Telemetry: Rec</span></div><span class="font-label-mono text-label-mono text-outline">Tactical Link Up</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Desk Environment Backdrop -->
+<div class="w-full min-h-[calc(100vh-4rem)] bg-surface-container py-space-xl px-gutter md:px-gutter-desktop relative flex justify-center items-start overflow-hidden">
+<!-- Subtle Tactical Desk Markings / Grid Underlay -->
+<div class="absolute inset-0 pointer-events-none opacity-10 flex justify-between px-12 py-8">
+<div class="w-px h-full bg-outline"></div>
+<div class="w-px h-full bg-outline hidden md:block"></div>
+<div class="w-px h-full bg-outline hidden lg:block"></div>
+<div class="w-px h-full bg-outline"></div>
+</div>
+<div class="absolute top-12 left-10 text-outline-variant font-label-mono text-label-mono uppercase tracking-[0.3em] pointer-events-none select-none hidden lg:block">
+      DESK POS // PITCHSIDE_BAY_04 // OFFICIAL PROTOCOL
+    </div>
+<div class="absolute bottom-8 right-12 text-outline-variant font-label-mono text-label-mono uppercase tracking-[0.2em] pointer-events-none select-none hidden lg:block">
+      REF: FA-ENG-REG-DOC // MATCHDAY LOGISTICS
+    </div>
+<!-- The Tactile Paper Team Sheet (Chalk Canvas) -->
+<div class="relative w-full max-w-[890px] bg-primary text-on-primary shadow-2xl transition-all duration-300 transform -rotate-[0.3deg] p-space-md sm:p-space-lg md:p-space-xl my-2">
+<!-- Paper Clip / Clamp Aesthetic on top edge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 w-28 h-6 bg-surface-container-high rounded-sm shadow-md flex items-center justify-center gap-1.5 z-20">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="h-1 w-14 bg-surface-container-lowest rounded-full"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Watermark / Micro Header Meta -->
+<div class="flex flex-wrap items-start justify-between pb-space-md gap-y-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="bg-surface-container text-primary font-label-tactical text-label-tactical px-2 py-0.5 tracking-widest uppercase">
+              CONFIDENTIAL // DEPT. FOOTBALL OPS
+            </span>
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase tracking-wider">
+              FORM #REG-2025-SQD
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg uppercase tracking-tight text-on-primary mt-1">
+            Official Squad Registration Dossier
+          </h1>
+<p class="font-label-tactical text-label-tactical uppercase text-on-primary-container tracking-wider">
+            TECHNICAL DIRECTORY ARCHIVE // SANCTIONED ROSTER SUBMISSION
+          </p>
+</div>
+<!-- Official Club Register Seal Stamp -->
+<div class="relative flex items-center justify-center w-24 h-24 p-2 text-center select-none transform rotate-[-6deg] opacity-90">
+<div class="absolute inset-0 bg-on-tertiary-container/10 rounded-full animate-pulse"></div>
+<svg class="absolute inset-0 w-full h-full text-on-tertiary-container" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="46" stroke="currentColor" stroke-dasharray="3, 2" stroke-width="2.5"></circle>
+<circle cx="50" cy="50" fill="none" r="41" stroke="currentColor" stroke-width="1"></circle>
+</svg>
+<div class="flex flex-col items-center justify-center text-on-tertiary-container">
+<span class="font-label-mono text-[8px] leading-tight uppercase font-bold tracking-widest">COACHAI OS</span>
+<span class="font-headline-sm text-headline-sm uppercase leading-none my-0.5">VALID</span>
+<span class="font-label-mono text-[7px] leading-none uppercase tracking-tighter">REG: 2025-26</span>
+</div>
+</div>
+</div>
+<div class="w-full h-1 bg-on-primary my-space-md opacity-90"></div>
+<!-- Registration Form Body -->
+<form class="space-y-space-lg" id="team-sheet-form" onsubmit="event.preventDefault();">
+<!-- Field 1: Squad / Team Name -->
+<div class="flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary font-bold" for="team-name">
+              01. Official Squad / Roster Designation
+            </label>
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase">CALL-SIGN NOTATION MANDATORY</span>
+</div>
+<div class="relative">
+<input class="w-full bg-primary-container/40 text-on-primary font-headline-md text-headline-md uppercase px-space-md py-2.5 outline-none placeholder:text-outline-variant focus:bg-primary-container transition-colors" id="team-name" placeholder="e.g. U-23 ELITE DEVELOPMENT SQUAD [ALPHA]" type="text" value="U-23 ELITE DEVELOPMENT SQUAD"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-primary-container">
+            This identity will calibrate match logs, player GPS vests, and referee submission sheets.
+          </span>
+</div>
+<!-- Field 2: Age Category (Shirt-number Athletic Tabs) -->
+<div class="flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary font-bold">
+              02. Age Tier &amp; Competition Level
+            </label>
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase">SELECT RUNNING TAB</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-space-sm" id="age-tabs-container">
+<button class="age-tab group relative flex flex-col items-center justify-center p-space-sm bg-surface-container text-primary transition-all duration-150" onclick="selectAgeTab(this, 'SENIOR')" type="button">
+<span class="font-headline-lg text-headline-lg text-secondary group-hover:text-primary leading-none">01</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1 text-on-surface">SENIOR</span>
+</button>
+<button class="age-tab active-age-tab group relative flex flex-col items-center justify-center p-space-sm bg-on-primary text-primary transition-all duration-150 shadow-md ring-2 ring-on-primary" onclick="selectAgeTab(this, 'U-23')" type="button">
+<div class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-secondary rounded-full"></div>
+<span class="font-headline-lg text-headline-lg text-secondary leading-none">23</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1 text-primary">U-23</span>
+</button>
+<button class="age-tab group relative flex flex-col items-center justify-center p-space-sm bg-surface-container text-primary transition-all duration-150" onclick="selectAgeTab(this, 'U-21')" type="button">
+<span class="font-headline-lg text-headline-lg text-on-surface-variant group-hover:text-primary leading-none">21</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1 text-on-surface">U-21</span>
+</button>
+<button class="age-tab group relative flex flex-col items-center justify-center p-space-sm bg-surface-container text-primary transition-all duration-150" onclick="selectAgeTab(this, 'U-18')" type="button">
+<span class="font-headline-lg text-headline-lg text-on-surface-variant group-hover:text-primary leading-none">18</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1 text-on-surface">U-18</span>
+</button>
+<button class="age-tab group relative flex flex-col items-center justify-center p-space-sm bg-surface-container text-primary transition-all duration-150" onclick="selectAgeTab(this, 'ACADEMY')" type="button">
+<span class="font-headline-lg text-headline-lg text-on-surface-variant group-hover:text-primary leading-none">AC</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1 text-on-surface">ACADEMY</span>
+</button>
+<button class="age-tab group relative flex flex-col items-center justify-center p-space-sm bg-surface-container text-primary transition-all duration-150" onclick="selectAgeTab(this, 'YOUTH')" type="button">
+<span class="font-headline-lg text-headline-lg text-on-surface-variant group-hover:text-primary leading-none">YO</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider mt-1 text-on-surface">YOUTH</span>
+</button>
+</div>
+<input id="selected-age-category" type="hidden" value="U-23"/>
+</div>
+<!-- Field 3: Default Tactical Formation (Chalk Glyphs) -->
+<div class="flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary font-bold">
+                03. Baseline Pitch Archetype / Tactical Shape
+              </label>
+<span class="px-1.5 py-0.5 bg-surface-container-high text-primary font-label-mono text-label-mono uppercase">FIELD DISPOSITION</span>
+</div>
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase">TAP GLYPH TO PRE-SET</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-sm" id="formation-cards-container">
+<!-- 4-3-3 Attack (Active default) -->
+<div class="formation-card cursor-pointer bg-surface-container p-space-sm text-left transition-all duration-150 relative bg-surface-container-high shadow-lg" data-formation="4-3-3 ATTACK" onclick="selectFormation(this, '4-3-3 ATTACK')">
+<div class="active-indicator absolute -top-1.5 -left-1.5 bg-on-tertiary-container text-primary font-label-mono text-[9px] px-1 py-0.5 uppercase tracking-widest font-bold">
+                ACTIVE
+              </div>
+<div class="flex items-center justify-between pb-1">
+<span class="font-headline-sm text-headline-sm uppercase text-primary leading-tight">4-3-3</span>
+<span class="font-label-mono text-[9px] text-secondary tracking-widest uppercase">ATTACK</span>
+</div>
+<!-- Mini Pitch SVG chalkboard -->
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest p-1 overflow-hidden">
+<svg class="w-full h-full text-outline/30" fill="none" stroke="currentColor" viewbox="0 0 100 125">
+<!-- Pitch Lines -->
+<rect height="115" stroke-dasharray="3,2" stroke-width="1.2" width="90" x="5" y="5"></rect>
+<line stroke-dasharray="2,2" stroke-width="1" x1="5" x2="95" y1="62.5" y2="62.5"></line>
+<circle cx="50" cy="62.5" r="14" stroke-dasharray="2,2" stroke-width="1"></circle>
+<!-- 4-3-3 dots -->
+<!-- GK -->
+<circle cx="50" cy="112" fill="#F7F5EF" r="3.2"></circle>
+<!-- Back 4 -->
+<circle cx="20" cy="94" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="40" cy="97" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="60" cy="97" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="80" cy="94" fill="#F7F5EF" r="3.2"></circle>
+<!-- Mid 3 -->
+<circle cx="50" cy="74" fill="#94D4B0" r="3.2"></circle>
+<circle cx="32" cy="58" fill="#94D4B0" r="3.2"></circle>
+<circle cx="68" cy="58" fill="#94D4B0" r="3.2"></circle>
+<!-- Front 3 -->
+<circle cx="20" cy="30" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="50" cy="22" fill="#F7F5EF" r="3.6"></circle>
+<circle cx="80" cy="30" fill="#F7F5EF" r="3.2"></circle>
+<!-- Hand drawn tactical chalk loop -->
+<path d="M 40,15 C 65,12 65,30 46,30 C 35,30 38,18 52,18" fill="none" stroke="#E3402A" stroke-linecap="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="mt-1 flex items-center justify-between">
+<span class="font-label-mono text-[9px] text-on-surface-variant uppercase">HIGH OVERLOAD</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+</div>
+<!-- 4-2-3-1 Fluid -->
+<div class="formation-card cursor-pointer bg-surface-container p-space-sm text-left transition-all duration-150 relative hover:bg-surface-container-high opacity-85" data-formation="4-2-3-1 FLUID" onclick="selectFormation(this, '4-2-3-1 FLUID')">
+<div class="active-indicator hidden absolute -top-1.5 -left-1.5 bg-on-tertiary-container text-primary font-label-mono text-[9px] px-1 py-0.5 uppercase tracking-widest font-bold">
+                ACTIVE
+              </div>
+<div class="flex items-center justify-between pb-1">
+<span class="font-headline-sm text-headline-sm uppercase text-primary leading-tight">4-2-3-1</span>
+<span class="font-label-mono text-[9px] text-on-surface-variant tracking-widest uppercase">FLUID</span>
+</div>
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest p-1 overflow-hidden">
+<svg class="w-full h-full text-outline/30" fill="none" stroke="currentColor" viewbox="0 0 100 125">
+<rect height="115" stroke-dasharray="3,2" stroke-width="1.2" width="90" x="5" y="5"></rect>
+<line stroke-dasharray="2,2" stroke-width="1" x1="5" x2="95" y1="62.5" y2="62.5"></line>
+<circle cx="50" cy="62.5" r="14" stroke-dasharray="2,2" stroke-width="1"></circle>
+<!-- GK -->
+<circle cx="50" cy="112" fill="#F7F5EF" r="3.2"></circle>
+<!-- Back 4 -->
+<circle cx="20" cy="95" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="40" cy="98" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="60" cy="98" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="80" cy="95" fill="#F7F5EF" r="3.2"></circle>
+<!-- Double Pivot -->
+<circle cx="36" cy="78" fill="#94D4B0" r="3.2"></circle>
+<circle cx="64" cy="78" fill="#94D4B0" r="3.2"></circle>
+<!-- 3 AM -->
+<circle cx="22" cy="46" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="50" cy="48" fill="#94D4B0" r="3.2"></circle>
+<circle cx="78" cy="46" fill="#F7F5EF" r="3.2"></circle>
+<!-- ST -->
+<circle cx="50" cy="22" fill="#F7F5EF" r="3.6"></circle>
+</svg>
+</div>
+<div class="mt-1 flex items-center justify-between">
+<span class="font-label-mono text-[9px] text-on-surface-variant uppercase">DOUBLE PIVOT</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+</div>
+<!-- 3-4-2-1 Press -->
+<div class="formation-card cursor-pointer bg-surface-container p-space-sm text-left transition-all duration-150 relative hover:bg-surface-container-high opacity-85" data-formation="3-4-2-1 PRESS" onclick="selectFormation(this, '3-4-2-1 PRESS')">
+<div class="active-indicator hidden absolute -top-1.5 -left-1.5 bg-on-tertiary-container text-primary font-label-mono text-[9px] px-1 py-0.5 uppercase tracking-widest font-bold">
+                ACTIVE
+              </div>
+<div class="flex items-center justify-between pb-1">
+<span class="font-headline-sm text-headline-sm uppercase text-primary leading-tight">3-4-2-1</span>
+<span class="font-label-mono text-[9px] text-on-surface-variant tracking-widest uppercase">PRESS</span>
+</div>
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest p-1 overflow-hidden">
+<svg class="w-full h-full text-outline/30" fill="none" stroke="currentColor" viewbox="0 0 100 125">
+<rect height="115" stroke-dasharray="3,2" stroke-width="1.2" width="90" x="5" y="5"></rect>
+<line stroke-dasharray="2,2" stroke-width="1" x1="5" x2="95" y1="62.5" y2="62.5"></line>
+<circle cx="50" cy="62.5" r="14" stroke-dasharray="2,2" stroke-width="1"></circle>
+<!-- GK -->
+<circle cx="50" cy="112" fill="#F7F5EF" r="3.2"></circle>
+<!-- Back 3 -->
+<circle cx="28" cy="96" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="50" cy="98" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="72" cy="96" fill="#F7F5EF" r="3.2"></circle>
+<!-- Mid 4 -->
+<circle cx="14" cy="66" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="38" cy="72" fill="#94D4B0" r="3.2"></circle>
+<circle cx="62" cy="72" fill="#94D4B0" r="3.2"></circle>
+<circle cx="86" cy="66" fill="#F7F5EF" r="3.2"></circle>
+<!-- Dual 10s -->
+<circle cx="35" cy="42" fill="#94D4B0" r="3.2"></circle>
+<circle cx="65" cy="42" fill="#94D4B0" r="3.2"></circle>
+<!-- 9 -->
+<circle cx="50" cy="20" fill="#F7F5EF" r="3.6"></circle>
+</svg>
+</div>
+<div class="mt-1 flex items-center justify-between">
+<span class="font-label-mono text-[9px] text-on-surface-variant uppercase">HIGH CAGE</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+</div>
+<!-- 4-4-2 Compact -->
+<div class="formation-card cursor-pointer bg-surface-container p-space-sm text-left transition-all duration-150 relative hover:bg-surface-container-high opacity-85" data-formation="4-4-2 COMPACT" onclick="selectFormation(this, '4-4-2 COMPACT')">
+<div class="active-indicator hidden absolute -top-1.5 -left-1.5 bg-on-tertiary-container text-primary font-label-mono text-[9px] px-1 py-0.5 uppercase tracking-widest font-bold">
+                ACTIVE
+              </div>
+<div class="flex items-center justify-between pb-1">
+<span class="font-headline-sm text-headline-sm uppercase text-primary leading-tight">4-4-2</span>
+<span class="font-label-mono text-[9px] text-on-surface-variant tracking-widest uppercase">COMPACT</span>
+</div>
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest p-1 overflow-hidden">
+<svg class="w-full h-full text-outline/30" fill="none" stroke="currentColor" viewbox="0 0 100 125">
+<rect height="115" stroke-dasharray="3,2" stroke-width="1.2" width="90" x="5" y="5"></rect>
+<line stroke-dasharray="2,2" stroke-width="1" x1="5" x2="95" y1="62.5" y2="62.5"></line>
+<circle cx="50" cy="62.5" r="14" stroke-dasharray="2,2" stroke-width="1"></circle>
+<!-- GK -->
+<circle cx="50" cy="112" fill="#F7F5EF" r="3.2"></circle>
+<!-- Back 4 -->
+<circle cx="20" cy="94" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="40" cy="97" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="60" cy="97" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="80" cy="94" fill="#F7F5EF" r="3.2"></circle>
+<!-- Mid 4 -->
+<circle cx="20" cy="64" fill="#94D4B0" r="3.2"></circle>
+<circle cx="40" cy="66" fill="#94D4B0" r="3.2"></circle>
+<circle cx="60" cy="66" fill="#94D4B0" r="3.2"></circle>
+<circle cx="80" cy="64" fill="#94D4B0" r="3.2"></circle>
+<!-- 2 CF -->
+<circle cx="38" cy="26" fill="#F7F5EF" r="3.4"></circle>
+<circle cx="62" cy="26" fill="#F7F5EF" r="3.4"></circle>
+</svg>
+</div>
+<div class="mt-1 flex items-center justify-between">
+<span class="font-label-mono text-[9px] text-on-surface-variant uppercase">LOW BLOCK</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+</div>
+<!-- 3-5-2 Wing-Back -->
+<div class="formation-card cursor-pointer bg-surface-container p-space-sm text-left transition-all duration-150 relative hover:bg-surface-container-high opacity-85" data-formation="3-5-2 WING-BACK" onclick="selectFormation(this, '3-5-2 WING-BACK')">
+<div class="active-indicator hidden absolute -top-1.5 -left-1.5 bg-on-tertiary-container text-primary font-label-mono text-[9px] px-1 py-0.5 uppercase tracking-widest font-bold">
+                ACTIVE
+              </div>
+<div class="flex items-center justify-between pb-1">
+<span class="font-headline-sm text-headline-sm uppercase text-primary leading-tight">3-5-2</span>
+<span class="font-label-mono text-[9px] text-on-surface-variant tracking-widest uppercase">WING-BACK</span>
+</div>
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest p-1 overflow-hidden">
+<svg class="w-full h-full text-outline/30" fill="none" stroke="currentColor" viewbox="0 0 100 125">
+<rect height="115" stroke-dasharray="3,2" stroke-width="1.2" width="90" x="5" y="5"></rect>
+<line stroke-dasharray="2,2" stroke-width="1" x1="5" x2="95" y1="62.5" y2="62.5"></line>
+<circle cx="50" cy="62.5" r="14" stroke-dasharray="2,2" stroke-width="1"></circle>
+<!-- GK -->
+<circle cx="50" cy="112" fill="#F7F5EF" r="3.2"></circle>
+<!-- Back 3 -->
+<circle cx="28" cy="96" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="50" cy="98" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="72" cy="96" fill="#F7F5EF" r="3.2"></circle>
+<!-- Wing backs + 3 Mids -->
+<circle cx="12" cy="56" fill="#F7F5EF" r="3.2"></circle>
+<circle cx="34" cy="68" fill="#94D4B0" r="3.2"></circle>
+<circle cx="50" cy="74" fill="#94D4B0" r="3.2"></circle>
+<circle cx="66" cy="68" fill="#94D4B0" r="3.2"></circle>
+<circle cx="88" cy="56" fill="#F7F5EF" r="3.2"></circle>
+<!-- 2 CF -->
+<circle cx="38" cy="24" fill="#F7F5EF" r="3.4"></circle>
+<circle cx="62" cy="24" fill="#F7F5EF" r="3.4"></circle>
+</svg>
+</div>
+<div class="mt-1 flex items-center justify-between">
+<span class="font-label-mono text-[9px] text-on-surface-variant uppercase">FLANK OVERLOAD</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+</div>
+</div>
+<input id="selected-formation" type="hidden" value="4-3-3 ATTACK"/>
+</div>
+<!-- Two Columns: Primary Competition & Home Ground -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg pt-2">
+<!-- Field 4: Primary Competition / Division -->
+<div class="flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary font-bold" for="primary-competition">
+                04. Sanctioned League / Division
+              </label>
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase">TIER 1 SANCTION</span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-primary-container pointer-events-none">
+                emoji_events
+              </span>
+<input class="w-full pl-10 pr-space-md py-2.5 bg-primary-container/40 text-on-primary font-headline-sm text-headline-sm uppercase outline-none focus:bg-primary-container transition-colors" id="primary-competition" placeholder="e.g. Premier League 2 / UEFA Youth League" type="text" value="PREMIER LEAGUE 2 (DIVISION ONE)"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-primary-container">
+              Auto-syncs matchday rulebooks, yellow card thresholds, and sub limits.
+            </span>
+</div>
+<!-- Field 5: Home Pitch / Training Ground -->
+<div class="flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary font-bold" for="training-ground">
+                05. Home Pitch / Primary Facility
+              </label>
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase">PITCH CODES</span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-primary-container pointer-events-none">
+                sports_soccer
+              </span>
+<input class="w-full pl-10 pr-space-md py-2.5 bg-primary-container/40 text-on-primary font-headline-sm text-headline-sm uppercase outline-none focus:bg-primary-container transition-colors" id="training-ground" placeholder="e.g. Academy Pitch 1 — Hybrid Turf Complex" type="text" value="ACADEMY TRAINING COMPLEX — PITCH 01 (TURF/HYBRID)"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-primary-container">
+              Calibrates sprint surface friction and wet-bulb stadium temperature presets.
+            </span>
+</div>
+</div>
+<!-- Auxiliary Telemetry Bar (Extra Tactical Context) -->
+<div class="bg-surface-container p-space-md text-primary flex flex-wrap items-center justify-between gap-space-md mt-space-lg">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase text-primary leading-tight">Live Roster Slot Allocation</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">Initial 25 Player Slots Available on Creation</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg">
+<div class="text-right">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">Data Telemetry Channel</span>
+<span class="font-label-tactical text-label-tactical text-secondary uppercase font-bold">ACTIVE ENCRYPTED</span>
+</div>
+<div class="h-8 w-px bg-outline-variant hidden sm:block"></div>
+<div class="text-right">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">Sanction Code</span>
+<span class="font-label-tactical text-label-tactical text-primary uppercase font-bold">ENG-EFL-25</span>
+</div>
+</div>
+</div>
+<!-- Footer Section of Team Sheet: Signature + Authentic Stamp Button -->
+<div class="pt-space-lg flex flex-col md:flex-row items-end justify-between gap-space-lg">
+<!-- Bottom-left: Coach Ratification Signature Line -->
+<div class="w-full md:w-5/12 flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary font-bold">
+                Manager / Technical Director Sign-off
+              </span>
+<span class="font-label-mono text-label-mono text-on-primary-container">RATIFIED</span>
+</div>
+<!-- Analog Hand-Signed Graphic Simulation -->
+<div class="relative w-full h-16 bg-primary-container/30 flex items-center justify-start px-space-md overflow-hidden">
+<svg class="w-48 h-12 text-on-primary" fill="none" viewbox="0 0 240 60">
+<path d="M 10,40 Q 30,10 60,35 T 100,20 Q 120,50 140,25 T 180,45 Q 210,10 230,30" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<path d="M 40,48 L 190,42" stroke="currentColor" stroke-dasharray="4,2" stroke-width="1.4"></path>
+</svg>
+<span class="absolute right-3 bottom-1.5 font-label-mono text-[9px] text-on-primary-container uppercase">
+                COACH_ID #008412
+              </span>
+</div>
+<div class="w-full h-0.5 bg-on-primary mt-0.5"></div>
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase tracking-tight">
+              I CONFIRM SQUAD COMPLIANCE UNDER APPLICABLE REGULATORY STATUTES.
+            </span>
+</div>
+<!-- Bottom-right: Touchline Red Authentic Rubber Stamp Action Button -->
+<div class="w-full md:w-auto flex flex-col items-end">
+<div class="text-right pb-1">
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase tracking-wider">
+                EXECUTE IMMEDIATE COMMIT
+              </span>
+</div>
+<!-- The Rubber Stamp Button -->
+<button class="group relative inline-flex items-center justify-center px-space-xl py-4 bg-on-tertiary-container hover:bg-error text-primary transition-all duration-150 transform hover:-translate-y-0.5 active:translate-y-1 shadow-xl" id="stamp-submit-btn" onclick="handleStampSquad(this)" type="button">
+<!-- Ink Stamp Decorative Border Overlay -->
+<span class="absolute inset-1 pointer-events-none opacity-40"></span>
+<div class="flex items-center gap-space-md z-10">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">done_all</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-headline-md text-headline-md tracking-wider leading-none text-primary uppercase">
+                    STAMP &amp; CREATE SQUAD →
+                  </span>
+<span class="font-label-mono text-[9px] text-primary/80 uppercase tracking-widest mt-0.5">
+                    GENERATE TACTICAL DOSSIER
+                  </span>
+</div>
+</div>
+</button>
+</div>
+</div>
+</form>
+<!-- Bottom Sheet Serial Footprint -->
+<div class="w-full flex items-center justify-between pt-space-lg text-on-primary-container font-label-mono text-[9px] uppercase tracking-widest">
+<span>COACHAI TACTICAL MANAGEMENT OS // FORM #REG-2025-SQD</span>
+<span>SECTION: P-08 // SQUAD CREATION PROTOCOL</span>
+<span>STATUS: READY FOR DESK DISPATCH</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function selectAgeTab(element, value) {
+    const allTabs = document.querySelectorAll('.age-tab');
+    allTabs.forEach(tab => {
+      tab.classList.remove('bg-on-primary', 'shadow-md', 'ring-2', 'ring-on-primary');
+      tab.classList.add('bg-surface-container');
+      const number = tab.querySelector('.font-headline-lg');
+      const label = tab.querySelector('.font-label-tactical');
+      if (number) {
+        number.classList.remove('text-secondary', 'text-primary');
+        number.classList.add('text-on-surface-variant');
+      }
+      if (label) {
+        label.classList.remove('text-primary');
+        label.classList.add('text-on-surface');
+      }
+      const dot = tab.querySelector('.w-3.h-3');
+      if (dot) dot.remove();
+    });
+
+    element.classList.remove('bg-surface-container');
+    element.classList.add('bg-on-primary', 'shadow-md', 'ring-2', 'ring-on-primary');
+    
+    const number = element.querySelector('.font-headline-lg');
+    const label = element.querySelector('.font-label-tactical');
+    if (number) {
+      number.classList.remove('text-on-surface-variant');
+      number.classList.add('text-secondary');
+    }
+    if (label) {
+      label.classList.remove('text-on-surface');
+      label.classList.add('text-primary');
+    }
+
+    const dot = document.createElement('div');
+    dot.className = 'absolute -top-1.5 -right-1.5 w-3 h-3 bg-secondary rounded-full';
+    element.appendChild(dot);
+
+    const hiddenInput = document.getElementById('selected-age-category');
+    if (hiddenInput) hiddenInput.value = value;
+  }
+
+  function selectFormation(card, formationName) {
+    const cards = document.querySelectorAll('.formation-card');
+    cards.forEach(c => {
+      c.classList.remove('bg-surface-container-high', 'shadow-lg');
+      c.classList.add('opacity-85');
+      const ind = c.querySelector('.active-indicator');
+      if (ind) ind.classList.add('hidden');
+      const dot = c.querySelector('.w-1\\.5.h-1\\.5');
+      if (dot) {
+        dot.classList.remove('bg-secondary');
+        dot.classList.add('bg-outline');
+      }
+    });
+
+    card.classList.add('bg-surface-container-high', 'shadow-lg');
+    card.classList.remove('opacity-85');
+    const activeIndicator = card.querySelector('.active-indicator');
+    if (activeIndicator) activeIndicator.classList.remove('hidden');
+
+    const dot = card.querySelector('.w-1\\.5.h-1\\.5');
+    if (dot) {
+      dot.classList.remove('bg-outline');
+      dot.classList.add('bg-secondary');
+    }
+
+    const hiddenFormation = document.getElementById('selected-formation');
+    if (hiddenFormation) hiddenFormation.value = formationName;
+  }
+
+  function handleStampSquad(button) {
+    const originalContent = button.innerHTML;
+    button.innerHTML = `
+      <div class="flex items-center gap-space-sm py-1">
+        <span class="material-symbols-outlined text-primary animate-spin">sync</span>
+        <span class="font-headline-md text-headline-md tracking-wider text-primary uppercase">STAMPING DOSSIER...</span>
+      </div>
+    `;
+    button.disabled = true;
+
+    setTimeout(() => {
+      button.innerHTML = `
+        <div class="flex items-center gap-space-sm py-1">
+          <span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+          <span class="font-headline-md text-headline-md tracking-wider text-primary uppercase">SQUAD CREATED!</span>
+        </div>
+      `;
+      button.classList.remove('bg-on-tertiary-container');
+      button.classList.add('bg-secondary-container');
+      
+      setTimeout(() => {
+        button.innerHTML = originalContent;
+        button.classList.remove('bg-secondary-container');
+        button.classList.add('bg-on-tertiary-container');
+        button.disabled = false;
+      }, 2000);
+    }, 700);
+  }
+</script></main><footer class="w-full bg-surface-container-low py-space-lg mt-space-xl"><div class="w-full px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase text-on-surface-variant">CoachAI</span><span class="font-label-mono text-label-mono text-outline">Tactical Management OS // Desk v4.1</span></div><div class="flex items-center gap-space-lg"><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">Pitchside Telemetry Protocol</span><span class="font-label-mono text-label-mono text-outline">© 2024 CoachAI Tactical Systems</span></div></div></footer></body></html>

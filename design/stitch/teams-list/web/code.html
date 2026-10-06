@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container": "#12231c",
+          "surface-tint": "#c8c6c1",
+          "surface-container-lowest": "#02110b",
+          "on-secondary-container": "#83c39f",
+          "primary-fixed-dim": "#c8c6c1",
+          "error": "#ffb4ab",
+          "error-container": "#93000a",
+          "inverse-surface": "#d3e7dc",
+          "on-surface-variant": "#c7c7bf",
+          "on-error-container": "#ffdad6",
+          "on-background": "#d3e7dc",
+          "secondary-fixed-dim": "#94d4b0",
+          "on-secondary-fixed-variant": "#0c5135",
+          "tertiary-fixed": "#ffdad4",
+          "tertiary-fixed-dim": "#ffb4a7",
+          "on-secondary": "#003823",
+          "on-tertiary-fixed": "#400200",
+          "on-primary-container": "#656560",
+          "on-primary-fixed": "#1b1c18",
+          "tertiary-container": "#ffdad4",
+          "surface-container-low": "#0e1f18",
+          "on-primary": "#30312d",
+          "surface-dim": "#061610",
+          "surface-container-highest": "#273831",
+          "on-tertiary": "#670500",
+          "primary": "#ffffff",
+          "inverse-on-surface": "#23342c",
+          "primary-container": "#e4e2dd",
+          "surface-container-high": "#1c2d26",
+          "tertiary": "#ffffff",
+          "inverse-primary": "#5f5f5a",
+          "background": "#061610",
+          "secondary-container": "#0c5135",
+          "surface-bright": "#2b3d35",
+          "on-surface": "#d3e7dc",
+          "surface": "#061610",
+          "on-error": "#690005",
+          "outline-variant": "#464741",
+          "on-tertiary-container": "#c12714",
+          "primary-fixed": "#e4e2dd",
+          "on-secondary-fixed": "#002112",
+          "outline": "#91918a",
+          "surface-variant": "#273831",
+          "on-tertiary-fixed-variant": "#910a00",
+          "secondary-fixed": "#b0f1cb",
+          "secondary": "#94d4b0",
+          "on-primary-fixed-variant": "#474743"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-lg": "1.5rem",
+          "space-xs": "0.25rem",
+          "margin": "1rem",
+          "gutter-desktop": "1.5rem",
+          "space-md": "1rem",
+          "space-xl": "2rem",
+          "margin-tablet": "1.5rem",
+          "gutter": "1rem",
+          "margin-desktop": "2rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "label-tactical": [
+            "IBM Plex Sans"
+          ],
+          "metric-huge": [
+            "Anton"
+          ],
+          "metric-huge-mobile": [
+            "Anton"
+          ],
+          "display-lg": [
+            "Anton"
+          ],
+          "display-lg-mobile": [
+            "Anton"
+          ],
+          "label-mono": [
+            "IBM Plex Sans"
+          ],
+          "headline-sm": [
+            "Anton"
+          ],
+          "body-lg": [
+            "IBM Plex Sans"
+          ],
+          "body-sm": [
+            "IBM Plex Sans"
+          ],
+          "headline-lg": [
+            "Anton"
+          ],
+          "body-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-md": [
+            "Anton"
+          ]
+        },
+        "fontSize": {
+          "label-tactical": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.12em",
+              "fontWeight": "600"
+            }
+          ],
+          "metric-huge": [
+            "64px",
+            {
+              "lineHeight": "64px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "metric-huge-mobile": [
+            "44px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "display-lg": [
+            "56px",
+            {
+              "lineHeight": "60px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            }
+          ],
+          "display-lg-mobile": [
+            "38px",
+            {
+              "lineHeight": "42px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            }
+          ],
+          "label-mono": [
+            "10px",
+            {
+              "lineHeight": "12px",
+              "letterSpacing": "0.08em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "22px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "0.03em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "0.03em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.2)] z-50"><div class="w-full h-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-baseline gap-space-xs"><span class="font-headline-lg text-headline-lg tracking-wider text-primary uppercase">COACH<span class="text-secondary">AI</span></span><span class="font-label-mono text-label-mono text-secondary uppercase px-space-xs py-0.5 bg-secondary-container rounded">PRO TACTICAL</span></div><div class="h-6 w-px bg-surface-variant hidden md:block"></div><div class="hidden md:flex items-center gap-space-sm bg-surface-container-high px-space-sm py-1"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-tactical text-label-tactical uppercase text-on-surface">MATCHDAY ACTIVE</span><span class="font-label-mono text-label-mono text-on-surface-variant">| LIVE TELEMETRY</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-sm bg-surface-container-low px-space-md py-1.5"><span class="font-label-mono text-label-mono text-on-surface-variant uppercase">SYSTEM STATUS</span><span class="font-label-tactical text-label-tactical text-secondary uppercase">BENCH SYNCED</span></div><div class="flex items-center gap-space-sm pl-space-md"><div class="text-right hidden sm:block"><div class="font-label-tactical text-label-tactical text-primary uppercase">HEAD COACH</div><div class="font-label-mono text-label-mono text-on-surface-variant">SQUAD HQ</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.3)] z-40 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-md"><div class="px-space-md flex flex-col gap-space-xs"><span class="font-label-mono text-label-mono text-on-surface-variant uppercase">COMMAND DIRECTORY</span><div class="font-label-tactical text-label-tactical text-secondary tracking-widest uppercase">FORMATION &amp; SQUAD</div></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-surface-container-highest text-primary font-semibold"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-surface-container-highest text-primary font-semibold" data-path="teams-list" href="#"><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Teams Directory</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="team-overview" href="#"><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Team Management</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="roster-management" href="#"><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Squad &amp; Roster</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tactical-chalkboard" href="#"><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Tactical Board</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="matchday-telemetry" href="#"><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Live Matchday</span></a></nav></div><div class="px-space-md"><div class="bg-surface-container p-space-sm flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-mono text-label-mono text-on-surface-variant uppercase">DRILL AI</span><span class="font-label-tactical text-label-tactical text-secondary">ONLINE</span></div><div class="font-body-sm text-body-sm text-on-surface">Press Index: <span class="text-primary font-semibold">88.4%</span></div></div></div></aside><div class="pl-64"><main class="w-full min-h-screen pt-16 bg-background px-gutter-desktop py-space-xl"><div class="flex flex-col w-full text-on-surface">
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-baseline gap-space-md">
+<span class="font-headline-lg text-headline-lg tracking-wider text-primary uppercase">TEAMS REGISTRY</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase px-space-xs py-0.5 bg-surface-container-high">DOSSIER VOL. 04</span>
+<span class="font-label-tactical text-label-tactical text-secondary uppercase tracking-widest hidden sm:inline-block">ARCHIVE // 2024–2025 CAMPAIGN</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">SYNCHRONIZED SQUADS:</span>
+<span class="font-headline-sm text-headline-sm text-primary">04</span>
+</div>
+</div>
+<div class="w-full h-px bg-surface-variant/40"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<div class="lg:col-span-4 flex flex-col gap-space-sm" id="squad-tabs-container">
+<div class="flex items-center justify-between px-space-xs mb-1">
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase tracking-widest">TACTICAL LEDGER // TABS</span>
+<span class="font-label-mono text-label-mono text-secondary uppercase">SYS.READY</span>
+</div>
+<!-- Tab 1: Senior First Team (Active) -->
+<button class="squad-tab text-left relative group w-full bg-surface-container-high transition-all duration-150 p-space-md shadow-md" id="tab-senior" onclick="selectTeam('senior')" type="button">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-on-tertiary-container" id="indicator-senior"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono px-1.5 py-0.5 bg-on-tertiary-container text-primary font-semibold">SENIOR A</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">EPL CAMPAIGN</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary tracking-wide uppercase mt-1">FIRST TEAM // SENIOR</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Primary Matchday Squad &amp; Tactical Core</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-headline-sm text-headline-sm text-primary">24</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">PLAYERS</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-surface-container-low px-space-sm py-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 bg-secondary"></span>
+<span class="font-label-tactical text-label-tactical text-primary uppercase">4-3-3 ATTACK</span>
+</div>
+<div class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface-variant">
+<span>●</span><span>●</span><span>●</span><span>●</span>
+<span class="mx-0.5 text-outline">|</span>
+<span>●</span><span>●</span><span>●</span>
+<span class="mx-0.5 text-outline">|</span>
+<span class="text-secondary font-bold">▲▲▲</span>
+</div>
+</div>
+</button>
+<!-- Tab 2: U-21 Academy Elite -->
+<button class="squad-tab text-left relative group w-full bg-surface-container transition-all duration-150 p-space-md shadow-sm hover:bg-surface-container-high" id="tab-u21" onclick="selectTeam('u21')" type="button">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container" id="indicator-u21"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono px-1.5 py-0.5 bg-secondary-container text-secondary font-semibold">U-21</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">PREMIER LEAGUE 2</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary tracking-wide uppercase mt-1">U-21 ACADEMY ELITE</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Development Squad &amp; First Team Feeder</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-headline-sm text-headline-sm text-primary">22</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">PLAYERS</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-surface-container-low px-space-sm py-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 bg-secondary"></span>
+<span class="font-label-tactical text-label-tactical text-primary uppercase">4-2-3-1 FLUID</span>
+</div>
+<div class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface-variant">
+<span>●</span><span>●</span><span>●</span><span>●</span>
+<span class="mx-0.5 text-outline">|</span>
+<span>●</span><span>●</span>
+<span class="mx-0.5 text-outline">|</span>
+<span class="text-secondary font-bold">▲▲▲▲</span>
+</div>
+</div>
+</button>
+<!-- Tab 3: U-18 Development -->
+<button class="squad-tab text-left relative group w-full bg-surface-container transition-all duration-150 p-space-md shadow-sm hover:bg-surface-container-high" id="tab-u18" onclick="selectTeam('u18')" type="button">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-surface-variant" id="indicator-u18"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono px-1.5 py-0.5 bg-surface-container-highest text-primary font-semibold">U-18</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">FA YOUTH CUP</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary tracking-wide uppercase mt-1">U-18 DEVELOPMENT</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">High-Cadence Technical Apprenticeship</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-headline-sm text-headline-sm text-primary">19</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">PLAYERS</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-surface-container-low px-space-sm py-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 bg-secondary"></span>
+<span class="font-label-tactical text-label-tactical text-primary uppercase">3-4-2-1 PRESS</span>
+</div>
+<div class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface-variant">
+<span>●</span><span>●</span><span>●</span>
+<span class="mx-0.5 text-outline">|</span>
+<span>●</span><span>●</span><span>●</span><span>●</span>
+<span class="mx-0.5 text-outline">|</span>
+<span class="text-secondary font-bold">▲▲▲</span>
+</div>
+</div>
+</button>
+<!-- Tab 4: Reserves & Trialists -->
+<button class="squad-tab text-left relative group w-full bg-surface-container transition-all duration-150 p-space-md shadow-sm hover:bg-surface-container-high" id="tab-reserves" onclick="selectTeam('reserves')" type="button">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-outline-variant" id="indicator-reserves"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono px-1.5 py-0.5 bg-surface-container-highest text-on-surface font-semibold">RES</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">EVALUATION</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary tracking-wide uppercase mt-1">RESERVES &amp; TRIALISTS</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Conditioning &amp; International Loan Registry</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-headline-sm text-headline-sm text-primary">14</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">PLAYERS</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-surface-container-low px-space-sm py-1.5">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 bg-outline"></span>
+<span class="font-label-tactical text-label-tactical text-primary uppercase">4-4-2 FLAT</span>
+</div>
+<div class="flex items-center gap-1 font-label-mono text-label-mono text-on-surface-variant">
+<span>●</span><span>●</span><span>●</span><span>●</span>
+<span class="mx-0.5 text-outline">|</span>
+<span>●</span><span>●</span><span>●</span><span>●</span>
+<span class="mx-0.5 text-outline">|</span>
+<span class="text-primary font-bold">▲▲</span>
+</div>
+</div>
+</button>
+<!-- Bottom Tab: New Team creation trigger -->
+<button class="w-full p-space-md bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-center gap-space-sm group cursor-pointer shadow-inner" type="button">
+<div class="w-7 h-7 bg-surface-container-high flex items-center justify-center group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:text-on-primary">add</span>
+</div>
+<div class="flex flex-col items-start text-left">
+<span class="font-label-tactical text-label-tactical text-primary uppercase tracking-wider">+ NEW SQUAD FOLDER</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">REGISTER ROSTER INDEX</span>
+</div>
+</button>
+</div>
+<!-- Right Detailed Quick-Glance Summary Desk -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg bg-surface-container-low p-space-lg shadow-xl relative overflow-hidden">
+<!-- Watermark Background Texture -->
+<div class="absolute -right-8 -bottom-12 pointer-events-none opacity-5">
+<span class="font-metric-huge text-[160px] tracking-tighter text-primary">VERDANT</span>
+</div>
+<!-- Header Section of Active Team Dossier -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-md bg-surface-container p-space-lg shadow-md">
+<div class="flex items-start gap-space-md">
+<!-- Team Crest Placeholder -->
+<div class="w-16 h-20 bg-surface-container-highest flex flex-col items-center justify-between p-2 flex-shrink-0 shadow-sm relative">
+<span class="font-label-mono text-[9px] text-on-surface-variant uppercase tracking-widest">EST.1896</span>
+<div class="flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[32px]">shield</span>
+</div>
+<div class="w-full text-center bg-secondary-container py-0.5">
+<span class="font-label-mono text-[8px] text-on-secondary-container uppercase font-bold">CORE</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-mono text-label-mono px-2 py-0.5 bg-surface-container-highest text-secondary uppercase font-semibold">TIER 1 PROFESSIONAL</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">UEFA CLUB LICENSED</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-tactical text-label-tactical text-secondary">IN COMPETITION</span>
+</div>
+<div class="font-headline-lg text-headline-lg tracking-wide text-primary uppercase mt-1" id="team-title-heading">FIRST TEAM // SENIOR</div>
+<div class="font-body-md text-body-md text-on-surface-variant">FC Verdant London • Emirates Arena Ground • Head Coach: M. Arteta</div>
+</div>
+</div>
+<!-- Primary Touchline Red CTA Pill -->
+<div class="flex flex-col sm:items-end gap-space-xs flex-shrink-0">
+<a class="inline-flex items-center justify-center gap-space-sm px-space-lg py-2.5 bg-on-tertiary-container hover:bg-error-container text-primary font-headline-sm text-headline-sm uppercase tracking-wider transition-colors shadow-md group" href="#">
+<span>ENTER DOSSIER</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<div class="flex items-center gap-space-sm mt-1">
+<button class="font-label-tactical text-label-tactical text-on-surface-variant hover:text-primary uppercase flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">print</span> SHEET
+            </button>
+<span class="text-surface-variant">/</span>
+<button class="font-label-tactical text-label-tactical text-on-surface-variant hover:text-primary uppercase flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">download</span> CSV
+            </button>
+</div>
+</div>
+</div>
+<!-- Core Tactical Identity Bar (Dial, Metric, Half-space) -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<!-- Tactical Setup Metric -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">CURRENT SYSTEM</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">category</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-headline-md text-headline-md text-primary tracking-wide">4-3-3 WIDE PRESS</div>
+<div class="font-body-sm text-body-sm text-secondary">Inverted Fullback Overload</div>
+</div>
+<div class="w-full bg-surface-container-high h-1 mt-space-sm">
+<div class="bg-secondary h-1" style="width: 85%"></div>
+</div>
+</div>
+<!-- Pressing Intensity / PPDA -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">PRESSING INTENSITY (PPDA)</span>
+<span class="font-label-mono text-label-mono text-on-tertiary-container font-bold">ZONE HIGH</span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-space-sm">
+<span class="font-metric-huge-mobile sm:font-metric-huge text-metric-huge-mobile sm:text-metric-huge text-primary leading-none">8.4</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant">PPDA / 88.4%</span>
+</div>
+<div class="flex items-center gap-1 mt-space-xs">
+<div class="h-1.5 flex-1 bg-secondary"></div>
+<div class="h-1.5 flex-1 bg-secondary"></div>
+<div class="h-1.5 flex-1 bg-secondary"></div>
+<div class="h-1.5 flex-1 bg-secondary"></div>
+<div class="h-1.5 flex-1 bg-surface-container-high"></div>
+</div>
+</div>
+<!-- Overload Sector -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">ATTACK CHANNEL BIAS</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">explore</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-headline-md text-headline-md text-primary tracking-wide uppercase">LEFT HALF-SPACE</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">54% Final-Third Entries</div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-label-mono text-on-surface-variant pt-space-xs">
+<span>LEFT: 54%</span>
+<span>CTR: 18%</span>
+<span>RIGHT: 28%</span>
+</div>
+</div>
+</div>
+<!-- Mini-Pitch Tactical Graphic + Coach Notes -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg items-stretch">
+<!-- Formation Mini-Pitch Diagram (SVG Chalkboard) -->
+<div class="md:col-span-7 bg-surface-container p-space-md flex flex-col shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">sports_soccer</span>
+<span class="font-label-tactical text-label-tactical text-primary uppercase">TACTICAL SCHEMATIC // 4-3-3</span>
+</div>
+<span class="font-label-mono text-label-mono text-on-surface-variant">FIELD: HIGH BLOCK (42M)</span>
+</div>
+<!-- Pitch Container -->
+<div class="relative w-full aspect-[4/3] bg-surface-container-lowest flex items-center justify-center p-3">
+<svg class="w-full h-full text-on-surface-variant/30" fill="none" viewbox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<!-- Field Perimeter -->
+<rect height="280" stroke="currentColor" stroke-width="1.5" width="380" x="10" y="10"></rect>
+<!-- Halfway Line -->
+<line stroke="currentColor" stroke-dasharray="4 4" stroke-width="1" x1="200" x2="200" y1="10" y2="290"></line>
+<!-- Center Circle -->
+<circle cx="200" cy="150" r="45" stroke="currentColor" stroke-width="1"></circle>
+<circle cx="200" cy="150" fill="currentColor" r="2.5"></circle>
+<!-- Left Penalty Box (Defensive) -->
+<rect height="160" stroke="currentColor" stroke-width="1" width="60" x="10" y="70"></rect>
+<rect height="90" stroke="currentColor" stroke-width="1" width="22" x="10" y="105"></rect>
+<path d="M 70 120 A 40 40 0 0 1 70 180" stroke="currentColor" stroke-width="1"></path>
+<!-- Right Penalty Box (Attacking) -->
+<rect height="160" stroke="currentColor" stroke-width="1" width="60" x="330" y="70"></rect>
+<rect height="90" stroke="currentColor" stroke-width="1" width="22" x="368" y="105"></rect>
+<path d="M 330 120 A 40 40 0 0 0 330 180" stroke="currentColor" stroke-width="1"></path>
+<!-- Chalk Tactical Movement Line (Inverted Fullback arrow) -->
+<path d="M 120 70 Q 170 85 190 115" fill="none" stroke="#94d4b0" stroke-dasharray="3 3" stroke-width="2"></path>
+<polygon fill="#94d4b0" points="192,122 186,112 195,115"></polygon>
+<!-- Chalk Transition Arrow (Winger run) -->
+<path d="M 285 60 L 340 45" fill="none" stroke="#ffb4a7" stroke-dasharray="3 3" stroke-width="2"></path>
+<polygon fill="#ffb4a7" points="345,44 336,41 338,48"></polygon>
+<!-- Players: 4-3-3 Schematic (Dots with jersey numbers) -->
+<!-- GK -->
+<circle cx="32" cy="150" fill="#e4e2dd" r="8"></circle>
+<text fill="#061610" font-family="Anton" font-size="9" text-anchor="middle" x="32" y="153">01</text>
+<!-- DEFENSE (4) -->
+<!-- RB -->
+<circle cx="110" cy="240" fill="#94d4b0" r="8"></circle>
+<text fill="#003823" font-family="Anton" font-size="9" text-anchor="middle" x="110" y="243">04</text>
+<!-- CB Right -->
+<circle cx="95" cy="180" fill="#94d4b0" r="8"></circle>
+<text fill="#003823" font-family="Anton" font-size="9" text-anchor="middle" x="95" y="183">02</text>
+<!-- CB Left -->
+<circle cx="95" cy="120" fill="#94d4b0" r="8"></circle>
+<text fill="#003823" font-family="Anton" font-size="9" text-anchor="middle" x="95" y="123">06</text>
+<!-- LB (Inverting) -->
+<circle cx="120" cy="65" fill="#94d4b0" r="8"></circle>
+<text fill="#003823" font-family="Anton" font-size="9" text-anchor="middle" x="120" y="68">35</text>
+<!-- MIDFIELD (3) -->
+<!-- DM -->
+<circle cx="170" cy="150" fill="#94d4b0" r="8"></circle>
+<text fill="#003823" font-family="Anton" font-size="9" text-anchor="middle" x="170" y="153">41</text>
+<!-- RCM -->
+<circle cx="230" cy="195" fill="#94d4b0" r="8"></circle>
+<text fill="#003823" font-family="Anton" font-size="9" text-anchor="middle" x="230" y="198">08</text>
+<!-- LCM (Advanced) -->
+<circle cx="230" cy="105" fill="#94d4b0" r="8"></circle>
+<text fill="#003823" font-family="Anton" font-size="9" text-anchor="middle" x="230" y="108">29</text>
+<!-- ATTACK (3) -->
+<!-- RW -->
+<circle cx="300" cy="245" fill="#ffffff" r="8"></circle>
+<text fill="#061610" font-family="Anton" font-size="9" text-anchor="middle" x="300" y="248">07</text>
+<!-- CF -->
+<circle cx="320" cy="150" fill="#ffffff" r="8"></circle>
+<text fill="#061610" font-family="Anton" font-size="9" text-anchor="middle" x="320" y="153">09</text>
+<!-- LW -->
+<circle cx="285" cy="55" fill="#ffffff" r="8"></circle>
+<text fill="#061610" font-family="Anton" font-size="9" text-anchor="middle" x="285" y="58">11</text>
+</svg>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-mono text-label-mono">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary inline-block"></span> BASE PHASE</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span> ATTACKING POD</span>
+<span class="flex items-center gap-1 text-tertiary-fixed-dim">--&gt; INVERTED LB CHANNEL</span>
+</div>
+</div>
+<!-- Coach Notes Excerpt (Chalk Memo / Pinned Briefing) -->
+<div class="md:col-span-5 flex flex-col gap-space-md">
+<div class="bg-surface-container p-space-md shadow-sm relative flex flex-col justify-between h-full">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">push_pin</span>
+<span class="font-label-tactical text-label-tactical text-primary uppercase">COACH DIRECTIVE BRIEFING</span>
+</div>
+<span class="font-label-mono text-label-mono px-1 bg-surface-container-high text-on-surface-variant">CONFIDENTIAL</span>
+</div>
+<div class="p-space-md bg-surface-container-low my-space-xs relative">
+<div class="absolute -top-2 right-4 font-label-mono text-[9px] bg-secondary-container px-2 py-0.2 text-secondary uppercase">MATCHDAY -1</div>
+<div class="font-label-tactical text-label-tactical text-secondary uppercase mb-1 tracking-wider">TACTICAL DIRECTIVE: HIGH-LINE COMPRESSION</div>
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed">
+                “Prioritize high-line compression against mid-table opposition. Gabriel and Saliba to hold 42m line; transition trigger activates on right-back turnover. Martin to drift into half-space when inverted FB occupies midfield slot.”
+              </p>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-mono text-label-mono">
+<span>AUTHOR: M. ARTETA (MGR)</span>
+<span>VERIFIED 08:30 GMT</span>
+</div>
+</div>
+<!-- Key Personnel Snapshot inside Coach Desk -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase tracking-wider">KEY ROSTER CATALYSTS</span>
+<div class="flex items-center justify-between p-2 bg-surface-container-high">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">#08</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-primary font-semibold">M. Ødegaard</span>
+<span class="font-label-mono text-[9px] text-on-surface-variant uppercase">CAPTAIN // CREATIVE AXIS</span>
+</div>
+</div>
+<span class="font-label-tactical text-label-tactical px-2 py-0.5 bg-secondary-container text-secondary">94% PAS</span>
+</div>
+<div class="flex items-center justify-between p-2 bg-surface-container-high">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">#41</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-primary font-semibold">D. Rice</span>
+<span class="font-label-mono text-[9px] text-on-surface-variant uppercase">TOP PRESSER // PIVOT</span>
+</div>
+</div>
+<span class="font-label-tactical text-label-tactical px-2 py-0.5 bg-surface-container-highest text-primary">11.8 KM/G</span>
+</div>
+<div class="flex items-center justify-between p-2 bg-surface-container-high">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">#29</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-primary font-semibold">K. Havertz</span>
+<span class="font-label-mono text-[9px] text-on-surface-variant uppercase">TARGET PRESS // CF</span>
+</div>
+</div>
+<span class="font-label-tactical text-label-tactical px-2 py-0.5 bg-on-tertiary-container text-primary">IN-FORM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Roster Overview Grid: Visual player cards with images -->
+<div class="bg-surface-container p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">SQUAD BENCHMARK • STARTING XI SAMPLES</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">| ACTIVE ROTATION</span>
+</div>
+<span class="font-label-tactical text-label-tactical text-secondary uppercase cursor-pointer hover:underline">VIEW ALL 24 DOSSIERS →</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-space-sm flex items-center gap-space-sm shadow-sm group hover:bg-surface-container-high transition-colors">
+<div class="w-14 h-16 bg-surface-container-highest relative flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="Close up athletic portrait of a focused professional soccer captain wearing a dark green technical training kit in a dim floodlit stadium facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfcc3e5DI7e9E4fzC7eZ2a37z5XpJAg40UgZvx9e_qE3JeakuWU8kbBN29ZToFgIvCWfSL-CWvf_6Txg-cTJGpmlxHPtSGtXZNtoJ-sYbj9aux6gyUWSlxuKaXzNXiBNHKPDdPUAQ2WpLiKWLveUt-z1D4mxYc2Q0mzqUAItu4-oESdHCeamDPRuNgKmd1h53ouRw2J5oh7ZU7yNsfnIMs79Iz-KtGfyB08wytcQSSJ_UC6X4hvaJgVA"/>
+<div class="absolute bottom-0 right-0 bg-primary text-on-primary font-headline-sm text-[12px] px-1 leading-tight">08</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary truncate">M. ØDEGAARD</span>
+<span class="font-label-mono text-label-mono text-secondary uppercase">ATTACKING MIDFIELD</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Matches: 28 • Goals: 8</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-space-sm flex items-center gap-space-sm shadow-sm group hover:bg-surface-container-high transition-colors">
+<div class="w-14 h-16 bg-surface-container-highest relative flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="Dramatic side-angle portrait of an elite midfield defensive player in high contrast athletic lighting with short cropped hair and intense focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKl0vrKxxYxafc_tRit50XPQnX9QSNdj8jhH-pSbEUj1eMBV-QOSNTC-z9a590OWjqNBYfpICSwVhCCLNO2XlXLeZCwRkx5Caz8ihhFlRWKU6e9LZzyAKCHtV_CVNZB0ux3gghLedlo6J_PvAwDe-e8ayz32JbcHhCBshwE1CCEWcYa7oAmJleXZyYfn1UXePtH3stlFsM5TpIka_xQ0NIrzOriqDqJIL1d9gER5GCmEVsW-q5nVGa-w"/>
+<div class="absolute bottom-0 right-0 bg-primary text-on-primary font-headline-sm text-[12px] px-1 leading-tight">41</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary truncate">D. RICE</span>
+<span class="font-label-mono text-label-mono text-secondary uppercase">DEFENSIVE MIDFIELD</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tackles: 64 • 91% Recov</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-space-sm flex items-center gap-space-sm shadow-sm group hover:bg-surface-container-high transition-colors">
+<div class="w-14 h-16 bg-surface-container-highest relative flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="Intense high contrast portrait of a professional soccer forward striker under technical floodlights against dark turf background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5N5vCXA5HedSw3TsoFbgRh5a0nYoyMN5l1GHB8cVD-Gj16a9T6ZiQ9uEvEcweaN5UZxPp4iOLNIrDOcmWbkoRiTdbwXn20X8uhKlCvQx_ZsiQQIDTvAJaIoF_bhaUR1l-UjvVimnCge_5codwUBfRkF8HvEfBfdWg3eV-Qdn-qRuZhE-rIpiHfuuAHOM-FTXn5x6uj-Mp960SF0KD-sumhGfsbFMZB2fgXsr5-EDFUYYExeXG3nkHmQ"/>
+<div class="absolute bottom-0 right-0 bg-on-tertiary-container text-primary font-headline-sm text-[12px] px-1 leading-tight">29</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary truncate">K. HAVERTZ</span>
+<span class="font-label-mono text-label-mono text-on-tertiary-container uppercase">FORWARD / PRESSER</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aerial Duels: 73% Win</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Tab Switching Micro-interaction Script -->
+<script>
+    function selectTeam(squadKey) {
+      const tabs = ['senior', 'u21', 'u18', 'reserves'];
+      tabs.forEach(key => {
+        const tabEl = document.getElementById('tab-' + key);
+        const indEl = document.getElementById('indicator-' + key);
+        if (tabEl) {
+          if (key === squadKey) {
+            tabEl.classList.remove('bg-surface-container');
+            tabEl.classList.add('bg-surface-container-high');
+            if (indEl) indEl.classList.remove('opacity-40');
+          } else {
+            tabEl.classList.remove('bg-surface-container-high');
+            tabEl.classList.add('bg-surface-container');
+            if (indEl) indEl.classList.add('opacity-40');
+          }
+        }
+      });
+
+      const heading = document.getElementById('team-title-heading');
+      if (heading) {
+        if (squadKey === 'senior') heading.textContent = 'FIRST TEAM // SENIOR';
+        else if (squadKey === 'u21') heading.textContent = 'U-21 ACADEMY ELITE';
+        else if (squadKey === 'u18') heading.textContent = 'U-18 DEVELOPMENT SQUAD';
+        else if (squadKey === 'reserves') heading.textContent = 'RESERVES & TRIALISTS';
+      }
+    }
+  </script>
+</div></main></div></body></html>

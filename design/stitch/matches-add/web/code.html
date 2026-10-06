@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-surface-variant":"#c7c7bf","inverse-primary":"#5f5f5a","on-secondary":"#003823","on-primary-fixed-variant":"#474743","on-background":"#d3e7dc","surface-container-lowest":"#02110b","primary-fixed":"#e4e2dd","inverse-on-surface":"#23342c","on-tertiary-container":"#c12714","surface-container":"#12231c","on-error-container":"#ffdad6","secondary-fixed":"#b0f1cb","secondary-fixed-dim":"#94d4b0","surface-container-low":"#0e1f18","background":"#061610","on-tertiary-fixed-variant":"#910a00","tertiary":"#ffffff","surface-variant":"#273831","on-secondary-fixed-variant":"#0c5135","tertiary-fixed":"#ffdad4","secondary-container":"#0c5135","surface":"#061610","on-secondary-fixed":"#002112","surface-dim":"#061610","primary-container":"#e4e2dd","on-secondary-container":"#83c39f","error-container":"#93000a","on-primary-fixed":"#1b1c18","tertiary-container":"#ffdad4","outline-variant":"#464741","secondary":"#94d4b0","on-primary":"#30312d","on-tertiary":"#670500","inverse-surface":"#d3e7dc","surface-bright":"#2b3d35","primary":"#ffffff","on-error":"#690005","error":"#ffb4ab","outline":"#91918a","surface-container-high":"#1c2d26","primary-fixed-dim":"#c8c6c1","tertiary-fixed-dim":"#ffb4a7","on-tertiary-fixed":"#400200","surface-tint":"#c8c6c1","on-primary-container":"#656560","on-surface":"#d3e7dc","surface-container-highest":"#273831"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","margin-desktop":"2rem","space-xl":"2rem","margin":"1rem","space-sm":"0.5rem","gutter-desktop":"1.5rem","margin-tablet":"1.5rem","space-md":"1rem","space-lg":"1.5rem","gutter":"1rem"},"fontFamily":{"display-lg-mobile":["Anton"],"display-lg":["Anton"],"label-tactical":["IBM Plex Sans"],"body-sm":["IBM Plex Sans"],"body-lg":["IBM Plex Sans"],"metric-huge-mobile":["Anton"],"label-mono":["IBM Plex Sans"],"headline-lg":["Anton"],"headline-md":["Anton"],"body-md":["IBM Plex Sans"],"headline-sm":["Anton"],"metric-huge":["Anton"]},"fontSize":{"display-lg-mobile":["38px",{"lineHeight":"42px","letterSpacing":"0.02em","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"60px","letterSpacing":"0.02em","fontWeight":"400"}],"label-tactical":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"metric-huge-mobile":["44px",{"lineHeight":"44px","letterSpacing":"0.01em","fontWeight":"400"}],"label-mono":["10px",{"lineHeight":"12px","letterSpacing":"0.08em","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"36px","letterSpacing":"0.03em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"28px","letterSpacing":"0.03em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"22px","letterSpacing":"0.04em","fontWeight":"400"}],"metric-huge":["64px",{"lineHeight":"64px","letterSpacing":"0.01em","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-40 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-md"><div class="px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-3 h-3 bg-on-tertiary-container"></div><span class="font-headline-md text-headline-md tracking-wider text-primary uppercase">COACH<span class="text-secondary">AI</span></span></div><span class="font-label-mono text-label-mono text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">SYS-PRO.24</span></div><div class="px-space-md"><div class="bg-surface-container p-space-sm rounded flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px]">sports_soccer</span><div class="flex flex-col"><span class="font-label-tactical text-label-tactical text-primary uppercase">FIRST TEAM SQUAD</span><span class="font-label-mono text-label-mono text-on-surface-variant">PREMIER DIVISION</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex flex-col px-space-sm gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-semibold border-l-2 border-primary"><a class="flex items-center gap-space-sm px-space-sm py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded" data-path="tactical-board" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Tactical Board</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded" data-path="live-matchday" href="#"><span class="material-symbols-outlined text-[20px]">sensors</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Live Matchday</span><span class="ml-auto w-2 h-2 bg-on-tertiary-container rounded-full"></span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded" data-path="squad-roster" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Squad &amp; Roster</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded" data-path="players-ledger" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Players Ledger</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded" data-path="teams-directory" href="#"><span class="material-symbols-outlined text-[20px]">shield</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Teams Directory</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded" data-path="match-history-fixtures" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Match History / Fixtures</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded" data-path="analytics-heatmaps" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Analytics &amp; Heatmaps</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-tactical text-label-tactical uppercase tracking-wider">Settings</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="bg-surface-container p-space-sm rounded"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase">LIVE BENCH LINK</span><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span></div><div class="flex items-baseline justify-between"><span class="font-headline-sm text-headline-sm text-primary">ZONE 4 HIGH</span><span class="font-label-mono text-label-mono text-secondary">68% PRESS</span></div></div><div class="flex items-center justify-between pt-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">terminal</span><span class="font-label-mono text-label-mono text-on-surface-variant uppercase">FEED: ACTIVE_OPTIC</span></div><span class="font-label-mono text-label-mono text-secondary">v4.1.9</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded"><span class="font-label-tactical text-label-tactical text-on-tertiary-container uppercase">MATCHDAY 24</span><span class="text-on-surface-variant font-label-mono text-label-mono">•</span><span class="font-label-mono text-label-mono text-primary uppercase">LIVE TELEMETRY STREAM</span></div><div class="hidden md:flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-mono text-label-mono text-on-surface uppercase">TURF SENSORS CONNECTED</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><button class="w-9 h-9 flex items-center justify-center rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[18px]">search</span></button><button class="w-9 h-9 flex items-center justify-center rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[18px]">layers</span></button><button class="w-9 h-9 flex items-center justify-center rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 bg-on-tertiary-container rounded-full"></span></button></div><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right"><span class="font-label-tactical text-label-tactical text-primary uppercase">M. ARTETA</span><span class="font-label-mono text-label-mono text-on-surface-variant uppercase">TACTICAL DIR.</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-background"><div class="flex flex-col w-full relative min-h-[calc(100vh-4rem)] overflow-hidden">
+<!-- DIMMED BACKGROUND CONTEXT: FIXTURE HISTORIC LEDGER (/matches) -->
+<div class="w-full p-space-lg flex flex-col gap-space-lg opacity-25 filter blur-[1px] pointer-events-none select-none">
+<!-- Archive Header Strip -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md bg-surface-container p-space-lg rounded">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 bg-secondary"></span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest text-secondary">ARCHIVE VAULT // REF-2024-PL</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg uppercase text-primary tracking-tight">FIXTURE HISTORIC LEDGER</h1>
+<p class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-wider">CAMPAIGN RECORD: 18 FIXTURES SANCTIONED</p>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-high px-space-md py-space-sm rounded">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">CAMPAIGN TALLY</span>
+<span class="font-headline-md text-headline-md text-primary">12W — 3D — 3L</span>
+</div>
+<div class="w-px h-8 bg-surface-variant"></div>
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono uppercase text-secondary">GOAL DIFF</span>
+<span class="font-headline-md text-headline-md text-secondary">+28 GD</span>
+</div>
+</div>
+</div>
+<!-- Broadcast Strips (Man City, Bayern, PSG) -->
+<div class="flex flex-col gap-space-xs">
+<!-- Match Strip 1 -->
+<div class="flex items-center justify-between bg-surface-container-low p-space-md rounded">
+<div class="flex items-center gap-space-md">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant w-12">MD 23</span>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">MANCHESTER CITY</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase px-2 py-0.5 bg-surface-container rounded">AWAY</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="font-headline-md text-headline-md text-primary tracking-widest">1 — 2</div>
+<span class="font-label-tactical text-label-tactical uppercase bg-secondary-container text-on-secondary-container px-space-sm py-1 rounded font-semibold">VICTORY (+3)</span>
+</div>
+</div>
+<!-- Match Strip 2 -->
+<div class="flex items-center justify-between bg-surface-container-low p-space-md rounded">
+<div class="flex items-center gap-space-md">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant w-12">UCL 04</span>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">BAYERN MUNICH</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase px-2 py-0.5 bg-surface-container rounded">HOME</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="font-headline-md text-headline-md text-primary tracking-widest">2 — 2</div>
+<span class="font-label-tactical text-label-tactical uppercase bg-surface-container-highest text-on-surface-variant px-space-sm py-1 rounded">DRAW (+1)</span>
+</div>
+</div>
+<!-- Match Strip 3 -->
+<div class="flex items-center justify-between bg-surface-container-low p-space-md rounded">
+<div class="flex items-center gap-space-md">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant w-12">UCL 03</span>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">PARIS SAINT-GERMAIN</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase px-2 py-0.5 bg-surface-container rounded">HOME</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="font-headline-md text-headline-md text-primary tracking-widest">3 — 0</div>
+<span class="font-label-tactical text-label-tactical uppercase bg-secondary-container text-on-secondary-container px-space-sm py-1 rounded font-semibold">VICTORY (+3)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE-UP MODAL OVERLAY WRAPPER -->
+<div class="absolute inset-0 bg-[#02110b]/85 backdrop-blur-[3px] flex items-center justify-center p-space-sm md:p-space-lg z-50 overflow-y-auto">
+<!-- TACTICAL CLIPBOARD CONTAINER -->
+<div class="relative w-full max-w-3xl my-auto flex flex-col items-center">
+<!-- Brass / Gunmetal Clipboard Top Clip Mechanism -->
+<div class="relative z-20 -mb-5 flex flex-col items-center select-none">
+<!-- Mechanical Base Clip -->
+<div class="w-48 h-10 bg-[#2b3d35] rounded-t shadow-md flex items-center justify-between px-space-md">
+<div class="w-3.5 h-3.5 rounded-full bg-[#12231c] flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-[#c8c6c1]"></div>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="h-1 w-6 bg-[#061610] rounded-full"></div>
+<span class="font-label-mono text-[9px] uppercase tracking-widest text-[#c8c6c1] font-bold">TACTICAL DESK</span>
+<div class="h-1 w-6 bg-[#061610] rounded-full"></div>
+</div>
+<div class="w-3.5 h-3.5 rounded-full bg-[#12231c] flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-[#c8c6c1]"></div>
+</div>
+</div>
+<!-- Metallic Grip Pressure Bar -->
+<div class="w-40 h-3 bg-[#474743] shadow-sm -mt-1 rounded-sm"></div>
+</div>
+<!-- PHYSICAL TEAM-SHEET SLATE CARD (#F7F5EF / primary-container) -->
+<div class="relative z-10 w-full bg-[#f4f1ea] text-[#12231c] rounded-lg shadow-2xl p-space-md md:p-space-xl flex flex-col gap-space-lg transition-transform duration-300">
+<!-- Faint Tactical Watermark Behind Chalk Sheet -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.04] bg-[radial-gradient(#12231c_1px,transparent_1px)] [background-size:16px_16px] rounded-lg"></div>
+<!-- SHEET HEADER: Official Stamp & Match Serial -->
+<div class="relative flex flex-col md:flex-row md:items-start justify-between gap-space-sm pb-space-md bg-transparent">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 bg-[#12231c] text-[#f4f1ea] font-label-mono text-[10px] font-bold tracking-widest uppercase">DOC REF: M-15</span>
+<span class="font-label-mono text-label-mono tracking-widest uppercase text-[#5f5f5a]">SANCTIONED FIXTURE RECORD</span>
+</div>
+<h2 class="font-headline-md text-headline-md tracking-tight uppercase text-[#12231c] mt-0.5">
+              OFFICIAL MATCH REPORT ENTRY
+            </h2>
+<div class="flex items-center gap-space-sm mt-0.5">
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider text-[#5f5f5a]">MATCHDAY SERIAL: <strong class="text-[#12231c]">PL-24-MD09-A</strong></span>
+<span class="text-[#91918a]">•</span>
+<span class="font-label-mono text-label-mono uppercase text-[#0c5135] bg-[#b0f1cb]/40 px-1 rounded font-semibold">PRE-KICK VERIFIED</span>
+</div>
+</div>
+<!-- Close ESC Action -->
+<button class="self-end md:self-start flex items-center gap-1 px-space-sm py-1 bg-[#e4e2dd] hover:bg-[#12231c] text-[#12231c] hover:text-[#f4f1ea] transition-colors rounded text-left group" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest">DISMISS // ESC</span>
+</button>
+</div>
+<!-- FORM SECTION 1: OPPONENT SELECTION & META -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md pt-space-xs">
+<!-- Opponent Selector (8 cols) -->
+<div class="md:col-span-7 flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-[#474743] flex items-center justify-between">
+<span>01. SANCTIONED OPPONENT</span>
+<span class="font-label-mono text-[10px] text-[#5f5f5a] uppercase tracking-normal">OPPONENT REGISTRY: FA-0082</span>
+</label>
+<div class="flex items-center gap-space-xs bg-[#e9e6dd] p-1.5 rounded relative">
+<div class="w-9 h-9 bg-[#12231c] text-[#f4f1ea] rounded flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div class="flex flex-col flex-1 pl-1">
+<span class="font-label-mono text-[10px] text-[#5f5f5a] uppercase font-bold">PREMIER LEAGUE OPPONENT</span>
+<span class="font-headline-sm text-headline-sm uppercase text-[#12231c] tracking-wide leading-none">Aston Villa FC</span>
+</div>
+<button class="px-2 py-1 bg-[#dedad0] hover:bg-[#12231c] hover:text-[#f4f1ea] text-[#12231c] text-[11px] font-label-tactical uppercase rounded transition-colors flex items-center gap-1" type="button">
+<span>CHANGE</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+</div>
+<!-- Sub inline action for unregistered club -->
+<button class="self-start flex items-center gap-1 text-[11px] font-label-tactical uppercase text-[#0c5135] hover:text-[#002112] px-1 py-0.5 rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>+ REGISTER UNLISTED OPPONENT / FRIENDLY CLUB</span>
+</button>
+</div>
+<!-- Competition selector (5 cols) -->
+<div class="md:col-span-5 flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-[#474743]">
+              02. TOURNAMENT COMP
+            </label>
+<div class="flex items-center gap-1 bg-[#e9e6dd] p-1 rounded">
+<button class="flex-1 py-1.5 px-2 bg-[#12231c] text-[#f4f1ea] font-label-tactical text-label-tactical uppercase rounded text-center shadow-sm" type="button">
+                PREMIER LEAGUE
+              </button>
+<button class="flex-1 py-1.5 px-2 hover:bg-[#dedad0] text-[#474743] font-label-tactical text-label-tactical uppercase rounded text-center transition-colors" type="button">
+                UCL
+              </button>
+<button class="flex-1 py-1.5 px-2 hover:bg-[#dedad0] text-[#474743] font-label-tactical text-label-tactical uppercase rounded text-center transition-colors" type="button">
+                FA CUP
+              </button>
+</div>
+<div class="flex items-center justify-between text-[#5f5f5a] font-label-mono text-[10px] uppercase px-1">
+<span>VENUE: VILLA PARK, BIRMINGHAM</span>
+<span>26 OCT 2024 • 15:00 GMT</span>
+</div>
+</div>
+</div>
+<!-- FORM SECTION 2: HOME / AWAY VENUE GATES -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-[#474743]">
+            03. VENUE GATE DEPLOYMENT
+          </label>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Home Gate (Unselected) -->
+<button class="flex items-center justify-between p-space-sm bg-[#e9e6dd] hover:bg-[#dfdbd0] rounded text-left transition-colors group" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-[#5f5f5a] group-hover:text-[#12231c]">stadium</span>
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-[#5f5f5a] uppercase">HOME GATE</span>
+<span class="font-headline-sm text-headline-sm text-[#5f5f5a] uppercase">OUR TURF (EMIRATES)</span>
+</div>
+</div>
+<span class="w-3 h-3 rounded-full bg-[#dedad0]"></span>
+</button>
+<!-- Away Gate (SELECTED) -->
+<button class="flex items-center justify-between p-space-sm bg-[#12231c] text-[#f4f1ea] rounded text-left shadow-md" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-[#94d4b0]">flight_takeoff</span>
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-[#94d4b0] uppercase">AWAY GATE // SELECTED</span>
+<span class="font-headline-sm text-headline-sm text-[#f4f1ea] uppercase">OPPONENT GROUND (VILLA PARK)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-[9px] uppercase tracking-wider text-[#94d4b0] bg-[#0c5135] px-1.5 py-0.5 rounded">ACTIVE</span>
+<span class="w-3 h-3 rounded-full bg-[#94d4b0] flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-[#12231c]"></span>
+</span>
+</div>
+</button>
+</div>
+</div>
+<!-- FORM SECTION 3: CENTERPIECE SCORE STEPPERS -->
+<div class="flex flex-col gap-1.5 bg-[#e9e6dd] p-space-md rounded shadow-inner">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider text-[#474743]">04. SCORE TELEMETRY CONFIRMATION</span>
+<div class="bg-[#0c5135] text-[#b0f1cb] font-label-tactical text-label-tactical uppercase px-2 py-0.5 rounded tracking-wide font-bold" id="projection-badge">
+              PROJECTED: +3 PTS (WIN)
+            </div>
+</div>
+<div class="grid grid-cols-11 items-center gap-2 py-space-sm">
+<!-- OUR SQUAD (5 cols) -->
+<div class="col-span-5 bg-[#12231c] text-[#f4f1ea] p-space-sm rounded shadow flex flex-col items-center">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-label-tactical text-label-tactical uppercase text-[#94d4b0]">OUR SQUAD</span>
+<span class="font-label-mono text-label-mono text-[#c8c6c1] uppercase font-bold">ARSENAL FC (ARS)</span>
+</div>
+<div class="flex items-center justify-between w-full px-space-xs">
+<button class="w-10 h-10 rounded bg-[#1c2d26] hover:bg-[#273831] text-[#f4f1ea] flex items-center justify-center font-headline-md transition-colors select-none active:scale-95" onclick="decrementScore('our-score')" type="button">
+                  —
+                </button>
+<span class="font-metric-huge text-metric-huge text-[#ffffff] tracking-normal select-none" id="our-score">
+                  2
+                </span>
+<button class="w-10 h-10 rounded bg-[#1c2d26] hover:bg-[#273831] text-[#f4f1ea] flex items-center justify-center font-headline-md transition-colors select-none active:scale-95" onclick="incrementScore('our-score')" type="button">
+                  +
+                </button>
+</div>
+<span class="font-label-mono text-[9px] uppercase text-[#94d4b0] tracking-widest mt-1">EXPECTED xG: 2.14</span>
+</div>
+<!-- CHALK "VS" SEPARATOR (1 col) -->
+<div class="col-span-1 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm uppercase text-[#5f5f5a] italic select-none">vs</span>
+<div class="w-4 h-0.5 bg-[#91918a] my-1 opacity-50"></div>
+<span class="font-label-mono text-[9px] text-[#5f5f5a] uppercase font-semibold">FT</span>
+</div>
+<!-- OPPONENT (5 cols) -->
+<div class="col-span-5 bg-[#ffffff] text-[#12231c] p-space-sm rounded shadow flex flex-col items-center">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="font-label-tactical text-label-tactical uppercase text-[#5f5f5a]">OPPONENT</span>
+<span class="font-label-mono text-label-mono text-[#5f5f5a] uppercase font-bold">ASTON VILLA (AVL)</span>
+</div>
+<div class="flex items-center justify-between w-full px-space-xs">
+<button class="w-10 h-10 rounded bg-[#e9e6dd] hover:bg-[#dedad0] text-[#12231c] flex items-center justify-center font-headline-md transition-colors select-none active:scale-95" onclick="decrementScore('opp-score')" type="button">
+                  —
+                </button>
+<span class="font-metric-huge text-metric-huge text-[#12231c] tracking-normal select-none" id="opp-score">
+                  1
+                </span>
+<button class="w-10 h-10 rounded bg-[#e9e6dd] hover:bg-[#dedad0] text-[#12231c] flex items-center justify-center font-headline-md transition-colors select-none active:scale-95" onclick="incrementScore('opp-score')" type="button">
+                  +
+                </button>
+</div>
+<span class="font-label-mono text-[9px] uppercase text-[#5f5f5a] tracking-widest mt-1">OPPONENT xG: 0.88</span>
+</div>
+</div>
+</div>
+<!-- FORM SECTION 4: TACTICAL EVENT LOG & NOTES -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-[#474743] flex items-center justify-between">
+<span>05. SCORERS &amp; INCIDENTS</span>
+<span class="font-label-mono text-[10px] text-[#0c5135] font-semibold">VERIFIED LOG</span>
+</label>
+<div class="bg-[#e9e6dd] p-2 rounded flex flex-col gap-1">
+<div class="flex items-center justify-between bg-[#f4f1ea] px-2 py-1 rounded">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-[#0c5135]">sports_soccer</span>
+<span class="font-label-tactical text-label-tactical uppercase text-[#12231c]">B. SAKA</span>
+</div>
+<span class="font-headline-sm text-[13px] text-[#12231c]">34' (PEN)</span>
+</div>
+<div class="flex items-center justify-between bg-[#f4f1ea] px-2 py-1 rounded">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-[#0c5135]">sports_soccer</span>
+<span class="font-label-tactical text-label-tactical uppercase text-[#12231c]">K. HAVERTZ</span>
+</div>
+<span class="font-headline-sm text-[13px] text-[#12231c]">68' (OPEN PLAY)</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-[#474743]">
+              06. FORMATION MATRIX DEPLOYED
+            </label>
+<div class="bg-[#e9e6dd] p-2 rounded flex flex-col gap-1.5 h-full justify-between">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-[#12231c]">4-3-3 HIGH PRESS</span>
+<span class="font-label-mono text-[10px] bg-[#12231c] text-[#f4f1ea] px-1.5 py-0.5 rounded uppercase">SYS-VAR B</span>
+</div>
+<p class="font-label-mono text-[10px] text-[#5f5f5a] uppercase leading-tight">
+                POSSESSION: 58% // HIGH DEFENSIVE LINE MAINTAINED AT 48.2 METERS // 14 COUNTER-PRESS ACTIONS RECORDED IN FINAL THIRD.
+              </p>
+</div>
+</div>
+</div>
+<!-- FORM SECTION 5: FOOTER ACTIONS & STAMP TRIGGER -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md pt-space-xs mt-space-xs">
+<a class="font-label-tactical text-label-tactical uppercase tracking-wider text-[#5f5f5a] hover:text-[#12231c] transition-colors flex items-center gap-1 underline underline-offset-4" href="#" onclick="window.history.back(); return false;">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>DISCARD DRAFT // RETURN TO LEDGER</span>
+</a>
+<!-- Primary Touchline Red Rubber-Stamp Trigger (#E3402A / on-tertiary-container) -->
+<button class="w-full md:w-auto px-space-xl py-3.5 bg-[#c12714] hover:bg-[#910a00] text-[#ffffff] font-headline-md text-headline-md tracking-wider uppercase rounded shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-space-sm group" id="stamp-button" onclick="stampFixture()" type="button">
+<span class="material-symbols-outlined text-[22px] group-hover:rotate-12 transition-transform">approval</span>
+<span>STAMP &amp; RECORD FIXTURE →</span>
+</button>
+</div>
+<!-- Tactile Paper Corner Stamp Impression -->
+<div class="absolute bottom-3 right-4 pointer-events-none opacity-20 rotate-[-12deg] select-none hidden md:block">
+<div class="p-2 rounded text-center">
+<span class="font-headline-sm text-[12px] uppercase tracking-widest text-[#c12714] font-black block">SANCTIONED BY COACHAI</span>
+<span class="font-label-mono text-[9px] uppercase tracking-widest text-[#c12714] font-bold block">OFFICIAL MATCHDAY ARCHIVE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- INLINE CLIENT SCRIPT FOR STEPPERS & MICRO-INTERACTION -->
+<script>
+    function updateReadout() {
+      const ourScore = parseInt(document.getElementById('our-score').innerText, 10);
+      const oppScore = parseInt(document.getElementById('opp-score').innerText, 10);
+      const badge = document.getElementById('projection-badge');
+
+      if (ourScore > oppScore) {
+        badge.className = 'bg-[#0c5135] text-[#b0f1cb] font-label-tactical text-label-tactical uppercase px-2 py-0.5 rounded tracking-wide font-bold';
+        badge.innerText = 'PROJECTED: +3 PTS (WIN)';
+      } else if (ourScore === oppScore) {
+        badge.className = 'bg-[#474743] text-[#f4f1ea] font-label-tactical text-label-tactical uppercase px-2 py-0.5 rounded tracking-wide font-bold';
+        badge.innerText = 'PROJECTED: +1 PT (DRAW)';
+      } else {
+        badge.className = 'bg-[#910a00] text-[#ffffff] font-label-tactical text-label-tactical uppercase px-2 py-0.5 rounded tracking-wide font-bold';
+        badge.innerText = 'PROJECTED: 0 PTS (LOSS)';
+      }
+    }
+
+    function incrementScore(id) {
+      const el = document.getElementById(id);
+      let val = parseInt(el.innerText, 10);
+      if (val < 15) {
+        el.innerText = val + 1;
+        updateReadout();
+      }
+    }
+
+    function decrementScore(id) {
+      const el = document.getElementById(id);
+      let val = parseInt(el.innerText, 10);
+      if (val > 0) {
+        el.innerText = val - 1;
+        updateReadout();
+      }
+    }
+
+    function stampFixture() {
+      const btn = document.getElementById('stamp-button');
+      btn.innerText = 'STAMPED & FILED IN LEDGER ✓';
+      btn.className = 'w-full md:w-auto px-space-xl py-3.5 bg-[#0c5135] text-[#ffffff] font-headline-md text-headline-md tracking-wider uppercase rounded shadow-lg flex items-center justify-center gap-space-sm';
+      setTimeout(() => {
+        window.history.back();
+      }, 900);
+    }
+  </script>
+</div></main></div></body></html>

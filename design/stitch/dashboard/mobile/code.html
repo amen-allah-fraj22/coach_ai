@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#061610;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface": "#d3e7dc", "primary-fixed": "#e4e2dd", "tertiary-fixed": "#ffdad4", "on-tertiary": "#670500", "inverse-surface": "#d3e7dc", "surface-container-lowest": "#02110b", "primary": "#ffffff", "on-secondary-fixed": "#002112", "surface-container-low": "#0e1f18", "primary-container": "#e4e2dd", "error-container": "#93000a", "on-primary-fixed": "#1b1c18", "surface-container-high": "#1c2d26", "on-tertiary-fixed-variant": "#910a00", "secondary-container": "#0c5135", "surface": "#061610", "error": "#ffb4ab", "inverse-on-surface": "#23342c", "outline": "#91918a", "background": "#061610", "on-secondary-fixed-variant": "#0c5135", "tertiary-fixed-dim": "#ffb4a7", "surface-bright": "#2b3d35", "on-error": "#690005", "surface-container": "#12231c", "tertiary-container": "#ffdad4", "on-primary": "#30312d", "inverse-primary": "#5f5f5a", "primary-fixed-dim": "#c8c6c1", "surface-tint": "#c8c6c1", "on-tertiary-container": "#c12714", "on-primary-container": "#656560", "on-tertiary-fixed": "#400200", "surface-variant": "#273831", "secondary-fixed": "#b0f1cb", "secondary": "#94d4b0", "surface-container-highest": "#273831", "secondary-fixed-dim": "#94d4b0", "on-background": "#d3e7dc", "on-secondary-container": "#83c39f", "on-secondary": "#003823", "on-primary-fixed-variant": "#474743", "on-surface-variant": "#c7c7bf", "surface-dim": "#061610", "outline-variant": "#464741", "on-error-container": "#ffdad6", "tertiary": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "2rem", "margin-tablet": "1.5rem", "space-md": "1rem", "margin": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "gutter": "1rem", "margin-desktop": "2rem" }, fontFamily: { "metric-huge": ["Anton"], "headline-sm": ["Anton"], "display-lg-mobile": ["Anton"], "label-tactical": ["IBM Plex Sans"], "body-lg": ["IBM Plex Sans"], "display-lg": ["Anton"], "body-sm": ["IBM Plex Sans"], "label-mono": ["IBM Plex Sans"], "metric-huge-mobile": ["Anton"], "headline-md": ["Anton"], "headline-lg": ["Anton"], "body-md": ["IBM Plex Sans"] }, fontSize: { "metric-huge": ["64px", { "lineHeight": "64px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "22px", "letterSpacing": "0.04em", "fontWeight": "400" }], "display-lg-mobile": ["38px", { "lineHeight": "42px", "letterSpacing": "0.02em", "fontWeight": "400" }], "label-tactical": ["11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "60px", "letterSpacing": "0.02em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-mono": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "500" }], "metric-huge-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "28px", "letterSpacing": "0.03em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "0.03em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased pt-safe pb-safe flex flex-col min-h-screen"><main class="flex-1 flex flex-col relative w-full bg-surface"><div class="flex flex-col w-full text-on-surface select-none pb-8">
+<!-- Top Broadcast Scoreline Band -->
+<header class="w-full bg-surface-container shadow-md p-space-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-error-container animate-pulse"></span>
+<span class="font-label-tactical text-label-tactical text-error tracking-widest uppercase">MATCHDAY TELEMETRY</span>
+</div>
+<div class="bg-surface-container-high px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm text-secondary">schedule</span>
+<span class="font-label-mono text-label-mono text-secondary tracking-widest font-semibold" id="countdown-clock">T-04:18:22</span>
+</div>
+</div>
+<!-- Matchup Display -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">HOME</span>
+<span class="font-headline-md text-headline-md tracking-wider text-primary">SPORTING CP</span>
+</div>
+<div class="flex flex-col items-center px-space-sm">
+<span class="font-label-tactical text-label-tactical text-outline-variant font-bold">VS</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant text-[10px]">UCL RD 4</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider">AWAY</span>
+<span class="font-headline-md text-headline-md tracking-wider text-primary">MAN CITY</span>
+</div>
+</div>
+<!-- Inline Formations Strip -->
+<div class="flex items-center justify-between bg-surface-container-low px-space-md py-space-xs rounded">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-sm bg-secondary-container"></span>
+<span class="font-label-tactical text-label-tactical text-secondary tracking-wider font-bold">4-3-3 ATTACK</span>
+</div>
+<span class="font-label-mono text-label-mono text-outline text-[9px] uppercase tracking-widest">TACTICAL SHAPE</span>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-tactical text-label-tactical text-tertiary-fixed-dim tracking-wider font-bold">3-2-4-1 FLUID</span>
+<span class="w-1.5 h-1.5 rounded-sm bg-error-container"></span>
+</div>
+</div>
+</header>
+<!-- Main Stack: 3 Physical Action Tiles -->
+<section class="flex flex-col gap-space-md px-margin py-space-md w-full">
+<!-- Tile 1: Prepare Match (-0.5deg) -->
+<div class="group relative w-full bg-surface-container-high rounded-lg p-space-md shadow-lg transform -rotate-[0.5deg] active:scale-[0.98] transition-transform duration-150 cursor-pointer overflow-hidden" onclick="handleCardClick('prepare')">
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-gradient-to-br from-primary via-transparent to-transparent"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-body-lg">arrow_forward</span>
+</div>
+<div>
+<span class="font-label-tactical text-label-tactical text-secondary tracking-widest block uppercase">TACTICAL BRIEF</span>
+<h2 class="font-headline-md text-headline-md text-primary leading-tight">PREPARE THIS MATCH</h2>
+</div>
+</div>
+<span class="font-label-mono text-label-mono bg-surface-container-lowest text-primary-fixed px-2 py-0.5 rounded font-semibold">T-MINUS</span>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-lowest/40 rounded p-space-sm relative z-10">
+<div class="flex items-center gap-space-xs text-secondary-fixed">
+<span class="material-symbols-outlined text-body-sm">lightbulb</span>
+<span class="font-label-tactical text-label-tactical tracking-wider">AI KEY INSIGHT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5 leading-snug">
+          Exploit City's left half-space during defensive transition. Akanji steps up early leaving 24m channel.
+        </p>
+</div>
+<div class="mt-space-sm flex items-center justify-between relative z-10 pt-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-mono text-label-mono text-outline-variant">CONFIDENCE</span>
+<div class="flex gap-0.5">
+<div class="w-3 h-1 bg-secondary rounded-full"></div>
+<div class="w-3 h-1 bg-secondary rounded-full"></div>
+<div class="w-3 h-1 bg-secondary rounded-full"></div>
+<div class="w-3 h-1 bg-secondary/30 rounded-full"></div>
+</div>
+</div>
+<div class="min-h-[48px] px-space-md bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center rounded tracking-wider shadow active:bg-primary-fixed">
+          OPEN DRILLS
+        </div>
+</div>
+</div>
+<!-- Tile 2: Review Last Match (0deg) -->
+<div class="group relative w-full bg-surface-container-high rounded-lg p-space-md shadow-lg active:scale-[0.98] transition-transform duration-150 cursor-pointer overflow-hidden" onclick="handleCardClick('review')">
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-body-lg">analytics</span>
+</div>
+<div>
+<span class="font-label-tactical text-label-tactical text-outline tracking-widest block uppercase">DEBRIEF &amp; METRICS</span>
+<h2 class="font-headline-md text-headline-md text-primary leading-tight">REVIEW LAST MATCH</h2>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary-fixed bg-secondary-container px-2 py-0.5 rounded">3-1 W</span>
+</div>
+<!-- Pressing Intensity SVG Sparkline -->
+<div class="mt-space-sm bg-surface-container-lowest/60 rounded p-space-sm relative z-10">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">PPDA TIMELINE vs PORTO</span>
+<span class="font-label-mono text-label-mono text-secondary-fixed">8.2 HIGH PRESS</span>
+</div>
+<svg class="w-full h-10 overflow-visible" fill="none" viewbox="0 0 280 40">
+<path d="M0 32 L35 28 L70 35 L105 10 L140 18 L175 6 L210 22 L245 14 L280 20" stroke="#94d4b0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M0 32 L35 28 L70 35 L105 10 L140 18 L175 6 L210 22 L245 14 L280 20 L280 40 L0 40 Z" fill="url(#pressGrad)" opacity="0.2"></path>
+<!-- Decision Turnovers Indicator at 32' -->
+<circle class="fill-error stroke-surface" cx="105" cy="10" r="3.5" stroke-width="1.5"></circle>
+<circle class="fill-error stroke-surface" cx="175" cy="6" r="3.5" stroke-width="1.5"></circle>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="pressGrad" x1="0" x2="0" y1="0" y2="40">
+<stop stop-color="#94d4b0"></stop>
+<stop offset="1" stop-color="#94d4b0" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/40 rounded p-space-sm relative z-10">
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Pressing peak at 32' yielded 2 decisive turnovers inside attacking third leading directly to Gyökeres finishes.
+        </p>
+</div>
+<div class="mt-space-sm flex items-center justify-between relative z-10 pt-1">
+<span class="font-label-tactical text-label-tactical text-outline tracking-wider">FULL REPLAY READY</span>
+<div class="min-h-[48px] px-space-md bg-surface-container text-on-surface font-headline-sm text-headline-sm flex items-center justify-center rounded tracking-wider shadow active:bg-surface-container-highest">
+          ANALYZE
+        </div>
+</div>
+</div>
+<!-- Tile 3: Ask AI Coach (+0.5deg) -->
+<div class="group relative w-full bg-surface-container-high rounded-lg p-space-md shadow-lg transform rotate-[0.5deg] active:scale-[0.98] transition-transform duration-150 cursor-pointer overflow-hidden" onclick="handleCardClick('aicoach')">
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined text-body-lg">forum</span>
+</div>
+<div>
+<span class="font-label-tactical text-label-tactical text-error tracking-widest block uppercase">NOTEPAD LIVE</span>
+<h2 class="font-headline-md text-headline-md text-primary leading-tight">ASK THE AI COACH</h2>
+</div>
+</div>
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span>
+</span>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-lowest/40 rounded p-space-sm relative z-10">
+<div class="flex items-center gap-space-xs text-error">
+<span class="material-symbols-outlined text-body-sm">bolt</span>
+<span class="font-label-tactical text-label-tactical tracking-wider">REAL-TIME QUERY READY</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5 leading-snug">
+          Counter-tactics ready for Haaland box delivery. Low block dual-pivot containment protocol generated.
+        </p>
+</div>
+<div class="mt-space-sm flex items-center justify-between relative z-10 pt-1">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-mono text-label-mono">
+<span class="material-symbols-outlined text-body-sm">mic</span>
+<span>AUDIO ENGINE ONLINE</span>
+</div>
+<div class="min-h-[48px] px-space-md bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm flex items-center justify-center rounded tracking-wider shadow active:bg-secondary">
+          QUERY ASSISTANT
+        </div>
+</div>
+</div>
+</section>
+<!-- Upcoming Fixtures Strip (Horizontally Scrollable) -->
+<section class="mt-space-sm w-full flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-margin">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 bg-error text-on-error font-label-tactical text-label-tactical rounded font-bold">NEXT</span>
+<span class="font-headline-sm text-headline-sm tracking-wider text-primary">FIXTURE HORIZON</span>
+</div>
+<span class="font-label-mono text-label-mono text-outline-variant">SWIPE →</span>
+</div>
+<!-- Horizontal Scroll Track -->
+<div class="flex overflow-x-auto gap-space-sm px-margin py-space-xs no-scrollbar">
+<!-- Fixture 1 (Current Active) -->
+<div class="flex-shrink-0 w-44 bg-surface-container-high rounded p-space-sm flex flex-col justify-between shadow">
+<div class="flex justify-between items-center text-outline font-label-mono text-label-mono">
+<span class="text-error font-bold">TONIGHT 20:00</span>
+<span>UCL</span>
+</div>
+<div class="py-1">
+<span class="font-label-tactical text-label-tactical text-on-surface-variant block uppercase">HOME</span>
+<span class="font-headline-sm text-headline-sm text-primary block truncate">MAN CITY</span>
+</div>
+<div class="flex justify-between items-center pt-1">
+<span class="font-label-mono text-label-mono text-secondary">PREPPED</span>
+<span class="material-symbols-outlined text-body-sm text-secondary">verified</span>
+</div>
+</div>
+<!-- Fixture 2 -->
+<div class="flex-shrink-0 w-44 bg-surface-container rounded p-space-sm flex flex-col justify-between shadow">
+<div class="flex justify-between items-center text-outline font-label-mono text-label-mono">
+<span>NOV 10 • 18:00</span>
+<span>LIGA</span>
+</div>
+<div class="py-1">
+<span class="font-label-tactical text-label-tactical text-on-surface-variant block uppercase">AWAY</span>
+<span class="font-headline-sm text-headline-sm text-primary block truncate">BRAGA</span>
+</div>
+<div class="flex justify-between items-center pt-1">
+<span class="font-label-mono text-label-mono text-outline">SCOUTING (84%)</span>
+<span class="material-symbols-outlined text-body-sm text-outline">pending</span>
+</div>
+</div>
+<!-- Fixture 3 -->
+<div class="flex-shrink-0 w-44 bg-surface-container rounded p-space-sm flex flex-col justify-between shadow">
+<div class="flex justify-between items-center text-outline font-label-mono text-label-mono">
+<span>NOV 26 • 20:00</span>
+<span>UCL</span>
+</div>
+<div class="py-1">
+<span class="font-label-tactical text-label-tactical text-on-surface-variant block uppercase">HOME</span>
+<span class="font-headline-sm text-headline-sm text-primary block truncate">ARSENAL</span>
+</div>
+<div class="flex justify-between items-center pt-1">
+<span class="font-label-mono text-label-mono text-outline-variant">SCHEDULED</span>
+<span class="material-symbols-outlined text-body-sm text-outline-variant">event</span>
+</div>
+</div>
+<!-- Fixture 4 -->
+<div class="flex-shrink-0 w-44 bg-surface-container rounded p-space-sm flex flex-col justify-between shadow">
+<div class="flex justify-between items-center text-outline font-label-mono text-label-mono">
+<span>NOV 30 • 20:30</span>
+<span>LIGA</span>
+</div>
+<div class="py-1">
+<span class="font-label-tactical text-label-tactical text-on-surface-variant block uppercase">HOME</span>
+<span class="font-headline-sm text-headline-sm text-primary block truncate">SANTA CLARA</span>
+</div>
+<div class="flex justify-between items-center pt-1">
+<span class="font-label-mono text-label-mono text-outline-variant">SCHEDULED</span>
+<span class="material-symbols-outlined text-body-sm text-outline-variant">event</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function handleCardClick(action) {
+    if (window.navigator && window.navigator.vibrate) {
+      window.navigator.vibrate(25);
+    }
+  }
+
+  // Active micro-interaction: Subtle realistic countdown decrementer
+  (function initMatchCountdown() {
+    const el = document.getElementById('countdown-clock');
+    if (!el) return;
+    let totalSeconds = 4 * 3600 + 18 * 60 + 22;
+    setInterval(() => {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        const h = Math.floor(totalSeconds / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
+        el.textContent = `T-${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+    }, 1000);
+  })();
+</script></main></body></html>
