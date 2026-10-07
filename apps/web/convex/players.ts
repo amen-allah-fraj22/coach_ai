@@ -6,6 +6,7 @@ import { assertSameClub, requireCoach } from "./lib/auth.js";
 const fields = {
   teamId: v.id("teams"),
   name: v.string(),
+  jerseyNumber: v.optional(v.number()),
   dateOfBirth: v.optional(v.string()),
   position: v.optional(v.string()),
   secondaryPosition: v.optional(v.string()),

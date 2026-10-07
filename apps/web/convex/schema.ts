@@ -57,6 +57,7 @@ export default defineSchema({
     clubId: v.id("clubs"),
     teamId: v.id("teams"),
     name: v.string(),
+    jerseyNumber: v.optional(v.number()),
     dateOfBirth: v.optional(v.string()),
     position: v.optional(v.string()),
     secondaryPosition: v.optional(v.string()),

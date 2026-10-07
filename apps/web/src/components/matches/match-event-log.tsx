@@ -86,7 +86,7 @@ export function MatchEventLog({
               <span className="font-display w-10 shrink-0 tabular-nums">
                 {event.minute}&apos;
               </span>
-              <span className={event.side === "us" ? "font-medium text-secondary" : "font-medium text-primary"}>
+              <span className={event.side === "us" ? "font-medium text-secondary" : "font-medium text-destructive"}>
                 {t(`types.${event.eventType}`)}
               </span>
               <span className="text-muted-foreground">{t(`sides.${event.side}`)}</span>
@@ -96,7 +96,7 @@ export function MatchEventLog({
               )}
               <Button
                 type="button"
-                variant="ghost"
+                variant="destructive"
                 size="sm"
                 className="ms-auto"
                 onClick={() => removeEvent({ id: event._id })}

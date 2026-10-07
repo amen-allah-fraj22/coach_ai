@@ -2,6 +2,12 @@
   "app": {
     "name": "CoachAI"
   },
+  "nav": {
+    "playersList": "Liste",
+    "playersBoard": "Tableau",
+    "more": "Plus",
+    "signOut": "Se déconnecter"
+  },
   "common": {
     "language": "Langue",
     "french": "Français",

@@ -11,7 +11,7 @@ function resultAccent(match: Doc<"matches">) {
     return "bg-muted";
   }
   if (match.scoreFor > match.scoreAgainst) return "bg-secondary";
-  if (match.scoreFor < match.scoreAgainst) return "bg-primary";
+  if (match.scoreFor < match.scoreAgainst) return "bg-destructive";
   return "bg-muted-foreground";
 }
 
@@ -38,7 +38,7 @@ export default async function MatchesPage() {
         </h1>
         {teamList.length > 0 && (
           <div className="flex gap-2">
-            <Button asChild variant="outline">
+            <Button asChild variant="secondary">
               <Link href="/matches/import">{t("importMatch")}</Link>
             </Button>
             <Button asChild>

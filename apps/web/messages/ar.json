@@ -2,6 +2,12 @@
   "app": {
     "name": "كوتش إه آي"
   },
+  "nav": {
+    "playersList": "قائمة",
+    "playersBoard": "لوحة",
+    "more": "المزيد",
+    "signOut": "تسجيل الخروج"
+  },
   "common": {
     "language": "اللغة",
     "french": "الفرنسية",

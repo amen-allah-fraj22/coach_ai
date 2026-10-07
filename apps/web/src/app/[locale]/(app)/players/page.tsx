@@ -85,7 +85,7 @@ export default async function PlayersPage() {
                           className={
                             player.availability === "available"
                               ? "text-secondary"
-                              : "text-primary"
+                              : "text-destructive"
                           }
                         >
                           {t(`status.${player.availability}`)}

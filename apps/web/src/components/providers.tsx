@@ -5,6 +5,8 @@ import { ClerkProvider, useAuth } from "@clerk/nextjs";
 import { ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 
+import { ToastProvider } from "@/components/ui/toast";
+
 /**
  * Wires Clerk (identity) to Convex (data). ConvexProviderWithClerk passes
  * the Clerk-issued JWT to Convex on every request, which Convex verifies
@@ -20,7 +22,7 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <ClerkProvider>
       <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-        {children}
+        <ToastProvider>{children}</ToastProvider>
       </ConvexProviderWithClerk>
     </ClerkProvider>
   );

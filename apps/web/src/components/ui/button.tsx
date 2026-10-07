@@ -4,31 +4,37 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
+/**
+ * Variants match design/stitch/DESIGN.md "Buttons & Tactical Triggers"
+ * exactly (primary/secondary/destructive), plus `pill` for the landing CTA
+ * only (the sole rounded element besides status dots/avatars). The
+ * `stampPress` motion preset (lib/motion.ts) is layered on at the call site
+ * via `whileTap`, not baked in here as a separate color variant — it's a
+ * behavior (Accept/Modify/Reject, "Stamp & …" submits), not a look.
+ */
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-none font-display uppercase tracking-wide outline-none transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 focus-visible:ring-2 focus-visible:ring-ring/50",
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+        primary:
+          "border border-chalk bg-chalk text-night-pitch hover:bg-slate-grass hover:text-chalk",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/90",
+          "border border-hairline-16 bg-slate-grass text-chalk hover:border-hairline-24",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "border border-touchline-red bg-slate-grass text-touchline-red hover:bg-touchline-red hover:text-chalk",
+        pill: "rounded-full bg-touchline-red text-chalk hover:bg-touchline-red/90",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9",
+        sm: "h-8 px-3 text-xs",
+        default: "h-10 px-4 text-sm",
+        lg: "h-12 px-6 text-base",
+        full: "h-14 w-full text-base",
+        icon: "size-10",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "primary",
       size: "default",
     },
   },

@@ -2,13 +2,14 @@
 
 import { useState, useTransition } from "react";
 import { useMutation } from "convex/react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 
 import { api } from "@convex/_generated/api";
 import type { Id } from "@convex/_generated/dataModel";
 import type { Recommendation } from "@convex/aiRecommendation";
 import { Button } from "@/components/ui/button";
+import { stampPress } from "@/lib/motion";
 
 type FeedbackStatus = "accepted" | "modified" | "rejected";
 
@@ -56,6 +57,7 @@ export function MatchPlanCard({
   const recordFeedback = useMutation(api.ai.recordFeedback);
   const [pending, startTransition] = useTransition();
   const [feedbackDone, setFeedbackDone] = useState(false);
+  const reduced = useReducedMotion();
 
   const rec = recommendation;
 
@@ -70,9 +72,9 @@ export function MatchPlanCard({
     });
   }
 
-  const stamps: { status: FeedbackStatus; label: string; variant: "secondary" | "outline" | "destructive" }[] = [
-    { status: "accepted", label: t("accept"), variant: "secondary" },
-    { status: "modified", label: t("modify"), variant: "outline" },
+  const stamps: { status: FeedbackStatus; label: string; variant: "primary" | "secondary" | "destructive" }[] = [
+    { status: "accepted", label: t("accept"), variant: "primary" },
+    { status: "modified", label: t("modify"), variant: "secondary" },
     { status: "rejected", label: t("reject"), variant: "destructive" },
   ];
 
@@ -155,7 +157,7 @@ export function MatchPlanCard({
         ) : (
           <div className="flex gap-2">
             {stamps.map((s) => (
-              <motion.div key={s.status} whileTap={{ scale: 0.9, rotate: -3 }}>
+              <motion.div key={s.status} whileTap={stampPress(reduced ?? false)}>
                 <Button
                   type="button"
                   variant={s.variant}

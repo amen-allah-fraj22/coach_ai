@@ -1,77 +1,78 @@
 @import "tailwindcss";
 
 /*
- * "Pitchside" design tokens — see /design/stitch-prompts.md for the full
- * visual language brief this palette and radius come from.
+ * "Pitchside" design tokens — dark-only, corrected against
+ * design/stitch/DESIGN.md per docs/design-implementation-plan.md §2:
+ * primary action is Chalk (not Touchline Red, which is reserved for
+ * destructive/urgent states), radius is 0 everywhere, no shadows on UI
+ * chrome.
  */
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0rem;
 
-  --background: #f7f5ef; /* Chalk */
-  --foreground: #16211b; /* near Night Pitch, for text */
+  /* Core palette */
+  --night-pitch: #12231c; /* base canvas */
+  --slate-grass: #182e25; /* card / container surfaces */
+  --deep-well: #0e1f18; /* recessed surfaces */
+  --chalk: #f7f5ef; /* ink — never pure white */
+  --pitch-green: #2f6d4f; /* positive / in-possession accent */
+  --touchline-red: #e3402a; /* urgent / destructive accent */
 
-  --card: #fdfcf8;
-  --card-foreground: #16211b;
+  --wash-green: rgba(47, 109, 79, 0.25);
+  --wash-red: rgba(227, 64, 42, 0.22);
 
-  --popover: #fdfcf8;
-  --popover-foreground: #16211b;
+  --hairline-08: rgba(247, 245, 239, 0.08);
+  --hairline-16: rgba(247, 245, 239, 0.16);
+  --hairline-24: rgba(247, 245, 239, 0.24);
 
-  --primary: #e3402a; /* Touchline Red */
-  --primary-foreground: #f7f5ef;
+  /* shadcn-style semantic tokens, mapped onto the Pitchside palette */
+  --background: var(--night-pitch);
+  --foreground: var(--chalk);
 
-  --secondary: #2f6d4f; /* Pitch Green */
-  --secondary-foreground: #f7f5ef;
+  --card: var(--slate-grass);
+  --card-foreground: var(--chalk);
 
-  --muted: #eae7dd;
-  --muted-foreground: #5b6560;
+  --popover: var(--night-pitch);
+  --popover-foreground: var(--chalk);
 
-  --accent: #12231c; /* Night Pitch, used as a dark accent surface */
-  --accent-foreground: #f7f5ef;
+  --primary: var(--chalk);
+  --primary-foreground: var(--night-pitch);
 
-  --destructive: #e3402a;
-  --destructive-foreground: #f7f5ef;
+  --secondary: var(--slate-grass);
+  --secondary-foreground: var(--chalk);
 
-  --border: #dad6c9;
-  --input: #dad6c9;
-  --ring: #e3402a;
-}
+  --muted: var(--slate-grass);
+  --muted-foreground: rgba(247, 245, 239, 0.6);
 
-.dark {
-  --background: #12231c; /* Night Pitch */
-  --foreground: #f7f5ef; /* Chalk */
+  --accent: var(--wash-green);
+  --accent-foreground: var(--chalk);
 
-  --card: #16261e;
-  --card-foreground: #f7f5ef;
+  --destructive: var(--touchline-red);
+  --destructive-foreground: var(--chalk);
 
-  --popover: #16261e;
-  --popover-foreground: #f7f5ef;
-
-  --primary: #e3402a;
-  --primary-foreground: #12231c;
-
-  --secondary: #3e8c67;
-  --secondary-foreground: #0d1712;
-
-  --muted: #1b2e24;
-  --muted-foreground: #9fb0a6;
-
-  --accent: #1b2e24;
-  --accent-foreground: #f7f5ef;
-
-  --destructive: #e3402a;
-  --destructive-foreground: #12231c;
-
-  --border: #24392e;
-  --input: #24392e;
-  --ring: #e3402a;
+  --border: var(--hairline-08);
+  --input: var(--hairline-16);
+  --ring: var(--chalk);
 }
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: var(--radius);
+
+  --color-night-pitch: var(--night-pitch);
+  --color-slate-grass: var(--slate-grass);
+  --color-deep-well: var(--deep-well);
+  --color-chalk: var(--chalk);
+  --color-pitch-green: var(--pitch-green);
+  --color-touchline-red: var(--touchline-red);
+  --color-wash-green: var(--wash-green);
+  --color-wash-red: var(--wash-red);
+  --color-hairline-08: var(--hairline-08);
+  --color-hairline-16: var(--hairline-16);
+  --color-hairline-24: var(--hairline-24);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -101,4 +102,123 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+ * Pitchside type scale (design/stitch/DESIGN.md "typography"). Display and
+ * metric sizes use the display font (Anton / Noto Kufi Arabic in RTL);
+ * metric values are always tabular-nums so they don't jitter on update.
+ */
+@utility text-display-lg {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+@utility text-display-lg-mobile {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0.02em;
+}
+@utility text-headline-lg {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+}
+@utility text-headline-md {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+}
+@utility text-headline-sm {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+}
+@utility text-metric-huge {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 64px;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+@utility text-metric-huge-mobile {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+@utility text-body-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+@utility text-body-md {
+  font-size: 14px;
+  line-height: 20px;
+}
+@utility text-body-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+@utility text-label-tactical {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+@utility text-label-mono {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dotted tactical-grid backdrop, used behind pitch/board containers. */
+@utility bg-pitch-grid {
+  background-image: radial-gradient(var(--hairline-16) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Continuous CSS loops backing lib/motion.ts's marchingAnts/marquee names. */
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+@utility animate-marching-ants {
+  stroke-dasharray: 8 4;
+  animation: marching-ants 0.6s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@utility animate-marquee {
+  animation: marquee-scroll 24s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marching-ants,
+  .animate-marquee {
+    animation: none;
+  }
 }
