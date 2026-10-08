@@ -1,7 +1,14 @@
-export default function AuthLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <main className="flex flex-1 items-center justify-center px-6 py-12">
-      <div className="w-full max-w-sm">{children}</div>
-    </main>
-  );
+import { AuthSplitLayout } from "@/components/auth/auth-split-layout";
+import type { Locale } from "@/i18n/routing";
+
+export default async function AuthLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  return <AuthSplitLayout locale={locale as Locale}>{children}</AuthSplitLayout>;
 }
