@@ -24,9 +24,92 @@
     "optional": "facultatif"
   },
   "home": {
-    "title": "Votre copilote tactique",
-    "subtitle": "Préparez vos matchs, organisez votre effectif et générez des plans de jeu à partir des données de votre équipe.",
-    "cta": "Entrer au vestiaire"
+    "nav": {
+      "howItWorks": "Comment ça marche",
+      "aiCoach": "Coach IA",
+      "manifesto": "Manifeste",
+      "login": "Se connecter"
+    },
+    "hero": {
+      "statusChip": "COACH IA PRÊT",
+      "titleLine1": "VOTRE COPILOTE",
+      "titleLine2": "TACTIQUE",
+      "subtitle": "Préparez vos matchs, organisez votre effectif et générez des plans de jeu à partir des données de votre équipe — en français, arabe ou anglais.",
+      "cta": "Entrer au vestiaire",
+      "seeHow": "Voir comment ça marche",
+      "metricLanguages": "LANGUES",
+      "metricLanguagesValue": "3",
+      "metricDemo": "EFFECTIF DÉMO",
+      "metricDemoValue": "1 CLIC",
+      "metricTools": "OUTILS DE DONNÉES LUS PAR L'IA",
+      "metricToolsValue": "8",
+      "metricSpreadsheets": "TABLEUR NÉCESSAIRE",
+      "metricSpreadsheetsValue": "0"
+    },
+    "ticker": {
+      "items": [
+        "GESTION D'EFFECTIF",
+        "COMPOSITIONS GLISSER-DÉPOSER",
+        "HISTORIQUE DES MATCHS",
+        "IMPORT CSV",
+        "ESPIONNAGE D'ADVERSAIRES",
+        "PLANS DE MATCH IA",
+        "FR · AR · EN"
+      ]
+    },
+    "phases": {
+      "label": "ARCHITECTURE DU BRIEFING",
+      "title": "Trois phases de maîtrise tactique",
+      "intro": "Un seul endroit pour préparer l'effectif, revoir ce qui s'est passé, et demander à l'IA quoi faire ensuite — construit autour des données que vous avez vraiment.",
+      "prepareTag": "FEUILLE DE MATCH",
+      "prepareTitle": "01. Préparer",
+      "prepareItem1": "Composez votre équipe sur le tableau glisser-déposer",
+      "prepareItem2": "Définissez la formation pour ce match",
+      "prepareItem3": "Enregistrez la disponibilité de l'effectif",
+      "reviewTag": "JOURNAL DE MATCH",
+      "reviewTitle": "02. Revoir",
+      "reviewStat": "Consignez le score, les statistiques et les événements clés après le match",
+      "askTag": "COACH IA",
+      "askTitle": "03. Demander à l'IA",
+      "askQuote": "« Comment aborder cet adversaire ? »",
+      "askRecommendation": "Un plan de match complet — formation, pressing, coups de pied arrêtés, risques — construit à partir de votre effectif et de vos matchs",
+      "askFooter": "Basé sur vos propres données enregistrées, pas une boîte noire"
+    },
+    "manifesto": {
+      "label": "PHILOSOPHIE DE TOUCHE",
+      "title": "Le manifeste du tableau noir",
+      "body": "Un outil de coaching doit ressembler à un tableau noir, pas à un tableur. CoachAI existe pour transformer les données que vous enregistrez déjà — effectifs, matchs, adversaires — en un plan lisible avant d'entrer sur le terrain.",
+      "quote": "Le meilleur outil tactique est celui qu'un coach ouvre vraiment avant le match, pas après.",
+      "quoteAuthor": "Principe de conception CoachAI",
+      "phaseALabel": "PHASE A : CONSTRUIRE L'EFFECTIF",
+      "phaseBLabel": "PHASE B : CONSIGNER LE MATCH",
+      "phaseCLabel": "PHASE C : DEMANDER À L'IA",
+      "labTitle": "LABORATOIRE TACTIQUE",
+      "runSimulation": "Lancer la simulation",
+      "labCaption": "Illustratif uniquement — pas des données de match en direct"
+    },
+    "doctrine": {
+      "label": "DOCTRINE DE BASE",
+      "title": "Conçu pour le vestiaire, pas pour la salle de conseil",
+      "item1Num": "01",
+      "item1Title": "Zéro bruit ambiant",
+      "item1Body": "Pas de tableaux de bord que personne ne lit. Juste l'effectif, les matchs, et le plan pour le prochain.",
+      "item2Num": "02",
+      "item2Title": "Vos données, pas une démo",
+      "item2Body": "Chaque recommandation est construite à partir de l'effectif et de l'historique de votre propre club — jamais inventée.",
+      "item3Num": "03",
+      "item3Title": "Conçu pour la touche",
+      "item3Body": "Français, arabe et anglais dès le premier jour, avec une interface qui fonctionne aussi bien sur téléphone que sur ordinateur."
+    },
+    "finalCta": {
+      "label": "DÉPLOYÉ SUR VOTRE TOUCHE",
+      "title": "Prêt à entrer dans la zone technique ?",
+      "cta": "Commencer le briefing tactique"
+    },
+    "footer": {
+      "tagline": "Données d'effectif, de match et tactiques synchronisées — conçu pour les entraîneurs.",
+      "copyright": "© 2026 CoachAI"
+    }
   },
   "auth": {
     "loginTab": "Se connecter",

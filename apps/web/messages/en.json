@@ -24,9 +24,92 @@
     "optional": "optional"
   },
   "home": {
-    "title": "Your tactical copilot",
-    "subtitle": "Prepare your matches, organize your squad, and generate game plans from your team's own data.",
-    "cta": "Enter the dressing room"
+    "nav": {
+      "howItWorks": "How it works",
+      "aiCoach": "AI Coach",
+      "manifesto": "Manifesto",
+      "login": "Log in"
+    },
+    "hero": {
+      "statusChip": "AI COACH READY",
+      "titleLine1": "YOUR TACTICAL",
+      "titleLine2": "CO-PILOT",
+      "subtitle": "Prepare your matches, organize your squad, and generate game plans from your team's own data — read in French, Arabic or English.",
+      "cta": "Enter the dressing room",
+      "seeHow": "See how it works",
+      "metricLanguages": "LANGUAGES",
+      "metricLanguagesValue": "3",
+      "metricDemo": "DEMO SQUAD",
+      "metricDemoValue": "1 CLICK",
+      "metricTools": "DATA TOOLS THE AI READS",
+      "metricToolsValue": "8",
+      "metricSpreadsheets": "SPREADSHEETS NEEDED",
+      "metricSpreadsheetsValue": "0"
+    },
+    "ticker": {
+      "items": [
+        "SQUAD MANAGEMENT",
+        "DRAG-AND-DROP LINEUPS",
+        "MATCH HISTORY",
+        "CSV IMPORT",
+        "OPPONENT SCOUTING",
+        "AI MATCH PLANS",
+        "FR · AR · EN"
+      ]
+    },
+    "phases": {
+      "label": "BRIEFING ARCHITECTURE",
+      "title": "Three phases of tactical mastery",
+      "intro": "One place to prepare the squad, review what happened, and ask the AI what to do next — built around the data you actually have.",
+      "prepareTag": "TEAM SHEET",
+      "prepareTitle": "01. Prepare",
+      "prepareItem1": "Build your lineup on the drag-and-drop board",
+      "prepareItem2": "Set the formation for this match",
+      "prepareItem3": "Record the squad's availability",
+      "reviewTag": "MATCH LOG",
+      "reviewTitle": "02. Review",
+      "reviewStat": "Log the scoreline, stats and key events after the match",
+      "askTag": "AI COACH",
+      "askTitle": "03. Ask the AI",
+      "askQuote": "“How should we approach this opponent?”",
+      "askRecommendation": "A full match plan — formation, pressing, set pieces, risks — built from your squad and match data",
+      "askFooter": "Based on your own recorded data, not a black box"
+    },
+    "manifesto": {
+      "label": "TOUCHLINE PHILOSOPHY",
+      "title": "The chalkboard manifesto",
+      "body": "A coaching tool should feel like a chalkboard, not a spreadsheet. CoachAI exists to turn the data you already record — squads, matches, opponents — into a plan you can read before you walk onto the touchline.",
+      "quote": "The best tactical tool is the one a coach actually opens before the match, not after it.",
+      "quoteAuthor": "CoachAI design principle",
+      "phaseALabel": "PHASE A: BUILD THE SQUAD",
+      "phaseBLabel": "PHASE B: LOG THE MATCH",
+      "phaseCLabel": "PHASE C: ASK THE AI",
+      "labTitle": "TACTICAL LAB",
+      "runSimulation": "Run simulation",
+      "labCaption": "Illustrative only — not live match data"
+    },
+    "doctrine": {
+      "label": "CORE DOCTRINE",
+      "title": "Engineered for the dressing room, not the boardroom",
+      "item1Num": "01",
+      "item1Title": "Zero ambient noise",
+      "item1Body": "No dashboards nobody reads. Just the squad, the matches, and the plan for the next one.",
+      "item2Num": "02",
+      "item2Title": "Your data, not a demo",
+      "item2Body": "Every recommendation is built from your own club's squad and match history — never invented.",
+      "item3Num": "03",
+      "item3Title": "Built for the sideline",
+      "item3Body": "French, Arabic and English from day one, with a layout that works as well on your phone as your laptop."
+    },
+    "finalCta": {
+      "label": "DEPLOY ON YOUR SIDELINE",
+      "title": "Ready to enter the technical area?",
+      "cta": "Start tactical briefing"
+    },
+    "footer": {
+      "tagline": "Synchronized squad, match and tactical data — built for coaches.",
+      "copyright": "© 2026 CoachAI"
+    }
   },
   "auth": {
     "loginTab": "Log in",
