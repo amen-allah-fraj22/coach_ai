@@ -14,9 +14,10 @@ export default async function AssistantPage({
   const t = await getTranslations("assistant");
   const tMatches = await getTranslations("matches");
 
-  const [matches, opponents] = await Promise.all([
+  const [matches, opponents, pastRecommendations] = await Promise.all([
     fetchAuthed(api.matches.list, {}),
     fetchAuthed(api.opponents.list, {}),
+    fetchAuthed(api.ai.listRecommendations, {}),
   ]);
 
   const opponentNames = new Map(
@@ -35,15 +36,18 @@ export default async function AssistantPage({
     }));
 
   return (
-    <div className="mx-auto flex max-w-2xl flex-col gap-6">
+    <div className="mx-auto flex max-w-5xl flex-col gap-6">
       <div>
-        <h1 className="font-display text-2xl uppercase tracking-tight">
-          {t("title")}
-        </h1>
+        <h1 className="font-display text-headline-sm uppercase text-chalk">{t("title")}</h1>
         <p className="text-sm text-muted-foreground">{t("subtitle")}</p>
       </div>
 
-      <AssistantChat matches={matchOptions} defaultMatchId={matchId} defaultQuestion={question} />
+      <AssistantChat
+        matches={matchOptions}
+        defaultMatchId={matchId}
+        defaultQuestion={question}
+        pastRecommendations={pastRecommendations ?? []}
+      />
     </div>
   );
 }

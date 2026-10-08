@@ -444,6 +444,16 @@
     "modify": "Modifier",
     "reject": "Rejeter",
     "feedbackThanks": "Merci, retour enregistré.",
-    "poweredBy": "Généré par {provider}"
+    "poweredBy": "Généré par {provider}",
+    "matchPlanTab": "Plan de match",
+    "touchlineChatTab": "Chat de touche",
+    "quickSubs": "Simuler des remplacements",
+    "quickPressing": "Intensité du pressing",
+    "quickSetPieces": "Défense sur coups de pied arrêtés",
+    "pastRecommendations": "Recommandations précédentes",
+    "noPastRecommendations": "Aucune question posée pour l'instant.",
+    "emptyPlan": "Posez une question pour voir le plan de match ici.",
+    "quotaError": "Limite de l'IA atteinte — réessayez dans quelques minutes.",
+    "questionLabel": "Votre question"
   }
 }

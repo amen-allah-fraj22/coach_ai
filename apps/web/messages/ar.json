@@ -444,6 +444,16 @@
     "modify": "تعديل",
     "reject": "رفض",
     "feedbackThanks": "شكراً، تم حفظ ملاحظتك.",
-    "poweredBy": "أُنشئ بواسطة {provider}"
+    "poweredBy": "أُنشئ بواسطة {provider}",
+    "matchPlanTab": "خطة المباراة",
+    "touchlineChatTab": "دردشة خط التماس",
+    "quickSubs": "محاكاة التبديلات",
+    "quickPressing": "شدة الضغط",
+    "quickSetPieces": "الدفاع في الكرات الثابتة",
+    "pastRecommendations": "التوصيات السابقة",
+    "noPastRecommendations": "لم تُطرح أي أسئلة بعد.",
+    "emptyPlan": "اطرح سؤالاً لرؤية خطة المباراة هنا.",
+    "quotaError": "تم بلوغ حد الذكاء الاصطناعي — أعد المحاولة بعد دقائق.",
+    "questionLabel": "سؤالك"
   }
 }

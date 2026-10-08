@@ -5,6 +5,7 @@ import {
   internalMutation,
   internalQuery,
   mutation,
+  query,
   type ActionCtx,
 } from "./_generated/server.js";
 import { internal } from "./_generated/api.js";
@@ -226,5 +227,26 @@ export const recordFeedback = mutation({
         ...fields,
       });
     }
+  },
+});
+
+/** Past recommendations for the club's notepad history, most recent first. */
+export const listRecommendations = query({
+  args: {},
+  handler: async (ctx) => {
+    const coach = await requireCoach(ctx);
+    const recs = await ctx.db
+      .query("aiRecommendations")
+      .withIndex("by_club", (q) => q.eq("clubId", coach.clubId))
+      .collect();
+    return recs
+      .sort((a, b) => b._creationTime - a._creationTime)
+      .slice(0, 20)
+      .map((r) => ({
+        id: r._id,
+        headline: (r.recommendation as { headline?: string } | null)?.headline ?? r.question,
+        question: r.question,
+        createdAt: r._creationTime,
+      }));
   },
 });
