@@ -5,43 +5,39 @@ import { api } from "@convex/_generated/api";
 import type { Doc } from "@convex/_generated/dataModel";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
+import { TeamsRoster } from "@/components/teams/teams-roster";
 
 export default async function TeamsPage() {
   const t = await getTranslations("teams");
-  const teams = (await fetchAuthed(api.teams.list, {})) ?? [];
+  const [teams, players] = await Promise.all([
+    fetchAuthed(api.teams.list, {}),
+    fetchAuthed(api.players.list, {}),
+  ]);
+
+  const teamList = (teams ?? []) as Doc<"teams">[];
+  const playerCounts = new Map<string, number>();
+  for (const p of (players ?? []) as Doc<"players">[]) {
+    playerCounts.set(p.teamId, (playerCounts.get(p.teamId) ?? 0) + 1);
+  }
 
   return (
-    <div className="flex max-w-2xl flex-col gap-6">
+    <div className="flex max-w-3xl flex-col gap-6">
       <div className="flex items-center justify-between">
-        <h1 className="font-display text-2xl uppercase tracking-tight">
-          {t("title")}
-        </h1>
-        <Button asChild>
-          <Link href="/teams/new">{t("addTeam")}</Link>
+        <h1 className="font-display text-headline-sm uppercase text-chalk">{t("rosterBook")}</h1>
+        <Button asChild size="sm" className="hidden md:inline-flex">
+          <Link href="/teams/new">{t("registerNewSquad")}</Link>
         </Button>
       </div>
 
-      {teams.length === 0 ? (
+      {teamList.length === 0 ? (
         <p className="text-muted-foreground">{t("empty")}</p>
       ) : (
-        <ul className="flex flex-col gap-2">
-          {teams.map((team: Doc<"teams">) => (
-            <li key={team._id}>
-              <Link
-                href={`/teams/${team._id}`}
-                className="flex items-center justify-between rounded-md border border-border px-4 py-3 hover:border-primary"
-              >
-                <span className="font-medium">{team.name}</span>
-                <span className="text-sm text-muted-foreground">
-                  {[team.ageCategory, team.defaultFormation]
-                    .filter(Boolean)
-                    .join(" · ")}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <TeamsRoster teams={teamList} playerCounts={playerCounts} />
       )}
+
+      <Button asChild className="md:hidden">
+        <Link href="/teams/new">{t("registerNewSquad")}</Link>
+      </Button>
     </div>
   );
 }

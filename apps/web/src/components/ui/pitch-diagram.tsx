@@ -91,7 +91,11 @@ function PitchDiagram({
       ))}
 
       {points.map((dot, i) => (
-        <g key={i} transform={`translate(${dot.x} ${dot.y})`}>
+        <motion.g
+          key={i}
+          animate={{ x: dot.x, y: dot.y }}
+          transition={reduced ? { duration: 0.01 } : { duration: 0.4, ease: "easeInOut" }}
+        >
           <circle r="3" fill="var(--chalk)" />
           {dot.label && (
             <text
@@ -104,7 +108,7 @@ function PitchDiagram({
               {dot.label}
             </text>
           )}
-        </g>
+        </motion.g>
       ))}
     </svg>
   );
