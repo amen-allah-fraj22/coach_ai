@@ -5,7 +5,12 @@ import { api } from "@convex/_generated/api";
 import type { Doc } from "@convex/_generated/dataModel";
 import { AssistantChat } from "@/components/assistant/assistant-chat";
 
-export default async function AssistantPage() {
+export default async function AssistantPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ matchId?: string }>;
+}) {
+  const { matchId } = await searchParams;
   const t = await getTranslations("assistant");
   const tMatches = await getTranslations("matches");
 
@@ -38,7 +43,7 @@ export default async function AssistantPage() {
         <p className="text-sm text-muted-foreground">{t("subtitle")}</p>
       </div>
 
-      <AssistantChat matches={matchOptions} />
+      <AssistantChat matches={matchOptions} defaultMatchId={matchId} />
     </div>
   );
 }

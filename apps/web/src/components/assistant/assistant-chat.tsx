@@ -25,7 +25,13 @@ interface AskResult {
   provider: string;
 }
 
-export function AssistantChat({ matches }: { matches: MatchOption[] }) {
+export function AssistantChat({
+  matches,
+  defaultMatchId,
+}: {
+  matches: MatchOption[];
+  defaultMatchId?: string;
+}) {
   const t = useTranslations("assistant");
   const ask = useAction(api.ai.ask);
 
@@ -64,7 +70,7 @@ export function AssistantChat({ matches }: { matches: MatchOption[] }) {
         {matches.length > 0 && (
           <div className="flex flex-col gap-1.5">
             <Label htmlFor="matchId">{t("matchContext")}</Label>
-            <SelectNative id="matchId" name="matchId" defaultValue="">
+            <SelectNative id="matchId" name="matchId" defaultValue={defaultMatchId ?? ""}>
               <option value="">{t("noMatch")}</option>
               {matches.map((match) => (
                 <option key={match.id} value={match.id}>

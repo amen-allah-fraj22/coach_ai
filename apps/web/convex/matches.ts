@@ -7,6 +7,7 @@ const fields = {
   teamId: v.id("teams"),
   opponentId: v.optional(v.id("opponents")),
   matchDate: v.string(),
+  kickoffTime: v.optional(v.string()),
   homeAway: v.union(v.literal("home"), v.literal("away")),
   competition: v.optional(v.string()),
   ourFormation: v.optional(v.string()),
