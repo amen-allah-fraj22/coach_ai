@@ -3,15 +3,18 @@
 import { useState } from "react";
 import { useMutation } from "convex/react";
 import { useTranslations, useLocale } from "next-intl";
+import { motion, useReducedMotion } from "motion/react";
 
 import { api } from "@convex/_generated/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { stampPress } from "@/lib/motion";
 
 export function InviteForm() {
   const t = useTranslations("settings");
   const locale = useLocale();
+  const reduced = useReducedMotion() ?? false;
   const createInvite = useMutation(api.invites.createInvite);
 
   const [error, setError] = useState<string | null>(null);
@@ -43,18 +46,20 @@ export function InviteForm() {
           <Label htmlFor="inviteEmail">{t("inviteEmail")}</Label>
           <Input id="inviteEmail" name="email" type="email" required />
         </div>
-        <Button type="submit" disabled={pending}>
-          {t("inviteCoach")}
-        </Button>
+        <motion.div whileTap={stampPress(reduced)}>
+          <Button type="submit" disabled={pending}>
+            {t("stampInvitationIssuePass")}
+          </Button>
+        </motion.div>
       </form>
 
       {error && <p className="text-sm text-destructive">{error}</p>}
 
       {inviteUrl && (
-        <p className="rounded-md bg-muted p-3 text-sm break-all">
+        <p className="border border-hairline-08 bg-slate-grass p-3 text-sm break-all text-chalk">
           {t("inviteSent")}
           <br />
-          <span className="font-mono text-foreground">{inviteUrl}</span>
+          <span className="font-mono">{inviteUrl}</span>
         </p>
       )}
     </div>

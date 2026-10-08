@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 /**
  * The "generating" state: a small tactics-board loader where dashed passing
@@ -8,6 +8,7 @@ import { motion } from "motion/react";
  * #9). Night Pitch board, Touchline Red + Pitch Green chalk strokes.
  */
 export function AiThinking({ label }: { label: string }) {
+  const reduced = useReducedMotion();
   const arrows = [
     { d: "M20 70 Q 60 20 110 45", color: "var(--chalk)", delay: 0 },
     { d: "M30 40 Q 80 80 130 60", color: "var(--pitch-green)", delay: 0.5 },
@@ -30,14 +31,22 @@ export function AiThinking({ label }: { label: string }) {
             strokeLinecap="round"
             strokeDasharray="6 5"
             initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: [0, 1, 1], opacity: [0, 1, 0] }}
-            transition={{
-              duration: 1.8,
-              delay: a.delay,
-              repeat: Infinity,
-              repeatDelay: 0.3,
-              ease: "easeInOut",
-            }}
+            animate={
+              reduced
+                ? { pathLength: 1, opacity: 0.6 }
+                : { pathLength: [0, 1, 1], opacity: [0, 1, 0] }
+            }
+            transition={
+              reduced
+                ? { duration: 0.3 }
+                : {
+                    duration: 1.8,
+                    delay: a.delay,
+                    repeat: Infinity,
+                    repeatDelay: 0.3,
+                    ease: "easeInOut",
+                  }
+            }
           />
         ))}
       </svg>

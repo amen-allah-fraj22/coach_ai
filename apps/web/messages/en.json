@@ -21,7 +21,9 @@
     "delete": "Delete",
     "loading": "Loading...",
     "none": "None",
-    "optional": "optional"
+    "optional": "optional",
+    "confirmDelete": "Delete this? This can't be undone.",
+    "confirm": "Confirm"
   },
   "home": {
     "nav": {
@@ -205,7 +207,14 @@
     "role": {
       "owner": "Owner",
       "member": "Member"
-    }
+    },
+    "operationalLedger": "Operational ledger & settings",
+    "coachPhilosophy": "Coach philosophy",
+    "modifyShapeMatrix": "Modify shape matrix",
+    "issueTechnicalPassport": "Issue technical passport // Invite coach",
+    "stampInvitationIssuePass": "Stamp invitation & issue pass",
+    "saveConfiguration": "Save configuration",
+    "savedConfirmation": "Saved."
   },
   "teams": {
     "title": "Teams",
@@ -455,5 +464,10 @@
     "emptyPlan": "Ask a question to see the match plan here.",
     "quotaError": "AI limit reached — try again in a few minutes.",
     "questionLabel": "Your question"
+  },
+  "notFound": {
+    "title": "Off the pitch",
+    "subtitle": "This page doesn't exist — offside call.",
+    "backToDashboard": "Back to dashboard"
   }
 }

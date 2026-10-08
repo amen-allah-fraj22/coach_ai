@@ -21,7 +21,9 @@
     "delete": "حذف",
     "loading": "جارٍ التحميل...",
     "none": "لا شيء",
-    "optional": "اختياري"
+    "optional": "اختياري",
+    "confirmDelete": "حذف هذا؟ لا يمكن التراجع عن هذا الإجراء.",
+    "confirm": "تأكيد"
   },
   "home": {
     "nav": {
@@ -205,7 +207,14 @@
     "role": {
       "owner": "مالك",
       "member": "عضو"
-    }
+    },
+    "operationalLedger": "السجل التشغيلي والإعدادات",
+    "coachPhilosophy": "فلسفة المدرب",
+    "modifyShapeMatrix": "تعديل مصفوفة التشكيل",
+    "issueTechnicalPassport": "إصدار جواز تقني // دعوة مدرب",
+    "stampInvitationIssuePass": "ختم الدعوة وإصدار التصريح",
+    "saveConfiguration": "حفظ الإعدادات",
+    "savedConfirmation": "تم الحفظ."
   },
   "teams": {
     "title": "الفرق",
@@ -455,5 +464,10 @@
     "emptyPlan": "اطرح سؤالاً لرؤية خطة المباراة هنا.",
     "quotaError": "تم بلوغ حد الذكاء الاصطناعي — أعد المحاولة بعد دقائق.",
     "questionLabel": "سؤالك"
+  },
+  "notFound": {
+    "title": "خارج أرض الملعب",
+    "subtitle": "هذه الصفحة غير موجودة — تسلل.",
+    "backToDashboard": "العودة إلى لوحة القيادة"
   }
 }

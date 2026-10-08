@@ -21,7 +21,9 @@
     "delete": "Supprimer",
     "loading": "Chargement...",
     "none": "Aucun",
-    "optional": "facultatif"
+    "optional": "facultatif",
+    "confirmDelete": "Supprimer ceci ? Action irréversible.",
+    "confirm": "Confirmer"
   },
   "home": {
     "nav": {
@@ -205,7 +207,14 @@
     "role": {
       "owner": "Propriétaire",
       "member": "Membre"
-    }
+    },
+    "operationalLedger": "Registre opérationnel et paramètres",
+    "coachPhilosophy": "Philosophie de l'entraineur",
+    "modifyShapeMatrix": "Modifier la matrice tactique",
+    "issueTechnicalPassport": "Émettre un passeport technique // Inviter un entraineur",
+    "stampInvitationIssuePass": "Tamponner et émettre l'invitation",
+    "saveConfiguration": "Enregistrer la configuration",
+    "savedConfirmation": "Enregistré."
   },
   "teams": {
     "title": "Équipes",
@@ -455,5 +464,10 @@
     "emptyPlan": "Posez une question pour voir le plan de match ici.",
     "quotaError": "Limite de l'IA atteinte — réessayez dans quelques minutes.",
     "questionLabel": "Votre question"
+  },
+  "notFound": {
+    "title": "Hors du terrain",
+    "subtitle": "Cette page n'existe pas — hors-jeu.",
+    "backToDashboard": "Retour au tableau de bord"
   }
 }

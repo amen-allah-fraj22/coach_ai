@@ -90,7 +90,7 @@ export function LandingHero() {
             {t("titleLine2")}
             <motion.svg
               viewBox="0 0 200 12"
-              className="absolute -bottom-2 left-0 h-3 w-full"
+              className="absolute -bottom-2 start-0 h-3 w-full"
               aria-hidden
             >
               <motion.path

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
@@ -19,6 +19,8 @@ export function AuthSubmitButton({
   onClick?: () => void;
   type?: "submit" | "button";
 }) {
+  const reduced = useReducedMotion();
+
   return (
     <Button
       type={type}
@@ -30,8 +32,8 @@ export function AuthSubmitButton({
     >
       {pending ? (
         <motion.span
-          animate={{ rotate: 360 }}
-          transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+          animate={reduced ? { opacity: [1, 0.4, 1] } : { rotate: 360 }}
+          transition={{ duration: reduced ? 1 : 0.8, repeat: Infinity, ease: reduced ? "easeInOut" : "linear" }}
         >
           <Icon name="sports_soccer" size={18} />
         </motion.span>

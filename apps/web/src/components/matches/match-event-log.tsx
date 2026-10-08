@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SelectNative } from "@/components/ui/select-native";
 import { Chip } from "@/components/ui/chip";
+import { ConfirmButton } from "@/components/ui/confirm-button";
 import { tickerIn, stampPress } from "@/lib/motion";
 
 const EVENT_TYPES = [
@@ -140,13 +141,13 @@ export function MatchEventLog({
                   {t(`types.${event.eventType}`)}
                 </span>
                 {event.playerId && <span className="text-chalk">{playerNames.get(event.playerId)}</span>}
-                <button
-                  type="button"
-                  onClick={() => removeEvent({ id: event._id })}
+                <ConfirmButton
+                  onConfirm={() => removeEvent({ id: event._id })}
+                  confirmLabel={tCommon("confirm")}
                   className="ms-auto text-xs text-muted-foreground hover:text-touchline-red"
                 >
                   {tCommon("delete")}
-                </button>
+                </ConfirmButton>
               </motion.li>
             ))}
           </AnimatePresence>
