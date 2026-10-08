@@ -1,30 +1,23 @@
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 
-import { OpponentForm } from "@/components/opponents/opponent-form";
+import { OpponentDossier } from "@/components/opponents/opponent-dossier";
 import { fetchAuthed } from "@/lib/convex/server";
 import { api } from "@convex/_generated/api";
 import type { Id } from "@convex/_generated/dataModel";
 
-export default async function EditOpponentPage({
+export default async function OpponentDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const t = await getTranslations("common");
 
-  const opponent = await fetchAuthed(api.opponents.get, {
-    id: id as Id<"opponents">,
-  });
+  const opponent = await fetchAuthed(api.opponents.get, { id: id as Id<"opponents"> });
   if (!opponent) notFound();
 
   return (
-    <div className="mx-auto flex max-w-lg flex-col gap-6">
-      <h1 className="font-display text-2xl uppercase tracking-tight">
-        {t("edit")}
-      </h1>
-      <OpponentForm opponent={opponent} />
+    <div className="mx-auto max-w-2xl">
+      <OpponentDossier opponent={opponent} />
     </div>
   );
 }
