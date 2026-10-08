@@ -4,16 +4,8 @@ import { fetchAuthed } from "@/lib/convex/server";
 import { api } from "@convex/_generated/api";
 import type { Doc } from "@convex/_generated/dataModel";
 import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
-
-function resultAccent(match: Doc<"matches">) {
-  if (match.scoreFor === undefined || match.scoreAgainst === undefined) {
-    return "bg-muted";
-  }
-  if (match.scoreFor > match.scoreAgainst) return "bg-secondary";
-  if (match.scoreFor < match.scoreAgainst) return "bg-destructive";
-  return "bg-muted-foreground";
-}
+import { Icon } from "@/components/ui/icon";
+import { MatchesLedger } from "@/components/matches/matches-ledger";
 
 export default async function MatchesPage() {
   const t = await getTranslations("matches");
@@ -32,55 +24,41 @@ export default async function MatchesPage() {
 
   return (
     <div className="flex max-w-3xl flex-col gap-6">
-      <div className="flex items-center justify-between">
-        <h1 className="font-display text-2xl uppercase tracking-tight">
-          {t("title")}
-        </h1>
-        {teamList.length > 0 && (
-          <div className="flex gap-2">
-            <Button asChild variant="secondary">
-              <Link href="/matches/import">{t("importMatch")}</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/matches/new">{t("addMatch")}</Link>
-            </Button>
-          </div>
-        )}
-      </div>
+      <h1 className="font-display text-headline-sm uppercase text-chalk">{t("title")}</h1>
 
       {teamList.length === 0 ? (
         <p className="text-muted-foreground">{t("emptyNeedsTeam")}</p>
-      ) : list.length === 0 ? (
-        <p className="text-muted-foreground">{t("empty")}</p>
       ) : (
-        <ul className="flex flex-col gap-2">
-          {list.map((match) => (
-            <li key={match._id}>
-              <Link
-                href={`/matches/${match._id}`}
-                className="flex items-stretch gap-4 overflow-hidden rounded-md border border-border hover:border-primary"
-              >
-                <span className={`w-1.5 shrink-0 ${resultAccent(match)}`} aria-hidden />
-                <span className="flex flex-1 items-center justify-between py-3 pe-4">
-                  <span className="flex flex-col">
-                    <span className="font-medium">
-                      {match.opponentId
-                        ? opponentNames.get(match.opponentId)
-                        : t("unknownOpponent")}
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      {match.matchDate} &middot;{" "}
-                      {match.homeAway === "home" ? t("home") : t("away")}
-                    </span>
-                  </span>
-                  <span className="font-display text-lg tabular-nums">
-                    {match.scoreFor ?? "-"} : {match.scoreAgainst ?? "-"}
-                  </span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <Link
+              href="/matches/new"
+              className="flex items-center gap-3 border border-hairline-16 bg-slate-grass p-4 hover:border-chalk"
+            >
+              <Icon name="stadium" size={28} className="text-pitch-green" />
+              <div>
+                <p className="font-display uppercase text-chalk">{t("recordFixture")}</p>
+                <p className="text-xs text-muted-foreground">{t("addMatch")}</p>
+              </div>
+            </Link>
+            <Link
+              href="/matches/import"
+              className="flex items-center gap-3 border border-dashed border-hairline-16 p-4 hover:border-chalk"
+            >
+              <Icon name="upload_file" size={28} className="text-muted-foreground" />
+              <div>
+                <p className="font-display uppercase text-chalk">{t("batchImport")}</p>
+                <p className="text-xs text-muted-foreground">{t("importMatch")}</p>
+              </div>
+            </Link>
+          </div>
+
+          {list.length === 0 ? (
+            <p className="text-muted-foreground">{t("empty")}</p>
+          ) : (
+            <MatchesLedger matches={list} opponentNames={opponentNames} />
+          )}
+        </>
       )}
     </div>
   );

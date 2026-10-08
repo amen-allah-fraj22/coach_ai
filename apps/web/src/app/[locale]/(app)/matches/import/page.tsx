@@ -21,7 +21,7 @@ export default async function ImportMatchesPage({
 
   return (
     <div className="mx-auto flex max-w-lg flex-col gap-6">
-      <h1 className="font-display text-2xl uppercase tracking-tight">
+      <h1 className="font-display text-headline-sm uppercase text-chalk">
         {t("importTitle")}
       </h1>
       <ImportMatches teams={teams} />
