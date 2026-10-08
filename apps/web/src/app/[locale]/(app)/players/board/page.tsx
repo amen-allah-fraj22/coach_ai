@@ -17,20 +17,15 @@ export default async function PlayersBoardPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <h1 className="font-display text-2xl uppercase tracking-tight">
-            {t("squadBoard")}
-          </h1>
-          <nav className="flex gap-2 text-sm">
-            <Link href="/players" className="text-muted-foreground hover:text-foreground">
-              {t("list")}
-            </Link>
-            <span className="font-semibold text-primary">{t("board")}</span>
-          </nav>
-        </div>
+        <nav className="flex gap-2 text-sm">
+          <Link href="/players" className="text-muted-foreground hover:text-chalk">
+            {t("list")}
+          </Link>
+          <span className="font-semibold text-chalk">{t("board")}</span>
+        </nav>
         {teams.length > 0 && (
-          <Button asChild>
-            <Link href="/players/new">{t("addPlayer")}</Link>
+          <Button asChild size="sm">
+            <Link href="/players/new">{t("registerAthlete")}</Link>
           </Button>
         )}
       </div>

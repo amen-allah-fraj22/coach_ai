@@ -5,6 +5,7 @@ import {
   DndContext,
   DragOverlay,
   PointerSensor,
+  TouchSensor,
   closestCorners,
   useDroppable,
   useSensor,
@@ -19,14 +20,20 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useMutation, useQuery } from "convex/react";
 import { useTranslations } from "next-intl";
 
 import { api } from "@convex/_generated/api";
 import type { Doc, Id } from "@convex/_generated/dataModel";
 import { PlayerToken } from "@/components/players/player-token";
+import { Input } from "@/components/ui/input";
+import { Chip } from "@/components/ui/chip";
+import { Button } from "@/components/ui/button";
+import { Icon } from "@/components/ui/icon";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 import { cn } from "@/lib/utils";
+import { tokenLift, dropSettle, dropSettleLanePulse } from "@/lib/motion";
 
 // Lanes always shown, so there's somewhere to drag into even when empty.
 const DEFAULT_LANES = ["Starting XI", "Bench", "Reserves", "Squad"];
@@ -38,20 +45,25 @@ function laneOrder(groups: string[]): string[] {
   return [...DEFAULT_LANES, ...extras];
 }
 
-function SortablePlayer({ player }: { player: Doc<"players"> }) {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
-    useSortable({ id: player._id });
+function SortablePlayer({ player, editable }: { player: Doc<"players">; editable: boolean }) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id: player._id,
+    disabled: !editable,
+  });
+  const reduced = useReducedMotion() ?? false;
 
   return (
-    <div
+    <motion.div
       ref={setNodeRef}
+      layout
       style={{ transform: CSS.Transform.toString(transform), transition }}
+      animate={isDragging ? tokenLift(reduced) : { scale: 1, rotate: 0 }}
       className={cn("touch-none", isDragging && "opacity-40")}
       {...attributes}
-      {...listeners}
+      {...(editable ? listeners : {})}
     >
       <PlayerToken player={player} />
-    </div>
+    </motion.div>
   );
 }
 
@@ -60,39 +72,44 @@ function Lane({
   playerIds,
   playersById,
   pulsing,
+  editable,
+  t,
 }: {
   group: string;
   playerIds: Id<"players">[];
   playersById: Map<Id<"players">, Doc<"players">>;
   pulsing: boolean;
+  editable: boolean;
+  t: ReturnType<typeof useTranslations>;
 }) {
   const { setNodeRef, isOver } = useDroppable({ id: group });
 
   return (
     <div className="flex min-w-[15rem] flex-1 flex-col gap-2">
-      <h3 className="font-display text-xs uppercase tracking-wide text-muted-foreground">
+      <h3 className="text-label-tactical text-muted-foreground">
         {group}
         <span className="ms-2 text-muted-foreground/60">{playerIds.length}</span>
       </h3>
       <motion.div
         ref={setNodeRef}
-        animate={
-          pulsing
-            ? { boxShadow: ["0 0 0 0px var(--color-primary)", "0 0 0 2px var(--color-primary)", "0 0 0 0px var(--color-primary)"] }
-            : {}
-        }
-        transition={{ duration: 0.5 }}
+        variants={dropSettleLanePulse}
+        animate={pulsing ? "pulse" : "idle"}
         className={cn(
-          "flex min-h-32 flex-col gap-2 rounded-lg border border-dashed p-3 transition-colors",
-          "bg-accent/40",
-          isOver ? "border-primary" : "border-border",
+          "flex min-h-32 flex-col gap-2 border border-dashed bg-slate-grass/40 p-3 transition-colors",
+          isOver ? "border-chalk" : "border-hairline-16",
         )}
       >
         <SortableContext items={playerIds} strategy={verticalListSortingStrategy}>
-          {playerIds.map((id) => {
-            const player = playersById.get(id);
-            return player ? <SortablePlayer key={id} player={player} /> : null;
-          })}
+          {playerIds.length === 0 ? (
+            <p className="py-6 text-center text-xs text-muted-foreground">{t("dropTokenHere")}</p>
+          ) : (
+            playerIds.map((id) => {
+              const player = playersById.get(id);
+              return player ? (
+                <SortablePlayer key={id} player={player} editable={editable} />
+              ) : null;
+            })
+          )}
         </SortableContext>
       </motion.div>
     </div>
@@ -103,12 +120,21 @@ export function SquadBoard() {
   const t = useTranslations("players");
   const tCommon = useTranslations("common");
   const players = useQuery(api.players.list);
+  const teams = useQuery(api.teams.list);
   const reorder = useMutation(api.players.reorder);
+  const reduced = useReducedMotion() ?? false;
+  const isMobile = useIsMobile();
 
   const [lanes, setLanes] = useState<Lanes>({});
   const [activeId, setActiveId] = useState<Id<"players"> | null>(null);
   const [pulsingLane, setPulsingLane] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
+  const [editMode, setEditMode] = useState(false);
+  const [addingLane, setAddingLane] = useState(false);
+  const [newLaneName, setNewLaneName] = useState("");
   const dragging = useRef(false);
+
+  const editable = !isMobile || editMode;
 
   const playersById = useMemo(() => {
     const map = new Map<Id<"players">, Doc<"players">>();
@@ -131,9 +157,11 @@ export function SquadBoard() {
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
+    useSensor(TouchSensor, { activationConstraint: { delay: 250, tolerance: 8 } }),
   );
 
   const laneNames = laneOrder(Object.keys(lanes));
+  const defaultFormation = (teams ?? [])[0]?.defaultFormation;
 
   function containerOf(id: string): string | undefined {
     if (id in lanes) return id;
@@ -201,13 +229,65 @@ export function SquadBoard() {
     await reorder({ id: activeItem, squadGroup: lane, orderedIds: finalIds });
   }
 
+  function visibleIds(ids: Id<"players">[]): Id<"players">[] {
+    if (!search.trim()) return ids;
+    const q = search.trim().toLowerCase();
+    return ids.filter((id) => playersById.get(id)?.name.toLowerCase().includes(q));
+  }
+
   if (players === undefined) {
     return <p className="text-muted-foreground">{tCommon("loading")}</p>;
   }
 
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-sm text-muted-foreground">{t("dragHint")}</p>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h1 className="font-display text-headline-sm uppercase text-chalk">{t("boardTitle")}</h1>
+          <p className="text-sm text-muted-foreground">{t("dragHint")}</p>
+        </div>
+        <div className="flex items-center gap-2">
+          {defaultFormation && <Chip status="green">{defaultFormation}</Chip>}
+          {isMobile && (
+            <Button type="button" variant="secondary" size="sm" onClick={() => setEditMode((v) => !v)}>
+              <Icon name="edit" size={16} /> {t("editLineup")}
+            </Button>
+          )}
+        </div>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2">
+        <Input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder={t("searchPlaceholder")}
+          className="max-w-xs"
+        />
+        {addingLane ? (
+          <div className="flex items-center gap-1">
+            <Input
+              autoFocus
+              value={newLaneName}
+              onChange={(e) => setNewLaneName(e.target.value)}
+              placeholder={t("laneNamePlaceholder")}
+              className="w-40"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && newLaneName.trim()) {
+                  setLanes((prev) => ({ ...prev, [newLaneName.trim()]: [] }));
+                  setNewLaneName("");
+                  setAddingLane(false);
+                }
+                if (e.key === "Escape") setAddingLane(false);
+              }}
+            />
+          </div>
+        ) : (
+          <Button type="button" variant="secondary" size="sm" onClick={() => setAddingLane(true)}>
+            {t("addLane")}
+          </Button>
+        )}
+      </div>
+
       <DndContext
         sensors={sensors}
         collisionDetection={closestCorners}
@@ -215,14 +295,16 @@ export function SquadBoard() {
         onDragOver={onDragOver}
         onDragEnd={onDragEnd}
       >
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-col gap-4 md:flex-row md:flex-wrap">
           {laneNames.map((lane) => (
             <Lane
               key={lane}
               group={lane}
-              playerIds={lanes[lane] ?? []}
+              playerIds={visibleIds(lanes[lane] ?? [])}
               playersById={playersById}
               pulsing={pulsingLane === lane}
+              editable={editable}
+              t={t}
             />
           ))}
         </div>
@@ -231,8 +313,8 @@ export function SquadBoard() {
           {activeId && playersById.get(activeId) ? (
             <motion.div
               initial={{ scale: 1 }}
-              animate={{ scale: 1.04, rotate: 3 }}
-              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+              animate={tokenLift(reduced)}
+              transition={dropSettle(reduced)}
             >
               <PlayerToken player={playersById.get(activeId)!} dragging />
             </motion.div>

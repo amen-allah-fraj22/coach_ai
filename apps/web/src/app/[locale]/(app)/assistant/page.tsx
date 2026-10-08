@@ -8,9 +8,9 @@ import { AssistantChat } from "@/components/assistant/assistant-chat";
 export default async function AssistantPage({
   searchParams,
 }: {
-  searchParams: Promise<{ matchId?: string }>;
+  searchParams: Promise<{ matchId?: string; question?: string }>;
 }) {
-  const { matchId } = await searchParams;
+  const { matchId, question } = await searchParams;
   const t = await getTranslations("assistant");
   const tMatches = await getTranslations("matches");
 
@@ -43,7 +43,7 @@ export default async function AssistantPage({
         <p className="text-sm text-muted-foreground">{t("subtitle")}</p>
       </div>
 
-      <AssistantChat matches={matchOptions} defaultMatchId={matchId} />
+      <AssistantChat matches={matchOptions} defaultMatchId={matchId} defaultQuestion={question} />
     </div>
   );
 }

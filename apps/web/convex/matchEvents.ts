@@ -18,6 +18,23 @@ export const listByMatch = query({
   },
 });
 
+/** Events involving a given player, most recent first — the player profile's "recent matches" tab. */
+export const listByPlayer = query({
+  args: { playerId: v.id("players") },
+  handler: async (ctx, args) => {
+    const coach = await requireCoach(ctx);
+    assertSameClub(coach, await ctx.db.get(args.playerId));
+
+    const events = await ctx.db
+      .query("matchEvents")
+      .withIndex("by_club", (q) => q.eq("clubId", coach.clubId))
+      .collect();
+    return events
+      .filter((e) => e.playerId === args.playerId)
+      .sort((a, b) => b._creationTime - a._creationTime);
+  },
+});
+
 export const add = mutation({
   args: {
     matchId: v.id("matches"),

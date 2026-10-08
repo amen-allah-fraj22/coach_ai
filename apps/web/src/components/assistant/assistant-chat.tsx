@@ -28,9 +28,11 @@ interface AskResult {
 export function AssistantChat({
   matches,
   defaultMatchId,
+  defaultQuestion,
 }: {
   matches: MatchOption[];
   defaultMatchId?: string;
+  defaultQuestion?: string;
 }) {
   const t = useTranslations("assistant");
   const ask = useAction(api.ai.ask);
@@ -64,7 +66,14 @@ export function AssistantChat({
       <form action={onSubmit} className="flex flex-col gap-3">
         <div className="flex flex-col gap-1.5">
           <Label htmlFor="question">{t("title")}</Label>
-          <Textarea id="question" name="question" required rows={3} placeholder={t("placeholder")} />
+          <Textarea
+            id="question"
+            name="question"
+            required
+            rows={3}
+            placeholder={t("placeholder")}
+            defaultValue={defaultQuestion}
+          />
         </div>
 
         {matches.length > 0 && (

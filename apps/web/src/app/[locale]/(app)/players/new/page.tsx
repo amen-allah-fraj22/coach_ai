@@ -20,9 +20,9 @@ export default async function NewPlayerPage({
   }
 
   return (
-    <div className="mx-auto flex max-w-lg flex-col gap-6">
-      <h1 className="font-display text-2xl uppercase tracking-tight">
-        {t("addPlayer")}
+    <div className="mx-auto flex max-w-3xl flex-col gap-6">
+      <h1 className="font-display text-headline-sm uppercase text-chalk">
+        {t("registerAthlete")}
       </h1>
       <PlayerForm teams={teams} />
     </div>
