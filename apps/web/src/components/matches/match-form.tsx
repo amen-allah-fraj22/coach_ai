@@ -81,6 +81,12 @@ export function MatchForm({
   const [homeAway, setHomeAway] = useState<"home" | "away">(match?.homeAway ?? "home");
   const [scoreFor, setScoreFor] = useState(match?.scoreFor ?? 0);
   const [scoreAgainst, setScoreAgainst] = useState(match?.scoreAgainst ?? 0);
+  // Steppers always show a number, but an unplayed fixture has no score yet —
+  // only start sending one once the coach actually touches a stepper (or the
+  // match already had a recorded result).
+  const [scoreRecorded, setScoreRecorded] = useState(
+    match ? match.scoreFor !== undefined : false,
+  );
 
   async function onSubmit(formData: FormData) {
     setError(null);
@@ -95,8 +101,8 @@ export function MatchForm({
       competition: text("competition"),
       ourFormation: text("ourFormation"),
       opponentFormation: text("opponentFormation"),
-      scoreFor,
-      scoreAgainst,
+      scoreFor: scoreRecorded ? scoreFor : undefined,
+      scoreAgainst: scoreRecorded ? scoreAgainst : undefined,
       possessionPct: num(formData, "possessionPct"),
       shots: num(formData, "shots"),
       shotsOnTarget: num(formData, "shotsOnTarget"),
@@ -202,10 +208,49 @@ export function MatchForm({
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-6 border-y border-hairline-08 py-4">
-        <ScoreStepper value={scoreFor} onChange={setScoreFor} label={t("scoreFor")} />
-        <span className="font-display text-xl text-muted-foreground">vs</span>
-        <ScoreStepper value={scoreAgainst} onChange={setScoreAgainst} label={t("scoreAgainst")} />
+      <div className="flex flex-col items-center gap-2 border-y border-hairline-08 py-4">
+        {scoreRecorded ? (
+          <div className="flex items-center gap-6">
+            <ScoreStepper
+              value={scoreFor}
+              onChange={(v) => {
+                setScoreFor(v);
+                setScoreRecorded(true);
+              }}
+              label={t("scoreFor")}
+            />
+            <span className="font-display text-xl text-muted-foreground">vs</span>
+            <ScoreStepper
+              value={scoreAgainst}
+              onChange={(v) => {
+                setScoreAgainst(v);
+                setScoreRecorded(true);
+              }}
+              label={t("scoreAgainst")}
+            />
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setScoreRecorded(true)}
+            className="text-sm text-muted-foreground underline hover:text-chalk"
+          >
+            {t("scoreFor")} / {t("scoreAgainst")}
+          </button>
+        )}
+        {scoreRecorded && (
+          <button
+            type="button"
+            onClick={() => {
+              setScoreRecorded(false);
+              setScoreFor(0);
+              setScoreAgainst(0);
+            }}
+            className="text-xs text-muted-foreground hover:text-touchline-red"
+          >
+            {tCommon("none")}
+          </button>
+        )}
       </div>
 
       <details className="flex flex-col gap-3">

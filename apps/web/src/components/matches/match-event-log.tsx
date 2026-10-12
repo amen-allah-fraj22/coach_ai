@@ -70,7 +70,7 @@ export function MatchEventLog({
 
   async function onAdd() {
     setError(null);
-    if (minute < 0 || minute > 130) {
+    if (!Number.isFinite(minute) || minute < 0 || minute > 130) {
       setError("Minute must be between 0 and 130.");
       return;
     }
@@ -188,7 +188,10 @@ export function MatchEventLog({
               <button
                 key={s}
                 type="button"
-                onClick={() => setSide(s)}
+                onClick={() => {
+                  setSide(s);
+                  setPlayerId("");
+                }}
                 className={`flex-1 border px-2 py-1 text-xs uppercase ${
                   side === s ? "border-pitch-green bg-wash-green text-chalk" : "border-hairline-16 text-muted-foreground"
                 }`}

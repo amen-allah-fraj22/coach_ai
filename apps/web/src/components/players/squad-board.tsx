@@ -132,6 +132,11 @@ export function SquadBoard() {
   const [editMode, setEditMode] = useState(false);
   const [addingLane, setAddingLane] = useState(false);
   const [newLaneName, setNewLaneName] = useState("");
+  // Lanes a coach added that have no players in them yet. The reconciliation
+  // effect below rebuilds `lanes` from the live query on every update, which
+  // would otherwise drop a still-empty custom lane before a player is ever
+  // dropped into it.
+  const [customLanes, setCustomLanes] = useState<string[]>([]);
   const dragging = useRef(false);
 
   const editable = !isMobile || editMode;
@@ -152,8 +157,11 @@ export function SquadBoard() {
     for (const p of sorted) {
       (grouped[p.squadGroup] ??= []).push(p._id);
     }
+    for (const lane of customLanes) {
+      grouped[lane] ??= [];
+    }
     setLanes(grouped);
-  }, [players]);
+  }, [players, customLanes]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
@@ -273,7 +281,9 @@ export function SquadBoard() {
               className="w-40"
               onKeyDown={(e) => {
                 if (e.key === "Enter" && newLaneName.trim()) {
-                  setLanes((prev) => ({ ...prev, [newLaneName.trim()]: [] }));
+                  const name = newLaneName.trim();
+                  setCustomLanes((prev) => (prev.includes(name) ? prev : [...prev, name]));
+                  setLanes((prev) => ({ ...prev, [name]: prev[name] ?? [] }));
                   setNewLaneName("");
                   setAddingLane(false);
                 }
