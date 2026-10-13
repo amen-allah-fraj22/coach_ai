@@ -48,3 +48,22 @@ export const update = mutation({
     await ctx.db.patch(id, patch);
   },
 });
+
+/** Refuses to delete a team that still has players — move or delete them first. */
+export const remove = mutation({
+  args: { id: v.id("teams") },
+  handler: async (ctx, args) => {
+    const coach = await requireCoach(ctx);
+    assertSameClub(coach, await ctx.db.get(args.id));
+
+    const players = await ctx.db
+      .query("players")
+      .withIndex("by_team", (q) => q.eq("teamId", args.id))
+      .collect();
+    if (players.length > 0) {
+      throw new Error("This team still has players. Move or delete them first.");
+    }
+
+    await ctx.db.delete(args.id);
+  },
+});

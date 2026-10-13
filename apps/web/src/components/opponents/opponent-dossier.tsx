@@ -4,6 +4,7 @@ import type { Doc } from "@convex/_generated/dataModel";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Monogram } from "@/components/dashboard/monogram";
+import { OpponentDeleteButton } from "@/components/opponents/opponent-delete-button";
 
 export async function OpponentDossier({ opponent }: { opponent: Doc<"opponents"> }) {
   const t = await getTranslations("opponents");
@@ -41,9 +42,12 @@ export async function OpponentDossier({ opponent }: { opponent: Doc<"opponents">
             <p className="text-sm text-muted-foreground">{opponent.usualFormation ?? "—"}</p>
           </div>
         </div>
-        <Link href={`/opponents/${opponent._id}/edit`} className="text-sm text-muted-foreground hover:text-chalk">
-          {tCommon("edit")}
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link href={`/opponents/${opponent._id}/edit`} className="text-sm text-muted-foreground hover:text-chalk">
+            {tCommon("edit")}
+          </Link>
+          <OpponentDeleteButton opponentId={opponent._id} />
+        </div>
       </div>
 
       <Button asChild variant="primary">

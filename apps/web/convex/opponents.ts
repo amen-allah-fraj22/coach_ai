@@ -54,3 +54,12 @@ export const update = mutation({
     await ctx.db.patch(id, patch);
   },
 });
+
+export const remove = mutation({
+  args: { id: v.id("opponents") },
+  handler: async (ctx, args) => {
+    const coach = await requireCoach(ctx);
+    assertSameClub(coach, await ctx.db.get(args.id));
+    await ctx.db.delete(args.id);
+  },
+});

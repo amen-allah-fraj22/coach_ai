@@ -107,3 +107,22 @@ export const importRows = mutation({
     return { imported: args.rows.length };
   },
 });
+
+/** Deletes a match and cascades to its events (matchEvents.matchId is required, so a dangling ref would be unrecoverable). */
+export const remove = mutation({
+  args: { id: v.id("matches") },
+  handler: async (ctx, args) => {
+    const coach = await requireCoach(ctx);
+    assertSameClub(coach, await ctx.db.get(args.id));
+
+    const events = await ctx.db
+      .query("matchEvents")
+      .withIndex("by_match", (q) => q.eq("matchId", args.id))
+      .collect();
+    for (const event of events) {
+      await ctx.db.delete(event._id);
+    }
+
+    await ctx.db.delete(args.id);
+  },
+});

@@ -29,6 +29,7 @@ export function MatchesLedger({
   const t = useTranslations("matches");
   const [competition, setCompetition] = useState<string | null>(null);
   const [page, setPage] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const competitions = useMemo(() => {
     const counts = new Map<string, number>();
@@ -41,19 +42,70 @@ export function MatchesLedger({
 
   const filtered = competition ? matches.filter((m) => m.competition === competition) : matches;
   const sorted = [...filtered].sort((a, b) => b.matchDate.localeCompare(a.matchDate));
+
+  function resetPaging() {
+    setPage(0);
+    setVisibleCount(PAGE_SIZE);
+  }
+
+  // Desktop: true, non-overlapping pagination via Prev/Next.
   const pageItems = sorted.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
   const remaining = Math.max(0, sorted.length - (page + 1) * PAGE_SIZE);
+
+  // Mobile: cumulative "load older" — each tap appends the next PAGE_SIZE items.
+  const mobileItems = sorted.slice(0, visibleCount);
+  const mobileRemaining = Math.max(0, sorted.length - visibleCount);
+
+  function renderList(items: Doc<"matches">[]) {
+    return (
+      <AnimatePresence initial={false}>
+        {items.map((match, i) => (
+          <motion.li
+            key={match._id}
+            variants={tickerIn({ index: i })}
+            initial="hidden"
+            animate="show"
+          >
+            <Link
+              href={`/matches/${match._id}`}
+              className="group flex items-stretch gap-4 overflow-hidden border border-hairline-08 hover:border-chalk"
+            >
+              <span className={`w-1.5 shrink-0 ${resultAccent(match)}`} aria-hidden />
+              <span className="flex flex-1 flex-col justify-center py-3 sm:flex-row sm:items-center sm:justify-between sm:pe-4">
+                <span className="flex flex-col">
+                  <span className="font-medium text-chalk">
+                    {match.opponentId ? opponentNames.get(match.opponentId) : t("unknownOpponent")}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {match.matchDate} · {match.homeAway === "home" ? t("home") : t("away")}
+                  </span>
+                </span>
+                <span className="flex items-center gap-3">
+                  <span className="font-display text-lg tabular-nums text-chalk">
+                    {match.scoreFor ?? "–"}:{match.scoreAgainst ?? "–"}
+                  </span>
+                  <span className="hidden text-xs text-muted-foreground group-hover:text-chalk sm:inline">
+                    {t("matchCenter")}
+                  </span>
+                </span>
+              </span>
+            </Link>
+          </motion.li>
+        ))}
+      </AnimatePresence>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap gap-2">
-        <button type="button" onClick={() => { setCompetition(null); setPage(0); }}>
+        <button type="button" onClick={() => { setCompetition(null); resetPaging(); }}>
           <Chip status={competition === null ? "green" : undefined}>
             {t("allCompetitions")} ({matches.length})
           </Chip>
         </button>
         {competitions.map(([comp, count]) => (
-          <button key={comp} type="button" onClick={() => { setCompetition(comp); setPage(0); }}>
+          <button key={comp} type="button" onClick={() => { setCompetition(comp); resetPaging(); }}>
             <Chip status={competition === comp ? "green" : undefined}>
               {comp} ({count})
             </Chip>
@@ -61,43 +113,8 @@ export function MatchesLedger({
         ))}
       </div>
 
-      <ul className="flex flex-col gap-2">
-        <AnimatePresence initial={false}>
-          {pageItems.map((match, i) => (
-            <motion.li
-              key={match._id}
-              variants={tickerIn({ index: i })}
-              initial="hidden"
-              animate="show"
-            >
-              <Link
-                href={`/matches/${match._id}`}
-                className="group flex items-stretch gap-4 overflow-hidden border border-hairline-08 hover:border-chalk"
-              >
-                <span className={`w-1.5 shrink-0 ${resultAccent(match)}`} aria-hidden />
-                <span className="flex flex-1 flex-col justify-center py-3 sm:flex-row sm:items-center sm:justify-between sm:pe-4">
-                  <span className="flex flex-col">
-                    <span className="font-medium text-chalk">
-                      {match.opponentId ? opponentNames.get(match.opponentId) : t("unknownOpponent")}
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      {match.matchDate} · {match.homeAway === "home" ? t("home") : t("away")}
-                    </span>
-                  </span>
-                  <span className="flex items-center gap-3">
-                    <span className="font-display text-lg tabular-nums text-chalk">
-                      {match.scoreFor ?? "–"}:{match.scoreAgainst ?? "–"}
-                    </span>
-                    <span className="hidden text-xs text-muted-foreground group-hover:text-chalk sm:inline">
-                      {t("matchCenter")}
-                    </span>
-                  </span>
-                </span>
-              </Link>
-            </motion.li>
-          ))}
-        </AnimatePresence>
-      </ul>
+      <ul className="flex flex-col gap-2 sm:hidden">{renderList(mobileItems)}</ul>
+      <ul className="hidden flex-col gap-2 sm:flex">{renderList(pageItems)}</ul>
 
       <div className="hidden items-center justify-between sm:flex">
         <Button type="button" variant="secondary" size="sm" disabled={page === 0} onClick={() => setPage((p) => p - 1)}>
@@ -108,9 +125,14 @@ export function MatchesLedger({
         </Button>
       </div>
 
-      {remaining > 0 && (
-        <Button type="button" variant="secondary" onClick={() => setPage((p) => p + 1)} className="sm:hidden">
-          {t("loadOlderFixtures", { n: remaining })}
+      {mobileRemaining > 0 && (
+        <Button
+          type="button"
+          variant="secondary"
+          onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+          className="sm:hidden"
+        >
+          {t("loadOlderFixtures", { n: mobileRemaining })}
         </Button>
       )}
     </div>

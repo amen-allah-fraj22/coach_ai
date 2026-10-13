@@ -107,3 +107,12 @@ export const reorder = mutation({
     }
   },
 });
+
+export const remove = mutation({
+  args: { id: v.id("players") },
+  handler: async (ctx, args) => {
+    const coach = await requireCoach(ctx);
+    assertSameClub(coach, await ctx.db.get(args.id));
+    await ctx.db.delete(args.id);
+  },
+});

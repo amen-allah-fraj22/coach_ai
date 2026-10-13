@@ -7,6 +7,7 @@ import { api } from "@convex/_generated/api";
 import type { Doc, Id } from "@convex/_generated/dataModel";
 import { Link } from "@/i18n/navigation";
 import { Monogram } from "@/components/dashboard/monogram";
+import { MatchDeleteButton } from "@/components/matches/match-delete-button";
 
 export default async function MatchDetailPage({
   params,
@@ -73,9 +74,12 @@ export default async function MatchDetailPage({
           <span>
             {match.matchDate} · {match.competition ?? "—"}
           </span>
-          <Link href={`/matches/${match._id}/edit`} className="text-chalk hover:underline">
-            {tCommon("edit")}
-          </Link>
+          <span className="flex items-center gap-3">
+            <Link href={`/matches/${match._id}/edit`} className="text-chalk hover:underline">
+              {tCommon("edit")}
+            </Link>
+            <MatchDeleteButton matchId={match._id} />
+          </span>
         </div>
       </div>
 

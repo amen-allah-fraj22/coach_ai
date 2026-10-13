@@ -1,14 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { useMutation } from "convex/react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
+import { api } from "@convex/_generated/api";
 import type { Doc } from "@convex/_generated/dataModel";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { SegmentedTabs } from "@/components/ui/segmented-tabs";
 import { RadarChart } from "@/components/ui/radar-chart";
+import { ConfirmButton } from "@/components/ui/confirm-button";
 import { arcEnter } from "@/lib/motion";
 
 interface RecentMatchRow {
@@ -48,6 +51,8 @@ export function PlayerDossier({
   const tCommon = useTranslations("common");
   const reduced = useReducedMotion() ?? false;
   const [tab, setTab] = useState("notes");
+  const router = useRouter();
+  const removePlayer = useMutation(api.players.remove);
   const age = ageFromDob(player.dateOfBirth);
 
   const ratings = {
@@ -112,6 +117,15 @@ export function PlayerDossier({
         <Button asChild variant="secondary">
           <Link href={`/players/${player._id}/edit`}>{tCommon("edit")}</Link>
         </Button>
+        <ConfirmButton
+          onConfirm={() => {
+            void removePlayer({ id: player._id }).then(() => router.push("/players"));
+          }}
+          confirmLabel={tCommon("confirm")}
+          className="border border-touchline-red px-4 py-2 text-sm text-touchline-red hover:bg-touchline-red hover:text-chalk"
+        >
+          {tCommon("delete")}
+        </ConfirmButton>
       </div>
 
       <SegmentedTabs

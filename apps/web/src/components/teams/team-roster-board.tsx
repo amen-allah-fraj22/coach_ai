@@ -6,11 +6,12 @@ import { useTranslations } from "next-intl";
 
 import { api } from "@convex/_generated/api";
 import type { Doc, Id } from "@convex/_generated/dataModel";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { Chip } from "@/components/ui/chip";
 import { PitchDiagram, layoutFormation } from "@/components/ui/pitch-diagram";
 import { FormationPicker } from "@/components/ui/formation-picker";
 import { BottomSheet } from "@/components/ui/bottom-sheet";
+import { ConfirmButton } from "@/components/ui/confirm-button";
 
 function groupOf(position?: string): "GK" | "DEF" | "MID" | "FWD" | "OTHER" {
   if (!position) return "OTHER";
@@ -34,6 +35,9 @@ export function TeamRosterBoard({
   const tPlayers = useTranslations("players");
   const tCommon = useTranslations("common");
   const updateTeam = useMutation(api.teams.update);
+  const removeTeam = useMutation(api.teams.remove);
+  const router = useRouter();
+  const [deleteError, setDeleteError] = useState<string | null>(null);
 
   const [formation, setFormation] = useState(team.defaultFormation ?? "4-3-3");
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -87,7 +91,20 @@ export function TeamRosterBoard({
             <Link href="/players/new" className="text-sm text-chalk underline underline-offset-4">
               {t("addPlayerCta")}
             </Link>
+            <ConfirmButton
+              onConfirm={() => {
+                setDeleteError(null);
+                removeTeam({ id: team._id })
+                  .then(() => router.push("/teams"))
+                  .catch((e) => setDeleteError(e instanceof Error ? e.message : String(e)));
+              }}
+              confirmLabel={tCommon("confirm")}
+              className="text-sm text-muted-foreground hover:text-touchline-red"
+            >
+              {tCommon("delete")}
+            </ConfirmButton>
           </div>
+          {deleteError && <p className="mt-1 text-sm text-touchline-red">{deleteError}</p>}
         </div>
 
         <button
