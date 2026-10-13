@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+/*
+ * "Pitchside" design tokens — dark-only, corrected against
+ * design/stitch/DESIGN.md per docs/design-implementation-plan.md §2:
+ * primary action is Chalk (not Touchline Red, which is reserved for
+ * destructive/urgent states), radius is 0 everywhere, no shadows on UI
+ * chrome.
+ */
+
+:root {
+  --radius: 0rem;
+
+  /* Core palette */
+  --night-pitch: #12231c; /* base canvas */
+  --slate-grass: #182e25; /* card / container surfaces */
+  --deep-well: #0e1f18; /* recessed surfaces */
+  --chalk: #f7f5ef; /* ink — never pure white */
+  --pitch-green: #2f6d4f; /* positive / in-possession accent */
+  --touchline-red: #e3402a; /* urgent / destructive accent */
+
+  --wash-green: rgba(47, 109, 79, 0.25);
+  --wash-red: rgba(227, 64, 42, 0.22);
+
+  --hairline-08: rgba(247, 245, 239, 0.08);
+  --hairline-16: rgba(247, 245, 239, 0.16);
+  --hairline-24: rgba(247, 245, 239, 0.24);
+
+  /* shadcn-style semantic tokens, mapped onto the Pitchside palette */
+  --background: var(--night-pitch);
+  --foreground: var(--chalk);
+
+  --card: var(--slate-grass);
+  --card-foreground: var(--chalk);
+
+  --popover: var(--night-pitch);
+  --popover-foreground: var(--chalk);
+
+  --primary: var(--chalk);
+  --primary-foreground: var(--night-pitch);
+
+  --secondary: var(--slate-grass);
+  --secondary-foreground: var(--chalk);
+
+  --muted: var(--slate-grass);
+  --muted-foreground: rgba(247, 245, 239, 0.6);
+
+  --accent: var(--wash-green);
+  --accent-foreground: var(--chalk);
+
+  --destructive: var(--touchline-red);
+  --destructive-foreground: var(--chalk);
+
+  --border: var(--hairline-08);
+  --input: var(--hairline-16);
+  --ring: var(--chalk);
+}
+
+@theme inline {
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius);
+
+  --color-night-pitch: var(--night-pitch);
+  --color-slate-grass: var(--slate-grass);
+  --color-deep-well: var(--deep-well);
+  --color-chalk: var(--chalk);
+  --color-pitch-green: var(--pitch-green);
+  --color-touchline-red: var(--touchline-red);
+  --color-wash-green: var(--wash-green);
+  --color-wash-red: var(--wash-red);
+  --color-hairline-08: var(--hairline-08);
+  --color-hairline-16: var(--hairline-16);
+  --color-hairline-24: var(--hairline-24);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+ * Pitchside type scale (design/stitch/DESIGN.md "typography"). Display and
+ * metric sizes use the display font (Anton / Noto Kufi Arabic in RTL);
+ * metric values are always tabular-nums so they don't jitter on update.
+ */
+@utility text-display-lg {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+}
+@utility text-display-lg-mobile {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0.02em;
+}
+@utility text-headline-lg {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+}
+@utility text-headline-md {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+}
+@utility text-headline-sm {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+}
+@utility text-metric-huge {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 64px;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+@utility text-metric-huge-mobile {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+@utility text-body-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+@utility text-body-md {
+  font-size: 14px;
+  line-height: 20px;
+}
+@utility text-body-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+@utility text-label-tactical {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+@utility text-label-mono {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dotted tactical-grid backdrop, used behind pitch/board containers. */
+@utility bg-pitch-grid {
+  background-image: radial-gradient(var(--hairline-16) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Continuous CSS loops backing lib/motion.ts's marchingAnts/marquee names. */
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+@utility animate-marching-ants {
+  stroke-dasharray: 8 4;
+  animation: marching-ants 0.6s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@utility animate-marquee {
+  animation: marquee-scroll 24s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marching-ants,
+  .animate-marquee {
+    animation: none;
+  }
+}

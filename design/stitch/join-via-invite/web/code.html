@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-fixed-dim": "#c8c6c1",
+          "surface-container": "#12231c",
+          "secondary-fixed-dim": "#94d4b0",
+          "on-primary": "#30312d",
+          "on-primary-container": "#656560",
+          "on-tertiary-container": "#c12714",
+          "primary-container": "#e4e2dd",
+          "secondary-fixed": "#b0f1cb",
+          "on-primary-fixed": "#1b1c18",
+          "on-surface-variant": "#c7c7bf",
+          "tertiary-fixed-dim": "#ffb4a7",
+          "inverse-surface": "#d3e7dc",
+          "error-container": "#93000a",
+          "on-secondary": "#003823",
+          "on-tertiary-fixed": "#400200",
+          "error": "#ffb4ab",
+          "inverse-on-surface": "#23342c",
+          "background": "#061610",
+          "secondary-container": "#0c5135",
+          "surface": "#061610",
+          "on-background": "#d3e7dc",
+          "tertiary-container": "#ffdad4",
+          "on-error-container": "#ffdad6",
+          "surface-container-highest": "#273831",
+          "outline": "#91918a",
+          "on-tertiary": "#670500",
+          "surface-container-high": "#1c2d26",
+          "tertiary": "#ffffff",
+          "tertiary-fixed": "#ffdad4",
+          "on-surface": "#d3e7dc",
+          "surface-tint": "#c8c6c1",
+          "surface-dim": "#061610",
+          "surface-bright": "#2b3d35",
+          "surface-container-low": "#0e1f18",
+          "surface-variant": "#273831",
+          "inverse-primary": "#5f5f5a",
+          "on-primary-fixed-variant": "#474743",
+          "on-error": "#690005",
+          "secondary": "#94d4b0",
+          "primary": "#ffffff",
+          "on-secondary-container": "#83c39f",
+          "on-tertiary-fixed-variant": "#910a00",
+          "surface-container-lowest": "#02110b",
+          "on-secondary-fixed-variant": "#0c5135",
+          "on-secondary-fixed": "#002112",
+          "primary-fixed": "#e4e2dd",
+          "outline-variant": "#464741"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter-desktop": "1.5rem",
+          "margin-desktop": "2rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "margin-tablet": "1.5rem",
+          "space-md": "1rem",
+          "gutter": "1rem",
+          "space-xl": "2rem",
+          "margin": "1rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "body-md": ["IBM Plex Sans"],
+          "metric-huge": ["Anton"],
+          "headline-sm": ["Anton"],
+          "label-tactical": ["IBM Plex Sans"],
+          "body-lg": ["IBM Plex Sans"],
+          "headline-md": ["Anton"],
+          "label-mono": ["IBM Plex Sans"],
+          "body-sm": ["IBM Plex Sans"],
+          "metric-huge-mobile": ["Anton"],
+          "display-lg-mobile": ["Anton"],
+          "headline-lg": ["Anton"],
+          "display-lg": ["Anton"]
+        },
+        "fontSize": {
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "metric-huge": ["64px", {"lineHeight": "64px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+          "headline-sm": ["18px", {"lineHeight": "22px", "letterSpacing": "0.04em", "fontWeight": "400"}],
+          "label-tactical": ["11px", {"lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-md": ["24px", {"lineHeight": "28px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+          "label-mono": ["10px", {"lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "metric-huge-mobile": ["44px", {"lineHeight": "44px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+          "display-lg-mobile": ["38px", {"lineHeight": "42px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+          "headline-lg": ["32px", {"lineHeight": "36px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+          "display-lg": ["56px", {"lineHeight": "60px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary selection:text-on-secondary"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-headline-md text-headline-md tracking-wider text-primary uppercase select-none">COACHAI</span><div class="h-4 w-[1px] bg-outline-variant/40 hidden sm:block"></div><span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase hidden sm:block">TECHNICAL BRIEFING</span></div><div class="flex items-center gap-space-lg"><nav class="flex items-center gap-space-xs" data-active-classes="bg-primary text-on-primary font-headline-sm"><a class="font-headline-sm text-headline-sm px-space-sm py-0.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors select-none" data-path="language-fr" href="#">07 FR</a><a class="font-headline-sm text-headline-sm px-space-sm py-0.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors select-none" data-path="language-ar" href="#">09 AR</a><a class="font-headline-sm text-headline-sm px-space-sm py-0.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors select-none" data-path="language-en" href="#">10 EN</a></nav><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 min-h-screen bg-background relative flex flex-col"><div class="flex flex-col w-full items-center justify-center min-h-[calc(100vh-4rem)] p-space-md sm:p-space-lg relative overflow-hidden bg-[#F7F5EF] select-none">
+<!-- Pitch Chalk Markings Ambient Texture Background -->
+<div class="absolute inset-0 pointer-events-none opacity-30 flex items-center justify-center">
+<svg class="w-full h-full max-w-6xl max-h-[850px] stroke-[#12231C]/15 fill-none" viewbox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+<rect height="600" stroke-dasharray="8 6" stroke-width="2" width="900" x="50" y="50"></rect>
+<line stroke-dasharray="8 6" stroke-width="2" x1="500" x2="500" y1="50" y2="650"></line>
+<circle cx="500" cy="350" r="90" stroke-dasharray="6 6" stroke-width="2"></circle>
+<circle cx="500" cy="350" fill="#12231C" opacity="0.4" r="3"></circle>
+<!-- Penalty areas -->
+<rect height="320" stroke-dasharray="6 4" stroke-width="2" width="160" x="50" y="190"></rect>
+<rect height="320" stroke-dasharray="6 4" stroke-width="2" width="160" x="790" y="190"></rect>
+<!-- Goal area chalk arcs -->
+<path d="M 210 290 A 80 80 0 0 1 210 410" stroke-dasharray="5 5" stroke-width="2"></path>
+<path d="M 790 290 A 80 80 0 0 0 790 410" stroke-dasharray="5 5" stroke-width="2"></path>
+<!-- Tactical arrow scribble in chalk style -->
+<path d="M 320 220 C 370 200, 440 240, 470 300" opacity="0.35" stroke="#2F6D4F" stroke-dasharray="6 4" stroke-width="3"></path>
+<polygon fill="#2F6D4F" opacity="0.35" points="475,302 460,296 468,284"></polygon>
+</svg>
+</div>
+<!-- Pinned Tactical Note Container -->
+<div class="relative w-full max-w-[620px] my-space-lg transition-transform duration-300 hover:-translate-y-0.5">
+<!-- Pushpin Element -->
+<div class="absolute -top-5 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center">
+<!-- Pin head cap -->
+<div class="w-8 h-8 rounded-full bg-[#E3402A] shadow-md flex items-center justify-center relative">
+<div class="w-3.5 h-3.5 rounded-full bg-[#F7F5EF]/80 shadow-inner"></div>
+<div class="absolute inset-0 rounded-full border border-black/20"></div>
+<!-- Pin highlight & shadow notch -->
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-1.5 bg-[#670500]/60 rounded-full blur-[1px]"></div>
+</div>
+<!-- Cast Shadow under pin onto note -->
+<div class="w-7 h-2 bg-[#12231C]/30 rounded-full blur-sm -mt-0.5"></div>
+</div>
+<!-- Paper Note Base Card -->
+<div class="relative bg-[#F7F5EF] text-[#12231C] px-6 sm:px-10 pt-10 pb-8 rounded-sm shadow-[0_20px_45px_-10px_rgba(18,35,28,0.18),0_2px_6px_rgba(18,35,28,0.08)] overflow-hidden">
+<!-- Faint Tactical Chalk Watermark in Note Background -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.06] flex items-center justify-center">
+<svg class="w-full h-full stroke-current" fill="none" viewbox="0 0 400 400">
+<circle cx="200" cy="200" r="140" stroke-dasharray="6 4" stroke-width="3"></circle>
+<line stroke-dasharray="4 4" stroke-width="2" x1="20" x2="380" y1="200" y2="200"></line>
+<line stroke-dasharray="4 4" stroke-width="2" x1="200" x2="200" y1="20" y2="380"></line>
+<rect height="180" stroke-dasharray="4 4" stroke-width="2" width="80" x="60" y="110"></rect>
+<rect height="180" stroke-dasharray="4 4" stroke-width="2" width="80" x="260" y="110"></rect>
+<text fill="currentColor" font-family="Anton" font-size="44" text-anchor="middle" x="200" y="340">TACTICAL CORE</text>
+</svg>
+</div>
+<!-- Top Club Identity & Metadata -->
+<div class="flex items-start justify-between gap-space-md mb-6 relative z-10">
+<div class="flex items-center gap-3">
+<!-- Club Crest Icon Badge -->
+<div class="w-12 h-12 bg-[#12231C] text-[#F7F5EF] flex items-center justify-center rounded-sm shadow-sm relative overflow-hidden">
+<span class="material-symbols-outlined text-2xl text-[#94d4b0]">sports_soccer</span>
+<div class="absolute bottom-0 inset-x-0 h-1 bg-[#E3402A]"></div>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm uppercase text-[#12231C] tracking-wide">
+              FC VERDANT <span class="text-[#2F6D4F]">//</span> 1ST SQUAD
+            </div>
+<div class="font-label-mono text-label-mono uppercase text-[#12231C]/60 tracking-wider">
+              TELEMETRY DIVISION · MATCHDAY DESK
+            </div>
+</div>
+</div>
+<!-- Official Seal / Directive Stamp -->
+<div class="bg-[#12231C]/5 px-2.5 py-1.5 rounded-sm text-right shrink-0">
+<div class="font-label-tactical text-label-tactical text-[#E3402A] tracking-wider uppercase font-semibold">
+            SECURE CLEARANCE
+          </div>
+<div class="font-label-mono text-[9px] text-[#12231C]/70">
+            REF #TK-8924
+          </div>
+</div>
+</div>
+<!-- Directive Badge Bar -->
+<div class="bg-[#182E25]/5 px-3 py-1.5 rounded-sm mb-6 flex items-center justify-between text-[#12231C]/80 relative z-10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-[1px] bg-[#E3402A] inline-block animate-pulse"></span>
+<span class="font-label-tactical text-label-tactical tracking-widest text-[#12231C] uppercase">
+            [OFFICIAL SQUAD DIRECTIVE // ACCESS TOKEN #TK-8924]
+          </span>
+</div>
+<span class="font-label-mono text-[10px] text-[#12231C]/50 uppercase">VERIFIED PROTOCOL</span>
+</div>
+<!-- Main Invitation Directive Headline -->
+<div class="space-y-3 mb-6 relative z-10">
+<h1 class="font-display-lg text-[34px] sm:text-[44px] leading-[0.95] text-[#12231C] uppercase tracking-normal">
+          YOU’VE BEEN ADDED<br/>TO THE SQUAD
+        </h1>
+<p class="font-body-md text-body-md text-[#12231C]/85 leading-relaxed pt-1">
+          Head Coach <strong class="text-[#12231C] font-semibold">Roberto De Zerbi</strong> has requested your clearance as <span class="bg-[#2F6D4F]/10 px-1 py-0.5 text-[#003823] font-medium">Tactical Analyst</span> for first-team telemetry, matchday line-up simulations, and live bench co-pilot channels.
+        </p>
+</div>
+<!-- Tactical Credentials Stamp Card -->
+<div class="bg-[#12231C] text-[#F7F5EF] p-4 rounded-sm shadow-inner mb-6 relative z-10 space-y-2">
+<div class="flex items-center justify-between pb-2 border-b border-[#F7F5EF]/10">
+<span class="font-label-tactical text-[10px] text-[#94d4b0] uppercase tracking-widest flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">shield_person</span>
+            DISPATCH CREDENTIALS
+          </span>
+<span class="font-label-mono text-[9px] text-[#F7F5EF]/50 tracking-wider">EXP: 24H LOCKOUT</span>
+</div>
+<div class="space-y-1 pt-1 font-body-sm text-[12px] leading-snug">
+<div class="flex items-center justify-between">
+<span class="text-[#F7F5EF]/60 font-label-mono text-[10px] uppercase">INVITED TARGET:</span>
+<span class="font-semibold text-[#F7F5EF] tracking-tight">analyst@club.pro</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[#F7F5EF]/60 font-label-mono text-[10px] uppercase">ASSIGNED ROLE:</span>
+<span class="font-semibold text-[#94d4b0]">FIRST-TEAM TACTICIAN</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[#F7F5EF]/60 font-label-mono text-[10px] uppercase">AUTHORITY STATUS:</span>
+<span class="inline-flex items-center gap-1 text-[#E3402A] font-bold tracking-wider text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#E3402A]"></span> TIER-01
+            </span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="space-y-4 relative z-10">
+<button class="w-full group relative overflow-hidden bg-[#E3402A] hover:bg-[#c12714] text-[#F7F5EF] py-4 px-6 rounded-full font-headline-sm text-headline-sm uppercase tracking-wider transition-all duration-200 active:scale-[0.99] shadow-[0_4px_16px_rgba(227,64,42,0.35)] flex items-center justify-center gap-2" id="acceptSquadBtn">
+<span>ACCEPT AND JOIN FC VERDANT</span>
+<span class="font-headline-sm text-xl transition-transform duration-200 group-hover:translate-x-1.5">→</span>
+</button>
+<!-- Microcopy & Switch Account Link -->
+<div class="text-center space-y-2 pt-1">
+<p class="font-label-mono text-label-mono text-[#12231C]/60 max-w-sm mx-auto leading-normal">
+            Invited email must match your authentication session to ratify data sovereignty.
+          </p>
+<div>
+<a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-[#12231C]/70 hover:text-[#12231C] underline decoration-[#12231C]/30 hover:decoration-[#12231C] underline-offset-4 transition-colors" href="#">
+<span>Wrong account? Log in as someone else</span>
+<span class="material-symbols-outlined text-[13px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Diagonal Corner Fold & Chalk Shadow Details -->
+<div class="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-[#12231C]/15 to-transparent pointer-events-none"></div>
+</div>
+<!-- Pinned Card Ambient Shadow Below -->
+<div class="w-[94%] h-4 bg-[#12231C]/20 mx-auto rounded-[100%] blur-md -mt-1"></div>
+</div>
+<!-- Notification Toast for Interaction -->
+<div class="fixed bottom-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-[#12231C] text-[#F7F5EF] px-5 py-3 rounded-md shadow-2xl flex items-center gap-3" id="statusToast">
+<span class="material-symbols-outlined text-[#94d4b0] text-xl">verified</span>
+<span class="font-body-md text-sm font-medium">Clearance ratified. Connecting to FC Verdant telemetry...</span>
+</div>
+<script>
+    (function() {
+      const btn = document.getElementById('acceptSquadBtn');
+      const toast = document.getElementById('statusToast');
+      if (btn && toast) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          btn.disabled = true;
+          btn.innerHTML = `
+            <span class="animate-spin inline-block w-4 h-4 border-2 border-[#F7F5EF] border-t-transparent rounded-full mr-2"></span>
+            <span>RATIFYING CREDENTIALS...</span>
+          `;
+          
+          setTimeout(() => {
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+              btn.innerHTML = `<span>ACCESS GRANTED // ENTERING PITCHSIDE</span>`;
+              btn.classList.remove('bg-[#E3402A]', 'hover:bg-[#c12714]');
+              btn.classList.add('bg-[#2F6D4F]');
+            }, 800);
+          }, 600);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest/80 py-space-lg"><div class="w-full px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-mono text-label-mono uppercase tracking-wider"><span>COACHAI TACTICAL TELEMETRY // DESKTOP CORE</span><span>TRANSMISSION ENCRYPTED // CHALKBOARD ENGINE V4.2</span></div></footer></body></html>

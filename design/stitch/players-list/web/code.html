@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error":"#690005","tertiary-container":"#ffdad4","surface-tint":"#c8c6c1","surface-container-low":"#0e1f18","primary-fixed-dim":"#c8c6c1","surface":"#061610","on-primary-container":"#656560","surface-bright":"#2b3d35","on-tertiary-fixed-variant":"#910a00","on-secondary-fixed":"#002112","on-error-container":"#ffdad6","on-secondary-container":"#83c39f","on-tertiary":"#670500","on-primary-fixed-variant":"#474743","on-secondary":"#003823","primary-fixed":"#e4e2dd","primary-container":"#e4e2dd","on-tertiary-container":"#c12714","surface-container-high":"#1c2d26","outline":"#91918a","secondary-container":"#0c5135","secondary-fixed-dim":"#94d4b0","surface-variant":"#273831","surface-container-lowest":"#02110b","tertiary-fixed":"#ffdad4","on-surface-variant":"#c7c7bf","outline-variant":"#464741","inverse-surface":"#d3e7dc","error":"#ffb4ab","error-container":"#93000a","secondary-fixed":"#b0f1cb","surface-container-highest":"#273831","background":"#061610","on-secondary-fixed-variant":"#0c5135","on-tertiary-fixed":"#400200","on-primary-fixed":"#1b1c18","surface-dim":"#061610","inverse-primary":"#5f5f5a","inverse-on-surface":"#23342c","primary":"#ffffff","on-background":"#d3e7dc","tertiary-fixed-dim":"#ffb4a7","on-primary":"#30312d","on-surface":"#d3e7dc","secondary":"#94d4b0","tertiary":"#ffffff","surface-container":"#12231c"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-desktop":"1.5rem","space-sm":"0.5rem",margin:"1rem","space-lg":"1.5rem","space-xs":"0.25rem","margin-tablet":"1.5rem","margin-desktop":"2rem","space-md":"1rem",gutter:"1rem","space-xl":"2rem"},fontFamily:{"body-md":["IBM Plex Sans"],"display-lg":["Anton"],"metric-huge":["Anton"],"headline-sm":["Anton"],"label-tactical":["IBM Plex Sans"],"headline-lg":["Anton"],"headline-md":["Anton"],"body-sm":["IBM Plex Sans"],"label-mono":["IBM Plex Sans"],"display-lg-mobile":["Anton"],"metric-huge-mobile":["Anton"],"body-lg":["IBM Plex Sans"]},fontSize:{"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"display-lg":["56px",{lineHeight:"60px",letterSpacing:"0.02em",fontWeight:"400"}],"metric-huge":["64px",{lineHeight:"64px",letterSpacing:"0.01em",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"22px",letterSpacing:"0.04em",fontWeight:"400"}],"label-tactical":["11px",{lineHeight:"14px",letterSpacing:"0.12em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"36px",letterSpacing:"0.03em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"28px",letterSpacing:"0.03em",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"label-mono":["10px",{lineHeight:"12px",letterSpacing:"0.08em",fontWeight:"500"}],"display-lg-mobile":["38px",{lineHeight:"42px",letterSpacing:"0.02em",fontWeight:"400"}],"metric-huge-mobile":["44px",{lineHeight:"44px",letterSpacing:"0.01em",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary selection:text-on-secondary"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-lg"><div class="h-16 flex items-center px-space-md"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-surface text-[18px]">sports_soccer</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-wider uppercase leading-none">COACHAI</span><span class="font-label-mono text-label-mono text-secondary tracking-widest uppercase">TACTICAL HUB</span></div></div></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tactical-board" href="#"><span class="material-symbols-outlined text-[18px]">developer_board</span><span class="font-body-md text-body-md tracking-wide uppercase">Tactical Board</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="live-matchday" href="#"><span class="material-symbols-outlined text-[18px]">stadium</span><span class="font-body-md text-body-md tracking-wide uppercase">Live Matchday</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="squad-roster" href="#"><span class="material-symbols-outlined text-[18px]">groups</span><span class="font-body-md text-body-md tracking-wide uppercase">Squad &amp; Roster</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none transition-colors bg-surface-container-high text-primary font-bold" data-path="players-ledger" href="#"><span class="material-symbols-outlined text-[18px]">badge</span><span class="font-body-md text-body-md tracking-wide uppercase">Players Ledger</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="teams-directory" href="#"><span class="material-symbols-outlined text-[18px]">shield</span><span class="font-body-md text-body-md tracking-wide uppercase">Teams Directory</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="analytics-heatmaps" href="#"><span class="material-symbols-outlined text-[18px]">query_stats</span><span class="font-body-md text-body-md tracking-wide uppercase">Analytics &amp; Heatmaps</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-md text-body-md tracking-wide uppercase">Settings</span></a></nav></div><div class="px-space-md flex flex-col gap-space-xs"><div class="bg-surface-container-low p-space-sm flex items-center justify-between"><span class="font-label-mono text-label-mono text-outline uppercase">PITCH LINK</span><span class="font-label-tactical text-label-tactical text-secondary tracking-widest uppercase">ENCRYPTED</span></div><div class="font-label-mono text-label-mono text-outline px-space-xs uppercase">SYSTEM V4.2 TACTICAL</div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 z-40 bg-surface-container/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-secondary-container px-space-sm py-space-xs"><div class="w-1.5 h-1.5 bg-secondary"></div><span class="font-label-tactical text-label-tactical text-secondary-fixed uppercase tracking-wider">MATCHDAY LIVE • 68'</span></div><div class="hidden md:flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-outline">sync</span><span class="font-label-mono text-label-mono text-outline uppercase">TELEMETRY SYNC: 14:02:18 UTC</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-xs"><span class="font-label-mono text-label-mono text-outline uppercase">DELTA LATENCY:</span><span class="font-label-mono text-label-mono text-secondary">12MS</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-margin-desktop py-space-lg flex flex-col gap-space-lg max-w-[1540px] mx-auto w-full">
+<!-- METALLIC CLIPBOARD CLAMP FIXTURE -->
+<div class="relative w-full flex flex-col items-center">
+<!-- Vintage Brushed Gunmetal Clip Plate -->
+<div class="w-80 h-11 bg-surface-container-highest shadow-xl flex items-center justify-between px-space-md relative z-20">
+<!-- Mechanical Rivets Left -->
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest shadow-inner flex items-center justify-center">
+<div class="w-1 h-0.5 bg-outline"></div>
+</div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest shadow-inner flex items-center justify-center">
+<div class="w-1 h-0.5 bg-outline"></div>
+</div>
+</div>
+<!-- Heavy Spring Cutout -->
+<div class="flex items-center gap-space-xs">
+<div class="w-14 h-3 bg-surface-container-lowest flex items-center justify-evenly px-0.5">
+<div class="w-1 h-full bg-outline-variant"></div>
+<div class="w-1 h-full bg-outline-variant"></div>
+<div class="w-1 h-full bg-outline-variant"></div>
+<div class="w-1 h-full bg-outline-variant"></div>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary tracking-widest uppercase">COACHAI // R-92</span>
+</div>
+<!-- Mechanical Rivets Right -->
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest shadow-inner flex items-center justify-center">
+<div class="w-1 h-0.5 bg-outline"></div>
+</div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest shadow-inner flex items-center justify-center">
+<div class="w-1 h-0.5 bg-outline"></div>
+</div>
+</div>
+</div>
+<!-- Clip Shadow Lip onto paper -->
+<div class="w-96 h-2 bg-black/40 blur-xs -mt-0.5 z-10"></div>
+</div>
+<!-- MAIN SCOUTING LEDGER BOOK SHEET (Chalk Paper Style) -->
+<div class="w-full bg-primary-fixed text-surface-container-lowest shadow-2xl relative overflow-hidden -mt-3">
+<!-- Paper Grain & Substrate Watermarks -->
+<div class="absolute inset-0 opacity-[0.035] pointer-events-none mix-blend-multiply bg-[radial-gradient(#12231c_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Top Red Margin Ruled Line -->
+<div class="h-1.5 w-full bg-error-container/40"></div>
+<!-- LEDGER HEADER & TACTICAL STAMP BAR -->
+<div class="p-space-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-space-md relative">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Vintage Touchline Red Stamp -->
+<div class="bg-error-container text-on-error-container px-space-sm py-0.5 font-label-tactical text-label-tactical uppercase tracking-widest inline-flex items-center gap-1.5 shadow-sm transform -rotate-1">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+              CONFIDENTIAL SQUAD ASSESSMENT • SERIES 2024-25
+            </div>
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-wider">SEC: FA-T1 // DOC NO. 0491-LON</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg uppercase text-surface-container-lowest tracking-tight mt-1">
+            FIRST TEAM SCOUTING LEDGER
+          </h1>
+<p class="font-body-sm text-body-sm text-on-primary-container max-w-xl">
+            Live technical evaluations, match-readiness indicators, and tactical deployment metrics extracted from high-frequency pitch telemetry.
+          </p>
+</div>
+<!-- Quick Summary & Action Trigger -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md w-full md:w-auto">
+<!-- Roster Count Pill -->
+<div class="bg-surface-container-highest/10 px-space-md py-space-xs flex flex-col">
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase tracking-widest">SQUAD DISPOSITION</span>
+<div class="flex items-center gap-space-xs font-label-tactical text-label-tactical text-surface-container-lowest">
+<span class="text-secondary-container font-bold">28 ROSTERED</span>
+<span>•</span>
+<span>24 FIT</span>
+<span>•</span>
+<span class="text-on-tertiary-container font-bold">4 MANAGED</span>
+</div>
+</div>
+<!-- Register Player Button -->
+<button class="bg-on-tertiary-container hover:bg-error-container text-primary font-headline-sm text-headline-sm uppercase px-space-lg py-space-sm flex items-center gap-space-xs transition-colors shadow-md">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+            + REGISTER ATHLETE
+          </button>
+</div>
+</div>
+<!-- CLIPBOARD CONTROLS BAR: Search & Position Filters -->
+<div class="px-space-lg py-space-sm bg-surface-container-lowest/5 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Clipboard Search Field -->
+<div class="relative flex-1 max-w-xl">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-primary-container text-[18px]">search</span>
+<input class="w-full pl-9 pr-space-md py-2 bg-primary-fixed-dim/40 text-surface-container-lowest placeholder:text-outline font-body-sm text-body-sm tracking-wide focus:outline-none focus:bg-primary" id="scouting-search" placeholder="FILTER BY ATHLETE NAME, TACTICAL ROLE, OR KIT NUMBER..." type="text"/>
+</div>
+<!-- Position Filter Chips (Shirt Numbers / Squad Units) -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0" id="filter-container">
+<button class="filter-btn active-filter px-space-sm py-1 font-label-tactical text-label-tactical uppercase tracking-wider bg-surface-container-lowest text-primary shadow-xs transition-colors" data-filter="all">
+            ALL (14)
+          </button>
+<button class="filter-btn px-space-sm py-1 font-label-tactical text-label-tactical uppercase tracking-wider bg-primary-fixed-dim/60 hover:bg-surface-container-lowest hover:text-primary text-surface-container-lowest transition-colors" data-filter="GK">
+            GK (2)
+          </button>
+<button class="filter-btn px-space-sm py-1 font-label-tactical text-label-tactical uppercase tracking-wider bg-primary-fixed-dim/60 hover:bg-surface-container-lowest hover:text-primary text-surface-container-lowest transition-colors" data-filter="DEF">
+            DEF (5)
+          </button>
+<button class="filter-btn px-space-sm py-1 font-label-tactical text-label-tactical uppercase tracking-wider bg-primary-fixed-dim/60 hover:bg-surface-container-lowest hover:text-primary text-surface-container-lowest transition-colors" data-filter="MID">
+            MID (4)
+          </button>
+<button class="filter-btn px-space-sm py-1 font-label-tactical text-label-tactical uppercase tracking-wider bg-primary-fixed-dim/60 hover:bg-surface-container-lowest hover:text-primary text-surface-container-lowest transition-colors" data-filter="FWD">
+            FWD (3)
+          </button>
+<button class="filter-btn px-space-sm py-1 font-label-tactical text-label-tactical uppercase tracking-wider bg-primary-fixed-dim/60 hover:bg-surface-container-lowest hover:text-primary text-surface-container-lowest transition-colors" data-filter="ACADEMY">
+            ACADEMY (2)
+          </button>
+</div>
+</div>
+<!-- LEDGER PAPER TABLE -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left table-auto min-w-[1080px]" id="scouting-table">
+<thead>
+<tr class="bg-surface-container-lowest/10 text-on-primary-container font-label-tactical text-label-tactical tracking-widest uppercase">
+<th class="py-space-sm px-space-md w-16">NO</th>
+<th class="py-space-sm px-space-md">ATHLETE NAME</th>
+<th class="py-space-sm px-space-md">TACTICAL ROLE</th>
+<th class="py-space-sm px-space-md">SQUAD UNIT</th>
+<th class="py-space-sm px-space-md">MATCH FITNESS</th>
+<th class="py-space-sm px-space-md text-center">DIAL EVAL (1-10)</th>
+<th class="py-space-sm px-space-md">DISPOSITION</th>
+<th class="py-space-sm px-space-md text-right w-24">PROFILE</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline/20 font-body-sm text-body-sm text-surface-container-lowest" id="ledger-rows">
+<!-- ROW 1: Martin Odegaard -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="MID" data-search="martin odegaard cam playmaker 08">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">08</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up athletic portrait of football player Martin Odegaard wearing team jersey against deep stadium lights background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbok-Ny-xGy5ZWx-yA7AsIpPtP4Ag7mSO-cnJ9CM5GBpBzFJKlOe3ez2p8N7AsnRy4AwLWmkYMPVPQw5hjRdlO-98dqhnFZTFClcWmheCEFO4k4_rE8ipQ44qwNf8GvgYszdBuvMAxz_SLBHQaXPAX8ksH6avd_I4duc6WcHCk-qSfRheZ_UGhsHDUfF78tDelJil05VE3RJ8uIS7Jy10nNI4KLNwvF11yhzjp8tJYEDWtxwM929V-rw"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Martin Ødegaard <span class="text-on-tertiary-container font-label-tactical text-label-tactical ml-1">(C)</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">NOR • EXP 9 YRS • PEAK FORM</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">ADVANCED PLAYMAKER</span>
+<span class="font-label-mono text-label-mono text-outline">HALF-SPACE CONDUCTOR [CAM]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">96% READY</span>
+<span class="text-outline">HI-LOAD</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[96%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="88, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">9.4</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 2: Bukayo Saka -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="FWD" data-search="bukayo saka rw winger forward 07">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">07</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Headshot of Bukayo Saka with determined look, premier league styling in warm natural dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWZI8-floOzRSJnKR7idCkJAfduywY-xTB43YrtJaT8TK-uLNx1tKSoDN7ry4wmcsr9usl1nStiox3CJQTVKqh2IIb9w5L_j8MqvFWMBLvL85ZXqsmxLpORBKOReKp4D_S_7S4GMdz3XO2j-1JWAKTqboMpxa3ARvEAdSRK2G0ihSWaNPHxFU6ORSib202wsPkOlCcKowrEWZAG2KeG27M7PyYnj36i7qSHAnBoXJEoo3oSpFARA3MzQ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Bukayo Saka
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">ENG • EXP 6 YRS • CRITICAL TALENT</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">INVERTED WINGER</span>
+<span class="font-label-mono text-label-mono text-outline">ISOLATION DRIBBLE [RW]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">98% READY</span>
+<span class="text-outline">MAX PEAK</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[98%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="90, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">9.6</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 3: William Saliba -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="DEF" data-search="william saliba cb centre back defender 02">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">02</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of football defender William Saliba in dark training kit with intense tactical expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIbf9a6iDiBnKwAPeXrsDk8_b7gn3YILEKZZ5NWLrqfurq2FZBdJcStpak24cfleVmG_UOM3eX70u47E3BGns-5Ws_PxJmcRGW5VF0tjuvv8u2kSw_jcE1vEQKSFXnJlcO7Auu3IWO_8OJ__puhX42io8y-M9X86T2dnMO4VNu2Q2dUvVkDptvW5aWmfp406584l1JLyAoBrr7LsdUTMfCZ_sXS9pgOUAttNwdu1hit-oJs1ziit-zCA"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      William Saliba
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">FRA • EXP 5 YRS • ANCHOR DEFENDER</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">BALL-PLAYING CB</span>
+<span class="font-label-mono text-label-mono text-outline">RECOVERY COVER [CB]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">94% READY</span>
+<span class="text-outline">NOMINAL</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[94%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="84, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">9.1</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 4: Declan Rice -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="MID" data-search="declan rice pivot defensive midfield 41">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">41</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Athletic face shot of Declan Rice looking directly into the camera in intense sports tunnel lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9leozN4fzG4GmfwsKTF1ldZDDv3VvBpdBtzKtBm4xQjCmCcQcNd9ugYr-izoAbndyfHvpKIEJIN1H8T4x_pVo64B0rOUG4MExI_d_U1BksdrBwbJSqRwPs2IlZapjSAJvbPIxc7bvH0v2Bio-q5dYcwEBecrxOSc_k9ngVsd19WNk7T9kv6_E0xdF6jl5hq6DXUH4mODr54kCBlNgTCfiwC9cU4ODdISdtyQwxA8YbCvBjx5-bBl5ig"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Declan Rice
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">ENG • EXP 7 YRS • BALL WINNER</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">BOX-TO-BOX ENFORCER</span>
+<span class="font-label-mono text-label-mono text-outline">INTERCEPTION ENGINE [DM/CM]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">93% READY</span>
+<span class="text-outline">OPTIMAL</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[93%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="83, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">9.0</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 5: David Raya -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="GK" data-search="david raya goalkeeper sweeper keeper 01">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">01</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of goalkeeper David Raya in athletic jersey with focused tactical stance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlrCr6oFHuH4FZSRcYNJwCJRsywKUSS-hmN4Fsq0p62hdjyW1aQX5gAjMjJPAzYoWbe98ZBcFkAXcQ-kSbVLPqHSDIoL28H4_j0GGldRi4ZMyDOv9eXW31UnR5V_HsaJ4DKgRpGik0Y5DcegD4Bgzpy3L01NufapFTR4q4OKxhWbAdUDBVHBHwx0PsNgvcwA9umCQSbbeKc8DmHVRR0c2lkXDzyZFGPXzvjaykU4ExVJxuQDCmb-I7Jg"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      David Raya
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">ESP • EXP 8 YRS • GOLDEN GLOVE</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">SWEEPER KEEPER</span>
+<span class="font-label-mono text-label-mono text-outline">DISTRIBUTION LAUNCH [GK]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">91% READY</span>
+<span class="text-outline">NOMINAL</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[91%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="80, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">8.8</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 6: Kai Havertz -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="FWD" data-search="kai havertz forward striker false 9 29">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">29</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Dramatic studio sports portrait of Kai Havertz with cinematic lighting and dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAShNQ5-KRbg8ONnHLUODgmd2N0w15guuyfIHNItKW3Dq3sFEARi7g7XVQLf-ZMpGptIW6Ojx8tqaf4jyWXUXKdlZtN0ZZymuan6QKUdiZV20SeKo-dyTjxzuOO-jPC7h6NOCnJMFPChO6Nf327UAWgYNUcJ_6-eyRVAkiVVfQy-JZrY22dKrQYuIczyytisNFeVS73iplTrmfyfiKLXdLJOa3A_GVamcimNnROyHCASoNBcTKLnf7LXA"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Kai Havertz
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">GER • EXP 7 YRS • AERIAL OUTLET</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">TARGET MAN / FALSE 9</span>
+<span class="font-label-mono text-label-mono text-outline">CHANNEL RUNNER [CF]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">92% READY</span>
+<span class="text-outline">NOMINAL</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[92%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="78, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">8.7</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 7: Gabriel Magalhães -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="DEF" data-search="gabriel magalhaes cb defender 06">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">06</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Headshot of Gabriel Magalhaes with fierce competitive game-ready focus in dark locker room atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvfd_M1A2HPWswCXIzHl5LfNvMOs8kYub7era8e_gFCInvTswIP38yq1EWLG3BixOzD5t_sZWhJRIGcCydV2n1HVXQV__J7ZwB2xesL8NfxCn_fxxzdn7iDBOEjMpPj3fDM2PJG3TRWeKbBo4K7RN4ig5UJEUE43oF6zKXD2pp11stoEZtV17DI_t8sXb3vUY248aImo2u_h6yd_tuNjIb_YiPfA4S78PXvGRwsmKt5p4i-nwMYbqxsw"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Gabriel Magalhães
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">BRA • EXP 6 YRS • SET-PIECE TARGET</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">STOPPER CB</span>
+<span class="font-label-mono text-label-mono text-outline">AERIAL DOMINANCE [CB]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">90% READY</span>
+<span class="text-outline">NOMINAL</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[90%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="81, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">8.9</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 8: Gabriel Martinelli -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="FWD" data-search="gabriel martinelli lw winger forward speed 11">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">11</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of Gabriel Martinelli looking sharp and energetic in professional team uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFRnXk8ISpnXMDklJjNM4rdVCn8ZfCydnYnITK5o1aRJ1hWYbwezPWxpP18_1H1ocUf1FYVxNtplubGvCUshOP9PGEzbDybwJ3nDVqu2WDQ0tru7k3m2zrlWxBCobTYqv0nQ63glauldXuxVCeODouoQVCYIhHucHQmjUDcNBFsh2uYLTmqP0HjkDehodWvbeYf9ucnMmluTYbJH1Ub-NfCJi5SJE7wI4mO8sN_x-iUTUepwlEdMqUGQ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Gabriel Martinelli
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">BRA • EXP 5 YRS • SPRINT THREAT</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">DIRECT WINGER</span>
+<span class="font-label-mono text-label-mono text-outline">VERTICAL TRANSITION [LW]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">89% READY</span>
+<span class="text-outline">HI-SPEED</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[89%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="75, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">8.5</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 9: Ben White (Minor Knock / Probable) -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="DEF" data-search="ben white inverted rb fullback defender 04">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">04</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Athletic portrait photo of Ben White in training kit with natural stadium light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkoTo8Yaqz1VyRFc2BQ9WXUbnd8FzZKwAUUTwgUMAiKfdmvsv0e1hWU-hz1rJ75u_6bQcbsmLggHB2qRAkb7NfCWywcRFacDAcuHkSTZimGSrq4UF_-Ns6H-PhtH_dOSDHKUjAxEJ5lm7DgQCUxl_CjXTeZ1zRxaccuB_GJP-5mYRQzSycn7N4HnLoNoNqRmWjWqI_aF0q-Nqqy6_8dI62e1hUuRDKfy3_XX2Fddb1k0cj4NZfXeU9mA"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Ben White
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">ENG • EXP 6 YRS • UNDERLAPPING SPECIALIST</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">INVERTED FULLBACK</span>
+<span class="font-label-mono text-label-mono text-outline">RIGHT FLANK AXIS [RB]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-outline">88% MANAGED</span>
+<span class="text-outline">ASSESS</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-outline w-[88%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="74, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">8.4</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-surface-variant text-primary font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">medical_services</span>
+                  PROBABLE (MINOR KNOCK)
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 10: Jurrien Timber -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="DEF" data-search="jurrien timber wingback left back lb defender 12">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">12</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Jurrien Timber looking concentrated in football practice kit against pitch background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe1Lsdg_l2EHv9d8tj_DPm853GHgPi6ibuPupM77Mdph0ZDcvotAmZP4ucvmkTICepK8gY7pix3ys2qGozEpgVzYw9sAYDxxAeXUaBQoqzkpqQ110DcDTS3zYwPi3W6a1fdIFVrrJcICq5xtLLMShnJKdhmp6JXheNgubLZ7mdqUAvQdi0ddjTzYHORvgvGL6gUG6Kqy4gEEpeuDAwBs7muhNSLSv_ChmICCzj57glVUyUPmHmMjh_-Q"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Jurriën Timber
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">NED • EXP 4 YRS • HYBRID DEFENDER</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">OVERLAP WINGBACK</span>
+<span class="font-label-mono text-label-mono text-outline">LEFT-SIDED BUILDUP [LB]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-outline">82% REST</span>
+<span class="text-outline">ROTATION</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-outline w-[82%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="72, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">8.2</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-primary-fixed-dim/80 text-surface-container-lowest font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">hotel</span>
+                  LOAD MANAGED
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 11: Ethan Nwaneri -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="ACADEMY" data-search="ethan nwaneri youth academy cam midfield 23">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">23</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of young dynamic football prospect Ethan Nwaneri looking focused in red match kit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjwrYOpIa7xP9eQfkB9Nr2tMlS3dCtljHYi-9z3FY8MvyURLsf8brSHYds9ioquo6erof6k8jUEZIfbP4ZfNsmeTUNPXlaJIxi_wFM47N6doKvr227GFp45FO_0XcfDrVu6ff0TfrsjMK-KQsPYyfUxAuYo1u2KPN4itFN1hGAOyqFwXTn2jhYei5B5vgAjum4kEeqFJ3tFfG_qXymm8ojtmdiG7ltDtElm35ZjZQ-MgFV7Zg5L6Ox3A"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Ethan Nwaneri
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">ENG • EXP 1 YR • GENERATIONAL PROSPECT</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">ATTACKING MIDFIELD</span>
+<span class="font-label-mono text-label-mono text-outline">BETWEEN LINES [CAM]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-secondary-container/20 text-secondary-container font-label-mono text-label-mono uppercase tracking-wider font-bold">U-21 ACADEMY ELITE</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">95% READY</span>
+<span class="text-outline">FRESH</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[95%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="73, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">8.3</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 12: Myles Lewis-Skelly -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="ACADEMY" data-search="myles lewis-skelly youth inverted lb midfield 49">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">49</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of Myles Lewis-Skelly athlete looking determined in dark football academy kit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEHrCb6OfzBMzava1P0eDDWBGx1DrgYn5Z3uN1Xbj_k9grmtqDz1Ll_5T9sQQBL7Z5eCFq6M5ReZYPkHmqDuKFKO4COUTqWXtifuCsG3myTaKBzzMa5fYEXru7b1rEtmAMDCnSSddZdMNe4hDbiJ5CEM-SMGBzxrNVUa1TnxMc8cfdK415UON6KNNAzgx58aP9VgddxEZ-BNmQJRcCMdWgs-I5h9Ba_0fADP_lGoe1O4l6rWOuWAx1Ow"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Myles Lewis-Skelly
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">ENG • EXP 1 YR • PRESS RESISTANT</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">INVERTED MID / LB</span>
+<span class="font-label-mono text-label-mono text-outline">PROGRESSIVE CARRIER [DM]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-secondary-container/20 text-secondary-container font-label-mono text-label-mono uppercase tracking-wider font-bold">U-21 ACADEMY ELITE</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">94% READY</span>
+<span class="text-outline">PEAK</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[94%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="71, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">8.1</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 13: Norberto Neto -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="GK" data-search="norberto neto reserve goalkeeper backup 32">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">32</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Headshot of veteran goalkeeper Norberto Neto with steady calm look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA47kzi3w-Vi9sBENeUE1s4c-1g6DmqddCT1UhiURt08xYH0NjFQZDdDO0QXiGK5POrPMsEJTBfldh2Unmr8eLavCp1-8pWBZ-TR8bAx9O_v0zJmPj2qbp_jynyWBC_LdMvq723I4UWktgrroMiii1Y1JcBhj8naBvjcY2cmT6jzLcj7MskHgGMawpp7dGJV4HizC_O1o2AW4f_27rX_7T-4rzHmI09-6ccO8MhM-K_67wea8_4nMbwIg"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-secondary-container transition-colors">
+                      Norberto Neto
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">BRA • EXP 12 YRS • EXPERIENCED BACKUP</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">SHOT STOPPER</span>
+<span class="font-label-mono text-label-mono text-outline">LINE COMMAND [GK]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">RESERVES &amp; BACKUP</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-secondary-container">85% READY</span>
+<span class="text-outline">STANDBY</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-secondary-container w-[85%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-secondary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="66, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">7.6</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-secondary-container/15 text-secondary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+                  MATCHDAY READY
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+<!-- ROW 14: Takehiro Tomiyasu (Injured) -->
+<tr class="ledger-row hover:bg-surface-container-highest/10 cursor-pointer transition-colors group" data-category="DEF" data-search="takehiro tomiyasu injured defender fullback 18">
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center justify-center w-8 h-8 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">18</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 bg-surface-container-high flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of Takehiro Tomiyasu with stoic resolute expression in training session" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASjRwjiPfwlte0qvaZNg8wkwUOga0KBnARUzuC322TU8n_MBjvM-CiWexnhxQKIctQfxHqVDf0tR6KDhtRPO_VDyphyyuHtePj7eRRqWe6OYCoHJ6Tq58WX4urlM32zBVZBryhXKxqc0CKKkq4usVMfAQXgeE1pyynzvqinBkiG16X9wp3X6N36CC5qIjf7CdR22y3JVXkrD_LaoxKskiHNidFXQf9Zmr_ljW7yT7Y6QacHQ2QQiLznw"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide group-hover:text-on-tertiary-container transition-colors">
+                      Takehiro Tomiyasu
+                    </span>
+<span class="font-label-mono text-label-mono text-outline tracking-wider uppercase">JPN • EXP 6 YRS • DEFENSIVE VERSATILITY</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical text-surface-container-lowest font-bold">DEFENSIVE FULLBACK</span>
+<span class="font-label-mono text-label-mono text-outline">1V1 STOPPER [RB/LB]</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest/10 font-label-mono text-label-mono text-surface-container-lowest uppercase tracking-wider">FIRST TEAM // SENIOR A</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center font-label-mono text-label-mono">
+<span class="font-bold text-on-tertiary-container">60% REHAB</span>
+<span class="text-on-tertiary-container">14D RETURN</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest/20 overflow-hidden flex">
+<div class="h-full bg-on-tertiary-container w-[60%]"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center justify-center gap-1.5">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container-lowest/15" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-on-tertiary-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="70, 100" stroke-width="3"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">8.0</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 bg-error-container/40 text-on-tertiary-container font-label-tactical text-label-tactical uppercase">
+<span class="material-symbols-outlined text-[14px]">healing</span>
+                  INJURED • RESTRICTED
+                </div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-surface-container-lowest group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- FOOTER LEDGER SUMMARY & AUDIT MARK -->
+<div class="p-space-md bg-surface-container-lowest/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm border-t border-outline/20">
+<div class="flex items-center gap-space-sm">
+<div class="w-2.5 h-2.5 bg-secondary-container"></div>
+<span class="font-label-mono text-label-mono text-surface-container-lowest tracking-widest uppercase">
+            CERTIFIED SANCTIONED SQUAD REGISTER // FA TIER 1 // CHALKBOARD TELEMETRY PROTOCOL
+          </span>
+</div>
+<div class="flex items-center gap-space-md font-label-mono text-label-mono text-outline">
+<span>PAGE 01 OF 01</span>
+<span>•</span>
+<span>LAST SCRAPE: 14:02:18 UTC</span>
+<span>•</span>
+<span class="text-surface-container-lowest font-bold">14 ATHLETES IN VIEW</span>
+</div>
+</div>
+</div>
+<!-- TACTICAL BENCH INSIGHT CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: Role Saturation -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between shadow-lg">
+<div class="flex items-center justify-between pb-space-sm border-b border-primary/10">
+<span class="font-headline-sm text-headline-sm uppercase text-primary">TACTICAL DEPTH</span>
+<span class="font-label-tactical text-label-tactical text-secondary">ACTIVE 4-3-3</span>
+</div>
+<div class="py-space-md flex flex-col gap-space-xs">
+<div class="flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant">
+<span>Inverted Wingers / Creators</span>
+<span class="font-headline-sm text-headline-sm text-primary">5 OPERATIONAL</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant">
+<span>Ball-Carrying Centerbacks</span>
+<span class="font-headline-sm text-headline-sm text-primary">3 OPERATIONAL</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant">
+<span>Restricted / Physio Care</span>
+<span class="font-headline-sm text-headline-sm text-on-tertiary-container">2 MANAGED</span>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-wider">DEPTH ADEQUACY INDEX: 94.2%</span>
+</div>
+<!-- Card 2: Squad Metric Dial -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between shadow-lg">
+<div class="flex items-center justify-between pb-space-sm border-b border-primary/10">
+<span class="font-headline-sm text-headline-sm uppercase text-primary">SQUAD EVALUATION MEAN</span>
+<span class="font-label-tactical text-label-tactical text-secondary">TIER 1</span>
+</div>
+<div class="py-space-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-metric-huge text-metric-huge text-primary leading-none">8.7</span>
+<span class="font-label-tactical text-label-tactical text-secondary tracking-widest uppercase mt-1">STARTING XI COMBINED</span>
+</div>
+<div class="h-16 w-32 flex items-end gap-1.5 pb-1">
+<div class="w-full bg-secondary h-[88%]"></div>
+<div class="w-full bg-secondary h-[96%]"></div>
+<div class="w-full bg-secondary h-[91%]"></div>
+<div class="w-full bg-secondary h-[90%]"></div>
+<div class="w-full bg-secondary h-[87%]"></div>
+<div class="w-full bg-secondary-container h-[76%]"></div>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-wider">+0.4 DELTA VS MATCHDAY -1</span>
+</div>
+<!-- Card 3: Quick Batch Directive -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between shadow-lg">
+<div class="flex items-center justify-between pb-space-sm border-b border-primary/10">
+<span class="font-headline-sm text-headline-sm uppercase text-primary">DISPATCH TACTICS</span>
+<span class="font-label-tactical text-label-tactical text-outline">SEC PROTOCOL</span>
+</div>
+<div class="py-space-md flex flex-col gap-space-xs text-on-surface-variant text-body-sm font-body-sm">
+<p>Deploy custom tactical telemetry presets directly to pitchside monitors and coaching staff mobile tablets before warmups.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex-1 bg-surface-container-high hover:bg-surface-bright text-primary font-headline-sm text-headline-sm uppercase py-space-xs text-center transition-colors">
+            EXPORT LEDGER
+          </button>
+<button class="bg-primary hover:bg-primary-fixed text-on-primary font-headline-sm text-headline-sm uppercase px-space-md py-space-xs transition-colors">
+            SYNC PITCH
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Ledger Filtering and Search micro-interaction
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('scouting-search');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const rows = document.querySelectorAll('.ledger-row');
+
+    let currentFilter = 'all';
+    let currentSearchTerm = '';
+
+    function filterTable() {
+      rows.forEach(row => {
+        const category = row.getAttribute('data-category');
+        const searchText = row.getAttribute('data-search') || '';
+        
+        const matchesCategory = (currentFilter === 'all') || (category === currentFilter);
+        const matchesSearch = searchText.toLowerCase().includes(currentSearchTerm.toLowerCase());
+
+        if (matchesCategory && matchesSearch) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentSearchTerm = e.target.value.trim();
+        filterTable();
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-primary');
+          b.classList.add('bg-primary-fixed-dim/60', 'text-surface-container-lowest');
+        });
+
+        btn.classList.add('bg-surface-container-lowest', 'text-primary');
+        btn.classList.remove('bg-primary-fixed-dim/60', 'text-surface-container-lowest');
+
+        currentFilter = btn.getAttribute('data-filter');
+        filterTable();
+      });
+    });
+
+    // Row Click Trigger Simulator
+    rows.forEach(row => {
+      row.addEventListener('click', () => {
+        const playerName = row.querySelector('.font-headline-sm').innerText.trim();
+        const notification = document.createElement('div');
+        notification.className = 'fixed bottom-4 right-4 bg-surface-container-lowest text-primary px-4 py-2 shadow-2xl font-label-tactical text-label-tactical uppercase tracking-wider flex items-center gap-2 z-50 animate-bounce';
+        notification.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span> NAVIGATING: ' + playerName;
+        document.body.appendChild(notification);
+        setTimeout(() => notification.remove(), 2400);
+      });
+    });
+  });
+</script></main></div></body></html>

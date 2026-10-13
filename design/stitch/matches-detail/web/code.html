@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-container":"#e4e2dd","surface-tint":"#c8c6c1","secondary-fixed":"#b0f1cb","inverse-on-surface":"#23342c","primary":"#ffffff","tertiary-fixed":"#ffdad4","inverse-primary":"#5f5f5a","on-secondary-fixed":"#002112","on-secondary-container":"#83c39f","on-secondary":"#003823","on-tertiary-fixed":"#400200","on-surface":"#d3e7dc","primary-fixed":"#e4e2dd","background":"#061610","secondary-fixed-dim":"#94d4b0","on-background":"#d3e7dc","on-error":"#690005","on-error-container":"#ffdad6","primary-fixed-dim":"#c8c6c1","surface-container":"#12231c","on-primary-fixed-variant":"#474743","surface":"#061610","inverse-surface":"#d3e7dc","surface-container-low":"#0e1f18","surface-container-highest":"#273831","surface-variant":"#273831","on-primary-fixed":"#1b1c18","surface-container-lowest":"#02110b","on-tertiary-fixed-variant":"#910a00","outline":"#91918a","secondary":"#94d4b0","surface-container-high":"#1c2d26","tertiary-fixed-dim":"#ffb4a7","on-surface-variant":"#c7c7bf","outline-variant":"#464741","surface-bright":"#2b3d35","on-primary":"#30312d","error":"#ffb4ab","on-secondary-fixed-variant":"#0c5135","tertiary":"#ffffff","surface-dim":"#061610","on-tertiary":"#670500","secondary-container":"#0c5135","error-container":"#93000a","on-tertiary-container":"#c12714","on-primary-container":"#656560","tertiary-container":"#ffdad4"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter":"1rem","margin":"1rem","space-xl":"2rem","margin-tablet":"1.5rem","space-xs":"0.25rem","space-md":"1rem","space-sm":"0.5rem","margin-desktop":"2rem","space-lg":"1.5rem","gutter-desktop":"1.5rem"},fontFamily:{"metric-huge-mobile":["Anton"],"label-tactical":["IBM Plex Sans"],"headline-lg":["Anton"],"metric-huge":["Anton"],"body-sm":["IBM Plex Sans"],"headline-md":["Anton"],"label-mono":["IBM Plex Sans"],"display-lg":["Anton"],"display-lg-mobile":["Anton"],"body-lg":["IBM Plex Sans"],"body-md":["IBM Plex Sans"],"headline-sm":["Anton"]},fontSize:{"metric-huge-mobile":["44px",{"lineHeight":"44px","letterSpacing":"0.01em","fontWeight":"400"}],"label-tactical":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"36px","letterSpacing":"0.03em","fontWeight":"400"}],"metric-huge":["64px",{"lineHeight":"64px","letterSpacing":"0.01em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"28px","letterSpacing":"0.03em","fontWeight":"400"}],"label-mono":["10px",{"lineHeight":"12px","letterSpacing":"0.08em","fontWeight":"500"}],"display-lg":["56px",{"lineHeight":"60px","letterSpacing":"0.02em","fontWeight":"400"}],"display-lg-mobile":["38px",{"lineHeight":"42px","letterSpacing":"0.02em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"22px","letterSpacing":"0.04em","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-md"><div class="px-space-md flex items-center gap-space-sm"><div class="w-7 h-7 bg-surface-container-highest flex items-center justify-center"><span class="material-symbols-outlined text-secondary text-[18px]">sports_soccer</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase text-primary leading-none">CoachAI</span><span class="font-label-mono text-label-mono uppercase tracking-wider text-outline">Pitch Telemetry</span></div></div><div class="px-space-md"><div class="h-[1px] w-full bg-surface-container-highest"></div></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-secondary-container text-on-secondary-container"><a class="flex items-center gap-space-sm px-space-md py-space-sm font-label-tactical text-label-tactical uppercase text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="live-matchday" href="#"><span class="material-symbols-outlined text-[18px]">podium</span><span>Live Matchday</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm font-label-tactical text-label-tactical uppercase text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tactical-board" href="#"><span class="material-symbols-outlined text-[18px]">strategy</span><span>Tactical Board</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm font-label-tactical uppercase transition-colors bg-secondary-container text-on-secondary-container" data-path="matches" href="#"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span>Matches</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm font-label-tactical text-label-tactical uppercase text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="players" href="#"><span class="material-symbols-outlined text-[18px]">groups</span><span>Players</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm font-label-tactical text-label-tactical uppercase text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="teams" href="#"><span class="material-symbols-outlined text-[18px]">shield</span><span>Teams</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm font-label-tactical text-label-tactical uppercase text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span>Analytics</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm font-label-tactical text-label-tactical uppercase text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="bg-surface-container p-space-sm flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-mono text-label-mono uppercase text-outline">Engine Load</span><span class="font-label-mono text-label-mono uppercase text-secondary">Optimal</span></div><div class="h-1 w-full bg-surface-container-highest flex gap-0.5"><div class="w-2/3 h-full bg-secondary-container"></div><div class="w-1/3 h-full bg-surface-container-highest"></div></div></div><div class="flex items-center justify-between text-outline px-space-xs"><span class="font-label-mono text-label-mono uppercase">v4.1.2 Tactical</span><span class="material-symbols-outlined text-[14px]">wifi</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container"><span class="w-2 h-2 bg-on-tertiary-container animate-pulse"></span><span class="font-headline-sm text-headline-sm uppercase text-on-tertiary-container">LIVE</span><span class="font-label-mono text-label-mono text-outline">72:18</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container"><span class="material-symbols-outlined text-[14px] text-secondary">sensors</span><span class="font-label-mono text-label-mono uppercase text-outline">Latency:</span><span class="font-label-mono text-label-mono uppercase text-on-surface">14ms</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container"><span class="font-label-tactical text-label-tactical uppercase text-outline">Shape:</span><span class="font-label-tactical text-label-tactical uppercase text-primary">4-3-3 Holding</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center justify-center p-space-xs text-on-surface-variant hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 bg-on-tertiary-container"></span></div><div class="h-4 w-[1px] bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-tactical text-label-tactical uppercase text-primary leading-none">M. Arteta</span><span class="font-label-mono text-label-mono uppercase text-outline">Head Coach</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- MATCH HEADER & BROADCAST SCOREBOARD -->
+<section class="w-full px-margin-desktop py-space-lg flex flex-col gap-space-md">
+<!-- Top Metadata Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-sm font-label-mono text-label-mono uppercase tracking-wider text-outline">
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-semibold">PREMIER LEAGUE MD 09</span>
+<span>•</span>
+<span class="text-on-surface">EMIRATES STADIUM</span>
+<span>•</span>
+<span>ATTENDANCE: 60,140</span>
+<span>•</span>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]">sync_saved_locally</span>
+<span>OPTA SYNCED // OFFICIAL LOG</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-tactical text-label-tactical uppercase tracking-wider transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">picture_as_pdf</span>
+<span>EXPORT MATCH REPORT (PDF)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs bg-on-tertiary-container hover:bg-error text-primary font-headline-sm text-headline-sm uppercase tracking-wider transition-colors shadow-md" id="trigger-log-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>+ LOG TACTICAL EVENT</span>
+</button>
+</div>
+</div>
+<!-- Broadcast Scorecard Container -->
+<div class="w-full bg-surface-container p-space-lg flex flex-col gap-space-lg shadow-xl relative overflow-hidden">
+<!-- Ambient Pitch Line Background Pattern -->
+<div class="absolute inset-0 pointer-events-none opacity-5 flex justify-between">
+<div class="w-1/3 h-full bg-gradient-to-r from-primary to-transparent"></div>
+<div class="w-px h-full bg-primary"></div>
+<div class="w-1/3 h-full bg-gradient-to-l from-primary to-transparent"></div>
+</div>
+<div class="relative grid grid-cols-12 items-center gap-space-md">
+<!-- Home Team (Arsenal FC) -->
+<div class="col-span-5 flex items-center justify-end gap-space-lg">
+<div class="flex flex-col text-right items-end">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-label-mono text-label-mono uppercase tracking-wider">HOME</span>
+<span class="px-space-xs py-0.5 bg-surface-container-highest text-primary font-label-tactical text-label-tactical uppercase">4-3-3 ATTACK</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary tracking-wide">Arsenal FC</h2>
+<span class="font-label-mono text-label-mono uppercase text-secondary">Manager: Mikel Arteta</span>
+</div>
+<!-- Arsenal Crest Placeholder -->
+<div class="w-16 h-16 bg-surface-container-highest flex items-center justify-center p-2 relative shadow-md">
+<span class="material-symbols-outlined text-primary text-[36px]">shield</span>
+<div class="absolute bottom-1 right-1 w-2.5 h-2.5 bg-secondary"></div>
+</div>
+</div>
+<!-- Center Score Digit Board -->
+<div class="col-span-2 flex flex-col items-center justify-center px-space-sm py-space-xs bg-surface-container-lowest shadow-inner">
+<div class="flex items-baseline gap-space-md">
+<span class="font-metric-huge text-metric-huge text-primary leading-none">2</span>
+<span class="font-headline-lg text-headline-lg text-outline leading-none">:</span>
+<span class="font-metric-huge text-metric-huge text-primary-fixed-dim leading-none">1</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 bg-secondary"></span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-secondary">FULL TIME</span>
+</div>
+</div>
+<!-- Away Team (Aston Villa) -->
+<div class="col-span-5 flex items-center justify-start gap-space-lg">
+<!-- Aston Villa Crest Placeholder -->
+<div class="w-16 h-16 bg-surface-container-highest flex items-center justify-center p-2 relative shadow-md">
+<span class="material-symbols-outlined text-outline text-[36px]">shield</span>
+<div class="absolute bottom-1 right-1 w-2.5 h-2.5 bg-outline"></div>
+</div>
+<div class="flex flex-col text-left items-start">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-space-xs py-0.5 bg-surface-container-highest text-primary font-label-tactical text-label-tactical uppercase">4-2-3-1 LOW BLOCK</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-outline font-label-mono text-label-mono uppercase tracking-wider">AWAY</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface-variant tracking-wide">Aston Villa</h2>
+<span class="font-label-mono text-label-mono uppercase text-outline">Manager: Unai Emery</span>
+</div>
+</div>
+</div>
+<!-- Tactical Telemetry Highlights Strip -->
+<div class="w-full pt-space-md flex flex-wrap items-center justify-around gap-y-space-sm bg-surface-container-low px-space-md py-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">2.45</span>
+<span class="font-label-tactical text-label-tactical uppercase text-outline">EXPECTED GOALS (xG)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">0.88</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest hidden sm:block"></div>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">61%</span>
+<span class="font-label-tactical text-label-tactical uppercase text-outline">POSSESSION SHARE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">39%</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest hidden sm:block"></div>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">7.2</span>
+<span class="font-label-tactical text-label-tactical uppercase text-outline">PPDA (HIGH PRESS INDEX)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">14.8</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest hidden sm:block"></div>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">16</span>
+<span class="font-label-tactical text-label-tactical uppercase text-outline">BOX TOUCHES</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">6</span>
+</div>
+</div>
+</div>
+</section>
+<!-- MATCH EVENTS TIMELINE CONTAINER -->
+<section class="w-full px-margin-desktop py-space-md flex flex-col gap-space-lg">
+<!-- Filter Navigation & Title Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-low px-space-md py-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">reorder</span>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary tracking-wider">TACTICAL TIMELINE // MINUTE-BY-MINUTE CHRONOLOGY</h3>
+</div>
+<!-- Filter Buttons -->
+<div class="flex flex-wrap items-center gap-1 font-label-tactical text-label-tactical uppercase" id="timeline-filters">
+<button class="timeline-filter-btn px-space-sm py-1 bg-surface-container-high text-primary hover:bg-surface-container-highest" data-filter="all" type="button">ALL EVENTS (9)</button>
+<button class="timeline-filter-btn px-space-sm py-1 bg-surface-container text-on-surface-variant hover:text-primary" data-filter="goal" type="button">GOALS ONLY</button>
+<button class="timeline-filter-btn px-space-sm py-1 bg-surface-container text-on-surface-variant hover:text-primary" data-filter="card" type="button">CARDS</button>
+<button class="timeline-filter-btn px-space-sm py-1 bg-surface-container text-on-surface-variant hover:text-primary" data-filter="sub" type="button">SUBS</button>
+<button class="timeline-filter-btn px-space-sm py-1 bg-surface-container text-on-surface-variant hover:text-primary" data-filter="tactical" type="button">TACTICAL SHIFTS</button>
+</div>
+</div>
+<!-- Visual Team Anchors Above Spine -->
+<div class="grid grid-cols-12 gap-space-md text-center">
+<div class="col-span-5 text-right pr-space-md flex items-center justify-end gap-space-xs">
+<span class="w-3 h-3 bg-secondary-container"></span>
+<span class="font-headline-sm text-headline-sm uppercase text-primary">ARSENAL FC TELEMETRY</span>
+</div>
+<div class="col-span-2 text-center flex items-center justify-center">
+<span class="font-label-mono text-label-mono uppercase text-outline tracking-widest">PITCH AXIS</span>
+</div>
+<div class="col-span-5 text-left pl-space-md flex items-center justify-start gap-space-xs">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface-variant">ASTON VILLA EVENTS</span>
+<span class="w-3 h-3 bg-surface-container-highest"></span>
+</div>
+</div>
+<!-- Central Spine Tactical Timeline Canvas -->
+<div class="relative w-full py-space-lg">
+<!-- The Center Chalk Spine -->
+<div class="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[2px] bg-primary/20"></div>
+<!-- KICKOFF MARKER (0') -->
+<div class="relative z-10 flex items-center justify-center mb-space-xl">
+<div class="px-space-md py-1 bg-surface-container-lowest text-center shadow-md">
+<span class="font-headline-sm text-headline-sm text-primary tracking-widest">00' KICKOFF • EMIRATES PITCH 1</span>
+</div>
+</div>
+<!-- TIMELINE EVENTS CONTAINER -->
+<div class="flex flex-col gap-space-xl relative z-10" id="events-list">
+<!-- EVENT 1 (14' ARSENAL YELLOW CARD - LEFT) -->
+<div class="event-item grid grid-cols-12 items-center" data-category="card">
+<div class="col-span-5 pr-space-lg flex justify-end">
+<div class="w-full max-w-md bg-surface-container p-space-md shadow-md flex flex-col gap-space-xs hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-3 h-4 bg-tertiary-fixed-dim"></div>
+<span class="font-headline-sm text-headline-sm uppercase text-primary">DECLAN RICE</span>
+<span class="font-label-mono text-label-mono text-outline">#41 CM</span>
+</div>
+<span class="px-space-xs py-0.5 bg-surface-container-highest text-tertiary-fixed-dim font-label-tactical text-label-tactical uppercase">BOOKING</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tactical trip on McGinn during midfield break. Stopped progressive counter-transition.</p>
+<div class="flex items-center gap-space-sm pt-1 text-outline font-label-mono text-label-mono uppercase">
+<span>ZONE 8 // DEF THIRD ENTRY</span>
+<span>•</span>
+<span class="text-tertiary-fixed-dim">FOUL #1</span>
+</div>
+</div>
+</div>
+<!-- Minute Stamp Center Dot -->
+<div class="col-span-2 flex items-center justify-center">
+<div class="w-10 h-10 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm flex items-center justify-center shadow-lg">
+              14'
+            </div>
+</div>
+<div class="col-span-5 pl-space-lg"></div>
+</div>
+<!-- EVENT 2 (28' ASTON VILLA YELLOW CARD - RIGHT) -->
+<div class="event-item grid grid-cols-12 items-center" data-category="card">
+<div class="col-span-5 pr-space-lg"></div>
+<div class="col-span-2 flex items-center justify-center">
+<div class="w-10 h-10 bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm flex items-center justify-center shadow-lg">
+              28'
+            </div>
+</div>
+<div class="col-span-5 pl-space-lg flex justify-start">
+<div class="w-full max-w-md bg-surface-container p-space-md shadow-md flex flex-col gap-space-xs hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 bg-surface-container-highest text-tertiary-fixed-dim font-label-tactical text-label-tactical uppercase">BOOKING</span>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">DOUGLAS LUIZ</span>
+<div class="w-3 h-4 bg-tertiary-fixed-dim"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Persistent dissent following contested handball decision inside middle third.</p>
+<div class="flex items-center justify-end gap-space-sm pt-1 text-outline font-label-mono text-label-mono uppercase">
+<span>ZONE 11</span>
+<span>•</span>
+<span class="text-tertiary-fixed-dim">REFEREE WARNING IGNORED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- EVENT 3 (34' ARSENAL GOAL - LEFT) -->
+<div class="event-item grid grid-cols-12 items-center" data-category="goal">
+<div class="col-span-5 pr-space-lg flex justify-end">
+<div class="w-full max-w-md bg-secondary-container/40 p-space-md shadow-lg flex flex-col gap-space-xs hover:bg-secondary-container/50 transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[16px]">sports_soccer</span>
+</div>
+<span class="font-headline-sm text-headline-sm uppercase text-primary">BUKAYO SAKA</span>
+<span class="font-label-mono text-label-mono text-secondary">#7 RW</span>
+</div>
+<span class="px-space-xs py-0.5 bg-secondary text-on-secondary font-headline-sm text-headline-sm uppercase tracking-wider">GOAL! (PEN)</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary">Dispatched low into bottom right corner past Martinez. Foul drawn by Havertz box run.</p>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-space-sm font-label-mono text-label-mono uppercase text-secondary">
+<span>xG: 0.79</span>
+<span>•</span>
+<span>VELOCITY: 104 KM/H</span>
+</div>
+<span class="px-space-xs py-0.5 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">ARS 1 - 0 AVL</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 flex items-center justify-center">
+<div class="w-12 h-12 bg-secondary text-on-secondary font-headline-sm text-headline-sm flex items-center justify-center shadow-xl">
+              34'
+            </div>
+</div>
+<div class="col-span-5 pl-space-lg"></div>
+</div>
+<!-- HALF TIME BANNER (45+2') -->
+<div class="event-item grid grid-cols-12 items-center" data-category="tactical">
+<div class="col-span-12 flex justify-center">
+<div class="px-space-lg py-space-xs bg-surface-container-high shadow-md flex items-center gap-space-md">
+<span class="font-headline-sm text-headline-sm text-primary">HT // ARSENAL 1 - 0 ASTON VILLA</span>
+<span class="w-1.5 h-1.5 bg-outline"></span>
+<span class="font-label-tactical text-label-tactical uppercase text-secondary">FIRST HALF xG: 1.20 vs 0.31</span>
+<span class="w-1.5 h-1.5 bg-outline"></span>
+<span class="font-label-mono text-label-mono uppercase text-outline">RELOAD PITCH DATA (45+2')</span>
+</div>
+</div>
+</div>
+<!-- EVENT 4 (58' ARSENAL SUB - LEFT) -->
+<div class="event-item grid grid-cols-12 items-center" data-category="sub">
+<div class="col-span-5 pr-space-lg flex justify-end">
+<div class="w-full max-w-md bg-surface-container p-space-md shadow-md flex flex-col gap-space-xs hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span class="font-label-tactical text-label-tactical uppercase">TACTICAL SUB</span>
+</div>
+<span class="font-label-mono text-label-mono uppercase text-outline">WING OVERLOAD INITIATIVE</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm text-primary">L. TROSSARD</span>
+<span class="font-label-mono text-label-mono text-secondary">IN</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-outline">G. MARTINELLI</span>
+<span class="font-label-mono text-label-mono text-on-tertiary-container">OUT</span>
+<span class="w-2 h-2 bg-on-tertiary-container"></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Shift to inside forward inverted half-space dynamic to exploit Konsa's flank isolation.</p>
+</div>
+</div>
+<div class="col-span-2 flex items-center justify-center">
+<div class="w-10 h-10 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm flex items-center justify-center shadow-lg">
+              58'
+            </div>
+</div>
+<div class="col-span-5 pl-space-lg"></div>
+</div>
+<!-- EVENT 5 (68' ARSENAL GOAL - LEFT) -->
+<div class="event-item grid grid-cols-12 items-center" data-category="goal">
+<div class="col-span-5 pr-space-lg flex justify-end">
+<div class="w-full max-w-md bg-secondary-container/40 p-space-md shadow-lg flex flex-col gap-space-xs hover:bg-secondary-container/50 transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[16px]">sports_soccer</span>
+</div>
+<span class="font-headline-sm text-headline-sm uppercase text-primary">KAI HAVERTZ</span>
+<span class="font-label-mono text-label-mono text-secondary">#29 CF</span>
+</div>
+<span class="px-space-xs py-0.5 bg-secondary text-on-secondary font-headline-sm text-headline-sm uppercase tracking-wider">GOAL! (HEADER)</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary">Powerful header from central 6-yard perimeter into roof of net. Assist cross by B. Saka from right half-space.</p>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-space-sm font-label-mono text-label-mono uppercase text-secondary">
+<span>xG: 0.42</span>
+<span>•</span>
+<span>CROSS DIST: 22M</span>
+</div>
+<span class="px-space-xs py-0.5 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm">ARS 2 - 0 AVL</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 flex items-center justify-center">
+<div class="w-12 h-12 bg-secondary text-on-secondary font-headline-sm text-headline-sm flex items-center justify-center shadow-xl">
+              68'
+            </div>
+</div>
+<div class="col-span-5 pl-space-lg"></div>
+</div>
+<!-- EVENT 6 (71' ASTON VILLA GOAL - RIGHT) -->
+<div class="event-item grid grid-cols-12 items-center" data-category="goal">
+<div class="col-span-5 pr-space-lg"></div>
+<div class="col-span-2 flex items-center justify-center">
+<div class="w-12 h-12 bg-on-tertiary-container text-primary font-headline-sm text-headline-sm flex items-center justify-center shadow-xl">
+              71'
+            </div>
+</div>
+<div class="col-span-5 pl-space-lg flex justify-start">
+<div class="w-full max-w-md bg-surface-container p-space-md shadow-lg flex flex-col gap-space-xs hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 bg-on-tertiary-container text-primary font-headline-sm text-headline-sm uppercase tracking-wider">GOAL! (COUNTER)</span>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm uppercase text-primary">OLLIE WATKINS</span>
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[16px]">sports_soccer</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Breakaway counter through central lane. Beat high defensive line, low driven strike past Raya.</p>
+<div class="flex items-center justify-between pt-2">
+<span class="px-space-xs py-0.5 bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm">ARS 2 - 1 AVL</span>
+<div class="flex items-center gap-space-sm font-label-mono text-label-mono uppercase text-outline">
+<span>xG: 0.38</span>
+<span>•</span>
+<span>SPRINT: 32.4 KM/H</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COMPACT INLINE EVENT PICKER (ANCHORED AT 75') -->
+<div class="relative grid grid-cols-12 items-center z-30" id="inline-picker-row">
+<div class="col-span-5 pr-space-lg hidden lg:flex justify-end opacity-40">
+<span class="font-label-mono text-label-mono uppercase text-outline">TOUCHLINE LOG ANCHOR • MINUTE 75:00</span>
+</div>
+<!-- Pulsing Red Anchor on Central Spine -->
+<div class="col-span-2 flex items-center justify-center relative">
+<div class="w-10 h-10 bg-on-tertiary-container text-primary font-headline-sm text-headline-sm flex items-center justify-center shadow-xl relative">
+              75'
+              <span class="absolute -top-1 -right-1 w-3 h-3 bg-error animate-ping"></span>
+</div>
+</div>
+<!-- Anchored Popover Box -->
+<div class="col-span-12 lg:col-span-5 pl-0 lg:pl-space-lg mt-space-md lg:mt-0">
+<div class="w-full max-w-lg bg-surface-container-high p-space-md shadow-2xl flex flex-col gap-space-sm relative">
+<!-- Popover Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 bg-on-tertiary-container"></span>
+<span class="font-headline-sm text-headline-sm uppercase text-primary">LOG EVENT @ 75'</span>
+<span class="px-space-xs py-0.5 bg-surface-container-lowest text-secondary font-label-mono text-label-mono uppercase">LIVE STATE</span>
+</div>
+<button class="text-outline hover:text-primary" id="close-picker-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Event Type Selector -->
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-label-mono uppercase text-outline">SELECT EVENT CLASS</span>
+<div class="grid grid-cols-5 gap-1">
+<button class="flex flex-col items-center justify-center py-2 px-1 bg-surface-container hover:bg-secondary-container hover:text-on-secondary-container text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">sports_soccer</span>
+<span class="font-label-tactical text-label-tactical text-[9px] uppercase mt-0.5">GOAL</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2 px-1 bg-surface-container hover:bg-surface-container-highest text-tertiary-fixed-dim" type="button">
+<div class="w-2.5 h-3.5 bg-tertiary-fixed-dim mb-1"></div>
+<span class="font-label-tactical text-label-tactical text-[9px] uppercase">YELLOW</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2 px-1 bg-surface-container hover:bg-surface-container-highest text-on-tertiary-container" type="button">
+<div class="w-2.5 h-3.5 bg-on-tertiary-container mb-1"></div>
+<span class="font-label-tactical text-label-tactical text-[9px] uppercase">RED</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2 px-1 bg-surface-container hover:bg-surface-container-highest text-secondary" type="button">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+<span class="font-label-tactical text-label-tactical text-[9px] uppercase mt-0.5">SUB</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2 px-1 bg-surface-container-highest text-primary" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="font-label-tactical text-label-tactical text-[9px] uppercase mt-0.5">TACTICAL</span>
+</button>
+</div>
+</div>
+<!-- Quick Target Player Chips -->
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-label-mono uppercase text-outline">PRIMARY ACTOR</span>
+<div class="flex flex-wrap gap-1">
+<button class="px-space-xs py-1 bg-surface-container hover:bg-primary hover:text-on-primary font-label-tactical text-label-tactical uppercase" type="button">SAKA #7</button>
+<button class="px-space-xs py-1 bg-surface-container hover:bg-primary hover:text-on-primary font-label-tactical text-label-tactical uppercase" type="button">HAVERTZ #29</button>
+<button class="px-space-xs py-1 bg-primary text-on-primary font-label-tactical text-label-tactical uppercase font-bold" type="button">RICE #41</button>
+<button class="px-space-xs py-1 bg-surface-container hover:bg-primary hover:text-on-primary font-label-tactical text-label-tactical uppercase" type="button">SALIBA #2</button>
+<button class="px-space-xs py-1 bg-surface-container-lowest text-outline hover:text-primary font-label-tactical text-label-tactical uppercase" type="button">+ OTHER...</button>
+</div>
+</div>
+<!-- Commentary Input Field -->
+<div class="flex flex-col gap-1">
+<span class="font-label-mono text-label-mono uppercase text-outline">TACTICAL OBSERVATION / BENCH NOTE</span>
+<input class="w-full bg-surface-container-lowest px-space-sm py-1.5 font-body-sm text-body-sm text-primary placeholder-outline focus:outline-none focus:bg-surface-container" type="text" value="Defensive shape dropped to mid-block 4-5-1 to close interior passing channels."/>
+</div>
+<!-- Action Confirmation Buttons -->
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-1 bg-surface-container text-on-surface hover:text-primary font-label-tactical text-label-tactical uppercase" id="cancel-stamp-btn" type="button">CANCEL</button>
+<button class="px-space-md py-1 bg-on-tertiary-container hover:bg-error text-primary font-headline-sm text-headline-sm uppercase tracking-wider shadow-md" id="save-stamp-btn" type="button">STAMP EVENT</button>
+</div>
+</div>
+</div>
+</div>
+<!-- EVENT 7 (82' ARSENAL SUB - LEFT) -->
+<div class="event-item grid grid-cols-12 items-center" data-category="sub">
+<div class="col-span-5 pr-space-lg flex justify-end">
+<div class="w-full max-w-md bg-surface-container p-space-md shadow-md flex flex-col gap-space-xs hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span class="font-label-tactical text-label-tactical uppercase">TACTICAL SUB</span>
+</div>
+<span class="font-label-mono text-label-mono uppercase text-outline">GAME STATE PRESERVATION</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm text-primary">JORGINHO</span>
+<span class="font-label-mono text-label-mono text-secondary">IN</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-outline">M. ØDEGAARD</span>
+<span class="font-label-mono text-label-mono text-on-tertiary-container">OUT</span>
+<span class="w-2 h-2 bg-on-tertiary-container"></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Formation reconfiguration from 4-3-3 attacking stance to 4-2-3-1 double pivot anchor.</p>
+</div>
+</div>
+<div class="col-span-2 flex items-center justify-center">
+<div class="w-10 h-10 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm flex items-center justify-center shadow-lg">
+              82'
+            </div>
+</div>
+<div class="col-span-5 pl-space-lg"></div>
+</div>
+<!-- EVENT 8 (89' ASTON VILLA YELLOW CARD - RIGHT) -->
+<div class="event-item grid grid-cols-12 items-center" data-category="card">
+<div class="col-span-5 pr-space-lg"></div>
+<div class="col-span-2 flex items-center justify-center">
+<div class="w-10 h-10 bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm flex items-center justify-center shadow-lg">
+              89'
+            </div>
+</div>
+<div class="col-span-5 pl-space-lg flex justify-start">
+<div class="w-full max-w-md bg-surface-container p-space-md shadow-md flex flex-col gap-space-xs hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 bg-surface-container-highest text-tertiary-fixed-dim font-label-tactical text-label-tactical uppercase">BOOKING</span>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">EZRI KONSA</span>
+<div class="w-3 h-4 bg-tertiary-fixed-dim"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cynical professional foul pulling down Trossard along the left touchline to halt advance.</p>
+<div class="flex items-center justify-end gap-space-sm pt-1 text-outline font-label-mono text-label-mono uppercase">
+<span>ZONE 14 TRANSITION</span>
+<span>•</span>
+<span class="text-tertiary-fixed-dim">YELLOW CARD</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FULL TIME WHISTLE (90+4') -->
+<div class="relative z-10 flex items-center justify-center mt-space-xl">
+<div class="px-space-lg py-space-sm bg-surface-container-lowest text-center shadow-xl flex items-center gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[24px]">sports</span>
+<span class="font-headline-lg text-headline-lg text-primary tracking-widest">90+4' FULL TIME WHISTLE</span>
+<span class="px-space-sm py-0.5 bg-secondary-container text-on-secondary-container font-label-mono text-label-mono uppercase">ARSENAL +3 PTS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- PITCHSIDE DOSSIER & POST-MATCH TELEMETRY DRAWER -->
+<section class="w-full px-margin-desktop py-space-xl flex flex-col gap-space-lg bg-surface-container-low">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-6 h-6 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[16px]">query_stats</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary tracking-wider">TACTICAL POST-MATCH DOSSIER • METRIC BREAKDOWN</h3>
+</div>
+<div class="flex items-center gap-space-sm font-label-mono text-label-mono uppercase text-outline">
+<span>ENGINE RUNTIME: 94.2 MIN</span>
+<span>•</span>
+<span class="text-secondary">4,812 POSITION SAMPLES</span>
+</div>
+</div>
+<!-- Telemetry Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Territory & Threat Map Card -->
+<div class="bg-surface-container p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-tactical text-label-tactical uppercase text-outline">ZONE INCLINATION // THREAT</span>
+<span class="font-label-mono text-label-mono uppercase text-secondary">FINAL 1/3 RATIO</span>
+</div>
+<!-- Inline Chalk Pitch Threat Representation -->
+<div class="relative w-full h-36 bg-surface-container-lowest p-2 flex flex-col justify-between overflow-hidden shadow-inner">
+<div class="absolute inset-0 opacity-10 flex">
+<div class="w-1/3 h-full bg-secondary-container"></div>
+<div class="w-1/3 h-full bg-surface-container"></div>
+<div class="w-1/3 h-full bg-on-tertiary-container"></div>
+</div>
+<!-- Chalk Pitch Outline Graphic -->
+<svg class="w-full h-full text-primary/20" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 200 100">
+<rect height="90" width="190" x="5" y="5"></rect>
+<line stroke-dasharray="2,2" x1="100" x2="100" y1="5" y2="95"></line>
+<circle cx="100" cy="50" r="18"></circle>
+<rect height="50" width="30" x="5" y="25"></rect>
+<rect height="50" width="30" x="165" y="25"></rect>
+</svg>
+<div class="relative z-10 flex justify-between text-outline font-label-mono text-label-mono px-1">
+<span>DEF: 22%</span>
+<span>MID: 43%</span>
+<span class="text-secondary font-bold">ATT: 35%</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sustained left-half-space dominance (Zone 11) generated 7 out of 9 goal-scoring chances.</p>
+</div>
+<!-- High-Intensity Pressing Telemetry -->
+<div class="bg-surface-container p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-tactical text-label-tactical uppercase text-outline">PRESSING INTENSITY (PPDA)</span>
+<span class="font-label-mono text-label-mono uppercase text-secondary">HIGH PRESS ACTIVE</span>
+</div>
+<div class="flex flex-col gap-space-xs py-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase text-primary">ARSENAL (7.2 PPDA)</span>
+<span class="font-label-mono text-label-mono uppercase text-secondary">OPTIMAL STIFFNESS</span>
+</div>
+<!-- Segmented Sparkbar -->
+<div class="h-3 w-full bg-surface-container-highest flex gap-0.5">
+<div class="w-4/5 h-full bg-secondary"></div>
+<div class="w-1/5 h-full bg-surface-container-highest"></div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="font-label-tactical text-label-tactical uppercase text-outline">ASTON VILLA (14.8 PPDA)</span>
+<span class="font-label-mono text-label-mono uppercase text-outline">LOW BLOCK DISPERSED</span>
+</div>
+<!-- Segmented Sparkbar -->
+<div class="h-3 w-full bg-surface-container-highest flex gap-0.5">
+<div class="w-2/5 h-full bg-outline"></div>
+<div class="w-3/5 h-full bg-surface-container-highest"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">24 turnovers forced in opposing half; Declan Rice recorded 11 recoveries.</p>
+</div>
+<!-- Match Official Certification Card -->
+<div class="bg-surface-container p-space-md flex flex-col justify-between shadow-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-tactical text-label-tactical uppercase text-outline">MATCH CONTROL PROTOCOL</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+</div>
+<span class="font-headline-sm text-headline-sm uppercase text-primary">OFFICIAL TELEMETRY ARCHIVE</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Referee: Michael Oliver • VAR: Jarred Gillett • Match ball verified and telemetry packets locked for Premier League audit.</p>
+</div>
+<div class="p-space-sm bg-surface-container-lowest mt-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono uppercase text-secondary">STATUS: VERIFIED</span>
+<span class="font-label-mono text-label-mono uppercase text-outline">SHA256: 8a4f9c2d1</span>
+</div>
+<div class="px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-label-tactical text-label-tactical uppercase">
+            3 PTS RECORDED
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- INLINE CLIENT SCRIPT FOR EVENT FILTERING AND PICKER TOGGLE -->
+<script>
+    (function initMatchdayEvents() {
+      const filterButtons = document.querySelectorAll('.timeline-filter-btn');
+      const eventItems = document.querySelectorAll('.event-item');
+      const triggerBtn = document.getElementById('trigger-log-btn');
+      const pickerRow = document.getElementById('inline-picker-row');
+      const closeBtn = document.getElementById('close-picker-btn');
+      const cancelBtn = document.getElementById('cancel-stamp-btn');
+      const saveBtn = document.getElementById('save-stamp-btn');
+
+      // Filter timeline events
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+
+          // Highlight button
+          filterButtons.forEach(b => {
+            b.classList.remove('bg-surface-container-high', 'text-primary');
+            b.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          btn.classList.add('bg-surface-container-high', 'text-primary');
+
+          // Filter rows
+          eventItems.forEach(item => {
+            const cat = item.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              item.style.display = 'grid';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Show/scroll to inline picker
+      if (triggerBtn && pickerRow) {
+        triggerBtn.addEventListener('click', () => {
+          pickerRow.classList.remove('hidden');
+          pickerRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }
+
+      // Close inline picker
+      const closePicker = () => {
+        if (pickerRow) {
+          pickerRow.classList.add('hidden');
+        }
+      };
+
+      if (closeBtn) closeBtn.addEventListener('click', closePicker);
+      if (cancelBtn) cancelBtn.addEventListener('click', closePicker);
+      if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+          saveBtn.innerText = 'STAMPED!';
+          setTimeout(() => {
+            saveBtn.innerText = 'STAMP EVENT';
+            closePicker();
+          }, 600);
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>
