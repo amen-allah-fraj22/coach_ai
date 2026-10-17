@@ -39,7 +39,7 @@ export default async function MatchDetailPage({
   const away = match.homeAway === "home" ? (opponent?.teamName ?? t("unknownOpponent")) : (team?.name ?? "—");
 
   const STAT_FIELDS = [
-    ["possessionPct", match.possessionPct],
+    ["possession", match.possessionPct],
     ["shots", match.shots],
     ["shotsOnTarget", match.shotsOnTarget],
     ["corners", match.corners],

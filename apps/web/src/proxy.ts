@@ -29,12 +29,23 @@ const isProtected = createRouteMatcher([
   "/invite(.*)",
 ]);
 
+function loginUrlFor(req: Request): string {
+  const url = new URL(req.url);
+  const first = url.pathname.split("/")[1];
+  const locale = routing.locales.includes(first as (typeof routing.locales)[number])
+    ? first
+    : routing.defaultLocale;
+  const login = new URL(`/${locale}/login`, url.origin);
+  login.searchParams.set("redirect_url", url.pathname + url.search);
+  return login.toString();
+}
+
 // Clerk wraps next-intl: Clerk resolves the session, then locale routing
-// runs and returns the response. protect() redirects anonymous users on
-// guarded routes to Clerk's sign-in.
+// runs and returns the response. protect() sends anonymous users on
+// guarded routes to our own /[locale]/login, not Clerk's hosted page.
 export default clerkMiddleware(async (auth, req) => {
   if (isProtected(req)) {
-    await auth.protect();
+    await auth.protect({ unauthenticatedUrl: loginUrlFor(req) });
   }
   return intlMiddleware(req);
 });

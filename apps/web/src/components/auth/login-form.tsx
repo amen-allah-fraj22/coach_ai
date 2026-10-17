@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSignIn } from "@clerk/nextjs/legacy";
+import { useAuth } from "@clerk/nextjs";
 import { useTranslations } from "next-intl";
 import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
 
+import { useRouter as useNextRouter, useSearchParams } from "next/navigation";
 import { useRouter, Link } from "@/i18n/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -23,12 +25,33 @@ export function LoginForm() {
   const t = useTranslations("auth");
   const { isLoaded, signIn, setActive } = useSignIn();
   const router = useRouter();
+  const nextRouter = useNextRouter();
+  const searchParams = useSearchParams();
+
+  // Back to the page that bounced the visitor here (set by proxy.ts). Only
+  // same-site absolute paths are honoured, never another origin.
+  function goIn() {
+    const target = searchParams.get("redirect_url");
+    if (target && target.startsWith("/") && !target.startsWith("//")) {
+      nextRouter.replace(target);
+    } else {
+      router.replace("/dashboard");
+    }
+  }
 
   const [mode, setMode] = useState<Mode>("login");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [resetEmail, setResetEmail] = useState("");
   const [resetCode, setResetCode] = useState("");
+
+  // Already signed in (e.g. a session from an earlier tab): go into the app
+  // instead of showing Clerk's "already signed in" error on submit.
+  const { isSignedIn } = useAuth();
+  useEffect(() => {
+    if (isSignedIn && !pending) goIn();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSignedIn, pending]);
 
   async function onLogin(formData: FormData) {
     if (!isLoaded) return;
@@ -41,7 +64,7 @@ export function LoginForm() {
       });
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
-        router.push("/dashboard");
+        goIn();
       } else {
         setError(result.status);
       }
@@ -83,7 +106,7 @@ export function LoginForm() {
         });
         if (result.status === "complete") {
           await setActive({ session: result.createdSessionId });
-          router.push("/dashboard");
+          goIn();
           return;
         }
       }

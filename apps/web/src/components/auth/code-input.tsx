@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 import { flipDigit } from "@/lib/motion";
 
@@ -52,21 +52,39 @@ export function CodeInput({
   return (
     <div className="flex justify-between gap-2" dir="ltr">
       {digits.map((digit, i) => (
-        <motion.input
-          key={i}
-          ref={(el) => {
-            refs.current[i] = el;
-          }}
-          value={digit}
-          onChange={(e) => handleChange(i, e.target.value)}
-          onKeyDown={(e) => handleKeyDown(i, e)}
-          onPaste={handlePaste}
-          inputMode="numeric"
-          maxLength={1}
-          animate={digit ? "animate" : "initial"}
-          variants={flipDigit(reduced)}
-          className="h-12 w-10 border-0 border-b-2 border-hairline-24 bg-transparent text-center font-display text-2xl tabular-nums text-chalk outline-none focus:border-chalk"
-        />
+        // The input stays visible and holds the caret; the typed digit is
+        // drawn by the overlay so it can roll in without hiding empty boxes.
+        <div key={i} className="relative h-12 w-10" style={{ perspective: 200 }}>
+          <input
+            ref={(el) => {
+              refs.current[i] = el;
+            }}
+            value={digit}
+            onChange={(e) => handleChange(i, e.target.value)}
+            onKeyDown={(e) => handleKeyDown(i, e)}
+            onPaste={handlePaste}
+            inputMode="numeric"
+            autoComplete={i === 0 ? "one-time-code" : "off"}
+            aria-label={`Digit ${i + 1}`}
+            maxLength={1}
+            className="size-full border-0 border-b-2 border-hairline-24 bg-slate-grass/40 text-center font-display text-2xl text-transparent caret-chalk outline-none focus:border-chalk"
+          />
+          <AnimatePresence initial={false}>
+            {digit && (
+              <motion.span
+                key={digit}
+                aria-hidden
+                variants={flipDigit(reduced)}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="pointer-events-none absolute inset-0 flex items-center justify-center font-display text-2xl tabular-nums text-chalk"
+              >
+                {digit}
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </div>
       ))}
     </div>
   );

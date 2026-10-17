@@ -233,7 +233,7 @@ export function MatchEventLog({
 
           <div className="flex gap-2">
             <Button type="button" variant="secondary" onClick={() => setAdding(false)}>
-              {tMatches("cancel")}
+              {tCommon("cancel")}
             </Button>
             <motion.div whileTap={stampPress(reduced)} className="flex-1">
               <Button type="button" disabled={pending} onClick={onAdd} className="w-full">

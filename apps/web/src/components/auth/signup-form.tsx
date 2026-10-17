@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSignUp } from "@clerk/nextjs/legacy";
+import { useAuth } from "@clerk/nextjs";
 import { useTranslations } from "next-intl";
 import { isClerkAPIResponseError } from "@clerk/nextjs/errors";
 
@@ -29,6 +30,13 @@ export function SignupForm() {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [clubName, setClubName] = useState("");
+
+  // Already signed in (e.g. a session from an earlier tab): go into the app
+  // instead of showing Clerk's "already signed in" error on submit.
+  const { isSignedIn } = useAuth();
+  useEffect(() => {
+    if (isSignedIn && step === "form" && !pending) router.replace("/dashboard");
+  }, [isSignedIn, pending, step, router]);
 
   async function onCreate(formData: FormData) {
     if (!isLoaded) return;
@@ -152,6 +160,9 @@ export function SignupForm() {
           {error}
         </p>
       )}
+
+      {/* Clerk bot protection mounts its Smart CAPTCHA here in custom sign-up flows. */}
+      <div id="clerk-captcha" />
 
       <AuthSubmitButton pending={pending} label={t("setupDressingRoom")} />
 
