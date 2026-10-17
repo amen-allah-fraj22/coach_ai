@@ -4,7 +4,7 @@ import * as React from "react";
 import { motion, useReducedMotion } from "motion/react";
 
 import { cn } from "@/lib/utils";
-import { chalkDraw } from "@/lib/motion";
+import { ChalkPath, lineToPath } from "@/components/ui/chalk-path";
 
 export interface PitchDot {
   x: number; // 0-100
@@ -75,18 +75,15 @@ function PitchDiagram({
       <rect x="30" y="84" width="40" height="14" fill="none" stroke="rgba(247,245,239,0.15)" strokeWidth="0.5" />
 
       {arrows.map((arrow, i) => (
-        <motion.line
+        <ChalkPath
           key={i}
-          x1={arrow.from.x}
-          y1={arrow.from.y}
-          x2={arrow.to.x}
-          y2={arrow.to.y}
+          d={lineToPath(arrow.from, arrow.to)}
           stroke="var(--chalk)"
-          strokeWidth="1"
+          strokeWidth={1}
           strokeDasharray="4 4"
-          variants={chalkDraw({ duration: 0.4, delay: i * 0.1 }, reduced ?? false)}
-          initial="hidden"
-          animate="show"
+          duration={0.4}
+          delay={i * 0.1}
+          reduced={reduced ?? false}
         />
       ))}
 

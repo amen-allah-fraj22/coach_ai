@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { motion, useReducedMotion, AnimatePresence } from "motion/react";
 
 import { Button } from "@/components/ui/button";
-import { chalkDraw } from "@/lib/motion";
+import { ChalkPath, lineToPath } from "@/components/ui/chalk-path";
 
 type Phase = "A" | "B" | "C";
 
@@ -90,18 +90,14 @@ export function ManifestoLab() {
             {nodes.slice(0, -1).map((node, i) => {
               const next = nodes[i + 1];
               return (
-                <motion.line
+                <ChalkPath
                   key={`${phase}-${i}`}
-                  x1={node.x}
-                  y1={node.y}
-                  x2={next.x}
-                  y2={next.y}
+                  d={lineToPath(node, next)}
                   stroke="var(--chalk)"
-                  strokeWidth="0.6"
+                  strokeWidth={0.6}
                   strokeDasharray="2 2"
-                  variants={chalkDraw({ duration: 0.4 }, reduced)}
-                  initial="hidden"
-                  animate="show"
+                  duration={0.4}
+                  reduced={reduced}
                 />
               );
             })}
@@ -111,6 +107,7 @@ export function ManifestoLab() {
                 key={`${phase}-dot-${i}`}
                 r="3"
                 fill={i === nodes.length - 1 ? "var(--touchline-red)" : "var(--pitch-green)"}
+                initial={false}
                 animate={{ cx: node.x, cy: node.y }}
                 transition={reduced ? { duration: 0.01 } : { duration: 0.4, ease: "easeInOut" }}
               />
