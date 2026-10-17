@@ -471,5 +471,35 @@
     "title": "Off the pitch",
     "subtitle": "This page doesn't exist — offside call.",
     "backToDashboard": "Back to dashboard"
+  },
+  "playingStyles": {
+    "possession": {
+      "label": "Possession",
+      "hint": "Patient build-up, keep the ball"
+    },
+    "counter_attack": {
+      "label": "Counter-attack",
+      "hint": "Stay compact, break fast"
+    },
+    "high_press": {
+      "label": "High press",
+      "hint": "Win it high, press after losing it"
+    },
+    "direct": {
+      "label": "Direct play",
+      "hint": "Early balls into the forwards"
+    },
+    "wing_play": {
+      "label": "Wing play",
+      "hint": "Width, crosses, overlapping full-backs"
+    },
+    "low_block": {
+      "label": "Low block",
+      "hint": "Defend deep and compact"
+    },
+    "balanced": {
+      "label": "Balanced",
+      "hint": "Adapt to each opponent"
+    }
   }
 }

@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PaperCard } from "@/components/ui/paper-card";
 import { FormationPicker } from "@/components/ui/formation-picker";
+import { PlayingStylePicker } from "@/components/ui/playing-style-picker";
 import { RiskSlider } from "@/components/onboarding/risk-slider";
 import { pageTurn } from "@/lib/motion";
 
@@ -79,7 +80,7 @@ export function OnboardingFlow({
       await createClub({ clubName: clubName.trim(), fullName: fullName.trim(), language: locale });
       await updatePhilosophy({
         preferredFormation: preferredFormation || undefined,
-        playingStyle: playingStyle.trim() || undefined,
+        playingStyle: playingStyle || undefined,
         riskTolerance,
       });
       router.replace("/dashboard");
@@ -223,12 +224,8 @@ export function OnboardingFlow({
               <FormationPicker value={preferredFormation} onChange={setPreferredFormation} />
             </div>
             <div className="flex flex-col gap-1.5">
-              <Label htmlFor="playingStyle">{t("playingStyle")}</Label>
-              <Input
-                id="playingStyle"
-                value={playingStyle}
-                onChange={(e) => setPlayingStyle(e.target.value)}
-              />
+              <Label>{t("playingStyle")}</Label>
+              <PlayingStylePicker value={playingStyle} onChange={setPlayingStyle} />
             </div>
             <div className="mt-2 flex gap-2">
               <Button type="button" variant="secondary" onClick={goBack}>

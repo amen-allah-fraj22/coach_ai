@@ -471,5 +471,35 @@
     "title": "Hors du terrain",
     "subtitle": "Cette page n'existe pas — hors-jeu.",
     "backToDashboard": "Retour au tableau de bord"
+  },
+  "playingStyles": {
+    "possession": {
+      "label": "Possession",
+      "hint": "Construction patiente, garder le ballon"
+    },
+    "counter_attack": {
+      "label": "Contre-attaque",
+      "hint": "Bloc compact, transitions rapides"
+    },
+    "high_press": {
+      "label": "Pressing haut",
+      "hint": "Récupérer haut, contre-presser à la perte"
+    },
+    "direct": {
+      "label": "Jeu direct",
+      "hint": "Ballons rapides vers les attaquants"
+    },
+    "wing_play": {
+      "label": "Jeu sur les ailes",
+      "hint": "Largeur, centres, latéraux qui débordent"
+    },
+    "low_block": {
+      "label": "Bloc bas",
+      "hint": "Défendre bas et compact"
+    },
+    "balanced": {
+      "label": "Équilibré",
+      "hint": "S'adapter à chaque adversaire"
+    }
   }
 }

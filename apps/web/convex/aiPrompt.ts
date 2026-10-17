@@ -1,4 +1,5 @@
 import type { Doc } from "./_generated/dataModel.js";
+import { describePlayingStyle } from "./lib/playingStyles.js";
 
 const LANGUAGE_NAMES = { fr: "French", ar: "Arabic", en: "English" } as const;
 
@@ -7,7 +8,7 @@ export const SUBMIT_TOOL = "submit_recommendation";
 export function buildSystemPrompt(coach: Doc<"coaches">): string {
   const philosophy = [
     coach.preferredFormation && `preferred formation ${coach.preferredFormation}`,
-    coach.playingStyle && `playing style: ${coach.playingStyle}`,
+    coach.playingStyle && `playing style: ${describePlayingStyle(coach.playingStyle)}`,
     coach.riskTolerance && `risk tolerance: ${coach.riskTolerance}`,
   ]
     .filter(Boolean)

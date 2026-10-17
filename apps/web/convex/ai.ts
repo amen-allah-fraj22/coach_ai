@@ -15,6 +15,7 @@ import { buildSystemPrompt, SUBMIT_TOOL } from "./aiPrompt.js";
 import { recommendationSchema, type Recommendation } from "./aiRecommendation.js";
 import { toolDefinitions } from "./aiTools.js";
 import { requireCoach } from "./lib/auth.js";
+import { describePlayingStyle } from "./lib/playingStyles.js";
 
 const MAX_STEPS = 8;
 
@@ -68,7 +69,7 @@ async function dispatchTool(
       return {
         full_name: coach.fullName,
         preferred_formation: coach.preferredFormation ?? null,
-        playing_style: coach.playingStyle ?? null,
+        playing_style: describePlayingStyle(coach.playingStyle) ?? null,
         risk_tolerance: coach.riskTolerance ?? null,
         language: coach.preferredLanguage,
       };

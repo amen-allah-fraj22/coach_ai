@@ -7,9 +7,9 @@ import { useTranslations } from "next-intl";
 import { api } from "@convex/_generated/api";
 import type { Doc } from "@convex/_generated/dataModel";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FormationPicker } from "@/components/ui/formation-picker";
+import { PlayingStylePicker, usePlayingStyleLabel } from "@/components/ui/playing-style-picker";
 import { Chip } from "@/components/ui/chip";
 
 const RISK_LEVELS = ["low", "medium", "high"] as const;
@@ -19,6 +19,7 @@ export function SettingsPhilosophy({ coach }: { coach: Doc<"coaches"> }) {
   const tSettings = useTranslations("settings");
   const tCommon = useTranslations("common");
   const update = useMutation(api.coaches.updatePhilosophy);
+  const styleLabel = usePlayingStyleLabel();
 
   const [editing, setEditing] = useState(false);
   const [formation, setFormation] = useState(coach.preferredFormation ?? "");
@@ -32,7 +33,7 @@ export function SettingsPhilosophy({ coach }: { coach: Doc<"coaches"> }) {
     try {
       await update({
         preferredFormation: formation || undefined,
-        playingStyle: playingStyle.trim() || undefined,
+        playingStyle: playingStyle || undefined,
         riskTolerance,
       });
       setSaved(true);
@@ -47,7 +48,7 @@ export function SettingsPhilosophy({ coach }: { coach: Doc<"coaches"> }) {
     return (
       <div className="flex flex-col gap-2">
         <p className="text-sm text-chalk">
-          {coach.preferredFormation ?? "—"} · {coach.playingStyle || "—"} ·{" "}
+          {coach.preferredFormation ?? "—"} · {styleLabel(coach.playingStyle) ?? "—"} ·{" "}
           {t(`risk${(coach.riskTolerance ?? "medium").replace(/^./, (c) => c.toUpperCase())}` as "riskLow" | "riskMedium" | "riskHigh")}
         </p>
         <div className="flex items-center gap-2">
@@ -67,8 +68,8 @@ export function SettingsPhilosophy({ coach }: { coach: Doc<"coaches"> }) {
         <FormationPicker value={formation} onChange={setFormation} />
       </div>
       <div className="flex flex-col gap-1.5">
-        <Label htmlFor="playingStyle">{t("playingStyle")}</Label>
-        <Input id="playingStyle" value={playingStyle} onChange={(e) => setPlayingStyle(e.target.value)} />
+        <Label>{t("playingStyle")}</Label>
+        <PlayingStylePicker value={playingStyle} onChange={setPlayingStyle} />
       </div>
       <div className="flex flex-col gap-1.5">
         <Label>{t("riskTolerance")}</Label>
