@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 
+import { cn } from "@/lib/utils";
 import { chalkDraw } from "@/lib/motion";
 
 export interface RadarAxis {
@@ -28,7 +29,7 @@ function RadarChart({
   const reduced = useReducedMotion();
   const n = axes.length;
   const center = 50;
-  const maxRadius = 40;
+  const maxRadius = 46;
 
   function pointFor(i: number, fraction: number) {
     const angle = -90 + (360 / n) * i;
@@ -41,65 +42,69 @@ function RadarChart({
   const dataPath = dataPoints.map((p) => `${p.x},${p.y}`).join(" ");
 
   const ringFractions = [0.33, 0.66, 1];
+  const compact = size < 100;
+  const labelClass = cn(
+    "uppercase text-chalk",
+    compact ? "text-[9px] font-semibold leading-none" : "text-label-tactical",
+  );
+  // Axis order from pointFor: 0 top, 1 right, 2 bottom, 3 left.
+  const [top, right, bottom, left] = axes;
 
+  // Labels are HTML in a 3x3 grid around the SVG so they never clip and keep
+  // a real font size; dir="ltr" keeps each label beside its own axis in RTL.
   return (
-    <svg viewBox="0 0 100 100" width={size} height={size} className={className}>
-      {ringFractions.map((fraction) => {
-        const ringPoints = axes.map((_, i) => pointFor(i, fraction));
-        return (
-          <polygon
-            key={fraction}
-            points={ringPoints.map((p) => `${p.x},${p.y}`).join(" ")}
-            fill="none"
-            stroke="rgba(247,245,239,0.15)"
-            strokeWidth="0.5"
-          />
-        );
-      })}
+    <div
+      dir="ltr"
+      className={cn(
+        "inline-grid grid-cols-[auto_auto_auto] grid-rows-[auto_auto_auto] items-center justify-items-center",
+        compact ? "gap-0.5" : "gap-1.5",
+        className,
+      )}
+    >
+      <span className={cn(labelClass, "col-start-2 row-start-1")}>{top?.label}</span>
+      <span className={cn(labelClass, "col-start-1 row-start-2 justify-self-end")}>{left?.label}</span>
+      <svg viewBox="0 0 100 100" width={size} height={size} className="col-start-2 row-start-2 overflow-visible">
+        {ringFractions.map((fraction) => {
+          const ringPoints = axes.map((_, i) => pointFor(i, fraction));
+          return (
+            <polygon
+              key={fraction}
+              points={ringPoints.map((p) => `${p.x},${p.y}`).join(" ")}
+              fill="none"
+              stroke="rgba(247,245,239,0.15)"
+              strokeWidth="0.5"
+            />
+          );
+        })}
 
-      {axes.map((axis, i) => {
-        const outer = pointFor(i, 1);
-        return (
-          <line
-            key={axis.label}
-            x1={center}
-            y1={center}
-            x2={outer.x}
-            y2={outer.y}
-            stroke="rgba(247,245,239,0.15)"
-            strokeWidth="0.5"
-          />
-        );
-      })}
+        {axes.map((axis, i) => {
+          const outer = pointFor(i, 1);
+          return (
+            <line
+              key={axis.label}
+              x1={center}
+              y1={center}
+              x2={outer.x}
+              y2={outer.y}
+              stroke="rgba(247,245,239,0.15)"
+              strokeWidth="0.5"
+            />
+          );
+        })}
 
-      <motion.polygon
-        points={dataPath}
-        fill="rgba(47,109,79,0.25)"
-        stroke="var(--chalk)"
-        strokeWidth="1.5"
-        variants={chalkDraw({ duration: 0.5 }, reduced ?? false)}
-        initial="hidden"
-        animate="show"
-      />
-
-      {axes.map((axis, i) => {
-        const labelPoint = pointFor(i, 1.28);
-        return (
-          <text
-            key={axis.label}
-            x={labelPoint.x}
-            y={labelPoint.y}
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fontSize="5"
-            fill="var(--chalk)"
-            className="text-label-tactical"
-          >
-            {axis.label}
-          </text>
-        );
-      })}
-    </svg>
+        <motion.polygon
+          points={dataPath}
+          fill="rgba(47,109,79,0.25)"
+          stroke="var(--chalk)"
+          strokeWidth="1.5"
+          variants={chalkDraw({ duration: 0.5 }, reduced ?? false)}
+          initial="hidden"
+          animate="show"
+        />
+      </svg>
+      <span className={cn(labelClass, "col-start-3 row-start-2 justify-self-start")}>{right?.label}</span>
+      <span className={cn(labelClass, "col-start-2 row-start-3")}>{bottom?.label}</span>
+    </div>
   );
 }
 
