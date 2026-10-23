@@ -99,12 +99,12 @@ export function TeamRosterBoard({
                   .catch((e) => setDeleteError(e instanceof Error ? e.message : String(e)));
               }}
               confirmLabel={tCommon("confirm")}
-              className="text-sm text-muted-foreground hover:text-touchline-red"
+              className="text-sm text-muted-foreground hover:text-red-ink"
             >
               {tCommon("delete")}
             </ConfirmButton>
           </div>
-          {deleteError && <p className="mt-1 text-sm text-touchline-red">{deleteError}</p>}
+          {deleteError && <p className="mt-1 text-sm text-red-ink">{deleteError}</p>}
         </div>
 
         <button

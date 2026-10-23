@@ -100,7 +100,7 @@ export function SignupForm() {
         <CodeInput value={code} onChange={setCode} />
 
         {error && (
-          <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-touchline-red">
+          <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-red-ink">
             {error}
           </p>
         )}
@@ -156,7 +156,7 @@ export function SignupForm() {
       </div>
 
       {error && (
-        <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-touchline-red">
+        <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-red-ink">
           {error}
         </p>
       )}

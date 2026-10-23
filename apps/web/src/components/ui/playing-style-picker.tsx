@@ -39,8 +39,8 @@ function PlayingStylePicker({
             className={cn(
               "relative flex min-h-14 flex-col items-start justify-center gap-0.5 border px-3 py-2 text-start transition-colors",
               selected
-                ? "border-hairline-24 border-s-4 border-s-pitch-green bg-[rgba(47,109,79,0.25)]"
-                : "border-hairline-16 bg-slate-grass hover:bg-[#1C2D26]",
+                ? "border-hairline-24 border-s-4 border-s-pitch-green bg-wash-green"
+                : "border-hairline-16 bg-slate-grass hover:bg-card-hover",
             )}
           >
             <span className="font-display text-sm uppercase tracking-wide text-chalk">

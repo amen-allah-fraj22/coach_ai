@@ -36,7 +36,7 @@ export function BriefingCards({
   return (
     <div className="grid gap-4 md:grid-cols-3">
       <PaperCard rotate={-1} index={0}>
-        <p className="mb-2 text-label-tactical text-touchline-red">{t("prepareTitle")}</p>
+        <p className="mb-2 text-label-tactical text-red-ink">{t("prepareTitle")}</p>
         {nextMatch ? (
           <>
             <p className="mb-4 text-sm text-night-pitch/80">
@@ -55,7 +55,7 @@ export function BriefingCards({
       </PaperCard>
 
       <PaperCard rotate={0} index={1}>
-        <p className="mb-2 text-label-tactical text-touchline-red">{t("reviewTitle")}</p>
+        <p className="mb-2 text-label-tactical text-red-ink">{t("reviewTitle")}</p>
         {lastMatch ? (
           <>
             <div className="mb-4 flex items-center gap-2">
@@ -78,7 +78,7 @@ export function BriefingCards({
       </PaperCard>
 
       <PaperCard rotate={1} index={2}>
-        <p className="mb-2 text-label-tactical text-touchline-red">{t("askTitle")}</p>
+        <p className="mb-2 text-label-tactical text-red-ink">{t("askTitle")}</p>
         {latestRecommendation ? (
           <>
             <p className="mb-4 line-clamp-2 text-sm text-night-pitch/80">

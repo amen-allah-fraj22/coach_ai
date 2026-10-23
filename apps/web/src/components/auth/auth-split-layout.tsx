@@ -31,7 +31,7 @@ export async function AuthSplitLayout({
 
   return (
     <div className="flex min-h-full flex-1 flex-col md:flex-row">
-      <div className="flex flex-col items-center justify-center gap-6 border-b border-hairline-08 bg-night-pitch px-6 py-8 text-center md:w-1/2 md:border-b-0 md:border-e md:py-0">
+      <div data-theme="dark" className="flex flex-col items-center justify-center gap-6 border-b border-hairline-08 bg-night-pitch px-6 py-8 text-center md:w-1/2 md:border-b-0 md:border-e md:py-0">
         <span className="font-display text-2xl uppercase tracking-tight text-chalk">
           {tApp("name")}
         </span>

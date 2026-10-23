@@ -27,7 +27,7 @@ function PaperCard({
       initial="hidden"
       animate="show"
       className={cn(
-        "border border-hairline-08 bg-chalk p-5 text-night-pitch shadow-[0_8px_24px_rgba(0,0,0,0.35)]",
+        "border border-hairline-08 bg-paper p-5 text-paper-foreground shadow-lift",
         className,
       )}
       {...props}

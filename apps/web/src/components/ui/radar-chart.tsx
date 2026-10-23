@@ -71,7 +71,7 @@ function RadarChart({
               key={fraction}
               points={ringPoints.map((p) => `${p.x},${p.y}`).join(" ")}
               fill="none"
-              stroke="rgba(247,245,239,0.15)"
+              stroke="var(--line-15)"
               strokeWidth="0.5"
             />
           );
@@ -86,7 +86,7 @@ function RadarChart({
               y1={center}
               x2={outer.x}
               y2={outer.y}
-              stroke="rgba(247,245,239,0.15)"
+              stroke="var(--line-15)"
               strokeWidth="0.5"
             />
           );
@@ -94,7 +94,7 @@ function RadarChart({
 
         <motion.polygon
           points={dataPath}
-          fill="rgba(47,109,79,0.25)"
+          fill="var(--wash-green)"
           stroke="var(--chalk)"
           strokeWidth="1.5"
           variants={chalkDraw({ duration: 0.5 }, reduced ?? false)}

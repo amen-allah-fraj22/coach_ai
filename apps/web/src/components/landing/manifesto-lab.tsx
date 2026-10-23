@@ -85,7 +85,7 @@ export function ManifestoLab() {
           </div>
 
           <svg viewBox="0 0 100 100" className="aspect-square w-full bg-night-pitch">
-            <rect x="2" y="2" width="96" height="96" fill="none" stroke="rgba(247,245,239,0.12)" strokeWidth="0.5" />
+            <rect x="2" y="2" width="96" height="96" fill="none" stroke="var(--line-12)" strokeWidth="0.5" />
 
             {nodes.slice(0, -1).map((node, i) => {
               const next = nodes[i + 1];

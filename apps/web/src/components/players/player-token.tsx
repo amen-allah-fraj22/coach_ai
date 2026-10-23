@@ -90,7 +90,7 @@ export function PlayerToken({
           style={{ backfaceVisibility: "hidden" }}
           className={cn(
             "absolute inset-0 flex items-center gap-2 border border-hairline-16 bg-slate-grass px-3 py-2",
-            dragging && "shadow-[0_8px_20px_rgba(0,0,0,0.5)]",
+            dragging && "shadow-drag",
           )}
         >
           <span className="flex size-8 shrink-0 items-center justify-center border border-hairline-16 bg-night-pitch font-display text-xs tabular-nums text-chalk">

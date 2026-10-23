@@ -137,14 +137,14 @@ export function MatchEventLog({
                 <span className="font-display w-10 shrink-0 tabular-nums text-chalk">
                   {event.minute}&apos;
                 </span>
-                <span className={event.side === "us" ? "font-medium text-pitch-green" : "font-medium text-touchline-red"}>
+                <span className={event.side === "us" ? "font-medium text-pitch-green" : "font-medium text-red-ink"}>
                   {t(`types.${event.eventType}`)}
                 </span>
                 {event.playerId && <span className="text-chalk">{playerNames.get(event.playerId)}</span>}
                 <ConfirmButton
                   onConfirm={() => removeEvent({ id: event._id })}
                   confirmLabel={tCommon("confirm")}
-                  className="ms-auto text-xs text-muted-foreground hover:text-touchline-red"
+                  className="ms-auto text-xs text-muted-foreground hover:text-red-ink"
                 >
                   {tCommon("delete")}
                 </ConfirmButton>

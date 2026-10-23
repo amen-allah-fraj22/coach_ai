@@ -68,11 +68,11 @@ function PitchDiagram({
       aria-hidden={points.length === 0}
     >
       {/* Field lines */}
-      <rect x="2" y="2" width="96" height="96" fill="none" stroke="rgba(247,245,239,0.15)" strokeWidth="0.5" />
-      <line x1="2" y1="50" x2="98" y2="50" stroke="rgba(247,245,239,0.15)" strokeWidth="0.5" />
-      <circle cx="50" cy="50" r="10" fill="none" stroke="rgba(247,245,239,0.15)" strokeWidth="0.5" />
-      <rect x="30" y="2" width="40" height="14" fill="none" stroke="rgba(247,245,239,0.15)" strokeWidth="0.5" />
-      <rect x="30" y="84" width="40" height="14" fill="none" stroke="rgba(247,245,239,0.15)" strokeWidth="0.5" />
+      <rect x="2" y="2" width="96" height="96" fill="none" stroke="var(--line-15)" strokeWidth="0.5" />
+      <line x1="2" y1="50" x2="98" y2="50" stroke="var(--line-15)" strokeWidth="0.5" />
+      <circle cx="50" cy="50" r="10" fill="none" stroke="var(--line-15)" strokeWidth="0.5" />
+      <rect x="30" y="2" width="40" height="14" fill="none" stroke="var(--line-15)" strokeWidth="0.5" />
+      <rect x="30" y="84" width="40" height="14" fill="none" stroke="var(--line-15)" strokeWidth="0.5" />
 
       {arrows.map((arrow, i) => (
         <ChalkPath

@@ -135,7 +135,7 @@ export function OnboardingFlow({
             <Label htmlFor="fullName">{tAuth("fullName")}</Label>
             <Input id="fullName" name="fullName" required autoComplete="name" className="border-night-pitch/30 text-night-pitch" />
           </div>
-          {error && <p className="text-sm text-touchline-red">{error}</p>}
+          {error && <p className="text-sm text-red-ink">{error}</p>}
           <Button type="submit" disabled={pending} variant="primary">
             {tAuth("inviteCta")}
           </Button>
@@ -263,7 +263,7 @@ export function OnboardingFlow({
                 }}
               />
             </div>
-            {error && <p className="text-sm text-touchline-red">{error}</p>}
+            {error && <p className="text-sm text-red-ink">{error}</p>}
             <div className="mt-2 flex gap-2">
               <Button type="button" variant="secondary" onClick={goBack} disabled={pending}>
                 {t("back")}

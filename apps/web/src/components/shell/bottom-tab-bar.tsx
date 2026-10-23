@@ -61,7 +61,7 @@ export function BottomTabBar() {
           <SignOutButton>
             <button
               type="button"
-              className="flex items-center gap-3 py-3 text-start text-touchline-red"
+              className="flex items-center gap-3 py-3 text-start text-red-ink"
             >
               <Icon name="logout" size={20} />
               {t("nav.signOut")}

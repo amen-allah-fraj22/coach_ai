@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-/** DESIGN.md "Chips & Tactical Tags": 0 radius, bg #182E25, label-tactical type. */
+/** DESIGN.md "Chips & Tactical Tags": 0 radius, slate-grass surface, label-tactical type. */
 function Chip({
   className,
   status,
@@ -14,7 +14,7 @@ function Chip({
       data-slot="chip"
       className={cn(
         "inline-flex items-center gap-1.5 border px-2 py-1 text-label-tactical text-chalk",
-        "border-[rgba(247,245,239,0.12)] bg-slate-grass",
+        "border-chip-border bg-slate-grass",
         className,
       )}
       {...props}

@@ -11,8 +11,8 @@ export function DoctrineSection() {
 
   const items = [
     { num: t("item1Num"), title: t("item1Title"), body: t("item1Body"), color: "text-chalk" },
-    { num: t("item2Num"), title: t("item2Title"), body: t("item2Body"), color: "text-[#94D4B0]" },
-    { num: t("item3Num"), title: t("item3Title"), body: t("item3Body"), color: "text-touchline-red" },
+    { num: t("item2Num"), title: t("item2Title"), body: t("item2Body"), color: "text-green-ink" },
+    { num: t("item3Num"), title: t("item3Title"), body: t("item3Body"), color: "text-red-ink" },
   ];
 
   return (

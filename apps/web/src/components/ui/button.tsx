@@ -22,7 +22,7 @@ const buttonVariants = cva(
         secondary:
           "border border-hairline-16 bg-slate-grass text-chalk hover:border-hairline-24",
         destructive:
-          "border border-touchline-red bg-slate-grass text-touchline-red hover:bg-touchline-red hover:text-chalk",
+          "border border-touchline-red bg-slate-grass text-red-ink hover:bg-touchline-red hover:text-chalk",
         pill: "rounded-full bg-touchline-red text-chalk hover:bg-touchline-red/90",
       },
       size: {

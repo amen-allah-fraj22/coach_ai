@@ -206,7 +206,7 @@ export function LandingHero() {
   ];
 
   return (
-    <section className="relative overflow-hidden border-b border-hairline-08 bg-pitch-grid px-4 py-10 text-start md:px-8 md:py-24 md:text-center">
+    <section data-theme="dark" className="relative overflow-hidden border-b border-hairline-08 bg-pitch-grid px-4 py-10 text-start md:px-8 md:py-24 md:text-center">
       <HeroPitch reduced={reduced} />
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-start gap-6 md:items-center">
@@ -215,7 +215,7 @@ export function LandingHero() {
         <h1 className="font-display text-4xl uppercase leading-tight tracking-tight text-chalk sm:text-5xl md:text-6xl">
           {t("titleLine1")}
           <br />
-          <span className="relative inline-block text-[#94D4B0]">
+          <span className="relative inline-block text-green-ink">
             {t("titleLine2")}
             <motion.svg
               viewBox="0 0 200 12"

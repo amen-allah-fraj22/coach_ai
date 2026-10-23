@@ -132,7 +132,7 @@ export function LoginForm() {
           <Input id="email" name="email" type="email" required autoComplete="email" />
         </div>
         {error && (
-          <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-touchline-red">
+          <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-red-ink">
             {error}
           </p>
         )}
@@ -168,7 +168,7 @@ export function LoginForm() {
           <PasswordInput id="password" name="password" autoComplete="new-password" required />
         </div>
         {error && (
-          <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-touchline-red">
+          <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-red-ink">
             {error}
           </p>
         )}
@@ -203,7 +203,7 @@ export function LoginForm() {
       </div>
 
       {error && (
-        <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-touchline-red">
+        <p className="border border-touchline-red bg-touchline-red/10 px-3 py-2 text-sm text-red-ink">
           {error}
         </p>
       )}

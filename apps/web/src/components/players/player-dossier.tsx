@@ -122,7 +122,7 @@ export function PlayerDossier({
             void removePlayer({ id: player._id }).then(() => router.push("/players"));
           }}
           confirmLabel={tCommon("confirm")}
-          className="border border-touchline-red px-4 py-2 text-sm text-touchline-red hover:bg-touchline-red hover:text-chalk"
+          className="border border-touchline-red px-4 py-2 text-sm text-red-ink hover:bg-touchline-red hover:text-chalk"
         >
           {tCommon("delete")}
         </ConfirmButton>

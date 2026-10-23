@@ -65,7 +65,7 @@ function BottomSheet({
             animate={isMobile ? "show" : { opacity: 1, scale: 1 }}
             exit={isMobile ? "exit" : { opacity: 0, scale: 0.96 }}
             className={cn(
-              "relative z-10 flex max-h-[85vh] w-full flex-col overflow-y-auto border-2 border-chalk bg-night-pitch shadow-[0_-8px_24px_rgba(0,0,0,0.4)]",
+              "relative z-10 flex max-h-[85vh] w-full flex-col overflow-y-auto border-2 border-chalk bg-night-pitch shadow-sheet",
               "md:max-w-lg",
               className,
             )}

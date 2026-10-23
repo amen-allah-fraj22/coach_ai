@@ -246,7 +246,7 @@ export function MatchForm({
               setScoreFor(0);
               setScoreAgainst(0);
             }}
-            className="text-xs text-muted-foreground hover:text-touchline-red"
+            className="text-xs text-muted-foreground hover:text-red-ink"
           >
             {tCommon("none")}
           </button>

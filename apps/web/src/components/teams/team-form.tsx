@@ -92,7 +92,7 @@ export function TeamForm({ team }: { team?: Doc<"teams"> }) {
         <FormationPicker value={defaultFormation} onChange={setDefaultFormation} />
       </div>
 
-      {error && <p className="text-sm text-touchline-red">{error}</p>}
+      {error && <p className="text-sm text-red-ink">{error}</p>}
 
       <motion.div whileTap={stampPress(reduced)}>
         <Button type="submit" disabled={pending} className="mt-2 w-full">

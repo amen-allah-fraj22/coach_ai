@@ -77,6 +77,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={dir}
+      data-theme="dark"
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">

@@ -25,11 +25,11 @@ export function MatchDeleteButton({ matchId }: { matchId: Id<"matches"> }) {
             .catch((e) => setError(e instanceof Error ? e.message : String(e)));
         }}
         confirmLabel={t("confirm")}
-        className="text-chalk hover:text-touchline-red hover:underline"
+        className="text-chalk hover:text-red-ink hover:underline"
       >
         {t("delete")}
       </ConfirmButton>
-      {error && <p className="text-xs text-touchline-red">{error}</p>}
+      {error && <p className="text-xs text-red-ink">{error}</p>}
     </>
   );
 }
