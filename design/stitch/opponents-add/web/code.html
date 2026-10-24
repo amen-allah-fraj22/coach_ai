@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-background":"#d3e7dc","on-tertiary-container":"#c12714","primary-fixed":"#e4e2dd","on-secondary-fixed-variant":"#0c5135","surface":"#061610","on-primary":"#30312d","on-primary-container":"#656560","on-surface-variant":"#c7c7bf","tertiary-container":"#ffdad4","outline-variant":"#464741","tertiary-fixed":"#ffdad4","inverse-on-surface":"#23342c","surface-bright":"#2b3d35","secondary-fixed-dim":"#94d4b0","secondary-container":"#0c5135","primary":"#ffffff","on-error":"#690005","inverse-primary":"#5f5f5a","on-surface":"#d3e7dc","surface-tint":"#c8c6c1","secondary-fixed":"#b0f1cb","on-tertiary-fixed":"#400200","on-error-container":"#ffdad6","primary-container":"#e4e2dd","primary-fixed-dim":"#c8c6c1","on-primary-fixed-variant":"#474743","surface-container-low":"#0e1f18","on-primary-fixed":"#1b1c18","on-tertiary":"#670500","secondary":"#94d4b0","on-secondary-container":"#83c39f","error-container":"#93000a","background":"#061610","tertiary-fixed-dim":"#ffb4a7","surface-container-high":"#1c2d26","surface-container":"#12231c","surface-container-lowest":"#02110b","inverse-surface":"#d3e7dc","tertiary":"#ffffff","error":"#ffb4ab","outline":"#91918a","surface-variant":"#273831","on-secondary":"#003823","on-secondary-fixed":"#002112","on-tertiary-fixed-variant":"#910a00","surface-dim":"#061610","surface-container-highest":"#273831"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","space-sm":"0.5rem","gutter-desktop":"1.5rem","space-lg":"1.5rem","gutter":"1rem","margin-desktop":"2rem","space-xs":"0.25rem","margin-tablet":"1.5rem","space-xl":"2rem","space-md":"1rem"},"fontFamily":{"headline-lg":["Anton"],"headline-sm":["Anton"],"metric-huge":["Anton"],"body-sm":["IBM Plex Sans"],"display-lg":["Anton"],"headline-md":["Anton"],"label-tactical":["IBM Plex Sans"],"display-lg-mobile":["Anton"],"body-md":["IBM Plex Sans"],"metric-huge-mobile":["Anton"],"body-lg":["IBM Plex Sans"],"label-mono":["IBM Plex Sans"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"36px","letterSpacing":"0.03em","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"22px","letterSpacing":"0.04em","fontWeight":"400"}],"metric-huge":["64px",{"lineHeight":"64px","letterSpacing":"0.01em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"60px","letterSpacing":"0.02em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"28px","letterSpacing":"0.03em","fontWeight":"400"}],"label-tactical":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"600"}],"display-lg-mobile":["38px",{"lineHeight":"42px","letterSpacing":"0.02em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"metric-huge-mobile":["44px",{"lineHeight":"44px","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-mono":["10px",{"lineHeight":"12px","letterSpacing":"0.08em","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-3 h-3 bg-secondary rounded-none flex-shrink-0"></div><span class="font-headline-md text-headline-md tracking-wider uppercase text-primary">COACH<span class="text-secondary">AI</span></span></div><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant bg-surface-container-highest px-space-xs py-0.5">V3.8</span></div><div class="px-space-lg"><div class="bg-surface-container px-space-md py-space-sm flex items-center justify-between"><div class="flex flex-col"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">ACTIVE CAMPAIGN</span><span class="font-body-md text-body-md text-primary font-semibold truncate max-w-[140px]">PREMIER DIV 24/25</span></div><span class="material-symbols-outlined text-secondary text-[18px]">shield</span></div></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-secondary-container text-on-secondary-container font-semibold border-l-4 border-secondary"><div class="px-space-sm py-1"><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">TACTICAL ARENA</span></div><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tactical-board" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Tactical Board</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="live-matchday" href="#"><span class="material-symbols-outlined text-[20px]">timer</span><span class="font-body-md text-body-md">Live Matchday</span><span class="w-2 h-2 rounded-full bg-error ml-auto animate-pulse"></span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="matches" href="#"><span class="material-symbols-outlined text-[20px]">sports_soccer</span><span class="font-body-md text-body-md">Matches</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="squad-roster" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-md text-body-md">Squad &amp; Roster</span></a><div class="px-space-sm pt-space-md pb-1"><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">INTELLIGENCE</span></div><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="opponents-list" href="#"><span class="material-symbols-outlined text-[20px]">travel_explore</span><span class="font-body-md text-body-md">Opponents &amp; Scouting</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-coach-assistant" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span class="font-body-md text-body-md">AI Assistant</span><span class="font-label-mono text-label-mono text-secondary bg-surface-container-highest px-1 py-0.5 ml-auto">SYNC</span></a></nav></div><div class="flex flex-col gap-space-sm px-space-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Settings</span></a><div class="bg-surface-container-lowest p-space-sm flex items-center justify-between mx-space-sm"><div class="flex flex-col"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">TELEMETRY FEED</span><span class="font-label-tactical text-label-tactical text-secondary uppercase">ONLINE // 60FPS</span></div><div class="w-2 h-2 bg-secondary rounded-none"></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">SESSION:</span><span class="font-headline-sm text-headline-sm uppercase text-primary">TACTICAL OPERATIONS</span></div><div class="h-4 w-px bg-surface-container-highest hidden md:block"></div><div class="hidden lg:flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">SYSTEM LOAD:</span><span class="font-label-tactical text-label-tactical text-secondary">OPTIMAL (23%)</span></div><div class="flex items-center gap-space-xs"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">PITCH RADAR:</span><span class="font-label-tactical text-label-tactical text-secondary">LINKED</span></div><div class="flex items-center gap-space-xs"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">MATCH PROJECTION:</span><span class="font-label-tactical text-label-tactical text-on-surface">W 68% / D 18% / L 14%</span></div></div></div><div class="flex items-center gap-space-md"><div class="bg-surface-container px-space-md py-1.5 flex items-center gap-space-sm"><span class="font-label-mono text-label-mono text-on-surface-variant uppercase">TOUCHLINE HUD</span><span class="w-2 h-2 rounded-full bg-secondary"></span></div><button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">notifications</span></button><button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">help</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Top Dossier Breadcrumb & Tactical Stamp Header -->
+<div class="flex items-center justify-between py-space-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<a class="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors text-body-sm font-label-tactical uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+        Scouting Index
+      </a>
+<span class="text-outline-variant font-label-mono">/</span>
+<span class="font-label-mono text-label-mono text-secondary uppercase bg-surface-container-high px-space-xs py-0.5">FILE REF: SCOUT-2025-ALPHA</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-mono text-label-mono uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+        DOSSIER INGESTION DESK
+      </div>
+<div class="bg-surface-container-high px-space-md py-1 flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">folder_open</span>
+<span class="font-headline-sm text-headline-sm uppercase text-primary tracking-wider">NEW TARGET LOG</span>
+</div>
+</div>
+</div>
+<!-- Main Workstation: Dossier Folder Desk -->
+<div class="relative max-w-5xl mx-auto w-full">
+<!-- Manilla / Dark Slate Folder Backing Tabs -->
+<div class="flex items-end gap-2 px-space-xl">
+<div class="bg-primary-fixed text-on-primary-fixed px-space-lg py-2 rounded-t-lg font-headline-sm text-headline-sm uppercase tracking-wider flex items-center gap-space-sm shadow-md">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+        DOSSIER ENTRY FORM
+      </div>
+<div class="bg-surface-container-high text-on-surface-variant px-space-md py-1.5 rounded-t font-label-tactical text-label-tactical uppercase tracking-wider">
+        ANALYTICAL BREAKDOWN
+      </div>
+<div class="bg-surface-container text-outline px-space-md py-1.5 rounded-t font-label-tactical text-label-tactical uppercase tracking-wider opacity-60">
+        HISTORICAL ARCHIVE
+      </div>
+<div class="ml-auto font-label-mono text-label-mono text-outline-variant pb-1">
+        CONFIDENTIAL // MATCH-WEEK OPS
+      </div>
+</div>
+<!-- The Chalk Paper Sheet (#F7F5EF / primary-fixed) sitting on the Pitch chalkboard -->
+<div class="relative bg-primary-fixed text-on-primary shadow-2xl rounded-sm p-8 md:p-12 overflow-hidden">
+<!-- Tactile paper texture simulation watermark & grid lines -->
+<div class="absolute inset-0 pointer-events-none opacity-5 bg-[radial-gradient(#1b1c18_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Top Dossier Meta Bar with Physical Clip graphic -->
+<div class="relative flex flex-col md:flex-row md:items-center justify-between pb-space-lg mb-space-xl gap-4">
+<!-- Physical paper clip anchor -->
+<div class="absolute -top-10 left-12 w-6 h-16 bg-surface-container-highest rounded-full shadow-inner opacity-80 flex items-center justify-center">
+<div class="w-3 h-12 rounded-full border-2 border-outline-variant"></div>
+</div>
+<div class="pl-16">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase font-bold tracking-widest">TACTICAL SURVEILLANCE DOSSIER</span>
+<span class="bg-surface-container text-primary font-label-tactical text-[9px] px-1.5 py-0.5 rounded-none font-bold">STATUS: DRAFT</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg uppercase text-on-primary tracking-tight mt-1">INITIAL ENCOUNTER SPECIFICATION</h1>
+</div>
+<!-- Classification Mark -->
+<div class="flex items-center gap-space-sm border-2 border-dashed border-on-primary-container/30 px-space-md py-2">
+<span class="material-symbols-outlined text-on-tertiary-container text-[26px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-mono text-[9px] uppercase tracking-wider text-on-primary-container font-semibold">COACHING STAFF ONLY</span>
+<span class="font-headline-sm text-headline-sm text-on-tertiary-container tracking-wider">LIVE TELEMETRY LOG</span>
+</div>
+</div>
+</div>
+<form class="relative flex flex-col gap-space-xl" id="scoutingForm" onsubmit="event.preventDefault();">
+<!-- Primary Squad Identifiers (Team & League) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg">
+<div class="md:col-span-7 flex flex-col gap-space-xs">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary-fixed flex items-center justify-between" for="teamName">
+<span>TARGET CLUB / OPPONENT NAME *</span>
+<span class="font-label-mono text-label-mono text-on-primary-container">FIELD REF #01</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest/10 text-on-primary font-headline-md text-headline-md uppercase placeholder:text-on-primary-container/40 px-space-md py-3 focus:outline-none focus:bg-surface-container-lowest/15 transition-all shadow-inner tracking-wide" id="teamName" placeholder="e.g. SPORTING ATLETICO METRO" required="" type="text"/>
+<div class="absolute right-3 top-3.5 text-on-primary-container">
+<span class="material-symbols-outlined text-[22px]">shield</span>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-on-primary-container">Registered club name for database linkage and radar matching</span>
+</div>
+<div class="md:col-span-5 flex flex-col gap-space-xs">
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary-fixed flex items-center justify-between" for="leagueSelect">
+<span>LEAGUE / COMPETITION *</span>
+<span class="font-label-mono text-label-mono text-on-primary-container">CIRCUIT</span>
+</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest/10 text-on-primary font-body-lg text-body-lg font-semibold uppercase px-space-md py-3.5 appearance-none focus:outline-none focus:bg-surface-container-lowest/15 transition-all shadow-inner cursor-pointer" id="leagueSelect" required="">
+<option class="bg-surface-container text-on-surface" disabled="" selected="" value="">Select active competition...</option>
+<option class="bg-surface-container text-on-surface" value="premier-div">Premier Division 2024/25</option>
+<option class="bg-surface-container text-on-surface" value="championship-tier">Continental Super League</option>
+<option class="bg-surface-container text-on-surface" value="national-cup">National Senior Cup (Knockout)</option>
+<option class="bg-surface-container text-on-surface" value="preseason-intl">International Showcase</option>
+</select>
+<div class="absolute right-3 top-4 pointer-events-none text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+<span class="font-label-mono text-label-mono text-on-primary-container">Defines tactical rule thresholds and referee parameters</span>
+</div>
+</div>
+<!-- Usual Formation Selector with Chalk Glyphs -->
+<div class="flex flex-col gap-space-md pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 bg-surface-container"></span>
+<label class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary-fixed">
+                USUAL BASE SHAPE / TACTICAL CONFIGURATION *
+              </label>
+</div>
+<span class="font-label-mono text-label-mono text-on-primary-container uppercase">SELECT CHALK GLYPH</span>
+</div>
+<!-- Hidden Input for Form Submission -->
+<input id="selectedFormation" name="formation" type="hidden" value="4-3-3"/>
+<!-- Interactive Formation Glyph Grid (Chalk board aesthetic inside chalk paper) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<!-- Formation 1: 4-3-3 (Selected by default) -->
+<button class="formation-btn group relative p-space-md text-left transition-all duration-200 bg-surface-container text-on-surface shadow-md" data-formation="4-3-3" type="button">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-md text-headline-md tracking-wider text-primary group-hover:text-secondary">4-3-3</span>
+<span class="formation-radio w-4 h-4 rounded-full border border-secondary flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</span>
+</div>
+<!-- 2D Pitch Chalkboard Miniature SVG -->
+<div class="relative w-full h-36 bg-surface-container-lowest flex items-center justify-center p-2 overflow-hidden shadow-inner">
+<!-- Half-pitch chalk markings -->
+<svg class="w-full h-full text-outline-variant/40" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 100 120">
+<rect height="110" stroke-dasharray="3 3" width="90" x="5" y="5"></rect>
+<line stroke-dasharray="2 2" x1="5" x2="95" y1="60" y2="60"></line>
+<circle cx="50" cy="60" r="14" stroke-dasharray="2 2"></circle>
+<rect height="28" width="50" x="25" y="5"></rect>
+<rect height="12" width="28" x="36" y="5"></rect>
+<!-- Formation Nodes: 4-3-3 with chalk glow circles -->
+<!-- GK -->
+<circle cx="50" cy="14" fill="#94d4b0" r="3.5" stroke="#d3e7dc" stroke-width="1.5"></circle>
+<!-- Back 4 -->
+<circle cx="16" cy="34" fill="#d3e7dc" r="3"></circle>
+<circle cx="38" cy="30" fill="#d3e7dc" r="3"></circle>
+<circle cx="62" cy="30" fill="#d3e7dc" r="3"></circle>
+<circle cx="84" cy="34" fill="#d3e7dc" r="3"></circle>
+<!-- Midfield 3 -->
+<circle cx="50" cy="52" fill="#d3e7dc" r="3"></circle>
+<circle cx="30" cy="66" fill="#d3e7dc" r="3"></circle>
+<circle cx="70" cy="66" fill="#d3e7dc" r="3"></circle>
+<!-- Front 3 -->
+<circle cx="18" cy="98" fill="#94d4b0" r="3.5" stroke="#d3e7dc" stroke-width="1.5"></circle>
+<circle cx="50" cy="102" fill="#94d4b0" r="3.5" stroke="#d3e7dc" stroke-width="1.5"></circle>
+<circle cx="82" cy="98" fill="#94d4b0" r="3.5" stroke="#d3e7dc" stroke-width="1.5"></circle>
+<!-- Chalk Tactical Run Line -->
+<path d="M 18 94 Q 25 80 40 76" stroke="#94d4b0" stroke-dasharray="2 2" stroke-width="1"></path>
+</svg>
+</div>
+<div class="mt-space-xs flex items-center justify-between">
+<span class="font-label-mono text-[9px] uppercase text-on-surface-variant">FLUID ATTACKING</span>
+<span class="font-label-tactical text-[9px] uppercase text-secondary">PRIMARY</span>
+</div>
+</button>
+<!-- Formation 2: 4-2-3-1 -->
+<button class="formation-btn group relative p-space-md text-left transition-all duration-200 bg-surface-container-low text-on-surface opacity-80 hover:opacity-100" data-formation="4-2-3-1" type="button">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-md text-headline-md tracking-wider text-on-surface group-hover:text-primary">4-2-3-1</span>
+<span class="formation-radio w-4 h-4 rounded-full border border-outline-variant flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-transparent"></span>
+</span>
+</div>
+<div class="relative w-full h-36 bg-surface-container-lowest flex items-center justify-center p-2 overflow-hidden shadow-inner">
+<svg class="w-full h-full text-outline-variant/30" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 100 120">
+<rect height="110" stroke-dasharray="3 3" width="90" x="5" y="5"></rect>
+<line stroke-dasharray="2 2" x1="5" x2="95" y1="60" y2="60"></line>
+<rect height="28" width="50" x="25" y="5"></rect>
+<!-- Nodes -->
+<circle cx="50" cy="14" fill="#94d4b0" r="3.5"></circle>
+<circle cx="16" cy="34" fill="#d3e7dc" r="3"></circle>
+<circle cx="38" cy="30" fill="#d3e7dc" r="3"></circle>
+<circle cx="62" cy="30" fill="#d3e7dc" r="3"></circle>
+<circle cx="84" cy="34" fill="#d3e7dc" r="3"></circle>
+<!-- Double Pivot -->
+<circle cx="36" cy="50" fill="#d3e7dc" r="3"></circle>
+<circle cx="64" cy="50" fill="#d3e7dc" r="3"></circle>
+<!-- Attacking 3 -->
+<circle cx="18" cy="78" fill="#d3e7dc" r="3"></circle>
+<circle cx="50" cy="74" fill="#d3e7dc" r="3"></circle>
+<circle cx="82" cy="78" fill="#d3e7dc" r="3"></circle>
+<!-- Solo Striker -->
+<circle cx="50" cy="102" fill="#94d4b0" r="3.5"></circle>
+</svg>
+</div>
+<div class="mt-space-xs flex items-center justify-between">
+<span class="font-label-mono text-[9px] uppercase text-on-surface-variant">DOUBLE PIVOT</span>
+<span class="font-label-mono text-[9px] text-outline-variant">DEFENSIVE BLOCK</span>
+</div>
+</button>
+<!-- Formation 3: 3-5-2 -->
+<button class="formation-btn group relative p-space-md text-left transition-all duration-200 bg-surface-container-low text-on-surface opacity-80 hover:opacity-100" data-formation="3-5-2" type="button">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-md text-headline-md tracking-wider text-on-surface group-hover:text-primary">3-5-2</span>
+<span class="formation-radio w-4 h-4 rounded-full border border-outline-variant flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-transparent"></span>
+</span>
+</div>
+<div class="relative w-full h-36 bg-surface-container-lowest flex items-center justify-center p-2 overflow-hidden shadow-inner">
+<svg class="w-full h-full text-outline-variant/30" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 100 120">
+<rect height="110" stroke-dasharray="3 3" width="90" x="5" y="5"></rect>
+<line stroke-dasharray="2 2" x1="5" x2="95" y1="60" y2="60"></line>
+<rect height="28" width="50" x="25" y="5"></rect>
+<!-- Nodes -->
+<circle cx="50" cy="14" fill="#94d4b0" r="3.5"></circle>
+<!-- Back 3 -->
+<circle cx="26" cy="30" fill="#d3e7dc" r="3"></circle>
+<circle cx="50" cy="28" fill="#d3e7dc" r="3"></circle>
+<circle cx="74" cy="30" fill="#d3e7dc" r="3"></circle>
+<!-- Midfield 5 with wingbacks -->
+<circle cx="12" cy="56" fill="#d3e7dc" r="3"></circle>
+<circle cx="36" cy="54" fill="#d3e7dc" r="3"></circle>
+<circle cx="50" cy="62" fill="#d3e7dc" r="3"></circle>
+<circle cx="64" cy="54" fill="#d3e7dc" r="3"></circle>
+<circle cx="88" cy="56" fill="#d3e7dc" r="3"></circle>
+<!-- Strikers -->
+<circle cx="38" cy="100" fill="#94d4b0" r="3.5"></circle>
+<circle cx="62" cy="100" fill="#94d4b0" r="3.5"></circle>
+</svg>
+</div>
+<div class="mt-space-xs flex items-center justify-between">
+<span class="font-label-mono text-[9px] uppercase text-on-surface-variant">WING OVERLOAD</span>
+<span class="font-label-mono text-[9px] text-outline-variant">HIGH CARRIERS</span>
+</div>
+</button>
+<!-- Formation 4: 4-4-2 -->
+<button class="formation-btn group relative p-space-md text-left transition-all duration-200 bg-surface-container-low text-on-surface opacity-80 hover:opacity-100" data-formation="4-4-2" type="button">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-md text-headline-md tracking-wider text-on-surface group-hover:text-primary">4-4-2</span>
+<span class="formation-radio w-4 h-4 rounded-full border border-outline-variant flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-transparent"></span>
+</span>
+</div>
+<div class="relative w-full h-36 bg-surface-container-lowest flex items-center justify-center p-2 overflow-hidden shadow-inner">
+<svg class="w-full h-full text-outline-variant/30" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 100 120">
+<rect height="110" stroke-dasharray="3 3" width="90" x="5" y="5"></rect>
+<line stroke-dasharray="2 2" x1="5" x2="95" y1="60" y2="60"></line>
+<rect height="28" width="50" x="25" y="5"></rect>
+<!-- Nodes -->
+<circle cx="50" cy="14" fill="#94d4b0" r="3.5"></circle>
+<!-- Back 4 -->
+<circle cx="16" cy="32" fill="#d3e7dc" r="3"></circle>
+<circle cx="38" cy="28" fill="#d3e7dc" r="3"></circle>
+<circle cx="62" cy="28" fill="#d3e7dc" r="3"></circle>
+<circle cx="84" cy="32" fill="#d3e7dc" r="3"></circle>
+<!-- Midfield 4 flat -->
+<circle cx="16" cy="62" fill="#d3e7dc" r="3"></circle>
+<circle cx="38" cy="60" fill="#d3e7dc" r="3"></circle>
+<circle cx="62" cy="60" fill="#d3e7dc" r="3"></circle>
+<circle cx="84" cy="62" fill="#d3e7dc" r="3"></circle>
+<!-- Twin Strikers -->
+<circle cx="36" cy="98" fill="#94d4b0" r="3.5"></circle>
+<circle cx="64" cy="98" fill="#94d4b0" r="3.5"></circle>
+</svg>
+</div>
+<div class="mt-space-xs flex items-center justify-between">
+<span class="font-label-mono text-[9px] uppercase text-on-surface-variant">COMPACT MID</span>
+<span class="font-label-mono text-[9px] text-outline-variant">CLASSIC BLOCK</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Sticky-Note Tactical Divider Sections (Style, Strengths, Weaknesses) -->
+<div class="flex flex-col gap-space-sm pt-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider text-on-primary-fixed">
+              TACTICAL PROFILE &amp; OBSERVATIONAL MEMOS
+            </span>
+<span class="font-label-mono text-label-mono text-on-primary-container">HAND-LABELED CARDS</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg items-start">
+<!-- Memo 1: Tactical Style (Pale warm chalk tint) -->
+<div class="relative bg-[#ebe7dc] text-on-primary p-space-md shadow-lg transform -rotate-1 hover:rotate-0 transition-transform duration-200">
+<!-- Tape snippet aesthetic at top -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-[#d8d3c5]/80 shadow-sm backdrop-blur-xs"></div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-on-primary-container">psychology</span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide">01. PLAYING STYLE</span>
+</div>
+<span class="font-label-mono text-[9px] uppercase bg-surface-container-lowest/10 px-1 py-0.5 font-bold">DNA</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<textarea class="w-full bg-transparent resize-none font-body-md text-body-md text-on-primary placeholder:text-on-primary-container/50 focus:outline-none leading-relaxed" placeholder="Describe opponent's tactical philosophy: Direct transition, high-possession positional play, low-block counter-punching, or mid-field rest-defense patterns..." rows="6"></textarea>
+<div class="pt-space-sm flex items-center justify-between font-label-mono text-[9px] text-on-primary-container">
+<span>PRESSING: MEDIUM-HIGH</span>
+<span>TEMPO: 104 BPM</span>
+</div>
+</div>
+</div>
+<!-- Memo 2: Strengths (Light Sage Green Chalk tint) -->
+<div class="relative bg-[#dbe8de] text-on-primary p-space-md shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-200">
+<!-- Tape snippet aesthetic -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-[#c2d7c7]/80 shadow-sm backdrop-blur-xs"></div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary-container">trending_up</span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide text-secondary-container">02. KEY STRENGTHS</span>
+</div>
+<span class="font-label-mono text-[9px] uppercase bg-secondary-container/10 text-secondary-container px-1 py-0.5 font-bold">EDGE</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<textarea class="w-full bg-transparent resize-none font-body-md text-body-md text-on-primary placeholder:text-secondary-container/50 focus:outline-none leading-relaxed" placeholder="Identify dominant threats: Aerial supremacy on offensive set-pieces, inverted winger box entries, lightning second-ball recoveries in central corridors..." rows="6"></textarea>
+<div class="pt-space-sm flex items-center justify-between font-label-mono text-[9px] text-secondary-container font-semibold">
+<span>TRANSITION xG: 1.84</span>
+<span>SET-PLAY DANGER: HIGH</span>
+</div>
+</div>
+</div>
+<!-- Memo 3: Weaknesses (Soft Muted Red-Tinted Chalk) -->
+<div class="relative bg-[#eedcd9] text-on-primary p-space-md shadow-lg transform -rotate-1 hover:rotate-0 transition-transform duration-200">
+<!-- Tape snippet aesthetic -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-[#d9c0bb]/80 shadow-sm backdrop-blur-xs"></div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-error-container">warning</span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide text-error-container">03. EXPLOITABLE FLAWS</span>
+</div>
+<span class="font-label-mono text-[9px] uppercase bg-error-container/15 text-error-container px-1 py-0.5 font-bold">TARGET</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<textarea class="w-full bg-transparent resize-none font-body-md text-body-md text-on-primary placeholder:text-error-container/50 focus:outline-none leading-relaxed" placeholder="Log vulnerabilities to punish: Space behind high fullbacks on turnover, vulnerability to cutbacks from half-spaces, poor stamina dropoff after 65th minute..." rows="6"></textarea>
+<div class="pt-space-sm flex items-center justify-between font-label-mono text-[9px] text-error-container font-semibold">
+<span>TURNOVER RISK: 38%</span>
+<span>ZONE 14 GAP: VULNERABLE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Touchline Red Rubber-Stamp Action Footer -->
+<div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<button class="px-space-md py-2.5 text-on-primary-container hover:text-on-primary transition-colors font-label-tactical text-label-tactical uppercase tracking-wider flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+              DISCARD DRAFT
+            </button>
+<div class="flex items-center gap-space-xs text-on-primary-container font-label-mono text-label-mono">
+<span class="material-symbols-outlined text-[14px]">save</span>
+<span>AUTOSAVED TO LOCAL DISK</span>
+</div>
+</div>
+<!-- Rubber Stamp Style Action Trigger -->
+<div class="relative group">
+<!-- Simulated skewed red rubber stamp backing shadow -->
+<div class="absolute inset-0 bg-[#E3402A] translate-x-1 translate-y-1 transform rotate-1 group-hover:translate-x-1.5 group-hover:translate-y-1.5 transition-transform duration-150"></div>
+<button class="relative z-10 px-8 py-3.5 bg-[#E3402A] text-primary hover:bg-[#c9321d] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-space-md shadow-lg transform -rotate-1 group-hover:rotate-0" id="submitDossierBtn" type="submit">
+<div class="flex flex-col text-left">
+<span class="font-label-mono text-[9px] tracking-widest uppercase text-tertiary-container font-bold">COMMIT OFFICIAL DOSSIER</span>
+<span class="font-headline-md text-headline-md tracking-wider uppercase text-primary leading-none">CREATE SCOUTING DOSSIER</span>
+</div>
+<span class="material-symbols-outlined text-[28px] text-primary">post_add</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+<!-- Supplementary Analytical Context Strips below the folder -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-lg">
+<div class="bg-surface-container p-space-md flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">batch_prediction</span>
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical uppercase text-primary">RADAR SYNC ACTIVE</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Telemetry model matches match footage tagging automatically.</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-md flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">hub</span>
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical uppercase text-primary">TACTICAL BOARD EXPORT</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Opponent formation will deploy into drill simulations immediately.</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-md flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[24px]">cloud_sync</span>
+<div class="flex flex-col">
+<span class="font-label-tactical text-label-tactical uppercase text-primary">STAFF COLLABORATION</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Scout annotations shareable across assistant coaching pads.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Script for Formation Glyph Selection & Dossier Feedback -->
+<script>
+    (function initDossierPage() {
+      const formationButtons = document.querySelectorAll('.formation-btn');
+      const hiddenInput = document.getElementById('selectedFormation');
+      const submitBtn = document.getElementById('submitDossierBtn');
+
+      formationButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Reset all
+          formationButtons.forEach(b => {
+            b.classList.remove('bg-surface-container', 'shadow-md');
+            b.classList.add('bg-surface-container-low', 'opacity-80');
+            const radioInner = b.querySelector('.formation-radio span');
+            if (radioInner) {
+              radioInner.classList.remove('bg-secondary');
+              radioInner.classList.add('bg-transparent');
+            }
+            const radioBorder = b.querySelector('.formation-radio');
+            if (radioBorder) {
+              radioBorder.classList.remove('border-secondary');
+              radioBorder.classList.add('border-outline-variant');
+            }
+            const heading = b.querySelector('h3, span.font-headline-md');
+            if (heading) {
+              heading.classList.remove('text-primary');
+              heading.classList.add('text-on-surface');
+            }
+          });
+
+          // Activate clicked button
+          btn.classList.add('bg-surface-container', 'shadow-md');
+          btn.classList.remove('bg-surface-container-low', 'opacity-80');
+          const activeRadioInner = btn.querySelector('.formation-radio span');
+          if (activeRadioInner) {
+            activeRadioInner.classList.add('bg-secondary');
+            activeRadioInner.classList.remove('bg-transparent');
+          }
+          const activeRadioBorder = btn.querySelector('.formation-radio');
+          if (activeRadioBorder) {
+            activeRadioBorder.classList.add('border-secondary');
+            activeRadioBorder.classList.remove('border-outline-variant');
+          }
+          const activeHeading = btn.querySelector('span.font-headline-md');
+          if (activeHeading) {
+            activeHeading.classList.add('text-primary');
+            activeHeading.classList.remove('text-on-surface');
+          }
+
+          const formationVal = btn.getAttribute('data-formation');
+          if (hiddenInput) {
+            hiddenInput.value = formationVal;
+          }
+        });
+      });
+
+      // Submit feedback simulation
+      if (submitBtn) {
+        submitBtn.addEventListener('click', () => {
+          const teamInput = document.getElementById('teamName');
+          if (teamInput && !teamInput.value.trim()) {
+            teamInput.focus();
+            teamInput.classList.add('bg-error-container/20');
+            setTimeout(() => teamInput.classList.remove('bg-error-container/20'), 1200);
+            return;
+          }
+          submitBtn.innerHTML = `
+            <div class="flex flex-col text-left">
+              <span class="font-label-mono text-[9px] tracking-widest uppercase text-tertiary-container font-bold">STAMPED & FILED</span>
+              <span class="font-headline-md text-headline-md tracking-wider uppercase text-primary leading-none">DOSSIER COMMITTED</span>
+            </div>
+            <span class="material-symbols-outlined text-[28px] text-primary animate-bounce">check_circle</span>
+          `;
+          setTimeout(() => {
+            alert('Scouting Dossier Created for: ' + (teamInput ? teamInput.value : 'Target'));
+          }, 350);
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-background":"#d3e7dc","on-tertiary-container":"#c12714","primary-fixed":"#e4e2dd","on-secondary-fixed-variant":"#0c5135","surface":"#061610","on-primary":"#30312d","on-primary-container":"#656560","on-surface-variant":"#c7c7bf","tertiary-container":"#ffdad4","outline-variant":"#464741","tertiary-fixed":"#ffdad4","inverse-on-surface":"#23342c","surface-bright":"#2b3d35","secondary-fixed-dim":"#94d4b0","secondary-container":"#0c5135","primary":"#ffffff","on-error":"#690005","inverse-primary":"#5f5f5a","on-surface":"#d3e7dc","surface-tint":"#c8c6c1","secondary-fixed":"#b0f1cb","on-tertiary-fixed":"#400200","on-error-container":"#ffdad6","primary-container":"#e4e2dd","primary-fixed-dim":"#c8c6c1","on-primary-fixed-variant":"#474743","surface-container-low":"#0e1f18","on-primary-fixed":"#1b1c18","on-tertiary":"#670500","secondary":"#94d4b0","on-secondary-container":"#83c39f","error-container":"#93000a","background":"#061610","tertiary-fixed-dim":"#ffb4a7","surface-container-high":"#1c2d26","surface-container":"#12231c","surface-container-lowest":"#02110b","inverse-surface":"#d3e7dc","tertiary":"#ffffff","error":"#ffb4ab","outline":"#91918a","surface-variant":"#273831","on-secondary":"#003823","on-secondary-fixed":"#002112","on-tertiary-fixed-variant":"#910a00","surface-dim":"#061610","surface-container-highest":"#273831"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","space-sm":"0.5rem","gutter-desktop":"1.5rem","space-lg":"1.5rem","gutter":"1rem","margin-desktop":"2rem","space-xs":"0.25rem","margin-tablet":"1.5rem","space-xl":"2rem","space-md":"1rem"},"fontFamily":{"headline-lg":["Anton"],"headline-sm":["Anton"],"metric-huge":["Anton"],"body-sm":["IBM Plex Sans"],"display-lg":["Anton"],"headline-md":["Anton"],"label-tactical":["IBM Plex Sans"],"display-lg-mobile":["Anton"],"body-md":["IBM Plex Sans"],"metric-huge-mobile":["Anton"],"body-lg":["IBM Plex Sans"],"label-mono":["IBM Plex Sans"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"36px","letterSpacing":"0.03em","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"22px","letterSpacing":"0.04em","fontWeight":"400"}],"metric-huge":["64px",{"lineHeight":"64px","letterSpacing":"0.01em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"60px","letterSpacing":"0.02em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"28px","letterSpacing":"0.03em","fontWeight":"400"}],"label-tactical":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"600"}],"display-lg-mobile":["38px",{"lineHeight":"42px","letterSpacing":"0.02em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"metric-huge-mobile":["44px",{"lineHeight":"44px","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-mono":["10px",{"lineHeight":"12px","letterSpacing":"0.08em","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-3 h-3 bg-secondary rounded-none flex-shrink-0"></div><span class="font-headline-md text-headline-md tracking-wider uppercase text-primary">COACH<span class="text-secondary">AI</span></span></div><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant bg-surface-container-highest px-space-xs py-0.5">V3.8</span></div><div class="px-space-lg"><div class="bg-surface-container px-space-md py-space-sm flex items-center justify-between"><div class="flex flex-col"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">ACTIVE CAMPAIGN</span><span class="font-body-md text-body-md text-primary font-semibold truncate max-w-[140px]">PREMIER DIV 24/25</span></div><span class="material-symbols-outlined text-secondary text-[18px]">shield</span></div></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-secondary-container text-on-secondary-container font-semibold border-l-4 border-secondary"><div class="px-space-sm py-1"><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">TACTICAL ARENA</span></div><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tactical-board" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Tactical Board</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="live-matchday" href="#"><span class="material-symbols-outlined text-[20px]">timer</span><span class="font-body-md text-body-md">Live Matchday</span><span class="w-2 h-2 rounded-full bg-error ml-auto animate-pulse"></span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="matches" href="#"><span class="material-symbols-outlined text-[20px]">sports_soccer</span><span class="font-body-md text-body-md">Matches</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="squad-roster" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-md text-body-md">Squad &amp; Roster</span></a><div class="px-space-sm pt-space-md pb-1"><span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">INTELLIGENCE</span></div><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="opponents-list" href="#"><span class="material-symbols-outlined text-[20px]">travel_explore</span><span class="font-body-md text-body-md">Opponents &amp; Scouting</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-coach-assistant" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span class="font-body-md text-body-md">AI Assistant</span><span class="font-label-mono text-label-mono text-secondary bg-surface-container-highest px-1 py-0.5 ml-auto">SYNC</span></a></nav></div><div class="flex flex-col gap-space-sm px-space-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Settings</span></a><div class="bg-surface-container-lowest p-space-sm flex items-center justify-between mx-space-sm"><div class="flex flex-col"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">TELEMETRY FEED</span><span class="font-label-tactical text-label-tactical text-secondary uppercase">ONLINE // 60FPS</span></div><div class="w-2 h-2 bg-secondary rounded-none"></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">SESSION:</span><span class="font-headline-sm text-headline-sm uppercase text-primary">TACTICAL OPERATIONS</span></div><div class="h-4 w-px bg-surface-container-highest hidden md:block"></div><div class="hidden lg:flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">SYSTEM LOAD:</span><span class="font-label-tactical text-label-tactical text-secondary">OPTIMAL (23%)</span></div><div class="flex items-center gap-space-xs"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">PITCH RADAR:</span><span class="font-label-tactical text-label-tactical text-secondary">LINKED</span></div><div class="flex items-center gap-space-xs"><span class="font-label-mono text-label-mono uppercase text-on-surface-variant">MATCH PROJECTION:</span><span class="font-label-tactical text-label-tactical text-on-surface">W 68% / D 18% / L 14%</span></div></div></div><div class="flex items-center gap-space-md"><div class="bg-surface-container px-space-md py-1.5 flex items-center gap-space-sm"><span class="font-label-mono text-label-mono text-on-surface-variant uppercase">TOUCHLINE HUD</span><span class="w-2 h-2 rounded-full bg-secondary"></span></div><button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">notifications</span></button><button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">help</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-4xl mx-auto py-space-xl flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 bg-secondary"></span>
+<span class="font-label-mono text-label-mono uppercase text-secondary tracking-widest">SYSTEM SPEC // LEDGER NO. 884-TX</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg uppercase text-primary tracking-wide">OPERATIONAL LEDGER &amp; SETTINGS</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">Master equipment configuration, club lineage records, statistical engine telemetry thresholds, and technical staff credentials.</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="bg-surface-container px-space-md py-space-sm flex flex-col text-right">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">HARDWARE SYNC</span>
+<span class="font-label-tactical text-label-tactical text-secondary uppercase">TERMINAL ONLINE</span>
+</div>
+<div class="bg-surface-container-highest px-space-md py-space-sm flex flex-col text-right">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">AUTH STAMP</span>
+<span class="font-label-tactical text-label-tactical text-primary uppercase">GAFFER // LVL 4</span>
+</div>
+</div>
+</div>
+<!-- SECTION 1: CLUB IDENTITY & CREST -->
+<section class="bg-surface-container p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">01</span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-primary tracking-wide">CLUB IDENTITY &amp; CREST REGISTRATION</h2>
+</div>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">SERIAL: CLB-7092-LON</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg items-start">
+<div class="md:col-span-4 flex flex-col gap-space-sm">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">OFFICIAL CREST BADGE</span>
+<div class="relative group bg-surface-container-lowest p-space-md flex flex-col items-center justify-center gap-space-sm h-48">
+<div class="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-85" data-alt="Monochromatic athletic crest badge shield embossed with an eagle and geometric tactical pitch lines, subtle green-black slate textures, dramatic studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs-Qtuc5njxrZBgsaAlIhwPxCo7yFGXG3B9LfDQb_UBGfyabufnRDRt5VEYiOxiilurjdfTVSbPv251ZKsRxMs0MV5jRjDE0CVkhUq-Qx6kNkzleihcodiVtLLrwQ6Tp049d8FbM3AeKpPiqrflDza3LGkmxrb5gkIDH7WFNkGxhXiFm1iEeYlK3yDwNrmkrgXgTje1IcuyK_TRTbSx2imsnSKFX2H6k8PntkkZRsM"/>
+<div class="absolute inset-0 bg-secondary/10 mix-blend-overlay"></div>
+</div>
+<label class="cursor-pointer bg-surface-container-highest hover:bg-surface-bright text-primary px-space-md py-1.5 font-label-tactical text-label-tactical uppercase tracking-wider transition-colors flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+<span>STAMP NEW CREST</span>
+<input accept="image/*" class="hidden" type="file"/>
+</label>
+<span class="font-label-mono text-label-mono text-on-surface-variant">SVG, EPS OR 24-BIT PNG (MAX 8MB)</span>
+</div>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">OFFICIAL REGISTERED NAME</label>
+<input class="bg-surface-container-lowest text-primary font-body-md text-body-md px-space-md py-2.5 outline-none focus:bg-surface-container-high transition-colors" type="text" value="ASTRUM ATHLETIC CLUB"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">ABBREVIATION &amp; CODE</label>
+<input class="bg-surface-container-lowest text-primary font-body-md text-body-md px-space-md py-2.5 outline-none focus:bg-surface-container-high transition-colors uppercase font-headline-sm text-headline-sm tracking-wider" type="text" value="AST // AAC"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">LEAGUE DIVISION TIER</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest text-primary font-body-md text-body-md px-space-md py-2.5 outline-none appearance-none cursor-pointer">
+<option selected="">PREMIER CHAMPIONSHIP DIV 1</option>
+<option>CONTINENTAL SUPER CUP</option>
+<option>DOMESTIC LEAGUE FLIGHT A</option>
+<option>DEVELOPMENT U-23 CIRCUIT</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">GROUND &amp; PITCH DIMENSIONS</label>
+<input class="bg-surface-container-lowest text-primary font-body-md text-body-md px-space-md py-2.5 outline-none focus:bg-surface-container-high transition-colors" type="text" value="VALE STADIUM (105M X 68M - DRAINED TURF)"/>
+</div>
+<div class="sm:col-span-2 flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">OFFICIAL MATCHDAY SQUAD NUMBERING FORMULA</label>
+<div class="bg-surface-container-lowest p-space-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 bg-secondary"></span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface">TRADITIONAL 1-11 STARTING LOCK</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 bg-outline-variant"></span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">SQUAD SURNAMES PRINTED</span>
+</div>
+</div>
+<span class="font-label-tactical text-label-tactical text-secondary">ACTIVE PROTOCOL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: PHYSICAL LANGUAGE SHIRT TABS -->
+<section class="bg-surface-container p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">02</span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-primary tracking-wide">MATCH DIALECT &amp; SYSTEM LOCALIZATION</h2>
+</div>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">KIT NUMBER SPEC</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Telemetry vernacular, coach voice instructions, and matchday command cards format directly around the chosen team sheet tag.</p>
+<!-- Shirt Number Tabs Container -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-xs" id="language-tab-group">
+<!-- Active Tab (EN) -->
+<button class="lang-tab text-left relative bg-surface-container-lowest p-space-md transition-all group flex flex-col justify-between h-32 cursor-pointer bg-secondary-container text-on-secondary-container" data-lang="en" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest">TACTICAL KIT // TAG</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-primary tracking-tighter">09</span>
+<span class="font-headline-md text-headline-md uppercase text-secondary">EN</span>
+</div>
+<div class="flex items-center justify-between w-full">
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-on-surface">ENGLISH // UK BROADCAST</span>
+<span class="font-label-mono text-label-mono text-secondary">PRIMARY</span>
+</div>
+</button>
+<!-- Inactive Tab (FR) -->
+<button class="lang-tab text-left relative bg-surface-container-lowest p-space-md transition-all group flex flex-col justify-between h-32 cursor-pointer hover:bg-surface-container-high" data-lang="fr" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-on-surface-variant">TACTICAL KIT // TAG</span>
+<span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-primary transition-colors">fiber_manual_record</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-on-surface-variant group-hover:text-primary tracking-tighter transition-colors">07</span>
+<span class="font-headline-md text-headline-md uppercase text-on-surface-variant group-hover:text-secondary transition-colors">FR</span>
+</div>
+<div class="flex items-center justify-between w-full">
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-on-surface-variant">FRANÇAIS // ÉLITE</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">FONCTIONNEL</span>
+</div>
+</button>
+<!-- Inactive Tab (AR) -->
+<button class="lang-tab text-left relative bg-surface-container-lowest p-space-md transition-all group flex flex-col justify-between h-32 cursor-pointer hover:bg-surface-container-high" data-lang="ar" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-tactical text-label-tactical uppercase tracking-widest text-on-surface-variant">TACTICAL KIT // TAG</span>
+<span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-primary transition-colors">fiber_manual_record</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-on-surface-variant group-hover:text-primary tracking-tighter transition-colors">10</span>
+<span class="font-headline-md text-headline-md uppercase text-on-surface-variant group-hover:text-secondary transition-colors">AR</span>
+</div>
+<div class="flex items-center justify-between w-full">
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-on-surface-variant">العربية // تحليل تكتيكي</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant">جاهز</span>
+</div>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 3: TACTICAL ENGINE & PREFERENCES -->
+<section class="bg-surface-container p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">03</span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-primary tracking-wide">TACTICAL COMPUTATION &amp; TELEMETRY ENGINE</h2>
+</div>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">ALG: SPATIAL-PPDA-V5</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Default Formation Preset -->
+<div class="bg-surface-container-lowest p-space-md flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">BASE FORMATION BLUEPRINT</span>
+<span class="font-headline-md text-headline-md text-primary tracking-wide">4-3-3 DIRECT INVERSION</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Default deployment structure loaded on matchday whiteboard activation.</span>
+</div>
+<div class="grid grid-cols-4 gap-space-xs text-center">
+<div class="bg-surface-container-high py-2 px-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">DEF</span>
+<span class="font-headline-sm text-headline-sm text-primary">HIGH 62M</span>
+</div>
+<div class="bg-surface-container-high py-2 px-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">MID</span>
+<span class="font-headline-sm text-headline-sm text-primary">SINGLE 6</span>
+</div>
+<div class="bg-surface-container-high py-2 px-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">ATT</span>
+<span class="font-headline-sm text-headline-sm text-primary">WIDE OVERLAP</span>
+</div>
+<div class="bg-surface-container-high py-2 px-1">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase block">REST</span>
+<span class="font-headline-sm text-headline-sm text-secondary">3-2 BASE</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<button class="bg-surface-container-highest hover:bg-surface-bright text-primary px-space-md py-2 font-label-tactical text-label-tactical uppercase tracking-wider transition-colors">MODIFY SHAPE MATRIX</button>
+<span class="font-label-mono text-label-mono text-secondary">LOCK: CHALKBOARD #1</span>
+</div>
+</div>
+<!-- PPDA Threshold Slider -->
+<div class="bg-surface-container-lowest p-space-md flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">PRESSING INTENSITY THRESHOLD</span>
+<span class="font-label-mono text-label-mono text-on-tertiary-container bg-tertiary-container/20 px-1.5 py-0.5">HIGH ALERT TRIGGER</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-md text-headline-md text-primary tracking-wide">PPDA ALARM CEILING</span>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-huge text-headline-lg text-secondary" id="ppda-display">8.4</span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">PASSES / ACTION</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Flags a critical touchline alert when opponent build-up chain exceeds defensive engagement pace.</p>
+</div>
+<!-- Custom Segmented Gauge -->
+<div class="flex flex-col gap-space-xs">
+<input class="w-full accent-secondary bg-surface-container-highest cursor-pointer h-2 outline-none" id="ppda-slider" max="15.0" min="5.0" step="0.2" type="range" value="8.4"/>
+<div class="flex justify-between font-label-mono text-label-mono text-on-surface-variant pt-1">
+<span>5.0 (HYPER-PRESS)</span>
+<span>9.5 (MID-BLOCK)</span>
+<span>15.0 (LOW COMPACT)</span>
+</div>
+</div>
+<!-- Telemetry Spark-Bar representation -->
+<div class="flex items-center gap-1 h-3 w-full bg-surface-container-high p-0.5">
+<div class="h-full bg-secondary w-[20%]"></div>
+<div class="h-full bg-secondary w-[15%]"></div>
+<div class="h-full bg-secondary w-[25%]"></div>
+<div class="h-full bg-secondary w-[10%]"></div>
+<div class="h-full bg-on-tertiary-container w-[10%]"></div>
+<div class="h-full bg-surface-container w-[20%]"></div>
+</div>
+</div>
+</div>
+<!-- Feed Provider Toggles -->
+<div class="bg-surface-container-lowest p-space-md flex flex-col gap-space-md">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">LIVE FEED CONNECTIVITY &amp; SATELLITE TRACKING</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Opta / Statsbomb sync -->
+<div class="bg-surface-container p-space-md flex items-center justify-between">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[24px]">hub</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">OPTA / STATSBOMB FEED SYNC</span>
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Live coordinate ball-tracking &amp; event stamp ingestion</span>
+<span class="font-label-mono text-label-mono text-secondary mt-1">LATENCY: 420MS // 25 HZ OPTICAL MESH</span>
+</div>
+</div>
+<button class="sync-toggle w-12 h-6 bg-secondary-container p-0.5 transition-colors relative flex items-center cursor-pointer" data-state="on" type="button">
+<div class="w-5 h-5 bg-secondary ml-auto transition-all"></div>
+</button>
+</div>
+<!-- Secondary Optical Kinematics -->
+<div class="bg-surface-container p-space-md flex items-center justify-between">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">sensors</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">SECOND-SPECTRUM LIDAR</span>
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">High-frequency player limb skeletal vector telemetry</span>
+<span class="font-label-mono text-label-mono text-on-surface-variant mt-1">STANDBY // RESUMES MATCHDAY T-45</span>
+</div>
+</div>
+<button class="sync-toggle w-12 h-6 bg-surface-container-highest p-0.5 transition-colors relative flex items-center cursor-pointer" data-state="off" type="button">
+<div class="w-5 h-5 bg-outline-variant mr-auto transition-all"></div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: COACH ROSTER (STAFF LEDGER) -->
+<section class="bg-surface-container p-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">04</span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-primary tracking-wide">COACH ROSTER &amp; TECHNICAL STAFF LEDGER</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">ACTIVE ACCREDITATION:</span>
+<span class="font-label-tactical text-label-tactical text-primary bg-surface-container-highest px-space-sm py-0.5">4 OF 6 BENCH SEATS ALLOCATED</span>
+</div>
+</div>
+<div class="flex flex-col divide-y divide-outline-variant/20 bg-surface-container-lowest">
+<!-- Head Coach -->
+<div class="p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<!-- Badge Token -->
+<div class="w-12 h-12 bg-surface-container-highest flex-shrink-0 flex items-center justify-center relative">
+<span class="font-headline-sm text-headline-sm text-primary">01</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary"></span>
+</div>
+<!-- Photo Avatar -->
+<div class="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of an experienced European football manager wearing a dark tactical technical waterproof coat, serious expression, floodlit pitch background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiyBMXJ5WIys-ko0hg52kQONq2eMbHHLwHWQnP-94KgeND6z77o-Et0dig7gA1PO-fCjPaco80J5RnnDZTry9uxkjZCT2sdqxcDeFV2OpvSYW-4gdH61tBP_5kJtSWBr_0wchgJLQYGHmliaasa-bE3zdbqD4xPShsj1rm68yQNt76mPvCe47j0iaXI4oHrzzjk7V0ers_Q79DYAiFgoR9Frk_A_883YTiOgYn1NP-"/>
+</div>
+<!-- Info -->
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary uppercase truncate">MARCUS V. STEIN</span>
+<span class="font-label-mono text-label-mono uppercase text-secondary bg-secondary-container px-1 py-0.5">TACTICAL CMD</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">HEAD COACH // UEFA PRO LICENSE #99281</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">AUTH TIER</span>
+<span class="font-label-tactical text-label-tactical text-secondary">ROOT GAFFER (LVL 4)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">HUD SEAT</span>
+<span class="font-headline-sm text-headline-sm text-primary">TOUCHLINE 01</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Assistant Tactical Analyst -->
+<div class="p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 bg-surface-container-highest flex-shrink-0 flex items-center justify-center relative">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">02</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary"></span>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a young female data tactical analyst with headset and stadium lights reflected in glasses, looking analytical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASeSOeun9v_BDg_C58bbmDQHxQN5A6GtzHYajequXWGfWW8NeYBsWOk25EoQcmpvLXc8mq_l0UY1omBYvvSwBP_ZkaPSdmgJXiXRs2uXDdFWaMGJ4WZ_HQUzlcovixac7tp9mpKxDUK_XAG8v1p5CKyccSyOeYymdCAvAD8V_wOZ_ZDXOO1y2S9Q9pUzUWatWDdILr0oP1g1fv-XcZrcoju0eFRgp6_0VHwtOE5Wzo"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary uppercase truncate">ELENA ROSTOVA</span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface bg-surface-container-highest px-1 py-0.5">ANALYTICS</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">ASSISTANT TACTICAL ANALYST // LIVE TELEMETRY OP</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">AUTH TIER</span>
+<span class="font-label-tactical text-label-tactical text-primary">TACTICAL READ/WRITE (LVL 3)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">HUD SEAT</span>
+<span class="font-headline-sm text-headline-sm text-primary">GANTRY FEED A</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Set-Piece Specialist -->
+<div class="p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 bg-surface-container-highest flex-shrink-0 flex items-center justify-center relative">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">03</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary"></span>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of an athletic coach pointing at a whiteboard marker diagram with sports stopwatch around neck, athletic jacket." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZZYLqAq5HbDqCg4BWpcbjJFnBboI0VSLJQvk63UOuq_B9x2vXFPF4D2t0YmIPM9PxR49Kr0bWXlW3VtNr_zX8BeO3Hqrsi7J0sDjeIJnX8n7ADZfuaa7UDPbs0_Vq6mAH8J3-AHrpkBBYJENAWNSz3Su1qBda000wKAF5ZWJrfoBzofBloSHcl8ZaMJIUSAEz3ZS0AujKo-95aWPUxFvJOfNkZ7RFXrlFYc1uG7IX"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary uppercase truncate">KHALIL BEN-ALI</span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface bg-surface-container-highest px-1 py-0.5">SET-PIECE</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">SET-PIECE &amp; DEAD-BALL ARCHITECT // CORNER XG LEAD</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">AUTH TIER</span>
+<span class="font-label-tactical text-label-tactical text-primary">TACTICAL READ/WRITE (LVL 3)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">HUD SEAT</span>
+<span class="font-headline-sm text-headline-sm text-primary">BENCH 03</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Fitness & High Performance Lead -->
+<div class="p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 bg-surface-container-highest flex-shrink-0 flex items-center justify-center relative">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">04</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-outline-variant"></span>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Headshot of a physical performance trainer in athletic training gear holding a tablet computer inside gym training center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUqavz5DbhJhIzpPd_AcvWGJzp4KFJ-nliBOW5qReBn6QmbFztXfVZA-j4lo_uO5m8gane7O8fmNuF5ZhrWa0YbPTRqrvIgFMSkGYQ4ngCJ1-yxmjgdwhMkpF6au3ALyiAcVc0JltmRU26Lci0mWILY9ZY8gsER11x3j1pNesmK1hec3UFCWYOCFtNy2IhAJRtzIVwiS8OB6tXrZupwUqeQiKk2GHwtQT30zr8FVYz"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary uppercase truncate">DR. LIAM O'CONNOR</span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface bg-surface-container-highest px-1 py-0.5">PHYSIO / BIOM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">HIGH PERFORMANCE &amp; LOAD CONDITIONING LEAD</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">AUTH TIER</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant">BIOMETRIC ONLY (LVL 2)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">HUD SEAT</span>
+<span class="font-headline-sm text-headline-sm text-primary">BENCH 04</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: INVITE A COACH (BLANK JERSEY TAG STYLE) -->
+<section class="bg-surface-container p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-secondary">05</span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-primary tracking-wide">ISSUE TECHNICAL PASSPORT // INVITE COACH</h2>
+</div>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">KIT TAG STAMP FORM</span>
+</div>
+<!-- Blank Jersey Tag styled container -->
+<div class="relative bg-surface-container-lowest p-space-xl flex flex-col gap-space-lg">
+<!-- Tag Header Bar mimicking stitched jersey tab -->
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">KIT NO. --</span>
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface tracking-widest">[BLANK ROSTER SLOT]</span>
+</div>
+<span class="font-label-mono text-label-mono uppercase text-secondary">AWAITING TECHNICAL STAMP</span>
+</div>
+<!-- Input Ledger Fields -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">STAFF FULL NAME</label>
+<input class="bg-surface-container text-primary font-body-md text-body-md px-space-md py-2.5 outline-none placeholder:text-outline-variant focus:bg-surface-container-high transition-colors" placeholder="E.G. JULIAN NAGELS" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">OFFICIAL CLUB EMAIL ADDRESS</label>
+<input class="bg-surface-container text-primary font-body-md text-body-md px-space-md py-2.5 outline-none placeholder:text-outline-variant focus:bg-surface-container-high transition-colors" placeholder="STAFF@ASTRUM-FC.COM" type="email"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tactical text-label-tactical uppercase text-on-surface-variant">ASSIGNED SPECIALIST ROLE</label>
+<div class="relative">
+<select class="w-full bg-surface-container text-primary font-body-md text-body-md px-space-md py-2.5 outline-none appearance-none cursor-pointer">
+<option>FIRST TEAM OPPONENT SCOUT</option>
+<option>SET-PIECE COACH (DEFENSIVE)</option>
+<option>DEVELOPMENT SQUAD HEAD</option>
+<option>DATA &amp; VIDEO COORDINATOR</option>
+<option>GOALKEEPING TACTICAL LEAD</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md items-center pt-space-xs">
+<!-- Permission Level Selector -->
+<div class="flex items-center gap-space-md">
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant flex-shrink-0">SECURITY ACCESS:</span>
+<div class="flex items-center gap-space-xs">
+<button class="bg-surface-container-high text-primary px-space-sm py-1 font-label-tactical text-label-tactical uppercase" type="button">READ TELEMETRY</button>
+<button class="bg-secondary-container text-on-secondary-container px-space-sm py-1 font-label-tactical text-label-tactical uppercase font-semibold" type="button">TACTICAL BOARD WRITE</button>
+<button class="bg-surface-container-high text-on-surface-variant px-space-sm py-1 font-label-tactical text-label-tactical uppercase" type="button">FULL ADMIN</button>
+</div>
+</div>
+<!-- Touchline Red Action Trigger -->
+<div class="flex justify-end">
+<button class="bg-error-container text-on-error hover:bg-error transition-colors px-space-xl py-3 flex items-center gap-space-sm font-headline-sm text-headline-sm uppercase tracking-wider cursor-pointer" id="stamp-invite-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span>STAMP INVITATION &amp; ISSUE PASS</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER TELEMETRY STATUS BAR -->
+<div class="bg-surface-container-lowest p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">LEDGER ENCRYPTION: SHA-256</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span class="font-label-mono text-label-mono uppercase text-on-surface-variant">CHALK ENGINE SYNC: ACTIVE</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="bg-surface-container-highest hover:bg-surface-bright text-primary px-space-md py-1.5 font-label-tactical text-label-tactical uppercase tracking-wider transition-colors">EXPORT AUDIT LEDGER (.CSV)</button>
+<button class="bg-primary text-surface hover:bg-primary-container font-headline-sm text-headline-sm px-space-lg py-1.5 uppercase tracking-wide transition-colors">SAVE CONFIGURATION</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple client-side micro-interactions for settings behavior
+  document.addEventListener('DOMContentLoaded', () => {
+    // Language Tab switcher
+    const langTabs = document.querySelectorAll('.lang-tab');
+    langTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        langTabs.forEach(t => {
+          t.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+          t.classList.add('bg-surface-container-lowest');
+          const checkIcon = t.querySelector('.material-symbols-outlined');
+          if (checkIcon) {
+            checkIcon.textContent = 'fiber_manual_record';
+            checkIcon.classList.remove('text-secondary');
+            checkIcon.classList.add('text-outline-variant');
+          }
+          const num = t.querySelector('.font-display-lg');
+          if (num) {
+            num.classList.remove('text-primary');
+            num.classList.add('text-on-surface-variant');
+          }
+        });
+        
+        tab.classList.remove('bg-surface-container-lowest');
+        tab.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        const icon = tab.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.textContent = 'check_circle';
+          icon.classList.remove('text-outline-variant');
+          icon.classList.add('text-secondary');
+        }
+        const num = tab.querySelector('.font-display-lg');
+        if (num) {
+          num.classList.add('text-primary');
+          num.classList.remove('text-on-surface-variant');
+        }
+      });
+    });
+
+    // PPDA slider live display
+    const slider = document.getElementById('ppda-slider');
+    const display = document.getElementById('ppda-display');
+    if (slider && display) {
+      slider.addEventListener('input', (e) => {
+        display.textContent = parseFloat(e.target.value).toFixed(1);
+      });
+    }
+
+    // Telemetry Sync Toggle buttons
+    const toggles = document.querySelectorAll('.sync-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const isCurrentlyOn = toggle.getAttribute('data-state') === 'on';
+        const indicator = toggle.querySelector('div');
+        if (isCurrentlyOn) {
+          toggle.setAttribute('data-state', 'off');
+          toggle.classList.remove('bg-secondary-container');
+          toggle.classList.add('bg-surface-container-highest');
+          indicator.classList.remove('ml-auto', 'bg-secondary');
+          indicator.classList.add('mr-auto', 'bg-outline-variant');
+        } else {
+          toggle.setAttribute('data-state', 'on');
+          toggle.classList.remove('bg-surface-container-highest');
+          toggle.classList.add('bg-secondary-container');
+          indicator.classList.remove('mr-auto', 'bg-outline-variant');
+          indicator.classList.add('ml-auto', 'bg-secondary');
+        }
+      });
+    });
+
+    // Invitation stamp click effect
+    const stampBtn = document.getElementById('stamp-invite-btn');
+    if (stampBtn) {
+      stampBtn.addEventListener('click', () => {
+        const originalHtml = stampBtn.innerHTML;
+        stampBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>PASSPORT ISSUED // STAMPED</span>';
+        stampBtn.classList.remove('bg-error-container', 'text-on-error');
+        stampBtn.classList.add('bg-secondary', 'text-surface');
+        setTimeout(() => {
+          stampBtn.innerHTML = originalHtml;
+          stampBtn.classList.remove('bg-secondary', 'text-surface');
+          stampBtn.classList.add('bg-error-container', 'text-on-error');
+        }, 2200);
+      });
+    }
+  });
+</script></main></div></body></html>

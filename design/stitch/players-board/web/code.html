@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error":"#690005","tertiary-container":"#ffdad4","surface-tint":"#c8c6c1","surface-container-low":"#0e1f18","primary-fixed-dim":"#c8c6c1","surface":"#061610","on-primary-container":"#656560","surface-bright":"#2b3d35","on-tertiary-fixed-variant":"#910a00","on-secondary-fixed":"#002112","on-error-container":"#ffdad6","on-secondary-container":"#83c39f","on-tertiary":"#670500","on-primary-fixed-variant":"#474743","on-secondary":"#003823","primary-fixed":"#e4e2dd","primary-container":"#e4e2dd","on-tertiary-container":"#c12714","surface-container-high":"#1c2d26","outline":"#91918a","secondary-container":"#0c5135","secondary-fixed-dim":"#94d4b0","surface-variant":"#273831","surface-container-lowest":"#02110b","tertiary-fixed":"#ffdad4","on-surface-variant":"#c7c7bf","outline-variant":"#464741","inverse-surface":"#d3e7dc","error":"#ffb4ab","error-container":"#93000a","secondary-fixed":"#b0f1cb","surface-container-highest":"#273831","background":"#061610","on-secondary-fixed-variant":"#0c5135","on-tertiary-fixed":"#400200","on-primary-fixed":"#1b1c18","surface-dim":"#061610","inverse-primary":"#5f5f5a","inverse-on-surface":"#23342c","primary":"#ffffff","on-background":"#d3e7dc","tertiary-fixed-dim":"#ffb4a7","on-primary":"#30312d","on-surface":"#d3e7dc","secondary":"#94d4b0","tertiary":"#ffffff","surface-container":"#12231c"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-desktop":"1.5rem","space-sm":"0.5rem",margin:"1rem","space-lg":"1.5rem","space-xs":"0.25rem","margin-tablet":"1.5rem","margin-desktop":"2rem","space-md":"1rem",gutter:"1rem","space-xl":"2rem"},fontFamily:{"body-md":["IBM Plex Sans"],"display-lg":["Anton"],"metric-huge":["Anton"],"headline-sm":["Anton"],"label-tactical":["IBM Plex Sans"],"headline-lg":["Anton"],"headline-md":["Anton"],"body-sm":["IBM Plex Sans"],"label-mono":["IBM Plex Sans"],"display-lg-mobile":["Anton"],"metric-huge-mobile":["Anton"],"body-lg":["IBM Plex Sans"]},fontSize:{"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"display-lg":["56px",{lineHeight:"60px",letterSpacing:"0.02em",fontWeight:"400"}],"metric-huge":["64px",{lineHeight:"64px",letterSpacing:"0.01em",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"22px",letterSpacing:"0.04em",fontWeight:"400"}],"label-tactical":["11px",{lineHeight:"14px",letterSpacing:"0.12em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"36px",letterSpacing:"0.03em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"28px",letterSpacing:"0.03em",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"label-mono":["10px",{lineHeight:"12px",letterSpacing:"0.08em",fontWeight:"500"}],"display-lg-mobile":["38px",{lineHeight:"42px",letterSpacing:"0.02em",fontWeight:"400"}],"metric-huge-mobile":["44px",{lineHeight:"44px",letterSpacing:"0.01em",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary selection:text-on-secondary"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-lg"><div class="h-16 flex items-center px-space-md"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-surface text-[18px]">sports_soccer</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-wider uppercase leading-none">COACHAI</span><span class="font-label-mono text-label-mono text-secondary tracking-widest uppercase">TACTICAL HUB</span></div></div></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tactical-board" href="#"><span class="material-symbols-outlined text-[18px]">developer_board</span><span class="font-body-md text-body-md tracking-wide uppercase">Tactical Board</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="live-matchday" href="#"><span class="material-symbols-outlined text-[18px]">stadium</span><span class="font-body-md text-body-md tracking-wide uppercase">Live Matchday</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="squad-roster" href="#"><span class="material-symbols-outlined text-[18px]">groups</span><span class="font-body-md text-body-md tracking-wide uppercase">Squad &amp; Roster</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="players-ledger" href="#"><span class="material-symbols-outlined text-[18px]">badge</span><span class="font-body-md text-body-md tracking-wide uppercase">Players Ledger</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="teams-directory" href="#"><span class="material-symbols-outlined text-[18px]">shield</span><span class="font-body-md text-body-md tracking-wide uppercase">Teams Directory</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="analytics-heatmaps" href="#"><span class="material-symbols-outlined text-[18px]">query_stats</span><span class="font-body-md text-body-md tracking-wide uppercase">Analytics &amp; Heatmaps</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-none text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-md text-body-md tracking-wide uppercase">Settings</span></a></nav></div><div class="px-space-md flex flex-col gap-space-xs"><div class="bg-surface-container-low p-space-sm flex items-center justify-between"><span class="font-label-mono text-label-mono text-outline uppercase">PITCH LINK</span><span class="font-label-tactical text-label-tactical text-secondary tracking-widest uppercase">ENCRYPTED</span></div><div class="font-label-mono text-label-mono text-outline px-space-xs uppercase">SYSTEM V4.2 TACTICAL</div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 z-40 bg-surface-container/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-secondary-container px-space-sm py-space-xs"><div class="w-1.5 h-1.5 bg-secondary"></div><span class="font-label-tactical text-label-tactical text-secondary-fixed uppercase tracking-wider">MATCHDAY LIVE • 68'</span></div><div class="hidden md:flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-outline">sync</span><span class="font-label-mono text-label-mono text-outline uppercase">TELEMETRY SYNC: 14:02:18 UTC</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-xs"><span class="font-label-mono text-label-mono text-outline uppercase">DELTA LATENCY:</span><span class="font-label-mono text-label-mono text-secondary">12MS</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- Pitch Texture & Tactical Backdrop Layer -->
+<div class="p-margin-desktop flex flex-col gap-space-lg relative overflow-hidden">
+<!-- Ambient Pitch Chalk Line Visual Element (Absolute Decorative Lines) -->
+<div class="absolute inset-0 pointer-events-none opacity-10 flex items-center justify-center">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50%" cy="50%" fill="none" r="180" stroke="#F7F5EF" stroke-dasharray="8 6" stroke-width="2"></circle>
+<line stroke="#F7F5EF" stroke-dasharray="12 8" stroke-width="2" x1="50%" x2="50%" y1="0" y2="100%"></line>
+<rect fill="none" height="70%" stroke="#F7F5EF" stroke-width="2" width="90%" x="5%" y="15%"></rect>
+<circle cx="50%" cy="50%" fill="#F7F5EF" r="6"></circle>
+</svg>
+</div>
+<!-- Top Broadcast Command Bar -->
+<header class="relative z-10 flex flex-col gap-space-md">
+<!-- Upper Tactical Metadata Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-low px-space-md py-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-2.5 h-2.5 bg-secondary"></div>
+<span class="font-label-tactical text-label-tactical text-primary uppercase tracking-widest">
+            MAGNETIC TACTICS WHITEBOARD // SQUAD DEPTH CHART • V2.4
+          </span>
+<span class="text-on-surface-variant font-label-mono text-label-mono px-space-xs bg-surface-container-highest">
+            SLATE-SURFACE LIVE
+          </span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-outline uppercase">MAGNETIC LOCKS:</span>
+<span class="font-label-tactical text-label-tactical text-secondary">ENGAGED (26 TOKENS)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-outline uppercase">DRIFT RESISTANCE:</span>
+<span class="font-label-tactical text-label-tactical text-primary">0.00 GAUSS</span>
+</div>
+</div>
+</div>
+<!-- Main Action & Search Hub: Clipboard Clip Motif -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-center bg-surface-container p-space-md shadow-md relative">
+<!-- Mechanical Board Clip Aesthetic Element -->
+<div class="hidden xl:flex absolute -top-3 left-1/2 -translate-x-1/2 w-48 h-6 bg-surface-variant items-center justify-center shadow-lg">
+<div class="w-36 h-2 bg-outline-variant"></div>
+<div class="w-2 h-2 rounded-full bg-primary mx-2"></div>
+</div>
+<!-- Search Bar with Clipboard Chalk Styling -->
+<div class="xl:col-span-5 flex items-center bg-surface-container-lowest px-space-sm py-space-xs shadow-inner">
+<span class="material-symbols-outlined text-outline text-[20px] mr-2">search</span>
+<input class="w-full bg-transparent text-primary placeholder-on-surface-variant text-body-md font-body-md focus:outline-none" id="tokenSearchInput" placeholder="Search token by name, position or kit number..." type="text"/>
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-wider px-space-xs bg-surface-container">⌘K</span>
+</div>
+<!-- Tactical Formation Pills -->
+<div class="xl:col-span-4 flex items-center gap-space-xs flex-wrap">
+<button class="bg-secondary-container text-secondary-fixed font-label-tactical text-label-tactical px-space-sm py-space-xs uppercase tracking-wider flex items-center gap-1 hover:brightness-110 transition-all">
+<span class="w-1.5 h-1.5 bg-secondary"></span>
+            4-3-3 ATTACKING SHAPE
+          </button>
+<button class="bg-surface-container-highest text-on-surface font-label-tactical text-label-tactical px-space-sm py-space-xs uppercase tracking-wider hover:bg-surface-bright transition-all">
+            FORMATION LOCK
+          </button>
+<button class="bg-surface-container-highest text-on-surface-variant font-label-tactical text-label-tactical px-space-sm py-space-xs uppercase tracking-wider hover:text-primary transition-all">
+            AUTO-BALANCE
+          </button>
+</div>
+<!-- Global Action Triggers -->
+<div class="xl:col-span-3 flex items-center justify-end gap-space-xs">
+<button class="bg-error text-on-error font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-1 hover:bg-error-container hover:text-on-error-container transition-all">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+            + ADD LANE
+          </button>
+<button class="bg-primary text-surface font-headline-sm text-headline-sm uppercase px-space-md py-space-xs flex items-center gap-1 hover:bg-surface-variant hover:text-primary transition-all" id="lockBoardBtn">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+            LOCK CHART
+          </button>
+</div>
+</div>
+</header>
+<!-- Side-by-Side Depth Chart Canvas (3 Tactical Lanes) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop relative z-10 items-start">
+<!-- ============================================== -->
+<!-- LANE 1: STARTING XI (Col Span 5)               -->
+<!-- ============================================== -->
+<section class="lg:col-span-5 bg-surface-container p-space-md shadow-lg flex flex-col gap-space-md min-h-[820px]" data-lane="starting-xi">
+<!-- Lane Tactical Header -->
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-high px-space-sm py-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 bg-secondary"></span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-wider uppercase leading-none">
+              STARTING XI
+            </h2>
+<span class="font-label-mono text-label-mono text-secondary px-space-xs bg-secondary-container">11 / 11 FIELDER CAPACITY</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">TACTIC:</span>
+<span class="font-label-tactical text-label-tactical text-primary">HIGH PRESS</span>
+</div>
+</div>
+<!-- Starting XI Positional Sectors -->
+<div class="flex flex-col gap-space-md">
+<!-- SECTOR: FORWARDS (3) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-tactical text-label-tactical text-outline uppercase tracking-widest">FORWARD ATTACK LINE // FWD (3)</span>
+<span class="font-label-mono text-label-mono text-secondary">xG THREAT: 2.48</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-xs drop-zone" data-sector="fwd">
+<!-- TOKEN: #11 G. Martinelli (LW) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="11" data-player="Martinelli" data-pos="LW" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">11</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">LW</span>
+</div>
+<!-- Rating Dial -->
+<div class="flex items-center gap-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.5</span>
+<span class="material-symbols-outlined text-[12px] text-secondary">speed</span>
+</div>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">G. Martinelli</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-lowest px-1">
+<span class="font-label-mono text-label-mono text-outline">SPRINT: 34.8 KM/H</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger" title="Flip card details">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #29 K. Havertz (ST) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="29" data-player="Havertz" data-pos="ST" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">29</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">ST</span>
+</div>
+<div class="flex items-center gap-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.7</span>
+<span class="material-symbols-outlined text-[12px] text-secondary">speed</span>
+</div>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">K. Havertz</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-lowest px-1">
+<span class="font-label-mono text-label-mono text-outline">AERIAL W%: 68%</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger" title="Flip card details">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #07 B. Saka (RW) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="07" data-player="Saka" data-pos="RW" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">07</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">RW</span>
+</div>
+<div class="flex items-center gap-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">9.6</span>
+<span class="material-symbols-outlined text-[12px] text-secondary">speed</span>
+</div>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">B. Saka</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-lowest px-1">
+<span class="font-label-mono text-label-mono text-secondary font-bold">KEY CHANCE: 3.4</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger" title="Flip card details">flip_camera_android</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTOR: MIDFIELD ENGINE (3) - Contains the Flipped 3D Profile Card -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-tactical text-label-tactical text-outline uppercase tracking-widest">CENTRAL MIDFIELD CORE // MID (3)</span>
+<span class="font-label-mono text-label-mono text-secondary">CTRL: 62.4%</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-xs drop-zone" data-sector="mid">
+<!-- TOKEN: #23 E. Nwaneri (CAM) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="23" data-player="Nwaneri" data-pos="CAM" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">23</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">CAM</span>
+</div>
+<div class="flex items-center gap-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.3</span>
+<span class="material-symbols-outlined text-[12px] text-secondary">speed</span>
+</div>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">E. Nwaneri</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-lowest px-1">
+<span class="font-label-mono text-label-mono text-outline">PROGRESSION +9</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger" title="Flip card details">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #41 D. Rice (CDM) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="41" data-player="Rice" data-pos="CDM" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">41</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">CDM</span>
+</div>
+<div class="flex items-center gap-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">9.0</span>
+<span class="material-symbols-outlined text-[12px] text-secondary">speed</span>
+</div>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">D. Rice</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-lowest px-1">
+<span class="font-label-mono text-label-mono text-secondary">INTERCEPT: 4.2</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger" title="Flip card details">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #08 M. ØDEGAARD (ACTIVELY FLIPPED CARD DEMO BACK VIEW) -->
+<div class="player-token flipped-card-active relative bg-surface-container-lowest p-space-xs shadow-xl col-span-1 border border-secondary" data-kit="08" data-player="Odegaard" data-pos="CAM">
+<!-- Chalk Accent Banner -->
+<div class="flex items-center justify-between pb-1 border-b border-surface-variant">
+<div class="flex items-center gap-1">
+<!-- Green jersey-pin icon for 100% Match Fitness -->
+<span class="material-symbols-outlined text-secondary text-[16px]" title="Fully Available / Match Ready">sports_and_outdoors</span>
+<span class="font-headline-sm text-headline-sm text-primary leading-none">#08 ØDEGAARD</span>
+</div>
+<span class="font-label-mono text-label-mono text-secondary bg-secondary-container px-1">25 YRS</span>
+</div>
+<!-- Radar Attribute SVG Visualization (Tactical Pentagram) -->
+<div class="py-2 flex items-center justify-between">
+<div class="w-20 h-20 flex-shrink-0 relative">
+<svg class="w-full h-full text-secondary" viewbox="0 0 100 100">
+<!-- Grid Outer Polygon -->
+<polygon fill="none" points="50,5 95,38 78,92 22,92 5,38" stroke="#464741" stroke-dasharray="2 2" stroke-width="1"></polygon>
+<!-- Grid Middle Polygon -->
+<polygon fill="none" points="50,25 73,42 64,69 36,69 27,42" stroke="#464741" stroke-width="0.8"></polygon>
+<!-- Player Attribute Web Shape (Pace 82, Pass 96, Dribble 92, Def 68, Phys 74) -->
+<polygon fill="currentColor" fill-opacity="0.25" points="50,14 91,40 76,82 29,80 18,44" stroke="currentColor" stroke-width="1.8"></polygon>
+<circle cx="50" cy="14" fill="#ffffff" r="2.5"></circle>
+<circle cx="91" cy="40" fill="#ffffff" r="2.5"></circle>
+<circle cx="76" cy="82" fill="#ffffff" r="2.5"></circle>
+<circle cx="29" cy="80" fill="#ffffff" r="2.5"></circle>
+<circle cx="18" cy="44" fill="#ffffff" r="2.5"></circle>
+</svg>
+</div>
+<!-- Attribute Numeric Metric Stack -->
+<div class="flex flex-col gap-0.5 text-right font-label-mono text-label-mono">
+<div class="flex items-center justify-end gap-1"><span class="text-outline">PAC</span><span class="text-primary font-bold">82</span></div>
+<div class="flex items-center justify-end gap-1"><span class="text-outline">PAS</span><span class="text-secondary font-bold">96</span></div>
+<div class="flex items-center justify-end gap-1"><span class="text-outline">DRI</span><span class="text-secondary font-bold">92</span></div>
+<div class="flex items-center justify-end gap-1"><span class="text-outline">DEF</span><span class="text-primary font-bold">68</span></div>
+<div class="flex items-center justify-end gap-1"><span class="text-outline">PHY</span><span class="text-primary font-bold">74</span></div>
+</div>
+</div>
+<!-- Handwritten Style Chalk Coach Notes -->
+<div class="bg-surface-container p-1.5 mt-1 border-l-2 border-secondary">
+<div class="font-label-mono text-label-mono text-outline uppercase tracking-wider">TACTICAL DOSSIER // NOTES</div>
+<p class="font-body-sm text-body-sm text-on-surface italic leading-tight mt-0.5">
+                    "Key creator in half-space, presses opposition #6 on trigger. Releases B. Saka on blindside overlap."
+                  </p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-1 border-t border-surface-variant">
+<span class="font-label-mono text-label-mono text-secondary">ACTIVE PRO-CARD [BACK]</span>
+<button class="font-label-mono text-label-mono text-primary bg-surface-container-high px-1.5 py-0.5 hover:bg-surface-variant transition-colors flip-trigger">
+                    FLIP FRONT
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTOR: DEFENSIVE BACKLINE (4) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-tactical text-label-tactical text-outline uppercase tracking-widest">DEFENSIVE LINE // DEF (4)</span>
+<span class="font-label-mono text-label-mono text-secondary">SHAPE COMPACTNESS: 88%</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-xs drop-zone" data-sector="def">
+<!-- TOKEN: #12 J. Timber (LB) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="12" data-player="Timber" data-pos="LB" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">12</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.2</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">J. Timber</div>
+<div class="font-label-tactical text-label-tactical text-outline uppercase">LB • INVERTED</div>
+<div class="mt-1 pt-1 bg-surface-container-lowest flex justify-between px-1">
+<span class="font-label-mono text-label-mono text-outline">DUELS: 74%</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #06 Gabriel M. (CB) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="06" data-player="Gabriel" data-pos="CB" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">06</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.9</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">Gabriel M.</div>
+<div class="font-label-tactical text-label-tactical text-outline uppercase">LCB • STOPPER</div>
+<div class="mt-1 pt-1 bg-surface-container-lowest flex justify-between px-1">
+<span class="font-label-mono text-label-mono text-secondary">AERIAL: 82%</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #02 W. Saliba (CB) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="02" data-player="Saliba" data-pos="CB" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">02</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">9.1</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">W. Saliba</div>
+<div class="font-label-tactical text-label-tactical text-outline uppercase">RCB • COVER</div>
+<div class="mt-1 pt-1 bg-surface-container-lowest flex justify-between px-1">
+<span class="font-label-mono text-label-mono text-secondary">RECOVERY: 8.9</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #04 B. White (RB) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="04" data-player="White" data-pos="RB" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">04</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.4</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">B. White</div>
+<div class="font-label-tactical text-label-tactical text-outline uppercase">RB • HYBRID</div>
+<div class="mt-1 pt-1 bg-surface-container-lowest flex justify-between px-1">
+<span class="font-label-mono text-label-mono text-outline">CROSS ACC: 78%</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTOR: GOALKEEPER (1) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-tactical text-label-tactical text-outline uppercase tracking-widest">LAST LINE DEFENSE // GK (1)</span>
+<span class="font-label-mono text-label-mono text-secondary">CLEAN SHEET PROB: 64%</span>
+</div>
+<div class="drop-zone" data-sector="gk">
+<!-- TOKEN: #01 D. Raya (GK) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm max-w-xs" data-kit="01" data-player="Raya" data-pos="GK" draggable="true">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">01</span>
+<span class="font-label-tactical text-label-tactical px-1.5 py-0.5 bg-surface-container-lowest text-secondary">GK</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.8</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">shield</span>
+</div>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary">D. Raya</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-lowest px-1">
+<span class="font-label-mono text-label-mono text-outline">PSxG-GA: +3.21</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- LANE 2: BENCH // MATCHDAY ROTATION (Col Span 4) -->
+<!-- ============================================== -->
+<section class="lg:col-span-4 bg-surface-container p-space-md shadow-lg flex flex-col gap-space-md min-h-[820px]" data-lane="bench">
+<!-- Lane Header -->
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-high px-space-sm py-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 bg-outline"></span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-wider uppercase leading-none">
+              BENCH // ROTATION
+            </h2>
+<span class="font-label-mono text-label-mono text-on-surface-variant px-space-xs bg-surface-container-highest">9 / 9 TOKENS</span>
+</div>
+<span class="font-label-mono text-label-mono text-secondary uppercase">READY ON CALL</span>
+</div>
+<!-- Bench Magnetic Tokens Stack -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-xs drop-zone" data-sector="bench-all">
+<!-- TOKEN: #32 N. Neto (GK) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="32" data-player="Neto" data-pos="GK" draggable="true">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">32</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-outline">GK</span>
+<span class="font-headline-sm text-headline-sm text-outline leading-none">7.6</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">N. Neto</div>
+<div class="flex items-center justify-between mt-1 text-label-mono text-outline">
+<span>BACKUP GOALKEEPER</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #18 T. Tomiyasu (RB/CB) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="18" data-player="Tomiyasu" data-pos="DEF" draggable="true">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">18</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">RB/CB</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.0</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">T. Tomiyasu</div>
+<div class="flex items-center justify-between mt-1 text-label-mono text-outline">
+<span>FLEX DEFENDER</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #15 J. Kiwior (LB) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="15" data-player="Kiwior" data-pos="DEF" draggable="true">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">15</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-outline">LB/CB</span>
+<span class="font-headline-sm text-headline-sm text-outline leading-none">7.8</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">J. Kiwior</div>
+<div class="flex items-center justify-between mt-1 text-label-mono text-outline">
+<span>LEFT-FOOT DEF</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #05 T. Partey (CDM) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="05" data-player="Partey" data-pos="MID" draggable="true">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">05</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">CDM</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.7</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">T. Partey</div>
+<div class="flex items-center justify-between mt-1 text-label-mono text-secondary">
+<span>ANCHOR SUB</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #20 Jorginho (CM) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="20" data-player="Jorginho" data-pos="MID" draggable="true">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">20</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">CM</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.1</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">Jorginho</div>
+<div class="flex items-center justify-between mt-1 text-label-mono text-outline">
+<span>TEMPO CONTROLLER</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #49 M. Lewis-Skelly (LB/CM) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="49" data-player="Lewis-Skelly" data-pos="MID" draggable="true">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">49</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">LB/CM</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.1</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">M. Lewis-Skelly</div>
+<div class="flex items-center justify-between mt-1 text-label-mono text-outline">
+<span>INVERTED PROGRESSOR</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #19 L. Trossard (LW/ST) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="19" data-player="Trossard" data-pos="FWD" draggable="true">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">19</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">LW/ST</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.6</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">L. Trossard</div>
+<div class="flex items-center justify-between mt-1 text-label-mono text-secondary">
+<span>IMPACT FINISHER</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #09 Gabriel Jesus (ST) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="09" data-player="Jesus" data-pos="FWD" draggable="true">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">09</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">ST</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.4</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">Gabriel Jesus</div>
+<div class="flex items-center justify-between mt-1 text-label-mono text-outline">
+<span>PRESS FORWARD</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<!-- TOKEN: #30 R. Sterling (RW/LW) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="30" data-player="Sterling" data-pos="FWD" draggable="true">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">30</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">RW/LW</span>
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">8.2</span>
+</div>
+<div class="font-body-md text-body-md font-semibold text-primary truncate">R. Sterling</div>
+<div class="flex items-center justify-between mt-1 text-label-mono text-outline">
+<span>ISOLATION DRIBBLE</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- LANE 3: RESERVES & U-21 POOL (Col Span 3)     -->
+<!-- ============================================== -->
+<section class="lg:col-span-3 bg-surface-container p-space-md shadow-lg flex flex-col gap-space-md min-h-[820px]" data-lane="reserves">
+<!-- Lane Header -->
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-high px-space-sm py-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 bg-outline-variant"></span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-wider uppercase leading-none">
+              RESERVES &amp; U-21
+            </h2>
+<span class="font-label-mono text-label-mono text-on-surface-variant px-space-xs bg-surface-container-highest">6 POOL</span>
+</div>
+<span class="font-label-mono text-label-mono text-outline uppercase">STANDBY</span>
+</div>
+<!-- Reserves Magnetic Tokens Stack -->
+<div class="flex flex-col gap-space-xs drop-zone" data-sector="reserves-all">
+<!-- TOKEN: #36 T. Setford (GK) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="36" data-player="Setford" data-pos="GK" draggable="true">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">36</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-outline">GK</span>
+<span class="font-body-md text-body-md font-semibold text-primary truncate">T. Setford</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-outline leading-none">7.2</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<div class="font-label-mono text-label-mono text-outline mt-0.5">DEV CONTRACT • 18 YRS</div>
+</div>
+<!-- TOKEN: #47 K. Nichols (DEF) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="47" data-player="Nichols" data-pos="DEF" draggable="true">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">47</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-outline">DEF</span>
+<span class="font-body-md text-body-md font-semibold text-primary truncate">K. Nichols</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-outline leading-none">7.4</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<div class="font-label-mono text-label-mono text-outline mt-0.5">U-21 CAPTAIN • 19 YRS</div>
+</div>
+<!-- TOKEN: #53 M. Rosiak (MID) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="53" data-player="Rosiak" data-pos="MID" draggable="true">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">53</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-outline">MID</span>
+<span class="font-body-md text-body-md font-semibold text-primary truncate">M. Rosiak</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-outline leading-none">7.3</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<div class="font-label-mono text-label-mono text-outline mt-0.5">SET-PIECE SPECIALIST</div>
+</div>
+<!-- TOKEN: #62 J. Henry-Francis (MID) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="62" data-player="Henry-Francis" data-pos="MID" draggable="true">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">62</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-outline">MID</span>
+<span class="font-body-md text-body-md font-semibold text-primary truncate">J. Henry-Francis</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-outline leading-none">7.1</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<div class="font-label-mono text-label-mono text-outline mt-0.5">PRESS DISRUPTOR</div>
+</div>
+<!-- TOKEN: #70 I. Kabia (FWD) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="70" data-player="Kabia" data-pos="FWD" draggable="true">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">70</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-secondary">FWD</span>
+<span class="font-body-md text-body-md font-semibold text-primary truncate">I. Kabia</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-secondary leading-none">7.5</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<div class="font-label-mono text-label-mono text-outline mt-0.5">PACE EXPLOSION: 35.1 KM/H</div>
+</div>
+<!-- TOKEN: #76 K. Heaven (DEF) -->
+<div class="player-token group relative cursor-grab active:cursor-grabbing bg-surface-container-high p-space-xs hover:bg-surface-bright transition-all shadow-sm" data-kit="76" data-player="Heaven" data-pos="DEF" draggable="true">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary leading-none">76</span>
+<span class="font-label-tactical text-label-tactical px-1 bg-surface-container-lowest text-outline">DEF</span>
+<span class="font-body-md text-body-md font-semibold text-primary truncate">K. Heaven</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-outline leading-none">7.3</span>
+<span class="material-symbols-outlined text-[14px] text-outline cursor-pointer hover:text-primary flip-trigger">flip_camera_android</span>
+</div>
+</div>
+<div class="font-label-mono text-label-mono text-outline mt-0.5">TALL CENTRAL TACKLER</div>
+</div>
+</div>
+<!-- Custom Coach Named Lane Drop Area Placeholder -->
+<div class="mt-auto p-space-sm bg-surface-container-low border border-dashed border-outline-variant flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-outline text-[24px]">drag_indicator</span>
+<span class="font-label-tactical text-label-tactical text-on-surface-variant uppercase mt-1">
+            DROP TOKEN HERE FOR TACTICAL EXPANSION
+          </span>
+<span class="font-label-mono text-label-mono text-outline mt-0.5">DRAG &amp; REORDER AUTOSAVES TO SYSTEM</span>
+</div>
+</section>
+</div>
+<!-- Bottom Pitchside Status Bar & Telemetry Metrics -->
+<footer class="relative z-10 bg-surface-container p-space-md shadow-md mt-space-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Metric: Balance Index -->
+<div class="flex items-center gap-space-md w-full md:w-auto">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-wider">TACTICAL BALANCE INDEX</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-primary">94.8</span>
+<span class="font-label-tactical text-label-tactical text-secondary">OPTIMAL SYNERGY</span>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-variant"></div>
+<!-- Metric: Squad Fatigue Indicator -->
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-wider">AGGREGATE SQUAD LOAD</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-secondary">22.4%</span>
+<span class="font-label-tactical text-label-tactical text-secondary">FRESH SQUAD</span>
+</div>
+</div>
+</div>
+<!-- Segmented Telemetry Spark-Bar Visual Component -->
+<div class="flex flex-col gap-1 w-full md:w-80">
+<div class="flex items-center justify-between font-label-mono text-label-mono">
+<span class="text-outline uppercase">PITCH OCCUPANCY DENSITY</span>
+<span class="text-primary font-bold">11 / 11 STARTERS ALLOCATED</span>
+</div>
+<!-- 11 Segmented Bars for Starting Lineup -->
+<div class="grid grid-cols-11 gap-1 h-2 bg-surface-container-lowest p-0.5">
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+<div class="bg-secondary h-full"></div>
+</div>
+</div>
+<!-- Quick Guidance & Status Marker -->
+<div class="flex items-center gap-space-sm text-right">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<div class="flex flex-col text-right">
+<span class="font-label-tactical text-label-tactical text-primary uppercase">DRAG-AND-DROP ACTIVE</span>
+<span class="font-label-mono text-label-mono text-outline">CLICK FLIP ICON TO INSPECT DOSSIER</span>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<!-- Drag-and-Drop & Token Flip Micro-Interactions -->
+<script>
+  (function initTacticsBoard() {
+    const tokens = document.querySelectorAll('.player-token');
+    const dropZones = document.querySelectorAll('.drop-zone');
+    const searchInput = document.getElementById('tokenSearchInput');
+    const lockBtn = document.getElementById('lockBoardBtn');
+    let isBoardLocked = false;
+    let draggedToken = null;
+
+    // Drag-and-Drop Handlers
+    tokens.forEach(token => {
+      token.addEventListener('dragstart', (e) => {
+        if (isBoardLocked) {
+          e.preventDefault();
+          return;
+        }
+        draggedToken = token;
+        token.classList.add('opacity-40', 'scale-95');
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', token.dataset.player || '');
+      });
+
+      token.addEventListener('dragend', () => {
+        if (draggedToken) {
+          draggedToken.classList.remove('opacity-40', 'scale-95');
+          draggedToken = null;
+        }
+      });
+    });
+
+    dropZones.forEach(zone => {
+      zone.addEventListener('dragover', (e) => {
+        if (isBoardLocked) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        zone.classList.add('bg-surface-container-high/40');
+      });
+
+      zone.addEventListener('dragleave', () => {
+        zone.classList.remove('bg-surface-container-high/40');
+      });
+
+      zone.addEventListener('drop', (e) => {
+        if (isBoardLocked) return;
+        e.preventDefault();
+        zone.classList.remove('bg-surface-container-high/40');
+        if (draggedToken) {
+          zone.appendChild(draggedToken);
+        }
+      });
+    });
+
+    // Flip Card Trigger Micro-Interaction
+    document.querySelectorAll('.flip-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const card = trigger.closest('.player-token');
+        if (!card) return;
+        
+        card.classList.toggle('border');
+        card.classList.toggle('border-secondary');
+        card.classList.toggle('bg-surface-container-lowest');
+      });
+    });
+
+    // Search filter for kit, name, position
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        tokens.forEach(tok => {
+          const name = (tok.dataset.player || '').toLowerCase();
+          const kit = (tok.dataset.kit || '').toLowerCase();
+          const pos = (tok.dataset.pos || '').toLowerCase();
+          
+          if (!query || name.includes(query) || kit.includes(query) || pos.includes(query)) {
+            tok.style.display = '';
+          } else {
+            tok.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // Toggle Lock Depth Chart
+    if (lockBtn) {
+      lockBtn.addEventListener('click', () => {
+        isBoardLocked = !isBoardLocked;
+        if (isBoardLocked) {
+          lockBtn.classList.remove('bg-primary', 'text-surface');
+          lockBtn.classList.add('bg-error', 'text-on-error');
+          lockBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">lock_open</span> UNLOCK CHART';
+        } else {
+          lockBtn.classList.remove('bg-error', 'text-on-error');
+          lockBtn.classList.add('bg-primary', 'text-surface');
+          lockBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">lock</span> LOCK CHART';
+        }
+      });
+    }
+  })();
+</script></main></div></body></html>
