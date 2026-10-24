@@ -7,7 +7,9 @@ import { fileURLToPath } from "node:url";
 const css = readFileSync(
   fileURLToPath(new URL("../src/app/globals.css", import.meta.url)),
   "utf8",
-).replace(/\/\*[\s\S]*?\*\//g, "");
+)
+  .replace(/\r\n/g, "\n") // Windows checkouts (core.autocrlf) use CRLF
+  .replace(/\/\*[\s\S]*?\*\//g, "");
 
 function block(selector) {
   const start = css.indexOf(selector);
