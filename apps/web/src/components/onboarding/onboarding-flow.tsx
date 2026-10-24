@@ -133,7 +133,7 @@ export function OnboardingFlow({
         <form action={handleAccept} className="flex flex-col gap-4">
           <div className="flex flex-col gap-1.5">
             <Label htmlFor="fullName">{tAuth("fullName")}</Label>
-            <Input id="fullName" name="fullName" required autoComplete="name" className="border-night-pitch/30 text-night-pitch" />
+            <Input id="fullName" name="fullName" required autoComplete="name" />
           </div>
           {error && <p className="text-sm text-red-ink">{error}</p>}
           <Button type="submit" disabled={pending} variant="primary">

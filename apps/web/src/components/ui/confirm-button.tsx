@@ -40,7 +40,7 @@ export function ConfirmButton({
           setConfirming(false);
           onConfirm();
         }}
-        className={cn("border border-touchline-red bg-touchline-red px-2 py-1 text-xs uppercase text-chalk", className)}
+        className={cn("border border-touchline-red bg-touchline-red px-2 py-1 text-xs uppercase text-on-accent", className)}
       >
         {confirmLabel}
       </button>

@@ -8,6 +8,10 @@
  * where it is declared and would otherwise leak the outer theme into a
  * dark island.
  *
+ * A subtree can opt into either theme with data-theme (paper sheets use
+ * "light" so their ink, muted text and form controls stay readable on a
+ * dark page).
+ *
  * Token names are colour names from the original dark design, so under the
  * light theme "chalk" is the ink and "night-pitch" is the canvas. Primary
  * buttons (bg-chalk text-night-pitch) therefore stay high-contrast in both
@@ -18,7 +22,8 @@
  * states), radius 0 everywhere, no shadows on UI chrome.
  */
 
-:root {
+:root,
+[data-theme="light"] {
   color-scheme: light;
   --radius: 0rem;
 
@@ -50,6 +55,9 @@
   --line-15: rgba(18, 35, 28, 0.25);
   --chip-border: rgba(18, 35, 28, 0.16);
   --card-hover: #f1eee3;
+  --scrim: rgba(18, 35, 28, 0.45);
+  --skeleton: #e2ddcd;
+  --control: rgba(18, 35, 28, 0.52);
 
   /* Elevation (only paper sheets, bottom sheets and dragged tokens float) */
   --elev-lift: 0 6px 18px rgba(18, 35, 28, 0.12);
@@ -114,6 +122,9 @@
   --line-15: rgba(247, 245, 239, 0.15);
   --chip-border: rgba(247, 245, 239, 0.12);
   --card-hover: #1c2d26;
+  --scrim: rgba(18, 35, 28, 0.8);
+  --skeleton: #182e25;
+  --control: rgba(247, 245, 239, 0.24);
 
   --elev-lift: 0 8px 24px rgba(0, 0, 0, 0.35);
   --elev-sheet: 0 -8px 24px rgba(0, 0, 0, 0.4);
@@ -177,6 +188,9 @@
   --color-paper-foreground: var(--paper-foreground);
   --color-chip-border: var(--chip-border);
   --color-card-hover: var(--card-hover);
+  --color-scrim: var(--scrim);
+  --color-skeleton: var(--skeleton);
+  --color-control: var(--control);
 
   --shadow-lift: var(--elev-lift);
   --shadow-sheet: var(--elev-sheet);

@@ -18,7 +18,7 @@ export async function OpponentDossier({ opponent }: { opponent: Doc<"opponents">
   ].filter(Boolean);
 
   const sections = [
-    { key: "style", title: t("sectionStyle"), tint: "bg-chalk text-night-pitch", body: styleLines.join(" · ") || null },
+    { key: "style", title: t("sectionStyle"), tint: "bg-paper text-chalk", paper: true, body: styleLines.join(" · ") || null },
     { key: "strengths", title: t("sectionStrengths"), tint: "bg-wash-green text-chalk", body: opponent.strengths, mark: "✓" },
     { key: "weaknesses", title: t("sectionWeaknesses"), tint: "bg-wash-red text-chalk", body: opponent.weaknesses, mark: "✕" },
     { key: "setPieces", title: t("sectionSetPieces"), tint: "bg-slate-grass text-chalk", body: opponent.setPieceNotes },
@@ -57,7 +57,7 @@ export async function OpponentDossier({ opponent }: { opponent: Doc<"opponents">
       {/* Mobile: accordion sections */}
       <div className="flex flex-col gap-2 md:hidden">
         {sections.map((section) => (
-          <details key={section.key} className={`border border-hairline-08 p-4 ${section.tint}`}>
+          <details key={section.key} data-theme={section.paper ? "light" : undefined} className={`border border-hairline-08 p-4 ${section.tint}`}>
             <summary className="cursor-pointer font-display uppercase">{section.title}</summary>
             <p className="mt-2 whitespace-pre-line text-sm">
               {section.body ? `${section.mark ? section.mark + " " : ""}${section.body}` : t("noneRecorded")}
@@ -69,7 +69,7 @@ export async function OpponentDossier({ opponent }: { opponent: Doc<"opponents">
       {/* Desktop: 2-column sticky notes, always visible */}
       <div className="hidden gap-4 md:grid md:grid-cols-2">
         {sections.map((section) => (
-          <div key={section.key} className={`border border-hairline-08 p-4 ${section.tint}`}>
+          <div key={section.key} data-theme={section.paper ? "light" : undefined} className={`border border-hairline-08 p-4 ${section.tint}`}>
             <h2 className="font-display uppercase">{section.title}</h2>
             <p className="mt-2 whitespace-pre-line text-sm">
               {section.body ? `${section.mark ? section.mark + " " : ""}${section.body}` : t("noneRecorded")}

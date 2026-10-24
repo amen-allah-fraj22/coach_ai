@@ -53,14 +53,14 @@ export function TeamForm({ team }: { team?: Doc<"teams"> }) {
   }
 
   return (
-    <form action={onSubmit} className="flex flex-col gap-4 border border-hairline-08 bg-chalk p-6 text-night-pitch md:-rotate-1">
+    <form action={onSubmit} data-theme="light" className="flex flex-col gap-4 border border-hairline-08 bg-paper p-6 text-chalk md:-rotate-1">
       <div className="flex flex-col gap-1.5">
-        <Label htmlFor="name" className="text-night-pitch/70">{t("name")}</Label>
-        <Input id="name" name="name" required defaultValue={team?.name} variant="underline" className="text-night-pitch" />
+        <Label htmlFor="name" className="text-chalk/70">{t("name")}</Label>
+        <Input id="name" name="name" required defaultValue={team?.name} variant="underline" className="text-chalk" />
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <Label className="text-night-pitch/70">{t("ageCategory")}</Label>
+        <Label className="text-chalk/70">{t("ageCategory")}</Label>
         <div className="flex flex-wrap gap-1.5">
           {AGE_CATEGORY_KEYS.map((key) => {
             const label = t(key);
@@ -71,8 +71,8 @@ export function TeamForm({ team }: { team?: Doc<"teams"> }) {
                 onClick={() => setAgeCategory(label)}
                 className={`border px-2 py-1 text-xs uppercase ${
                   ageCategory === label
-                    ? "border-night-pitch bg-night-pitch text-chalk"
-                    : "border-night-pitch/30 text-night-pitch/70"
+                    ? "border-chalk bg-chalk text-chalk"
+                    : "border-chalk/30 text-chalk/70"
                 }`}
               >
                 {label}
@@ -83,12 +83,12 @@ export function TeamForm({ team }: { team?: Doc<"teams"> }) {
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <Label htmlFor="competition" className="text-night-pitch/70">{t("competition")}</Label>
-        <Input id="competition" name="competition" variant="underline" className="text-night-pitch" defaultValue={team?.competition ?? ""} />
+        <Label htmlFor="competition" className="text-chalk/70">{t("competition")}</Label>
+        <Input id="competition" name="competition" variant="underline" className="text-chalk" defaultValue={team?.competition ?? ""} />
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <Label className="text-night-pitch/70">{t("defaultFormation")}</Label>
+        <Label className="text-chalk/70">{t("defaultFormation")}</Label>
         <FormationPicker value={defaultFormation} onChange={setDefaultFormation} />
       </div>
 

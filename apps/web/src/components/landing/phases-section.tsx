@@ -76,11 +76,11 @@ export function PhasesSection() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
-              className="text-night-pitch scroll-mt-20"
+              className="scroll-mt-20"
             >
-              <div className="border border-hairline-08 bg-chalk p-4">
+              <div data-theme="light" className="border border-hairline-08 bg-paper p-4 text-chalk">
                 <div className="mb-3 flex items-center justify-between">
-                  <Chip className="border-night-pitch/20 bg-transparent text-night-pitch">
+                  <Chip className="border-chalk/20 bg-transparent text-chalk">
                     {card.tag}
                   </Chip>
                 </div>

@@ -17,7 +17,7 @@ function Checkbox({ className, ...props }: React.ComponentProps<"input">) {
       <span
         aria-hidden
         className={cn(
-          "pointer-events-none absolute inset-0 flex items-center justify-center border border-hairline-24 bg-slate-grass",
+          "pointer-events-none absolute inset-0 flex items-center justify-center border border-control bg-slate-grass",
           "peer-checked:border-chalk peer-checked:bg-chalk peer-checked:[&>span]:scale-100",
           "peer-disabled:opacity-50",
           "peer-focus-visible:ring-2 peer-focus-visible:ring-ring/50",

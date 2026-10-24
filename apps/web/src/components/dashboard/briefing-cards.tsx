@@ -39,18 +39,18 @@ export function BriefingCards({
         <p className="mb-2 text-label-tactical text-red-ink">{t("prepareTitle")}</p>
         {nextMatch ? (
           <>
-            <p className="mb-4 text-sm text-night-pitch/80">
+            <p className="mb-4 text-sm text-chalk/80">
               {nextMatch.opponentName ?? "—"} · {nextMatch.matchDate}
             </p>
             <Link
               href={`/assistant?matchId=${nextMatch.id}`}
-              className="font-display text-sm uppercase text-night-pitch hover:underline"
+              className="font-display text-sm uppercase text-chalk hover:underline"
             >
               {t("deploy")}
             </Link>
           </>
         ) : (
-          <p className="text-sm text-night-pitch/70">{t("prepareTeaserEmpty")}</p>
+          <p className="text-sm text-chalk/70">{t("prepareTeaserEmpty")}</p>
         )}
       </PaperCard>
 
@@ -59,21 +59,21 @@ export function BriefingCards({
         {lastMatch ? (
           <>
             <div className="mb-4 flex items-center gap-2">
-              {resultLabel && <Chip className="border-night-pitch/20 bg-transparent text-night-pitch">{resultLabel}</Chip>}
-              <span className="font-display text-xl tabular-nums text-night-pitch">
+              {resultLabel && <Chip className="border-chalk/20 bg-transparent text-chalk">{resultLabel}</Chip>}
+              <span className="font-display text-xl tabular-nums text-chalk">
                 {lastMatch.scoreFor ?? "–"}–{lastMatch.scoreAgainst ?? "–"}
               </span>
-              <span className="text-sm text-night-pitch/70">{lastMatch.opponentName ?? "—"}</span>
+              <span className="text-sm text-chalk/70">{lastMatch.opponentName ?? "—"}</span>
             </div>
             <Link
               href={`/matches/${lastMatch.id}`}
-              className="font-display text-sm uppercase text-night-pitch hover:underline"
+              className="font-display text-sm uppercase text-chalk hover:underline"
             >
               {t("expand")}
             </Link>
           </>
         ) : (
-          <p className="text-sm text-night-pitch/70">{t("noLastMatch")}</p>
+          <p className="text-sm text-chalk/70">{t("noLastMatch")}</p>
         )}
       </PaperCard>
 
@@ -81,7 +81,7 @@ export function BriefingCards({
         <p className="mb-2 text-label-tactical text-red-ink">{t("askTitle")}</p>
         {latestRecommendation ? (
           <>
-            <p className="mb-4 line-clamp-2 text-sm text-night-pitch/80">
+            <p className="mb-4 line-clamp-2 text-sm text-chalk/80">
               {latestRecommendation.headline ?? latestRecommendation.question}
             </p>
             <Link
@@ -90,17 +90,17 @@ export function BriefingCards({
                   ? `/assistant?matchId=${latestRecommendation.matchId}`
                   : "/assistant"
               }
-              className="font-display text-sm uppercase text-night-pitch hover:underline"
+              className="font-display text-sm uppercase text-chalk hover:underline"
             >
               {t("launch")}
             </Link>
           </>
         ) : (
           <>
-            <p className="mb-4 text-sm text-night-pitch/70">{t("noQuestionYet")}</p>
+            <p className="mb-4 text-sm text-chalk/70">{t("noQuestionYet")}</p>
             <Link
               href="/assistant"
-              className="font-display text-sm uppercase text-night-pitch hover:underline"
+              className="font-display text-sm uppercase text-chalk hover:underline"
             >
               {t("launch")}
             </Link>

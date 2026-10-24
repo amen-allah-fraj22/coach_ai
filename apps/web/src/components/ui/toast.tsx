@@ -44,6 +44,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 24 }}
+                  data-theme="dark"
                   className={cn(
                     "pointer-events-auto w-full max-w-sm border-t-2 bg-night-pitch px-4 py-3 text-sm text-chalk",
                     toast.variant === "destructive" ? "border-t-touchline-red" : "border-t-chalk",

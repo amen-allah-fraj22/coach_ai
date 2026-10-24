@@ -17,7 +17,11 @@ function PaperCard({
   index = 0,
   children,
   ...props
-}: React.ComponentProps<typeof motion.div> & { rotate?: number; index?: number }) {
+}: Omit<React.ComponentProps<typeof motion.div>, "children"> & {
+  children?: React.ReactNode;
+  rotate?: number;
+  index?: number;
+}) {
   const reduced = useReducedMotion();
 
   return (
@@ -32,7 +36,9 @@ function PaperCard({
       )}
       {...props}
     >
-      {children}
+      <div data-theme="light" className="contents">
+        {children}
+      </div>
     </motion.div>
   );
 }
