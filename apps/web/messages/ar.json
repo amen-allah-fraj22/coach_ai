@@ -23,7 +23,14 @@
     "none": "لا شيء",
     "optional": "اختياري",
     "confirmDelete": "حذف هذا؟ لا يمكن التراجع عن هذا الإجراء.",
-    "confirm": "تأكيد"
+    "confirm": "تأكيد",
+    "theme": "السمة",
+    "themeLight": "فاتح",
+    "themeDark": "داكن",
+    "themeSystem": "النظام",
+    "appearance": "المظهر",
+    "switchToLight": "التبديل إلى السمة الفاتحة",
+    "switchToDark": "التبديل إلى السمة الداكنة"
   },
   "home": {
     "nav": {

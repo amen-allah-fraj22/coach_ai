@@ -23,7 +23,14 @@
     "none": "Aucun",
     "optional": "facultatif",
     "confirmDelete": "Supprimer ceci ? Action irréversible.",
-    "confirm": "Confirmer"
+    "confirm": "Confirmer",
+    "theme": "Thème",
+    "themeLight": "Clair",
+    "themeDark": "Sombre",
+    "themeSystem": "Système",
+    "appearance": "Apparence",
+    "switchToLight": "Passer au thème clair",
+    "switchToDark": "Passer au thème sombre"
   },
   "home": {
     "nav": {

@@ -8,6 +8,7 @@ import { routing, rtlLocales, type Locale } from "@/i18n/routing";
 import { Providers } from "@/components/providers";
 import "material-symbols/outlined.css";
 import "../globals.css";
+import { themeInitScript } from "@/lib/theme";
 
 const bodyLatin = IBM_Plex_Sans({
   variable: "--font-body",
@@ -77,9 +78,13 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={dir}
-      data-theme="dark"
+      data-theme="light"
+      suppressHydrationWarning
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <NextIntlClientProvider>
           <Providers>{children}</Providers>

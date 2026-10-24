@@ -5,6 +5,7 @@ import { api } from "@convex/_generated/api";
 import type { Doc } from "@convex/_generated/dataModel";
 import { InviteForm } from "@/components/settings/invite-form";
 import { SettingsPhilosophy } from "@/components/settings/settings-philosophy";
+import { ThemeSegmented } from "@/components/theme/theme-toggle";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 
@@ -38,6 +39,11 @@ export default async function SettingsPage({
       <section className="flex flex-col gap-3 border-b border-hairline-08 pb-6">
         <h2 className="text-label-tactical text-muted-foreground">{t("clubInfo")}</h2>
         <p className="font-display text-headline-sm uppercase text-chalk">{current.club.name}</p>
+      </section>
+
+      <section className="flex flex-col gap-3 border-b border-hairline-08 pb-6">
+        <h2 className="text-label-tactical text-muted-foreground">{tCommon("appearance")}</h2>
+        <ThemeSegmented />
       </section>
 
       <section className="flex flex-col gap-3 border-b border-hairline-08 pb-6">

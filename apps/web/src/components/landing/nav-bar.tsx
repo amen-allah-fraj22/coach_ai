@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
+import { ThemeToggleButton } from "@/components/theme/theme-toggle";
 
 export async function LandingNavBar({ locale }: { locale: Locale }) {
   const t = await getTranslations("home.nav");
@@ -72,6 +73,7 @@ export async function LandingNavBar({ locale }: { locale: Locale }) {
             </Link>
           ))}
         </div>
+        <ThemeToggleButton className="size-8" />
         <Button asChild variant="secondary" size="sm" className="hidden md:inline-flex">
           <Link href="/login">{t("login")}</Link>
         </Button>

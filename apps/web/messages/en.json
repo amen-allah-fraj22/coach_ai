@@ -23,7 +23,14 @@
     "none": "None",
     "optional": "optional",
     "confirmDelete": "Delete this? This can't be undone.",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "appearance": "Appearance",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
   },
   "home": {
     "nav": {
