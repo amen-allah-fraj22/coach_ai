@@ -78,7 +78,6 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={dir}
-      data-theme="light"
       suppressHydrationWarning
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
     >

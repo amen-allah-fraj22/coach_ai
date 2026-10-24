@@ -78,7 +78,7 @@ Port `design/stitch/DESIGN.md` exactly, with these corrections:
 | Rule | Decision |
 |---|---|
 | Stitch config sets `primary: #ffffff` | **Forbidden by DESIGN.md.** Map every "primary/white" usage to Chalk `#F7F5EF`. |
-| Theme | **Dark-only.** Remove the current light Chalk theme. Light "paper" surfaces (team-sheet cards) use Chalk `#F7F5EF` with Night Pitch `#12231C` text. |
+| Theme | **Light by default, dark available** (revised after launch feedback that dark-only felt too sombre). The dark values below are unchanged; the light palette and the rules for using both are in §2.1. "Paper" surfaces (team-sheet cards) stay cream with ink text in both themes. |
 | Base canvas | `#12231C` (Night Pitch) page background; containers `#182E25` (Slate Grass); deeper wells `#0E1F18`. |
 | Accents | Pitch Green `#2F6D4F` (+ light `#94D4B0` for text on dark), Touchline Red `#E3402A`. Washes: green `rgba(47,109,79,.25)`, red `rgba(227,64,42,.22)`. |
 | Hairlines | `rgba(247,245,239,.08)` structural, `.16` inputs, `.24` focus/active containers. |
@@ -175,6 +175,36 @@ hover:scale-[1.02]`; card CTA arrow `group-hover:translate-x-1`; nav items
 `hover:bg-[#1C2D26]`.
 
 ---
+
+## 2.1 Theming (light + dark)
+
+Tokens live in `apps/web/src/app/globals.css`. `:root` is the **light** theme (default);
+`[data-theme="dark"]` is dark. Either can be applied to a subtree, so a section can pin its own theme.
+Every block declares *all* variables, including the semantic aliases (`--background`, `--muted-foreground`, …),
+because a `var()` alias resolves where it is declared.
+
+**Token names are colours from the original dark design**, so in light `chalk` is the ink and `night-pitch` is the
+canvas. That keeps `bg-chalk text-night-pitch` (primary button, selected pill) high-contrast in both themes.
+
+| Need | Use |
+|---|---|
+| Body / secondary text | `text-chalk` / `text-muted-foreground` |
+| Page / card / recessed surface | `bg-night-pitch` / `bg-slate-grass` / `bg-deep-well` |
+| Green or red **text** | `text-green-ink` / `text-red-ink` (not `text-touchline-red`, `#94D4B0`) |
+| Label on a **solid** green/red fill | `text-on-accent` (cream in both themes) |
+| Cream "paper" sheet | `bg-paper text-paper-foreground` + `data-theme="light"` on the sheet, then write the inside with normal light-theme tokens (`text-chalk` is ink there) |
+| Always-dark section (landing hero, auth side panel, toasts) | `data-theme="dark"` |
+| Thin SVG linework, shadows, scrim, control borders | `var(--line-10/12/15)`, `shadow-lift/sheet/drag`, `bg-scrim`, `border-control` |
+
+Never hardcode `#hex` / `rgba()` in components; add a token to both blocks instead.
+
+**Runtime.** `lib/theme.ts` holds the pre-paint script (inlined in `<head>`, so there is no flash), the stored
+preference (`light | dark | system`, `localStorage["coachai-theme"]`, default light) and `applyTheme`.
+`hooks/use-theme.ts` exposes it to React; `components/theme/theme-toggle.tsx` has the toggles (top bar, landing nav,
+Settings → Appearance). `<html>` deliberately does not render `data-theme` from React; the script sets it.
+
+**Checks.** `pnpm contrast` (in `apps/web`) reads the tokens and checks WCAG ratios for the pairs the UI uses in both
+themes. Dark gaps that predate light mode are listed as "known" in the script instead of failing.
 
 ## 3. Feature split — what we build vs. what we cut
 
